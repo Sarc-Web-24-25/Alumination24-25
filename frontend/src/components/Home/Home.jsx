@@ -11,6 +11,7 @@ import logo from "./bgimg/logo.png";
 import ig1 from "./bgimg/ig1.png";
 import women from "./bgimg/women.png";
 import clock from "./bgimg/clock.png";
+import React from 'react';
 
 
 export default function Home() {
