@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from .options import *
 
 
 class MyUser(AbstractUser):
@@ -36,6 +36,7 @@ class Profile(models.Model):
             ("idddp", "Inter-Disciplinary Dual Degree"),
         ),
     )
+
     degree = models.CharField(max_length=50, choices=DEGREES, blank=False)
     join_year = models.IntegerField(blank=False)
     graduation_year = models.IntegerField(blank=False)
