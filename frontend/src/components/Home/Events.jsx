@@ -75,7 +75,7 @@ function EventList() {
                             <div className="event-info">
                                 <h3 className="event-title">{event.name}</h3>
                                 <p className="event-description">{event.description}</p>
-                                <button onClick={() => handleRegisterClick(event.id)}>Register Here</button>
+                                <button onClick={() => handleRegisterClick(event.id)} className="register-button">Register Here</button>
                                 {selectedEventId === event.id && <RegistrationForm eventId={event.id} />}
                             </div>
                         </li>

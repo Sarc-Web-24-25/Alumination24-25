@@ -119,26 +119,27 @@
     /* Ensure the image fits the container */
     max-height: 100%;
     /* Ensure the image fits the container */
-    height: auto;
+    height: 350px;
 }
 
 .event-info {
-    
     flex: 3;
     padding-left: 20px;
 }
 
 .event-title {
+    height: 50px;
     background-color: #533838;
     color: #FFF;
     padding: 10px;
     margin-bottom: 0;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0 ;
     
     /* Remove margin between title and description */
 }
 
 .event-description {
+    height: 250px;
     background-color: #392828;
     padding: 10px;
     opacity: 80%;
@@ -176,4 +177,18 @@
     font-family: 'Inknut Antiqua', serif;
     color: #FFD1AB;
     margin-bottom: 50px;
+}
+.register-button {
+    background-color: #533838;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #392828;
+    /* Change color on hover if desired */
 }
