@@ -16,6 +16,9 @@ import smoke1 from "./bgimg/smoke1.png";
 import smoke2 from "./bgimg/smoke2.png";
 import smoke3 from "./bgimg/smoke3.png";
 import counter from "./bgimg/counter.png";
+import feather from "./bgimg/feather.png";
+import frame from "./bgimg/frame.png";
+import glass from "./bgimg/glass.png";
 
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
@@ -53,9 +56,16 @@ export default function Home() {
    margin:"-550px",
    
 };
+const imgstyle4 = {
+   height:"100px",
+   width:"50px",
+   margin:"7px",
+   
+};
 const imgstyle3 = {
-   height:"250px",
-   marginLeft:"0px",
+   height:"800px",
+   marginLeft:"550px",
+   marginTop:"-900px",
    
 };
      const textstyle={
@@ -66,6 +76,10 @@ const imgstyle3 = {
         color:"#FFD6A0",
         fontSize:"35px",
      };
+     const textstyle3={
+      color:"#F4DEA8",
+      fontSize:"70px",
+   };
      const textstyle2={
       color:"#FFE500",
       fontSize:"50px",
@@ -76,7 +90,7 @@ const imgstyle3 = {
         // Adjust the child element width as needed
         backgroundImage: `url(${f1})`,
         height: "100vh",
-        width:"200000px",
+        width:"9000px",
         backgroundPosition: 'center',
          margin:"0px",
          display: 'flex',
@@ -120,6 +134,22 @@ const imgstyle3 = {
       opacity:"0.9",
       margin:"2px",
     };
+    const frame1 = {
+      width: "520px",
+      height: "220px",
+      borderRadius:"15px",
+      backgroundRepeat: "no-repeat",
+      backgroundColor:"#020000",
+      backgroundImage: `url(${frame})`,
+      backgroundPosition: "start",
+      backgroundSize:"contain",
+      display: "flex", // Add flex display
+      alignItems: "center", // Center vertically
+      justifyContent: "center", // Center horizontally
+      opacity:"0.8",
+      margin:"30px",
+      marginBottom:"5px",
+    };
 
      const [counterOn,setcounterOn]=useState(true);
     return (
@@ -148,11 +178,28 @@ const imgstyle3 = {
 <img src={ig1} style={imgstyle}   alt="" /> 
 
 
-     <div style={aboutus}>
+     <div >
      {/* <ScrollTrigger onEnter={()=>setcounterOn(true)} onExit={()=>setcounterOn(false)} >
               <h1 style={textstyle}>
                {counterOn && <CountUp start={0} end={1000} duration={5} delay={0} />} +</h1>
                </ScrollTrigger> */}
+
+               <div style={hcontain}><img src={glass} style={imgstyle4}   alt="" /> <span style={textstyle3}> NOTABLE ALUMNI </span> <img src={glass} style={imgstyle4}   alt="" /></div>
+               
+                  
+                     <div style={hcontain}>
+                         <div style={frame1}></div>
+                         <div style={frame1}></div>
+                         <div style={frame1}></div>
+                         </div>
+                         
+                     <div style={hcontain}>
+                         <div style={frame1}></div>
+                         <div style={frame1}></div>
+                         
+                         </div>
+                  
+                         <img src={feather} style={imgstyle3}   alt="" /> 
              </div>
              
             
