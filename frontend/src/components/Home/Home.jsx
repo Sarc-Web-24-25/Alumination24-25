@@ -68,6 +68,12 @@ const imgstyle3 = {
    marginTop:"-900px",
    
 };
+const imgstyle5 = {
+   height:"700px",
+   marginLeft:"950px",
+   
+   
+};
      const textstyle={
         color:"#FFE500",
         fontSize:"70px",
@@ -231,14 +237,15 @@ const imgstyle3 = {
             </div>
             </div>
        
-       
+            <img src={women} style={imgstyle5}   alt="" /> 
             </div>
 
             
-
-          
+           
+            
           
         </div>
+      
         
        
       </HorizontalScroll>
