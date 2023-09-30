@@ -20,6 +20,8 @@ import counter from "./bgimg/counter.png";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import { useState } from "react";
+import axios from 'axios';
+
 
 
 
