@@ -76,7 +76,7 @@ const imgstyle3 = {
         // Adjust the child element width as needed
         backgroundImage: `url(${f1})`,
         height: "100vh",
-        width:"200000px",
+        width:"9000px",
         backgroundPosition: 'center',
          margin:"0px",
          display: 'flex',
