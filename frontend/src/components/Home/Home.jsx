@@ -17,7 +17,7 @@ import counter from "./bgimg/counter.png";
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import { useState } from "react";
-
+import React from 'react';
 
 
 export default function Home() {
