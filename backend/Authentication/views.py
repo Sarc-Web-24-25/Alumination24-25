@@ -56,3 +56,18 @@ class UserLoginView(APIView):
                 return Response({"error":"Incorrect Password"},status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response({"error":"User not verified"},status=status.HTTP_400_BAD_REQUEST)
+        
+        
+        
+def verify_email(request, token):
+    try:
+        token = Token.objects.get(key = token)
+        user = token.user
+        print(user)
+        user.is_active = True
+        user.save()
+        token.delete()
+        return Response(status=status.HTTP_200_OK)
+    
+    except user.DoesNotExist:
+        return Response("invalid TOKEN",status=status.HTTP_400_BAD_REQUEST)
