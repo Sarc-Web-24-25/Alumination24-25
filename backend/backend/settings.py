@@ -31,14 +31,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'rest_framework',
-    'Events',
     "django.contrib.admin",
     "django.contrib.auth",
+    'rest_framework.authtoken',
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'Events',
+    'Authentication',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +122,19 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+AUTH_USER_MODEL = 'Authentication.MyUser'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Replace with the actual URL of your React frontend
+]
+
+CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+
+
+
+CSRF_COOKIE_SECURE = False

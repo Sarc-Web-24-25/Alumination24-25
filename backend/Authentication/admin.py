@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import MyUser  # Import your custom user model
-
+from .models import MyUser, Profile  # Import your custom user model
 
 class MyUserAdmin(UserAdmin):
     # Add customizations to the user admin page here
@@ -15,6 +14,6 @@ class MyUserAdmin(UserAdmin):
         ('Custom Fields', {'fields': ('is_alum',)}),
     )
 
-
 # Register your custom user model with the custom admin class
 admin.site.register(MyUser, MyUserAdmin)
+admin.site.register(Profile)

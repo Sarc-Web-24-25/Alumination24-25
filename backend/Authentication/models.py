@@ -2,16 +2,16 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .options import *
 
-
 class MyUser(AbstractUser):
     is_alum = models.BooleanField(default=False)
 
 
 class Profile(models.Model):
     def __str__(self):
-        return "%s %s" % (self.name, self.email)
+        return "%s %s" % (self.fullname, self.email)
 
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(upload_to="images/profile_pics/", blank=True)
     fullname = models.CharField(max_length=255, blank=False, default="")
     email = models.EmailField(blank=False)
     is_alumni = models.BooleanField(default=False)
