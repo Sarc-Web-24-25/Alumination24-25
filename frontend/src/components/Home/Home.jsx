@@ -12,12 +12,17 @@ import ig1 from "./bgimg/ig1.png";
 import women from "./bgimg/women.png";
 import clock from "./bgimg/clock.png";
 import smoke from "./bgimg/smoke.png";
+import smoke1 from "./bgimg/smoke1.png";
+import smoke2 from "./bgimg/smoke2.png";
+import smoke3 from "./bgimg/smoke3.png";
 import counter from "./bgimg/counter.png";
 
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import { useState } from "react";
-import React from 'react';
+import axios from 'axios';
+
+
 
 
 export default function Home() {
@@ -44,8 +49,8 @@ export default function Home() {
       
   };
   const imgstyle2 = {
-   height:"1000px",
-   margin:"-700px",
+   height:"700px",
+   margin:"-550px",
    
 };
 const imgstyle3 = {
@@ -95,7 +100,7 @@ const imgstyle3 = {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-      marginLeft:"-200px",
+      marginLeft:"-600px",
      };
      const hcontain={
       
@@ -155,7 +160,10 @@ const imgstyle3 = {
             <div style={aboutus}></div>
             
             <img src={clock} style={imgstyle1}   alt="" /> 
+            <img src={smoke1} style={imgstyle2}   alt="" /> 
+            <img src={smoke2} style={imgstyle2}   alt="" /> 
             <img src={smoke} style={imgstyle2}   alt="" /> 
+            <img src={smoke3} style={imgstyle2}   alt="" /> 
 
             <div style={contain}>
             <div style={hcontain}>
