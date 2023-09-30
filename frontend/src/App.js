@@ -16,6 +16,7 @@ import Gallery from "./components/Home/Gallery";
 import Events from "./components/Home/Events";
 import Signup from "./components/Authentication/signup";
 import Login from "./components/Authentication/login";
+import Profile from "./components/Authentication/profile";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/events" element={<Events />} />
       </Routes>
     </Router>

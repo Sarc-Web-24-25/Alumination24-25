@@ -19,7 +19,7 @@ import counter from "./bgimg/counter.png";
 import feather from "./bgimg/feather.png";
 import frame from "./bgimg/frame.png";
 import glass from "./bgimg/glass.png";
-
+import '../Home/all.css';
 import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import { useState } from "react";
@@ -48,7 +48,7 @@ export default function Home() {
      };
      const imgstyle1 = {
       height:"500px",
-      marginTop:"-220px",
+      marginTop:"-240px",
       
   };
   const imgstyle2 = {
@@ -212,7 +212,7 @@ const imgstyle5 = {
   
             
             
-            <img src={clock} style={imgstyle1}   alt="" /> 
+                   <img className="wobble-hor-top" src={clock} style={imgstyle1}   alt="" /> 
             <img src={smoke1} style={imgstyle2}   alt="" /> 
             <img src={smoke2} style={imgstyle2}   alt="" /> 
             <img src={smoke} style={imgstyle2}   alt="" /> 

@@ -34,7 +34,10 @@
 // export default EventList;
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import RegistrationForm from './RegistrationForm'; // Create this component
+import RegistrationForm from './RegistrationForm';
+import "../Home/all.css"
+import topImage from "./bgimg/events_title.png"
+import eventimage from "./bgimg/cfc.png"
 
 function EventList() {
     const [events, setEvents] = useState([]);
@@ -54,68 +57,33 @@ function EventList() {
     const handleRegisterClick = (eventId) => {
         setSelectedEventId(eventId);
     };
+
     return (
-        <div style={eventListContainerStyle}>
-            <h2>Event List</h2>
-            <ul>
-                {events.map((event) => (
-                    <li key={event.id} style={eventListItemStyle}>
-                        <div style={eventImageStyle}>
-                            <img src={event.image} alt={event.name} style={imageStyle} />
-                        </div>
-                        <div style={eventInfoStyle}>
-                            <h3 style={eventTitleStyle}>{event.name}</h3>
-                            <p style={eventDescriptionStyle}>{event.description}</p>
-                            <button onClick={() => handleRegisterClick(event.id)}>Register Here</button>
-                            {selectedEventId === event.id && <RegistrationForm eventId={event.id} />}
-                        </div>
-                    </li>
-                ))}
-            </ul>
+        <div className="event-list-container">
+            <div className="top-section">
+                <img src={topImage} alt="Top Image" className="top-image" />
+                <h1 className="top-title">EVENTS</h1>
+            </div>
+            <div className="page-content">
+                <ul>
+                    {events.map((event) => (
+                        <li key={event.id} className="event-list-item">
+                            <div className="event-image">
+                                {/* <img src={event.image} alt={event.name} className="event-image" /> */}
+                                <img src={eventimage} alt={event.name} className="event-image" />
+                            </div>
+                            <div className="event-info">
+                                <h3 className="event-title">{event.name}</h3>
+                                <p className="event-description">{event.description}</p>
+                                <button onClick={() => handleRegisterClick(event.id)}>Register Here</button>
+                                {selectedEventId === event.id && <RegistrationForm eventId={event.id} />}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }
-
-const eventListContainerStyle = {
-    backgroundImage: `url('bgimg/events_bg.png')`, // Replace with your image URL
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
-    padding: '20px', // Add padding to separate content from the background
-};
-
-
-const eventListItemStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '20px',
-};
-
-const eventImageStyle = {
-    flex: '1',
-};
-
-const imageStyle = {
-    width: '100px', // Adjust the image size as needed
-    height: '100px', // Adjust the image size as needed
-};
-
-const eventInfoStyle = {
-    flex: '3',
-    paddingLeft: '20px', // Add spacing between image and info
-};
-
-const eventTitleStyle = {
-    backgroundColor: '#533838',
-    color: '#FFF',
-    padding: '10px',
-    marginBottom: '10px',
-};
-
-const eventDescriptionStyle = {
-    backgroundColor: '#392828', // Background color for description
-    padding: '10px',
-    opacity: '80%'
-};
 
 export default EventList;
