@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import Navbar from "./Navbar";
+import Navbar1 from "./Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
@@ -20,7 +20,7 @@ import Login from "./components/Authentication/login";
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar1 />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
