@@ -31,7 +31,7 @@ import axios from 'axios';
 export default function Home() {
     const containerStyle = {
        // Adjust width as needed
-       height:"94.1vh",
+       height:"90.22vh",
     };
 
     const childStyle = {
