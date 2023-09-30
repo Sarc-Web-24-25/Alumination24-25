@@ -13,6 +13,7 @@ import Home from "./components/Home/Home";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
 import Gallery from "./components/Home/Gallery";
+import Events from "./components/Home/Events";
 import Signup from "./components/Authentication/signup";
 import Login from "./components/Authentication/login";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
     </Router>
   );
