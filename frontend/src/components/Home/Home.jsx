@@ -68,6 +68,12 @@ const imgstyle3 = {
    marginTop:"-900px",
    
 };
+const imgstyle5 = {
+   height:"700px",
+   marginLeft:"950px",
+   
+   
+};
      const textstyle={
         color:"#FFE500",
         fontSize:"70px",
@@ -90,7 +96,7 @@ const imgstyle3 = {
         // Adjust the child element width as needed
         backgroundImage: `url(${f1})`,
         height: "100vh",
-        width:"9000px",
+        width:"8000px",
         backgroundPosition: 'center',
          margin:"0px",
          display: 'flex',
@@ -203,8 +209,8 @@ const imgstyle3 = {
              </div>
              
             
-  <img src={women} style={imgstyle}   alt="" /> 
-            <div style={aboutus}></div>
+  
+            
             
             <img src={clock} style={imgstyle1}   alt="" /> 
             <img src={smoke1} style={imgstyle2}   alt="" /> 
@@ -231,14 +237,15 @@ const imgstyle3 = {
             </div>
             </div>
        
-       
+            <img src={women} style={imgstyle5}   alt="" /> 
             </div>
 
             
-
-          
+           
+            
           
         </div>
+      
         
        
       </HorizontalScroll>
