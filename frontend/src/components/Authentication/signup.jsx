@@ -48,11 +48,9 @@ const disabledButtonStyle = {
 
 
 
-
-
 function Signup() {
-  const departments = ["Department 1", "Department 2", "Department 3"]; // Add your department options
-  const degrees = ["Degree 1", "Degree 2", "Degree 3"]; // Add your degree options
+  const departments = ["Department 1", "Department 2", "Department 3"];
+  const degrees = ["Degree 1", "Degree 2", "Degree 3"];
   const [email, setEmail] = useState('');
   const [department, setDepartment] = useState('');
   const [name, setName] = useState('');
