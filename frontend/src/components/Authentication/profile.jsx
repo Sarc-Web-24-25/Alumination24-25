@@ -146,7 +146,7 @@ export default function Signup() {
                     <div className="user-profile">
                         <img
                             className="profile-picture"
-                            src="https://media.licdn.com/dms/image/D4D03AQHhwo3NFMddCg/profile-displayphoto-shrink_400_400/0/1680935085863?e=1700092800&v=beta&t=u7PmS6PGCJHoIVLmMyDYLdSST0D8p-eZ--Lrd43lmkk"
+                            src="https://.licdn.com/dms/image/D4D03AQHhwo3NFMddCg/profile-displayphoto-shrink_400_400/0/1680935085863?e=1700092800&v=beta&t=u7PmS6PGCJHoIVLmMyDYLdSST0D8p-eZ--Lrd43lmkk"
                             alt="User Profile"
                         />
                     </div>

@@ -1,7 +1,21 @@
 import React, { useState } from 'react';
-import bg from "./bg.jpg"
+import bg from "./bglogin.png"
 
-
+const containerStyle = {
+  background: '#fff', // Set the background color to white
+  padding: '20px', // Add some padding around the content
+  borderRadius: '10px', // Add rounded corners
+  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', // Add a subtle box shadow
+  opacity: '80%',
+  backgroundColor: '#45382C',
+  width: '40%',
+  height: '100vh',
+  display: 'flex', // Add flex display
+  flexDirection: 'column', // Stack items vertically
+  alignItems: 'center', // Center items horizontally
+  marginTop: '4%',
+  marginBottom: '4%'
+};
 
 const inputStyle = {
   width: '300px',
@@ -148,13 +162,16 @@ function Signup() {
   const headingStyle = {
     fontSize: '26px',
     marginBottom: '20px',
+    fontWeight: 60,
+  fontFamily: 'Inknut Antiqua',
+  color: '#fff',
   };
 
   return (
 
     <div style={formStyle}>
-      
-      <h1 style={headingStyle}>REGISTER</h1>
+      <div style={containerStyle}> {/* Wrap your form elements in this container */}
+        <h1 style={headingStyle}>REGISTER</h1>
       <input type="text" placeholder="Name" value={name} onChange={handleNameChange} style={inputStyle} required />
       <input type="email" placeholder="Email ID" value={email} onChange={handleEmailChange}  required  style={{
           ...inputStyle,
@@ -191,10 +208,11 @@ function Signup() {
       />
       
       <input type="text" placeholder="Roll Number" value={rollNumber} onChange={handleRollNumberChange} style={inputStyle} />
-      <button onClick={handleRegistration} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle}
-        disabled={!allFieldsFilled()}   >REGISTER</button>
+        <button onClick={handleRegistration} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle}
+          disabled={!allFieldsFilled()}   >REGISTER</button>
+      </div>
     </div>
-  );
+  )
 }
 
 
