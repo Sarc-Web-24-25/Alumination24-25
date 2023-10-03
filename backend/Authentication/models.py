@@ -11,6 +11,7 @@ class Profile(models.Model):
         return "%s %s" % (self.fullname, self.email)
 
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
+    rollno = models.CharField(max_length=20, blank=False, default="")
     profile_pic = models.ImageField(upload_to="images/profile_pics/", blank=True)
     fullname = models.CharField(max_length=255, blank=False, default="")
     email = models.EmailField(blank=False)
@@ -20,7 +21,7 @@ class Profile(models.Model):
     personal_email = models.EmailField(blank=False)
     dob = models.DateField(blank=False)
     hostel = models.CharField(choices=HOSTEL_CHOICES, max_length=255, blank=False)
-    room_no = models.CharField(blank=False, max_length=10)
+    room_no = models.CharField(blank=False, max_length=10, default="")
     department = models.CharField(
         max_length=255,
         blank=False,
@@ -42,6 +43,7 @@ class Profile(models.Model):
     graduation_year = models.IntegerField(blank=False)
     gender = models.CharField(choices=GENDER, max_length=100, blank=False,)
     career = models.CharField(choices=CAREER, max_length=100, blank=False,)
+    phoneno = models.CharField(max_length=20, blank=False, default="")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
