@@ -133,54 +133,38 @@
 // export default Login;
 
 import React, { useState } from 'react';
-import bg from './bglogin.png';
-import backgroundAudio from '../Home/bgimg/background-audio.mp3'; // Adjust the path to your audio file
+import bg from "./bglogin.png"
+import useLogin from '../../hooks/useLogin';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [error, setError] = useState('');
+
+
+  const { formData, setFormData, error, success, handleInputChange, login } = useLogin();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login();
+  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleLogin = () => {
-    const data = {
-      username: email,
-      password: password,
-    };
 
-    fetch('/login/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.ok) {
-          setIsLoggedIn(true);
-          setError('');
+ 
 
-          // Play the background audio when successfully logged in
-          const audio = new Audio(backgroundAudio);
-          audio.play();
 
-        } else {
-          setError('Login failed. Please check your credentials.');
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        setError('An error occurred. Please try again.');
-      });
-  };
+ 
 
   const frameStyle = {
     display: 'flex',
@@ -244,28 +228,28 @@ function Login() {
     <div style={frameStyle}>
       <div style={containerStyle}>
         <h1>LOGIN</h1>
+        {error && <p style={{color: "white"}} className="error">{error}</p>}
+        {success && <p style={{color: "white"}} className="success">{success}</p>}
         <input
           type="text"
+          name='username'
           style={inputStyle}
-          placeholder="Username"
+          placeholder="Roll No."
           value={email}
           onChange={handleEmailChange}
         />
         <input
+          name='password'
           type="password"
           style={inputStyle}
           placeholder="Password"
           value={password}
           onChange={handlePasswordChange}
         />
-        <button style={buttonStyle} onClick={handleLogin}>
+        <button style={buttonStyle} onClick={handleSubmit}>
           LOGIN
         </button>
-        <a href="#" style={anchorStyle}>
-          Forgot password?
-        </a>
-        {isLoggedIn && <p>Logged in successfully!</p>}
-        {error && <p>{error}</p>}
+        <a href='#' style={anchorStyle}>Forgot password?</a>
       </div>
     </div>
   );

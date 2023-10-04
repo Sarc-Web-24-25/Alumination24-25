@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import bg from "./bglogin.png"
+import bg from "./bg.jpg"
+import useSignup from '../../hooks/useSignup';
+
 
 const containerStyle = {
   background: '#fff', // Set the background color to white
@@ -24,8 +27,8 @@ const inputStyle = {
   border: '1px solid #ccc',
   borderRadius: '5px',
   fontSize: '16px',
-  backgroundColor: '#fff' ,
-  
+  backgroundColor: '#fff',
+
 };
 const inputStyle1 = {
   width: '320px',
@@ -34,8 +37,8 @@ const inputStyle1 = {
   border: '1px solid #ccc',
   borderRadius: '5px',
   fontSize: '16px',
-  backgroundColor: '#fff' ,
-  
+  backgroundColor: '#fff',
+
 };
 
 
@@ -71,6 +74,7 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [rollNumber, setRollNumber] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
   const [passwordMatch, setPasswordMatch] = useState(false);
 
   const handleConfirmPasswordChange = (event) => {
@@ -85,21 +89,9 @@ function Signup() {
     return emailPattern.test(email);
   };
 
-  const handleEmailChange = (event) => setEmail(event.target.value);
-  const handleDepartmentChange = (event) => setDepartment(event.target.value);
-  const handleNameChange = (event) => setName(event.target.value);
-  const handleDegreeChange = (event) => setDegree(event.target.value);
-  const handleContactNumberChange = (event) => setContactNumber(event.target.value);
-  const handlePasswordChange = (event) => setPassword(event.target.value);
-  const handleRollNumberChange = (event) => setRollNumber(event.target.value);
 
   const allFieldsFilled = () => {
     return (
-      isValidEmail(email) &&
-      department !== "" &&
-      degree !== "" &&
-      name !== "" &&
-      contactNumber !== "" &&
       password !== "" &&
       rollNumber !== "" &&
       confirmPassword !== "" &&
@@ -107,43 +99,8 @@ function Signup() {
     );
   };
 
-  const handleRegistration = () => {
-    if (!allFieldsFilled()) {
-      // Prevent registration if not all fields are filled
-      return;
-    }
 
-    const userData = {
-      username: email,
-      password: password,
-      department: department,
-      degree: degree,
-      name: name,
-      contact_number: contactNumber,
-      roll_number: rollNumber,
-    };
-
-    fetch('/api/signup/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    })
-      .then((response) => {
-        if (response.status === 201) {
-          // Registration successful, you can redirect or show a success message
-          console.log('Registration successful');
-        } else {
-          // Handle registration errors here
-          console.error('Registration failed');
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        // Handle network or other errors here
-      });
-  };
+  
 
   const formStyle = {
     display: 'flex',
@@ -156,63 +113,64 @@ function Signup() {
     backgroundSize: 'cover', // Scale the image to cover the entire container
     backgroundPosition: 'center', // Center the background image
     backgroundAttachment: 'fixed', // Fix the background image in place
-    
+
   };
 
   const headingStyle = {
     fontSize: '26px',
     marginBottom: '20px',
-    fontWeight: 60,
-  fontFamily: 'Inknut Antiqua',
-  color: '#fff',
   };
+
+
+  const { formData, setFormData, error, success, handleInputChange, signup } = useSignup();
+
+  const handlePasswordChange = (event) =>{
+    setPassword(event.target.value);
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  }
+  const handleRollNumberChange = (event) => {
+    setRollNumber(event.target.value);
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signup();
+  };
+
 
   return (
 
     <div style={formStyle}>
-      <div style={containerStyle}> {/* Wrap your form elements in this container */}
-        <h1 style={headingStyle}>REGISTER</h1>
-      <input type="text" placeholder="Name" value={name} onChange={handleNameChange} style={inputStyle} required />
-      <input type="email" placeholder="Email ID" value={email} onChange={handleEmailChange}  required  style={{
-          ...inputStyle,
-          border: (isValidEmail(email) || email==='') ? '' : '2px solid red'
-        }} />
 
-      <input type="text" placeholder="Contact Number" value={contactNumber} onChange={handleContactNumberChange} style={inputStyle} />
-      <select value={department} onChange={handleDepartmentChange} style={inputStyle1} required>
-        <option value="" disabled>Select Department</option>
-        {departments.map((dept, index) => (
-          <option key={index} value={dept}>{dept}</option>
-        ))}
-      </select>
-      <select value={degree} onChange={handleDegreeChange} style={inputStyle1}>
-        <option value="" disabled>Select Degree</option>
-        {degrees.map((deg, index) => (
-          <option key={index} value={deg}>{deg}</option>
-        ))}
-      </select>
-      
+      <h1 style={headingStyle}>REGISTER</h1>
+      {error && <p className="error">{error}</p>}
+      {success && <p className="success">Signup successful, Please check your webmail for verification link!</p>}
+
+      <input name='username' type="text" placeholder="Roll Number" value={rollNumber} onChange={handleRollNumberChange} style={inputStyle} />
+
       <input
         type="password"
+        name='password'
         placeholder="Password"
         value={password}
         onChange={handlePasswordChange}
         style={inputStyle}
       />
-  <input
+      <input
         type="password"
         placeholder="Confirm Password"
         value={confirmPassword}
         onChange={handleConfirmPasswordChange}
         style={inputStyle}
       />
-      
-      <input type="text" placeholder="Roll Number" value={rollNumber} onChange={handleRollNumberChange} style={inputStyle} />
-        <button onClick={handleRegistration} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle}
-          disabled={!allFieldsFilled()}   >REGISTER</button>
-      </div>
+
+      <button onClick={handleSubmit} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle} disabled={!allFieldsFilled()}>REGISTER</button>
+
     </div>
-  )
+  );
 }
 
 
