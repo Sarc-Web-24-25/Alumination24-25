@@ -1,7 +1,21 @@
 import React, { useState } from 'react';
-import bg from "./bg.jpg"
+import bg from "./bglogin.png"
 
-
+const containerStyle = {
+  background: '#fff', // Set the background color to white
+  padding: '20px', // Add some padding around the content
+  borderRadius: '10px', // Add rounded corners
+  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', // Add a subtle box shadow
+  opacity: '80%',
+  backgroundColor: '#45382C',
+  width: '40%',
+  height: '100vh',
+  display: 'flex', // Add flex display
+  flexDirection: 'column', // Stack items vertically
+  alignItems: 'center', // Center items horizontally
+  marginTop: '4%',
+  marginBottom: '4%'
+};
 
 const inputStyle = {
   width: '300px',
@@ -46,11 +60,9 @@ const disabledButtonStyle = {
 
 
 
-
-
 function Signup() {
-  const departments = ["Department 1", "Department 2", "Department 3"]; // Add your department options
-  const degrees = ["Degree 1", "Degree 2", "Degree 3"]; // Add your degree options
+  const departments = ["Department 1", "Department 2", "Department 3"];
+  const degrees = ["Degree 1", "Degree 2", "Degree 3"];
   const [email, setEmail] = useState('');
   const [department, setDepartment] = useState('');
   const [name, setName] = useState('');
@@ -59,14 +71,12 @@ function Signup() {
   const [password, setPassword] = useState('');
   const [rollNumber, setRollNumber] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  
   const [passwordMatch, setPasswordMatch] = useState(false);
 
   const handleConfirmPasswordChange = (event) => {
     const confirmPasswordValue = event.target.value;
     setConfirmPassword(confirmPasswordValue);
     setPasswordMatch(password === confirmPasswordValue);
-    
   };
 
   const isValidEmail = (email) => {
@@ -75,7 +85,6 @@ function Signup() {
     return emailPattern.test(email);
   };
 
-  
   const handleEmailChange = (event) => setEmail(event.target.value);
   const handleDepartmentChange = (event) => setDepartment(event.target.value);
   const handleNameChange = (event) => setName(event.target.value);
@@ -97,11 +106,43 @@ function Signup() {
       passwordMatch
     );
   };
-   
 
   const handleRegistration = () => {
-    // Simulate registration logic (replace with actual registration code)
-  
+    if (!allFieldsFilled()) {
+      // Prevent registration if not all fields are filled
+      return;
+    }
+
+    const userData = {
+      username: email,
+      password: password,
+      department: department,
+      degree: degree,
+      name: name,
+      contact_number: contactNumber,
+      roll_number: rollNumber,
+    };
+
+    fetch('/api/signup/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((response) => {
+        if (response.status === 201) {
+          // Registration successful, you can redirect or show a success message
+          console.log('Registration successful');
+        } else {
+          // Handle registration errors here
+          console.error('Registration failed');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle network or other errors here
+      });
   };
 
   const formStyle = {
@@ -121,13 +162,16 @@ function Signup() {
   const headingStyle = {
     fontSize: '26px',
     marginBottom: '20px',
+    fontWeight: 60,
+  fontFamily: 'Inknut Antiqua',
+  color: '#fff',
   };
 
   return (
 
     <div style={formStyle}>
-      
-      <h1 style={headingStyle}>REGISTER</h1>
+      <div style={containerStyle}> {/* Wrap your form elements in this container */}
+        <h1 style={headingStyle}>REGISTER</h1>
       <input type="text" placeholder="Name" value={name} onChange={handleNameChange} style={inputStyle} required />
       <input type="email" placeholder="Email ID" value={email} onChange={handleEmailChange}  required  style={{
           ...inputStyle,
@@ -164,11 +208,11 @@ function Signup() {
       />
       
       <input type="text" placeholder="Roll Number" value={rollNumber} onChange={handleRollNumberChange} style={inputStyle} />
-      <button onClick={handleRegistration} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle}
-        disabled={!allFieldsFilled()}   >REGISTER</button>
-      
+        <button onClick={handleRegistration} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle}
+          disabled={!allFieldsFilled()}   >REGISTER</button>
+      </div>
     </div>
-  );
+  )
 }
 
 

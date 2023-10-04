@@ -8,14 +8,16 @@ import {
 } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import Navbar1 from "./Navbar";
+import Navbar1 from "./components/Home/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
 import Gallery from "./components/Home/Gallery";
 import Events from "./components/Home/Events";
+import Schedule from "./components/Home/schedule";
 import Signup from "./components/Authentication/signup";
 import Login from "./components/Authentication/login";
+import Profile from "./components/Authentication/profile";
 
 function App() {
   return (
@@ -28,7 +30,9 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/schedule" element={<Schedule />} />
       </Routes>
     </Router>
   );

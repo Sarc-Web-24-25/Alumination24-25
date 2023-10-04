@@ -1,10 +1,4 @@
 import HorizontalScroll from "react-scroll-horizontal";
-import i1 from "./bgimg/i1.png";
-import i2 from "./bgimg/i2.png";
-import i3 from "./bgimg/i3.png";
-import i4 from "./bgimg/i4.png";
-import i5 from "./bgimg/i5.png";
-import i6 from "./bgimg/i6.png";
 import f1 from "./bgimg/final.png";
 import god from "./bgimg/god.png";
 import logo from "./bgimg/logo.png";
@@ -19,13 +13,10 @@ import counter from "./bgimg/counter.png";
 import feather from "./bgimg/feather.png";
 import frame from "./bgimg/frame.png";
 import glass from "./bgimg/glass.png";
-
+import '../Home/all.css';
 import CountUp from "react-countup";
-import ScrollTrigger from "react-scroll-trigger";
 import { useState } from "react";
-import axios from 'axios';
-
-
+import "./all.css"
 
 
 export default function Home() {
@@ -46,7 +37,7 @@ export default function Home() {
      };
      const imgstyle1 = {
       height:"500px",
-      marginTop:"-220px",
+      marginTop:"-240px",
       
   };
   const imgstyle2 = {
@@ -101,6 +92,14 @@ const imgstyle5 = {
    
      alignItems: 'center',
         //  justifyContent: 'space-evenly',
+        backgroundImage: `url(${f1})`,
+        height: "100vh",
+        width: "8000px",
+        backgroundPosition: 'center',
+        margin: "0px",
+        display: 'flex',
+        alignItems: 'center',
+        animation: 'moveBackground 30s linear infinite', // Add this line to apply the animation
 
          
      };
@@ -210,7 +209,7 @@ const imgstyle5 = {
   
             
             
-            <img src={clock} style={imgstyle1}   alt="" /> 
+                   <img className="wobble-hor-top" src={clock} style={imgstyle1}   alt="" /> 
             <img src={smoke1} style={imgstyle2}   alt="" /> 
             <img src={smoke2} style={imgstyle2}   alt="" /> 
             <img src={smoke} style={imgstyle2}   alt="" /> 
