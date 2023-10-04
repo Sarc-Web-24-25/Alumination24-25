@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import Navbar1 from "./Navbar";
+import Navbar1 from "./components/Home/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";

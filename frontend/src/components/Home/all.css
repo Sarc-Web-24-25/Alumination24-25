@@ -192,3 +192,12 @@
     background-color: #392828;
     /* Change color on hover if desired */
 }
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 100% 0;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Authentication/profile.css';
-import backgroundImage from '../Home/bgimg/i1.png';
+import backgroundImage from '../Home/bgimg/profile_bg.png';
 
 const styles = {
 
@@ -134,6 +134,8 @@ const styles = {
         color: '#FFF',
         fontSize: '16px',
     },
+    
+    
 };
 
 export default function Signup() {
@@ -162,10 +164,6 @@ export default function Signup() {
                                     name="linkedin"
                                     type="text"
                                     className="field text fn"
-                                    // placeholder='Roll Number'
-
-                                    // value={profile.linkedin}
-                                    // onChange={handleInputChange}
                                     style={styles.input}
                                 />
                             </div>
@@ -176,8 +174,6 @@ export default function Signup() {
                                     name="personal_email"
                                     type="email"
                                     className="field text fn"
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
                                     style={styles.input}
                                     required
                                 />
@@ -190,8 +186,7 @@ export default function Signup() {
                                     type="email"
 
                                     className="field text fn"
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
+                                    
                                     style={styles.input}
                                     required
                                 />
@@ -204,8 +199,6 @@ export default function Signup() {
                                     type="email"
 
                                     className="field text fn"
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
                                     style={styles.input}
                                     required
                                 />
@@ -219,9 +212,6 @@ export default function Signup() {
                                     style={{ ...styles.input, textAlign: 'center', color: 'black' }}
                                     placeholder='Hostel'
                                     className="field text fn"
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
-                                    // style={styles.input}
                                     required
                                 />
 
@@ -233,8 +223,6 @@ export default function Signup() {
                                     placeholder='Room No.'
 
                                     className="field text fn input"
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
                                     style={{ ...styles.input, textAlign: 'center' }}
                                     required
                                 />
@@ -247,39 +235,29 @@ export default function Signup() {
                                 <select
                                     id="Field11"
                                     name="personal_email"
-                                    className="field select fn" // You can apply the appropriate classes
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
-                                    // style={styles.input, textAlign: 'center'}
+                                    className="field select fn" 
                                     style={{ ...styles.input, textAlign: 'center' }}
                                     required
                                 >
-                                    {/* Add your options here */}
-                                    <option value="">  Program*</option>
+                                   <option value="">  Program*</option>
                                     <option value="email1@example.com">Email 1</option>
                                     <option value="email2@example.com">Email 2</option>
                                     <option value="email3@example.com">Email 3</option>
-                                    {/* Add more options as needed */}
+                                    
                                 </select>
-                                {/* </div>
-<div className="pinfo-constituents" style={styles.constituents2}> */}
                                 <label htmlFor="Field11" style={styles.profilelabel}>
                                 </label>
                                 <select
                                     id="Field11"
                                     name="personal_email"
-                                    className="field select fn" // You can apply the appropriate classes
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
+                                    className="field select fn" 
                                     style={{ ...styles.input, textAlign: 'center' }}
                                     required
                                 >
-                                    {/* Add your options here */}
                                     <option value="">Department  </option>
                                     <option value="email1@example.com">Email 1</option>
                                     <option value="email2@example.com">Email 2</option>
                                     <option value="email3@example.com">Email 3</option>
-                                    {/* Add more options as needed */}
                                 </select>
                             </div>
 
@@ -290,67 +268,33 @@ export default function Signup() {
                                 <select
                                     id="Field11"
                                     name="personal_email"
-                                    className="field select fn" // You can apply the appropriate classes
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
-                                    style={{ ...styles.input, textAlign: 'center' }}
+                                    className="field select fn" style={{ ...styles.input, textAlign: 'center' }}
                                     required
                                 >
-                                    {/* Add your options here */}
                                     <option value="">  Joining year*</option>
                                     <option value="email1@example.com">Email 1</option>
                                     <option value="email2@example.com">Email 2</option>
                                     <option value="email3@example.com">Email 3</option>
-                                    {/* Add more options as needed */}
-                                </select>
-                                {/* </div>
-<div className="pinfo-constituents" style={styles.constituents2}> */}
-                                <label htmlFor="Field11" style={styles.profilelabel}>
+                                    </select>
+                               <label htmlFor="Field11" style={styles.profilelabel}>
 
                                 </label>
                                 <select
                                     id="Field11"
                                     name="personal_email"
-                                    className="field select fn" // You can apply the appropriate classes
-                                    // value={profile.personal_email}
-                                    // onChange={handleInputChange}
-                                    style={{ ...styles.input, textAlign: 'center' }}
+                                    className="field select fn" style={{ ...styles.input, textAlign: 'center' }}
                                     required
                                 >
-                                    {/* Add your options here */}
                                     <option value="">  Graduating year*</option>
                                     <option value="email1@example.com">Email 1</option>
                                     <option value="email2@example.com">Email 2</option>
                                     <option value="email3@example.com">Email 3</option>
-                                    {/* Add more options as needed */}
                                 </select>
                             </div>
 
                         </div>
-
-                        {/* <div style={styles.textCenter}>
-            <label htmlFor="Field6" style={styles.profilelabel}>Why do you want to have a mentor and what do you want to learn from the mentor? 
-Include your previous works or experience*</label>
-          </div>
-          <div>
-            <textarea
-              id="Field6"
-              name="sop"
-              spellCheck="true"
-              rows="5"
-              cols="30"
-            //   value={profile.sop}
-            //   onChange={handleInputChange}
-              style={styles.textarea}
-              required
-            />
-          </div> */}
-                        {/* {error1 && <div style={{ color: "red" }}>{error1}</div>} */}
                         <div style={styles.textCenter}>
-                            {/* <button disabled={!check} onClick={handleSubmit} className="submit-button" style={styles.submitButton}>
-              Save
-            </button> */}
-                            <button type="submit" style={styles.submitButton}>
+                           <button type="submit" style={styles.submitButton}>
                                 Save
                             </button>
 
@@ -358,11 +302,6 @@ Include your previous works or experience*</label>
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </div>
     )
 }
