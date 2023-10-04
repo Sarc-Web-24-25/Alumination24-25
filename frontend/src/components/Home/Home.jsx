@@ -17,6 +17,7 @@ import '../Home/all.css';
 import CountUp from "react-countup";
 import { useState } from "react";
 import "./all.css"
+import CustomCursor from "./cursor";
 
 
 export default function Home() {
@@ -247,7 +248,7 @@ const imgstyle5 = {
         </div>
       
         
-       
+        <CustomCursor  />
       </HorizontalScroll>
     </div>
     )
