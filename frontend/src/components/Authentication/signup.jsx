@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import bg from "./bglogin.png"
-import bg from "./bg.jpg"
 import useSignup from '../../hooks/useSignup';
 
 
