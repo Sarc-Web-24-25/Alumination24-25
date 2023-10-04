@@ -11,12 +11,12 @@ export default function Navbar1() {
     const bg ={
         backgroundColor:"#2B1815",
     };
+
     const text ={
         color:"#FFD1AB",
         fontSize:"25px",
         margin:"0px",
         backgroundColor:"#2B1815"
-     
     };
     return (
 

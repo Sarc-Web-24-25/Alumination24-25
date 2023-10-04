@@ -38,8 +38,6 @@ export default function Home() {
        // Adjust the child element width as needed
         height: "100vh",
         margin:"0px",
-        
-        
     };
     const imgstyle = {
          height:"700px",
