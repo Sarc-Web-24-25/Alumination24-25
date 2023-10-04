@@ -22,13 +22,15 @@ import "./all.css"
 export default function Home() {
     const containerStyle = {
        // Adjust width as needed
-       height:"90.22vh",
+       height:"91.5vh",
     };
 
     const childStyle = {
        // Adjust the child element width as needed
         height: "100vh",
         margin:"0px",
+        
+        
     };
     const imgstyle = {
          height:"700px",
@@ -99,7 +101,7 @@ const imgstyle5 = {
         margin: "0px",
         display: 'flex',
         alignItems: 'center',
-        animation: 'moveBackground 30s linear infinite', // Add this line to apply the animation
+        animation: 'moveBackground 15s linear infinite', // Add this line to apply the animation
 
          
      };
@@ -152,6 +154,7 @@ const imgstyle5 = {
       opacity:"0.8",
       margin:"30px",
       marginBottom:"5px",
+      marginTop:"1px",
     };
 
      const [counterOn,setcounterOn]=useState(true);
