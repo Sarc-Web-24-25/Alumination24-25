@@ -17,7 +17,7 @@ import '../Home/all.css';
 import CountUp from "react-countup";
 import { useState } from "react";
 import "./all.css"
-import CustomCursor from "./cursor";
+
 
 
 export default function Home() {
@@ -101,7 +101,7 @@ export default function Home() {
       margin: "0px",
       display: 'flex',
       alignItems: 'center',
-      animation: 'moveBackground 15s linear infinite', // Add this line to apply the animation
+      animation: 'moveBackground 30s linear infinite', // Add this line to apply the animation
 
 
    };
