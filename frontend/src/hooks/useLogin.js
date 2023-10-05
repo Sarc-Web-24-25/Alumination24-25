@@ -15,16 +15,9 @@ function useLogin() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const apnaCsrf = document.cookie
-  .split('; ')
-  .find((row) => row.startsWith('csrftoken='))
-  .split('=')[1];
-
-
 
   const headers = {
     'Content-Type': 'application/json',
-    'X-CSRFToken': apnaCsrf, // Include the CSRF token in the headers
   };
 
   console.log(formData.password);
@@ -32,10 +25,10 @@ function useLogin() {
 
   const login = () => {
     axios
-      .post('/api/authenticate/login', formData, { headers })
+      .post('http://127.0.0.1:8000/api/authenticate/login', formData, { headers })
       .then((response) => {
         console.log(response.data);
-        localStorage.setItem('userData', response.data)
+        localStorage.setItem('access', response.data.access)
         setSuccess("logged in successfully"); // Set a success flag to indicate successful login
       })
       .catch((error) => {

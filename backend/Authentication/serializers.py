@@ -1,6 +1,12 @@
 from rest_framework import serializers
-from .models import MyUser
+from .models import MyUser,Profile  
 
+
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        exclude = ("is_verified", "is_alumni")
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)

@@ -16,14 +16,8 @@ function useSignup() {
   };
 
 
-  const apnaCsrf = document.cookie
-  .split('; ')
-  .find((row) => row.startsWith('csrftoken='))
-  .split('=')[1];
-
   const headers = {
     'Content-Type': 'application/json',
-    'X-CSRFToken': apnaCsrf, // Include the CSRF token in the headers
   };
 
   const signup = () => {
