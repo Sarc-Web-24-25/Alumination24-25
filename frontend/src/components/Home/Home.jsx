@@ -16,8 +16,8 @@ import glass from "./bgimg/glass.png";
 import '../Home/all.css';
 import CountUp from "react-countup";
 import { useState } from "react";
-import "./all.css"
-
+import "./all.css";
+import CursorAnimation from "./CursorAnimation"
 
 
 export default function Home() {
@@ -68,14 +68,19 @@ export default function Home() {
    const textstyle = {
       color: "#FFE500",
       fontSize: "70px",
+      fontFamily: 'Inknut Antiqua'
    };
    const textstyle1 = {
       color: "#FFD6A0",
       fontSize: "35px",
+      fontFamily: 'Inknut Antiqua',
+      justifyContent: 'center'
    };
    const textstyle3 = {
       color: "#F4DEA8",
       fontSize: "70px",
+      fontFamily: 'Inknut Antiqua',
+      fontWeight: '600'
    };
    const textstyle2 = {
       color: "#FFE500",
@@ -160,6 +165,7 @@ export default function Home() {
    const [counterOn, setcounterOn] = useState(true);
    return (
       <div style={containerStyle}>
+         <CursorAnimation />
          <HorizontalScroll>
 
             <div style={childStyle}>
@@ -172,18 +178,8 @@ export default function Home() {
                   <div style={aboutus}>
                      <h1 style={textstyle}>ABOUT US</h1>
                      <p style={textstyle1}>A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008. </p>
-
-
                   </div>
-
-
-
-
-
-
                   <img src={ig1} style={imgstyle} alt="" />
-
-
                   <div >
                      {/* <ScrollTrigger onEnter={()=>setcounterOn(true)} onExit={()=>setcounterOn(false)} >
               <h1 style={textstyle}>
@@ -191,8 +187,6 @@ export default function Home() {
                </ScrollTrigger> */}
 
                      <div style={hcontain}><img src={glass} style={imgstyle4} alt="" /> <span style={textstyle3}> NOTABLE ALUMNI </span> <img src={glass} style={imgstyle4} alt="" /></div>
-
-
                      <div style={hcontain}>
                         <div style={frame1}></div>
                         <div style={frame1}></div>
@@ -207,14 +201,7 @@ export default function Home() {
 
                      <img src={feather} style={imgstyle3} alt="" />
                   </div>
-
-
-
-
-
-                  <img className="wobble-hor-top" src={clock} style={imgstyle1} alt="" />
-
-                  
+                  <img className="wobble-hor-top" src={clock} style={imgstyle1} alt="" />     
                   <img src={smoke1} style={imgstyle2} alt="" />
                   <img src={smoke2} style={imgstyle2} alt="" />
                   <img src={smoke} style={imgstyle2} alt="" />
@@ -222,34 +209,51 @@ export default function Home() {
 
                   <div style={contain}>
                      <div style={hcontain}>
-                        <div style={clock1}> <span style={textstyle2}>
-                           {counterOn && <CountUp start={0} end={1000} duration={5} delay={7} />} +</span></div>
-                        <div style={clock1}> <span style={textstyle2}>
-                           {counterOn && <CountUp start={0} end={5000} duration={5} delay={7} />} +</span></div>
-                        <div style={clock1}> <span style={textstyle2}>
-                           {counterOn && <CountUp start={0} end={10000} duration={5} delay={7} />} +</span></div>
+                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                           <div style={clock1}>
+                              <span style={textstyle2}>
+                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+                              </span>
+                           </div>
+                        </div>
+
+                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                           <div style={clock1}>
+                              <span style={textstyle2}>
+                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+                              </span>
+                           </div>
+                        </div>
+                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                           <div style={clock1}>
+                              <span style={textstyle2}>
+                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+                              </span>
+                           </div>
+                        </div>
 
                      </div>
                      <div style={hcontain}>
-                        <div style={clock1}> <span style={textstyle2}>
-                           {counterOn && <CountUp start={0} end={4000} duration={5} delay={7} />} +</span></div>
-                        <div style={clock1}> <span style={textstyle2}>
-                           {counterOn && <CountUp start={0} end={7000} duration={5} delay={7} />} +</span></div>
+                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                           <div style={clock1}>
+                              <span style={textstyle2}>
+                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+                              </span>
+                           </div>
+                        </div>
+                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                           <div style={clock1}>
+                              <span style={textstyle2}>
+                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+                              </span>
+                           </div>
+                        </div>
 
                      </div>
                   </div>
-
                   <img src={women} style={imgstyle5} alt="" />
                </div>
-
-
-
-
-
             </div>
-
-
-
          </HorizontalScroll>
       </div>
    )
