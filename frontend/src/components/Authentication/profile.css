@@ -43,8 +43,6 @@
 
 
 
-
-
 .container {
     /* position: absolute; */
     /* top: 50%; */
@@ -246,26 +244,7 @@
     opacity: 0.5;
 }
 
-@media screen and (max-width: 600px) {
-    .profilelabel {
-        font-size: 10px !important;
-    }
 
-    .heading-container {
-        font-size: 20px !important;
-        width: 290px;
-        margin-left: 5% !important;
-        margin-top: 4% !important;
-        margin-bottom: 3% !important;
-    }
-
-    .profileform-area {
-        margin-bottom: 25%;
-    }
-
-}
-
-/* UserProfile.css */
 
 .user-profile {
     display: flex;
