@@ -1,0 +1,43 @@
+.team-page {
+  background-image: url('./bgimg/teambg.png'); /* Replace 'your_background_image.jpg' with the path to your background image */
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  padding: 0px;
+  text-align: center;
+  /* Add additional background styling as needed */
+  overflow-y: auto;
+}
+
+.horizontal-scroll {
+    display: flex;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    padding: 20px;
+    /* Optional padding for spacing */
+}
+
+.team-column {
+    flex-shrink: 0;
+    /* Prevent columns from shrinking */
+    margin-right: 20px;
+    /* Optional margin between columns */
+    text-align: center;
+}
+
+.team-member {
+    margin-bottom: 20px;
+    /* Optional margin between team members */
+}
+
+.prerna,
+.aastha {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+    /* Your background image styles here */
+}

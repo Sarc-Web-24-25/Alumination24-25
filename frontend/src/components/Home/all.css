@@ -205,3 +205,43 @@ body{
         background-position: 100% 0;
     }
 }
+
+.rotating-image {
+    animation: rotate 10s linear infinite;
+    /* Adjust duration and timing function as needed */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+.bubles {
+    border-radius: 100%;
+    position: absolute;
+    pointer-events: none;
+    background: #ffd700;
+    box-shadow: 10px 10px 30px #ffdf00,
+        -10px -10px 30px #fddc5c;
+    transform: translate(-50%, -50%);
+    animation: colorgen 1s infinite;
+}
+
+@keyframes colorgen {
+    0% {
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        filter: hue-rotate(270deg);
+    }
+}
