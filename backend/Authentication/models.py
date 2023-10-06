@@ -1,6 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .options import *
+from django.core.files import File
+from PIL import Image
+import io
+
+
+def process_image(image_file, id):
+    image = Image.open(image_file)
+    if image.mode == "RGBA":
+        image = image.convert("RGB")
+    output = io.BytesIO()
+    image.save(
+        output, format="JPEG", optimize=True, quality=60
+    )
+    output.seek(0)
+    output.name = "profile_" + str(id) + ".jpg"
+    return File(output)
 
 class MyUser(AbstractUser):
     is_alum = models.BooleanField(default=False)
@@ -46,4 +62,14 @@ class Profile(models.Model):
     phoneno = models.CharField(max_length=20, blank=False, default="")
 
     def save(self, *args, **kwargs):
+        profile = Profile.objects.filter(id=self.id).first()
+        if profile and profile.profile_pic != self.profile_pic:
+            try:
+                profile.profile_pic.delete(save=False)
+            except Exception as e:
+                print(e)
+        
+        if self.profile_pic:
+            self.profile_pic = process_image(self.profile_pic, self.id)
+        
         super().save(*args, **kwargs)
