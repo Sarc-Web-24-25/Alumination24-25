@@ -19,6 +19,7 @@ import { useState } from "react";
 import "./all.css"
 
 
+
 export default function Home() {
    const containerStyle = {
       // Adjust width as needed
@@ -100,7 +101,7 @@ export default function Home() {
       margin: "0px",
       display: 'flex',
       alignItems: 'center',
-      animation: 'moveBackground 15s linear infinite', // Add this line to apply the animation
+      animation: 'moveBackground 30s linear infinite', // Add this line to apply the animation
 
 
    };
