@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -57,6 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "backend.urls"
+
 
 TEMPLATES = [
     {
@@ -135,8 +137,24 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Replace with the actual URL of your React frontend
 ]
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
+    "DEFAULT_SCHEMA_CLASS": "rest_framework.schemas.coreapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ),
+}
 
 
 
-CSRF_COOKIE_SECURE = False
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Adjust as needed
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),  # Adjust as needed
+    'SLIDING_TOKEN_LIFETIME': timedelta(days=7),  # Adjust as needed
+    'SLIDING_TOKEN_REFRESH_LIFETIME_GRACE_PERIOD': timedelta(days=1),  # Adjust as needed
+    'SLIDING_TOKEN_REFRESH_EPOCH': timedelta(days=0),
+}

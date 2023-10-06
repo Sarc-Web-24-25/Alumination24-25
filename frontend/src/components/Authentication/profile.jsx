@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../Authentication/profile.css';
-import backgroundImage from '../Home/bgimg/profile_bg.png';
+import backgroundImage from '../Home/bgimg/i1.png';
+import useProfile from '../../hooks/useProfile';
+
 
 const styles = {
 
@@ -134,173 +136,248 @@ const styles = {
         color: '#FFF',
         fontSize: '16px',
     },
-    
-    
 };
 
-export default function Signup() {
+
+
+
+function Profile() {
+    const [formData, setFormData] = useState({
+        rollno: '',
+        fullname: '',
+        email: '',
+        is_alumni: false,
+        is_verified: false,
+        address: '',
+        personal_email: '',
+        dob: '',
+        hostel: '',
+        room_no: '',
+        department: '',
+        program: '',
+        degree: '',
+        join_year: '',
+        graduation_year: '',
+        gender: '',
+        career: '',
+        phoneno: '',
+    });
+
+   
+
+    const { profileData, loading, error, handleChange, updateProfileData, } = useProfile();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        updateProfileData();
+    };
+
     return (
         <div>
             <div className="profileform-area" style={styles.profileformArea}>
                 <div className="heading-container" style={styles.headingContainer}>
-
                     User Profile
                     <div className="user-profile">
-                        <img
-                            className="profile-picture"
-                            alt="profile pic"
-                        />
+                        <img className="profile-picture" alt="profile pic" />
                     </div>
-
                 </div>
                 <div className="profileformmain">
                     <div className="profileform-container" style={styles.formContainer}>
                         <div className="pinfo align-items-center">
                             <div className="pinfo-constituents" style={styles.constituents}>
-                                <label htmlFor="Field10" style={styles.profilelabel}>Roll Number</label>
+                                <label htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
                                 <input
-                                    id="Field10"
-                                    name="linkedin"
+                                    id="rollno"
+                                    name="rollno"
                                     type="text"
-                                    className="field text fn"
+                                    value={profileData.rollno}
+                                    onChange={handleChange}
                                     style={styles.input}
                                 />
                             </div>
                             <div className="pinfo-constituents" style={styles.constituents}>
-                                <label htmlFor="Field11" style={styles.profilelabel}>Full Name</label>
+                                <label htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
                                 <input
-                                    id="Field11"
-                                    name="personal_email"
+                                    id="fullname"
+                                    name="fullname"
+                                    type="text"
+                                    value={profileData.fullname}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                />
+                            </div>
+
+
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="email" style={styles.profilelabel}>Email</label>
+                                <input
+                                    id="email"
+                                    name="email"
                                     type="email"
-                                    className="field text fn"
+                                    value={profileData.email}
+                                    onChange={handleChange}
                                     style={styles.input}
                                     required
                                 />
                             </div>
                             <div className="pinfo-constituents" style={styles.constituents}>
-                                <label htmlFor="Field11" style={styles.profilelabel}>LDAP Email*</label>
+                                <label htmlFor="address" style={styles.profilelabel}>Address</label>
                                 <input
-                                    id="Field11"
-                                    name="personal_email"
-                                    type="email"
-
-                                    className="field text fn"
-                                    
+                                    id="address"
+                                    name="address"
+                                    type="text"
+                                    value={profileData.address}
+                                    onChange={handleChange}
                                     style={styles.input}
                                     required
                                 />
                             </div>
                             <div className="pinfo-constituents" style={styles.constituents}>
-                                <label htmlFor="Field11" style={styles.profilelabel}>Personal Email*</label>
+                                <label htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
                                 <input
-                                    id="Field11"
+                                    id="personal_email"
                                     name="personal_email"
                                     type="email"
-
-                                    className="field text fn"
+                                    value={profileData.personal_email}
+                                    onChange={handleChange}
                                     style={styles.input}
                                     required
                                 />
                             </div>
-                            <div className="pinfo-constituents" style={styles.constituents3}>
-                                <label htmlFor="Field11" style={styles.profilelabel}></label>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="dob" style={styles.profilelabel}>Date of Birth</label>
                                 <input
-                                    id="Field11"
-                                    name="personal_email"
-                                    type="email"
-                                    style={{ ...styles.input, textAlign: 'center', color: 'black' }}
-                                    placeholder='Hostel'
-                                    className="field text fn"
+                                    id="dob"
+                                    name="dob"
+                                    type="date"
+                                    value={profileData.dob}
+                                    onChange={handleChange}
+                                    style={styles.input}
                                     required
                                 />
-
-                                <label htmlFor="Field11" style={styles.profilelabel}></label>
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
                                 <input
-                                    id="Field11"
-                                    name="personal_email"
-                                    type="email"
-                                    placeholder='Room No.'
-
-                                    className="field text fn input"
-                                    style={{ ...styles.input, textAlign: 'center' }}
+                                    id="hostel"
+                                    name="hostel"
+                                    type="text"
+                                    value={profileData.hostel}
+                                    onChange={handleChange}
+                                    style={styles.input}
                                     required
                                 />
-
-                            </div >
-                            <div className="pinfo-constituents align-items-center" style={styles.constituents3}>
-                                <label htmlFor="Field11" style={styles.profilelabel}>
-
-                                </label>
-                                <select
-                                    id="Field11"
-                                    name="personal_email"
-                                    className="field select fn" 
-                                    style={{ ...styles.input, textAlign: 'center' }}
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="room_no" style={styles.profilelabel}>Room Number</label>
+                                <input
+                                    id="room_no"
+                                    name="room_no"
+                                    type="number"
+                                    value={profileData.room_no}
+                                    onChange={handleChange}
+                                    style={styles.input}
                                     required
-                                >
-                                   <option value="">  Program*</option>
-                                    <option value="email1@example.com">Email 1</option>
-                                    <option value="email2@example.com">Email 2</option>
-                                    <option value="email3@example.com">Email 3</option>
-                                    
-                                </select>
-                                <label htmlFor="Field11" style={styles.profilelabel}>
-                                </label>
-                                <select
-                                    id="Field11"
-                                    name="personal_email"
-                                    className="field select fn" 
-                                    style={{ ...styles.input, textAlign: 'center' }}
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="department" style={styles.profilelabel}>Department</label>
+                                <input
+                                    id="department"
+                                    name="department"
+                                    type="text"
+                                    value={profileData.department}
+                                    onChange={handleChange}
+                                    style={styles.input}
                                     required
-                                >
-                                    <option value="">Department  </option>
-                                    <option value="email1@example.com">Email 1</option>
-                                    <option value="email2@example.com">Email 2</option>
-                                    <option value="email3@example.com">Email 3</option>
-                                </select>
+                                />
                             </div>
 
-                            <div className="constituents3" style={styles.constituents3}>
-                                <label htmlFor="Field11" className="constituents3" style={styles.profilelabel}>
-
-                                </label>
-                                <select
-                                    id="Field11"
-                                    name="personal_email"
-                                    className="field select fn" style={{ ...styles.input, textAlign: 'center' }}
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="join_year" style={styles.profilelabel}>Join Year</label>
+                                <input
+                                    id="join_year"
+                                    name="join_year"
+                                    type="number"
+                                    value={profileData.join_year}
+                                    onChange={handleChange}
+                                    style={styles.input}
                                     required
-                                >
-                                    <option value="">  Joining year*</option>
-                                    <option value="email1@example.com">Email 1</option>
-                                    <option value="email2@example.com">Email 2</option>
-                                    <option value="email3@example.com">Email 3</option>
-                                    </select>
-                               <label htmlFor="Field11" style={styles.profilelabel}>
-
-                                </label>
-                                <select
-                                    id="Field11"
-                                    name="personal_email"
-                                    className="field select fn" style={{ ...styles.input, textAlign: 'center' }}
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="graduation_year" style={styles.profilelabel}>Graduation Year</label>
+                                <input
+                                    id="graduation_year"
+                                    name="graduation_year"
+                                    type="number"
+                                    value={profileData.graduation_year}
+                                    onChange={handleChange}
+                                    style={styles.input}
                                     required
-                                >
-                                    <option value="">  Graduating year*</option>
-                                    <option value="email1@example.com">Email 1</option>
-                                    <option value="email2@example.com">Email 2</option>
-                                    <option value="email3@example.com">Email 3</option>
-                                </select>
+                                />
+                            </div>
+
+
+
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="gender" style={styles.profilelabel}>Gender:</label>
+                                <input
+                                    id="gender"
+                                    name="gender"
+                                    type="text"
+                                    value={profileData.gender}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+
+
+
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="career" style={styles.profilelabel}>Career:</label>
+                                <input
+                                    id="career"
+                                    name="career"
+                                    type="text"
+                                    value={profileData.career}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+
+
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
+                                <input
+                                    id="phoneno"
+                                    name="phoneno"
+                                    type="text"
+                                    value={profileData.phoneno}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
                             </div>
 
                         </div>
-                        <div style={styles.textCenter}>
-                           <button type="submit" style={styles.submitButton}>
-                                Save
-                            </button>
-
-                        </div>
+                        {/* Submit Button */}
+                        <button
+                            type="submit"
+                            className="submitButton"
+                            onClick={handleSubmit} // Handle form submission here
+                            style={styles.submitButton}
+                        >
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
+
+
+export default Profile;
