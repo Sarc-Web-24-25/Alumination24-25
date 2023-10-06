@@ -23,15 +23,13 @@ import CursorAnimation from "./CursorAnimation"
 export default function Home() {
    const containerStyle = {
       // Adjust width as needed
-      height: "91.5vh",
+      height: "92vh",
    };
 
    const childStyle = {
       // Adjust the child element width as needed
       height: "100vh",
       margin: "0px",
-
-
    };
    const imgstyle = {
       height: "700px",
