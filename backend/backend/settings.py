@@ -59,6 +59,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "backend.urls"
 
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -136,14 +137,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Replace with the actual URL of your React frontend
 ]
 
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000"]
-
-
-
-CSRF_COOKIE_SECURE = False
-
-
-
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
@@ -151,12 +144,10 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.TokenAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.BasicAuthentication",
     ),
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 1,
 }
+
 
 
 

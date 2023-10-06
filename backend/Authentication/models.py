@@ -12,7 +12,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     rollno = models.CharField(max_length=20, blank=False, default="")
-    profile_pic = models.ImageField(upload_to="images/profile_pics/", blank=True)
+    profile_pic = models.ImageField(upload_to="images/profile_pics/", default="default.png", null=True)
     fullname = models.CharField(max_length=255, blank=False, default="")
     email = models.EmailField(blank=False)
     is_alumni = models.BooleanField(default=False)
@@ -29,7 +29,7 @@ class Profile(models.Model):
     )
     program = models.CharField(
         max_length=30,
-        blank=False,
+        blank=True,
         choices=(
             ("ug", "Undergraduate"),
             ("dd", "Dual Degree"),
@@ -38,11 +38,11 @@ class Profile(models.Model):
         ),
     )
 
-    degree = models.CharField(max_length=50, choices=DEGREES, blank=False)
+    degree = models.CharField(max_length=50, choices=DEGREES, blank=True)
     join_year = models.IntegerField(blank=False)
     graduation_year = models.IntegerField(blank=False)
     gender = models.CharField(choices=GENDER, max_length=100, blank=False,)
-    career = models.CharField(choices=CAREER, max_length=100, blank=False,)
+    career = models.CharField(choices=CAREER, max_length=100, blank=True,)
     phoneno = models.CharField(max_length=20, blank=False, default="")
 
     def save(self, *args, **kwargs):

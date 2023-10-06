@@ -7,6 +7,8 @@ from rest_framework.authtoken.models import Token
 from .models import MyUser,Profile
 from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from django.views.decorators.csrf import csrf_exempt
 
 def get_tokens_for_user(user):
     tokens = RefreshToken.for_user(user)
@@ -22,10 +24,9 @@ def send_verification_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
     print(token)
 
-
+@permission_classes([permissions.AllowAny])
 class UserSignupView(APIView):
-    permission_classes = (permissions.AllowAny,)
-    def post(self, request, format=None):
+    def post(self, request):
         username = request.data["username"]
         if MyUser.objects.filter(username=username).exists():
             user = MyUser.objects.filter(username=username)[0]
@@ -44,9 +45,9 @@ class UserSignupView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
+@permission_classes([permissions.AllowAny])
 class UserLoginView(APIView):
-    def post(self,request,format=None):
+    def post(self,request):
         username = request.data["username"]
         password = request.data["password"]
         user = MyUser.objects.filter(username=username)[0]
@@ -94,9 +95,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-
 class ProfileView(APIView):
-
     def get(self, request, format=None):
         try:
             profile = request.user.profile
@@ -117,9 +116,15 @@ class ProfileView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def post(self, request, format=None):
-        request.data["user"] = request.user.id
-        serializer = ProfileSerializer(data=request.data)
+        print(request.data)
+        if(Profile.objects.filter(user=request.user).exists()):
+            print("exists")
+            profile = Profile.objects.get(user=request.user)
+            serializer = ProfileSerializer(profile, data=request.data)
+        else:
+            serializer = ProfileSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
