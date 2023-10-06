@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { json } from 'react-router-dom';
 
 // Define a custom hook for managing the user profile data
 function useProfile() {
@@ -6,13 +7,27 @@ function useProfile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Function to fetch user profile data from the backend
+  const userData = localStorage.getItem('userData');
+
+  const accessToken = JSON.parse(userData).access;
+
+  console.log(accessToken);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProfileData({
+        ... profileData,
+        [name]: value,
+    });
+};
+
   const fetchProfileData = async () => {
     try {
-      const response = await fetch('/api/profile/', {
+      const response = await fetch('/api/authenticate/profile', {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${yourAccessToken}`,
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${accessToken}`,
         },
       });
 
@@ -29,16 +44,15 @@ function useProfile() {
     }
   };
 
-  // Function to update user profile data
   const updateProfileData = async (formData) => {
     try {
-      const response = await fetch('/api/profile/', {
-        method: 'PUT',
+      const response = await fetch('/api/authenticate/profile', {
+        method: 'POST',
         headers: {
-          'Authorization': `Bearer ${yourAccessToken}`, 
+          'Authorization': `Bearer ${accessToken}`, 
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(profileData),
       });
 
       if (!response.ok) {
@@ -59,6 +73,7 @@ function useProfile() {
     profileData,
     loading,
     error,
+    handleChange,
     updateProfileData,
   };
 }

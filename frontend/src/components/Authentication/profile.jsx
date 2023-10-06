@@ -142,244 +142,241 @@ const styles = {
 
 
 function Profile() {
-  const [formData, setFormData] = useState({
-    rollno: '',
-    fullname: '',
-    email: '',
-    is_alumni: false,
-    is_verified: false,
-    address: '',
-    personal_email: '',
-    dob: '',
-    hostel: '',
-    room_no: '',
-    department: '',
-    program: '',
-    degree: '',
-    join_year: '',
-    graduation_year: '',
-    gender: '',
-    career: '',
-    phoneno: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+    const [formData, setFormData] = useState({
+        rollno: '',
+        fullname: '',
+        email: '',
+        is_alumni: false,
+        is_verified: false,
+        address: '',
+        personal_email: '',
+        dob: '',
+        hostel: '',
+        room_no: '',
+        department: '',
+        program: '',
+        degree: '',
+        join_year: '',
+        graduation_year: '',
+        gender: '',
+        career: '',
+        phoneno: '',
     });
-  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  };
+   
 
-  return (
-    <div>
-      <div className="profileform-area" style={styles.profileformArea}>
-        <div className="heading-container" style={styles.headingContainer}>
-          User Profile
-          <div className="user-profile">
-            <img className="profile-picture" alt="profile pic" />
-          </div>
-        </div>
-        <div className="profileformmain">
-          <div className="profileform-container" style={styles.formContainer}>
-            <div className="pinfo align-items-center">
-              <div className="pinfo-constituents" style={styles.constituents}>
-                <label htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
-                <input
-                  id="rollno"
-                  name="rollno"
-                  type="text"
-                  value={formData.rollno}
-                  onChange={handleChange}
-                  style={styles.input}
-                />
-              </div>
-              <div className="pinfo-constituents" style={styles.constituents}>
-                <label htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
-                <input
-                  id="fullname"
-                  name="fullname"
-                  type="text"
-                  value={formData.fullname}
-                  onChange={handleChange}
-                  style={styles.input}
-                />
-              </div>
-              
+    const { profileData, loading, error, handleChange, updateProfileData, } = useProfile();
 
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="email" style={styles.profilelabel}>Email</label>
-  <input
-    id="email"
-    name="email"
-    type="email"
-    value={formData.email}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="address" style={styles.profilelabel}>Address</label>
-  <input
-    id="address"
-    name="address"
-    type="text"
-    value={formData.address}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
-  <input
-    id="personal_email"
-    name="personal_email"
-    type="email"
-    value={formData.personal_email}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="dob" style={styles.profilelabel}>Date of Birth</label>
-  <input
-    id="dob"
-    name="dob"
-    type="date"
-    value={formData.dob}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
-  <input
-    id="hostel"
-    name="hostel"
-    type="number"
-    value={formData.hostel}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="room_no" style={styles.profilelabel}>Room Number</label>
-  <input
-    id="room_no"
-    name="room_no"
-    type="number"
-    value={formData.room_no}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="department" style={styles.profilelabel}>Department</label>
-  <input
-    id="department"
-    name="department"
-    type="text"
-    value={formData.department}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        updateProfileData();
+    };
 
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="join_year" style={styles.profilelabel}>Join Year</label>
-  <input
-    id="join_year"
-    name="join_year"
-    type="number"
-    value={formData.join_year}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="graduation_year" style={styles.profilelabel}>Graduation Year</label>
-  <input
-    id="graduation_year"
-    name="graduation_year"
-    type="number"
-    value={formData.graduation_year}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
+    return (
+        <div>
+            <div className="profileform-area" style={styles.profileformArea}>
+                <div className="heading-container" style={styles.headingContainer}>
+                    User Profile
+                    <div className="user-profile">
+                        <img className="profile-picture" alt="profile pic" />
+                    </div>
+                </div>
+                <div className="profileformmain">
+                    <div className="profileform-container" style={styles.formContainer}>
+                        <div className="pinfo align-items-center">
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
+                                <input
+                                    id="rollno"
+                                    name="rollno"
+                                    type="text"
+                                    value={profileData.rollno}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
+                                <input
+                                    id="fullname"
+                                    name="fullname"
+                                    type="text"
+                                    value={profileData.fullname}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                />
+                            </div>
 
 
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="email" style={styles.profilelabel}>Email</label>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    value={profileData.email}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="address" style={styles.profilelabel}>Address</label>
+                                <input
+                                    id="address"
+                                    name="address"
+                                    type="text"
+                                    value={profileData.address}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
+                                <input
+                                    id="personal_email"
+                                    name="personal_email"
+                                    type="email"
+                                    value={profileData.personal_email}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="dob" style={styles.profilelabel}>Date of Birth</label>
+                                <input
+                                    id="dob"
+                                    name="dob"
+                                    type="date"
+                                    value={profileData.dob}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
+                                <input
+                                    id="hostel"
+                                    name="hostel"
+                                    type="text"
+                                    value={profileData.hostel}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="room_no" style={styles.profilelabel}>Room Number</label>
+                                <input
+                                    id="room_no"
+                                    name="room_no"
+                                    type="number"
+                                    value={profileData.room_no}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="department" style={styles.profilelabel}>Department</label>
+                                <input
+                                    id="department"
+                                    name="department"
+                                    type="text"
+                                    value={profileData.department}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
 
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="gender" style={styles.profilelabel}>Gender:</label>
-  <input
-    id="gender"
-    name="gender"
-    type="text"
-    value={formData.gender}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="join_year" style={styles.profilelabel}>Join Year</label>
+                                <input
+                                    id="join_year"
+                                    name="join_year"
+                                    type="number"
+                                    value={profileData.join_year}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="graduation_year" style={styles.profilelabel}>Graduation Year</label>
+                                <input
+                                    id="graduation_year"
+                                    name="graduation_year"
+                                    type="number"
+                                    value={profileData.graduation_year}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
 
 
 
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="career" style={styles.profilelabel}>Career:</label>
-  <input
-    id="career"
-    name="career"
-    type="text"
-    value={formData.career}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="gender" style={styles.profilelabel}>Gender:</label>
+                                <input
+                                    id="gender"
+                                    name="gender"
+                                    type="text"
+                                    value={profileData.gender}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
 
 
-<div className="pinfo-constituents" style={styles.constituents}>
-  <label htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
-  <input
-    id="phoneno"
-    name="phoneno"
-    type="text"
-    value={formData.phoneno}
-    onChange={handleChange}
-    style={styles.input}
-    required
-  />
-</div>
-              
+
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="career" style={styles.profilelabel}>Career:</label>
+                                <input
+                                    id="career"
+                                    name="career"
+                                    type="text"
+                                    value={profileData.career}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+
+
+                            <div className="pinfo-constituents" style={styles.constituents}>
+                                <label htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
+                                <input
+                                    id="phoneno"
+                                    name="phoneno"
+                                    type="text"
+                                    value={profileData.phoneno}
+                                    onChange={handleChange}
+                                    style={styles.input}
+                                    required
+                                />
+                            </div>
+
+                        </div>
+                        {/* Submit Button */}
+                        <button
+                            type="submit"
+                            className="submitButton"
+                            onClick={handleSubmit} // Handle form submission here
+                            style={styles.submitButton}
+                        >
+                            Submit
+                        </button>
+                    </div>
+                </div>
             </div>
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="submitButton"
-              onClick={handleSubmit} // Handle form submission here
-              style={styles.submitButton}
-            >
-              Submit
-            </button>
-          </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 

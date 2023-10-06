@@ -28,7 +28,7 @@ function useLogin() {
       .post('http://127.0.0.1:8000/api/authenticate/login', formData, { headers })
       .then((response) => {
         console.log(response.data);
-        localStorage.setItem('access', response.data.access)
+        localStorage.setItem('userData', JSON.stringify(response.data));
         setSuccess("logged in successfully"); // Set a success flag to indicate successful login
       })
       .catch((error) => {
