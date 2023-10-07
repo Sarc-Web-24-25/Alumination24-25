@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import bg from "./bglogin.png"
 import useSignup from '../../hooks/useSignup';
+import { Navigate } from 'react-router-dom';
+import './signup.css';
 
 
 const containerStyle = {
@@ -30,7 +32,7 @@ const inputStyle = {
 
 };
 const inputStyle1 = {
-  width: '320px',
+  width: '150px',
   padding: '10px',
   margin: '5px 0',
   border: '1px solid #ccc',
@@ -63,16 +65,13 @@ const disabledButtonStyle = {
 
 
 function Signup() {
-  const departments = ["Department 1", "Department 2", "Department 3"];
-  const degrees = ["Degree 1", "Degree 2", "Degree 3"];
-  const [email, setEmail] = useState('');
-  const [department, setDepartment] = useState('');
-  const [name, setName] = useState('');
-  const [degree, setDegree] = useState('');
-  const [contactNumber, setContactNumber] = useState('');
   const [password, setPassword] = useState('');
   const [rollNumber, setRollNumber] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [is_alum, setIsAlum] = useState(false);
+  const [emailtype, setEmailType] = useState('@iitb.ac.in');
+
+
 
   const [passwordMatch, setPasswordMatch] = useState(false);
 
@@ -80,12 +79,6 @@ function Signup() {
     const confirmPasswordValue = event.target.value;
     setConfirmPassword(confirmPasswordValue);
     setPasswordMatch(password === confirmPasswordValue);
-  };
-
-  const isValidEmail = (email) => {
-    // Use a regular expression for basic email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
   };
 
 
@@ -99,7 +92,7 @@ function Signup() {
   };
 
 
-  
+
 
   const formStyle = {
     display: 'flex',
@@ -118,12 +111,16 @@ function Signup() {
   const headingStyle = {
     fontSize: '26px',
     marginBottom: '20px',
+    backgroundColor: "rgba(255,255,255,0.5)",
+    padding: "10px",
+    paddingLeft: "20px",
+    paddingRight: "20px",
+    borderRadius: "10px",
   };
-
 
   const { formData, setFormData, error, success, handleInputChange, signup } = useSignup();
 
-  const handlePasswordChange = (event) =>{
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
@@ -131,13 +128,47 @@ function Signup() {
   const handleRollNumberChange = (event) => {
     setRollNumber(event.target.value);
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: value + emailtype });
+  }
+
+  const handleAlumChange = (value) => {
+    setIsAlum(value);
+    setFormData({ ...formData, is_alum: value });
+    if(value){
+      if(emailtype === "@iitb.ac.in"){
+        setEmailType("@iitbombay.org");
+      }
+    }else{
+      if(emailtype === "@iitbombay.org"){
+        setIsAlum(true);
+      }
+    }
+  }
+
+  const handleEmailTypeChange = (event) => {
+    setEmailType(event.target.value);
+    if(event.target.value === "@iitbombay.org"){
+      setIsAlum(true);
+    }
+    if(event.target.value === "@iitb.ac.in"){
+      setIsAlum(false);
+    }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      username: rollNumber + emailtype
+    }));
+    console.log(formData); 
     signup();
   };
+
+  if (localStorage.getItem('userData')) {
+    return <Navigate to="/" />;
+  }
+
 
 
   return (
@@ -146,9 +177,31 @@ function Signup() {
 
       <h1 style={headingStyle}>REGISTER</h1>
       {error && <p className="error">{error}</p>}
-      {success && <p className="success">Signup successful, Please check your webmail for verification link!</p>}
+      {success && <p style={{color: "green"}} className="error">Signup successful, Please check your webmail for verification link!</p>}
 
-      <input name='username' type="text" placeholder="Roll Number" value={rollNumber} onChange={handleRollNumberChange} style={inputStyle} />
+      <div style={{ display: "flex", width: "300px" }}>
+          <input
+            type="text"
+            name='username'
+            style={inputStyle1}
+            placeholder="Email"
+            value={rollNumber}
+            onChange={handleRollNumberChange}
+          />
+          <select
+            name="emailtype"
+            id="emailtype"
+            style={inputStyle1}
+            onChange={handleEmailTypeChange}
+            value={emailtype}
+          >
+            <option value="@iitb.ac.in" default>
+              @iitb.ac.in
+            </option>
+            <option value="@iitbombay.org">@iitbombay.org</option>
+            <option value="@gmail.com">@gmail.com</option>
+          </select>
+        </div>
 
       <input
         type="password"
@@ -165,6 +218,13 @@ function Signup() {
         onChange={handleConfirmPasswordChange}
         style={inputStyle}
       />
+
+      <div style={{backgroundColor: "rgba(255,255,255,0.3)", padding: "5px", borderRadius: "10px"}}>
+        <label for="is_alum" style={{marginRight: "10px", fontWeight: "bolder"}}>Are you an alumni?</label>
+        <input onChange={() => handleAlumChange(true)} type="radio" name='is_alum' checked={is_alum} style={{color: "white"}} required /> Yes
+        <input onChange={() => handleAlumChange(false)} type="radio" name='is_alum' checked={!is_alum} style={{color: "white"}} required /> No
+      </div>
+
 
       <button onClick={handleSubmit} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle} disabled={!allFieldsFilled()}>REGISTER</button>
 

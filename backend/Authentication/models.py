@@ -19,25 +19,20 @@ def process_image(image_file, id):
     return File(output)
 
 class MyUser(AbstractUser):
-    is_alum = models.BooleanField(default=False)
+    is_alum = models.BooleanField(blank=False)
 
 
 class Profile(models.Model):
     def __str__(self):
         return "%s %s" % (self.fullname, self.email)
-
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
-    rollno = models.CharField(max_length=20, blank=False, default="")
-    profile_pic = models.ImageField(upload_to="images/profile_pics/", default="default.png", null=True)
+    rollno = models.CharField(max_length=20, blank=True)
+    profile_pic = models.ImageField(upload_to="profile_pics/", null=True, default="profile_pics/default.png")
     fullname = models.CharField(max_length=255, blank=False, default="")
     email = models.EmailField(blank=False)
     is_alumni = models.BooleanField(default=False)
-    is_verified = models.BooleanField(default=False)
-    address = models.CharField(max_length=500, blank=False, default="")
     personal_email = models.EmailField(blank=False)
-    dob = models.DateField(blank=False)
-    hostel = models.CharField(choices=HOSTEL_CHOICES, max_length=255, blank=False)
-    room_no = models.CharField(blank=False, max_length=10, default="")
+    hostel = models.CharField(max_length=255, blank=True)
     department = models.CharField(
         max_length=255,
         blank=False,
@@ -55,10 +50,8 @@ class Profile(models.Model):
     )
 
     degree = models.CharField(max_length=50, choices=DEGREES, blank=True)
-    join_year = models.IntegerField(blank=False)
     graduation_year = models.IntegerField(blank=False)
     gender = models.CharField(choices=GENDER, max_length=100, blank=False,)
-    career = models.CharField(choices=CAREER, max_length=100, blank=True,)
     phoneno = models.CharField(max_length=20, blank=False, default="")
 
     def save(self, *args, **kwargs):
@@ -71,5 +64,7 @@ class Profile(models.Model):
         
         if self.profile_pic:
             self.profile_pic = process_image(self.profile_pic, self.id)
+        else:
+            self.profile_pic = "/profile_pics/default.png"
         
         super().save(*args, **kwargs)

@@ -2,9 +2,14 @@ import { useState } from 'react';
 import axios from 'axios';
 
 function useSignup() {
+
+
+  const [is_alum, setIsAlum] = useState(false);
+
   const [formData, setFormData] = useState({
     username: '',
     password: '',
+    is_alum: is_alum,
   });
 
   const [error, setError] = useState('');
@@ -36,7 +41,7 @@ function useSignup() {
       });
   };
 
-  return { formData, setFormData, error, success, handleInputChange, signup };
+  return { formData, setFormData, setIsAlum, error, success, handleInputChange, signup };
 }
 
 export default useSignup;

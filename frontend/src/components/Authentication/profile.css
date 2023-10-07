@@ -270,3 +270,7 @@
     border: 2px solid #fff;
     /* Optional: Add a white border around the circle */
 }
+
+.editing{
+    opacity: 0.5;
+}

@@ -4,19 +4,20 @@ import React, { useState } from 'react';
 import bg from "./bglogin.png"
 import useLogin from '../../hooks/useLogin';
 import { Navigate } from 'react-router-dom';
+import useSendPasswordLink from '../../hooks/useSendPasswordLink';
 
-function Login() {
+function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailtype, setEmailType] = useState('@iitb.ac.in');
 
 
-  const { formData, setFormData, error, success, handleInputChange, login } = useLogin();
+  const { formData, setFormData, error, success, forgotPassword } = useSendPasswordLink();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormData({ ...formData, username: email + emailtype });
-    login();
+    forgotPassword();
   };
 
   const handleEmailChange = (event) => {
@@ -126,9 +127,9 @@ function Login() {
   return (
     <div style={frameStyle}>
       <div style={containerStyle}>
-        <h1>LOGIN</h1>
+        <h1>Forgot Password</h1>
         {error && <p className="error">{error}</p>}
-        {success && <p style={{ color: "white" }} className="success">{success}</p>}
+        {success && <p style={{color: "green"}} className="error">{success}</p>}
         <div style={{ display: "flex" }}>
           <input
             type="text"
@@ -152,21 +153,12 @@ function Login() {
             <option value="@gmail.com">@gmail.com</option>
           </select>
         </div>
-        <input
-          name='password'
-          type="password"
-          style={inputStyle}
-          placeholder="Password"
-          value={password}
-          onChange={handlePasswordChange}
-        />
-        <button style={password !== "" && email !== "" ? buttonStyle: disabledButtonStyle} onClick={handleSubmit} disabled={!(password !== "" && email !== "")}>
-          LOGIN
+        <button style={email !== "" ? buttonStyle: disabledButtonStyle} onClick={handleSubmit} disabled={!(email !== "")}>
+            Submit
         </button>
-        <a href='#' style={anchorStyle}>Forgot password?</a>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default ForgotPassword;

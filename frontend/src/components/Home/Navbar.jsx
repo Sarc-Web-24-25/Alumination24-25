@@ -66,15 +66,18 @@ export default function CustomNavbar() {
                 zIndex: 1,
               }}
             >
-              <NavDropdown.Item href="/" style={text}>
+              <NavDropdown.Item href="/profile" style={text}>
                 Profile
               </NavDropdown.Item>
-              <NavDropdown.Item href="/login" style={text}>
-                Login
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/signup" style={text}>
-                SignUp
-              </NavDropdown.Item>
+              {
+                localStorage.getItem('userData') != null ? <NavDropdown.Item href="/logout" style={text}>Logout</NavDropdown.Item> : <>
+                  <NavDropdown.Item href="/login" style={text}>
+                    Login
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/signup" style={text}>
+                    SignUp
+                  </NavDropdown.Item></>
+              }
             </div>
           )}
         </div>

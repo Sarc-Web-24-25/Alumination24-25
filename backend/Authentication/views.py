@@ -23,11 +23,17 @@ def get_tokens_for_user(user):
 def send_verification_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
     print(token)
+    
+    
+def send_forgot_password_email(username):
+    token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
+    print(token)
 
 @permission_classes([permissions.AllowAny])
 class UserSignupView(APIView):
     def post(self, request):
         username = request.data["username"]
+        print(request.data)
         if MyUser.objects.filter(username=username).exists():
             user = MyUser.objects.filter(username=username)[0]
             if user.is_active:
@@ -50,7 +56,11 @@ class UserLoginView(APIView):
     def post(self,request):
         username = request.data["username"]
         password = request.data["password"]
-        user = MyUser.objects.filter(username=username)[0]
+        try:
+            user = MyUser.objects.get(username=username)
+        except MyUser.DoesNotExist:
+            print("user does not exist")
+            return Response({"error":"User does not exist"},status=status.HTTP_400_BAD_REQUEST)
         if user.is_active:
             if user.check_password(password):
                 return Response(get_tokens_for_user(user),status=status.HTTP_200_OK)
@@ -58,12 +68,51 @@ class UserLoginView(APIView):
                 return Response({"error":"Incorrect Password"},status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response({"error":"User not verified"},status=status.HTTP_400_BAD_REQUEST)
+
+
+@permission_classes([permissions.AllowAny])
+class SendForgotPasswordLink(APIView):
+    def post(self,request):
+        username = request.data["username"]
+        try:
+            user = MyUser.objects.get(username=username)
+        except MyUser.DoesNotExist:
+            return Response({"error":"User does not exist"},status=status.HTTP_400_BAD_REQUEST)
+        if user.is_active:
+            send_forgot_password_email(username)
+            return Response({"success":"Email sent"},status=status.HTTP_200_OK)
+        else:
+            return Response({"error":"User not verified"},status=status.HTTP_400_BAD_REQUEST)
+       
+
+@permission_classes([permissions.AllowAny]) 
+class ResetPasswordView(APIView):
+    def post(self,request,key):
+        try:
+            token = Token.objects.filter(key=key)
+            if(len(token)==0):
+                return Response("invalid TOKEN",status=status.HTTP_400_BAD_REQUEST)
+        except MyUser.DoesNotExist:
+            return Response("invalid TOKEN",status=status.HTTP_400_BAD_REQUEST)
+        token = token[0]
+        user = token.user
+        print(user)
+        user.set_password(request.data["password"])
+        user.save()
+        token.delete()
+        return Response(status=status.HTTP_200_OK)
         
         
-        
-def verify_email(request, token):
-    try:
-        token = Token.objects.get(key = token)
+@permission_classes([permissions.AllowAny])
+class VerifyEmailView(APIView):
+    def post(self,request,key):
+        try:
+            token = Token.objects.filter(key=key)
+            if(len(token)==0):
+                return Response("invalid TOKEN",status=status.HTTP_400_BAD_REQUEST)
+        except MyUser.DoesNotExist:
+            return Response("invalid TOKEN",status=status.HTTP_400_BAD_REQUEST)
+        token = token[0]
         user = token.user
         print(user)
         user.is_active = True
@@ -71,8 +120,6 @@ def verify_email(request, token):
         token.delete()
         return Response(status=status.HTTP_200_OK)
     
-    except user.DoesNotExist:
-        return Response("invalid TOKEN",status=status.HTTP_400_BAD_REQUEST)
     
 
 
@@ -116,15 +163,34 @@ class ProfileView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     def post(self, request, format=None):
+        request.data._mutable = True
         print(request.data)
-        if(Profile.objects.filter(user=request.user).exists()):
-            print("exists")
+        try: 
+            user = MyUser.objects.get(id=request.user.id)
+            request.data["user"] = user.id
+        except MyUser.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        if not user.is_active:
+            print("user not verified")
+            return Response({"error": "User not verified"}, status=status.HTTP_400_BAD_REQUEST)
+        if user.is_alum:
+            request.data["is_alumni"] = True
+        try:
             profile = Profile.objects.get(user=request.user)
-            serializer = ProfileSerializer(profile, data=request.data)
-        else:
+        except Profile.DoesNotExist:
+            profile = None
+            
+        if profile is None:
             serializer = ProfileSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        print(serializer.errors)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            print(serializer.errors)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        else:
+            serializer = ProfileSerializer(profile, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            print(serializer.errors)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

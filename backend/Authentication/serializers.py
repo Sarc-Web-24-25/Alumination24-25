@@ -6,14 +6,14 @@ from .models import MyUser,Profile
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        exclude = ("is_verified", "is_alumni")
+        fields = "__all__"
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
     class Meta:
         model = MyUser
-        fields = ("username", "password", "id")
+        fields = ("username", "password", "id", "is_alum")
 
     def create(self, validated_data):
         validated_data["is_active"] = False

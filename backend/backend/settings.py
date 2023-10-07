@@ -123,8 +123,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
+import os;
 STATIC_URL = "static/"
+
+MEDIA_URL = "api/images/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "images")
 
 AUTH_USER_MODEL = 'Authentication.MyUser'
 
@@ -152,9 +155,6 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Adjust as needed
-    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),  # Adjust as needed
-    'SLIDING_TOKEN_LIFETIME': timedelta(days=7),  # Adjust as needed
-    'SLIDING_TOKEN_REFRESH_LIFETIME_GRACE_PERIOD': timedelta(days=1),  # Adjust as needed
-    'SLIDING_TOKEN_REFRESH_EPOCH': timedelta(days=0),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }

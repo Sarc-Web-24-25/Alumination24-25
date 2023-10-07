@@ -1,9 +1,8 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "http://127.0.0.1:8000/",
-  "private": true,
   "proxy": "http://localhost:8000",
+  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -20,6 +19,7 @@
     "react-scripts": "5.0.1",
     "react-scroll-horizontal": "^1.6.6",
     "react-scroll-trigger": "^0.6.14",
+    "sweetalert2": "^11.7.32",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
