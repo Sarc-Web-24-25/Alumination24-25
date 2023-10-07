@@ -9,7 +9,7 @@ const CursorAnimation = () => {
             let y = e.pageY;
             bubbles.style.left = x + 'px';
             bubbles.style.top = y + 'px';
-            let size = Math.random() * 15;
+            let size = Math.random() * 6;
             bubbles.style.width = 1 + size + 'px';
             bubbles.style.height = 1 + size + 'px';
             bubbles.classList.add('bubbles'); // Apply the CSS class to the bubbles element

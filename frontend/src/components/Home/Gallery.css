@@ -1,0 +1,78 @@
+/* Gallery.css */
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url('./bgimg//gallery.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.center-image img {
+    width: 70vh;
+    height: 60vh;
+    /* Adjust the maximum height as needed */
+    object-fit: contain;
+    scroll-snap-align: start;
+    filter: brightness(1) !important;
+}
+
+.thumbnail-list-container {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* Hide the scrollbar */
+    -ms-overflow-style: none;
+    /* Hide the scrollbar for IE/Edge */
+}
+
+.thumbnail-list {
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+
+.thumbnail-list img {
+    width: 100px;
+    /* Adjust the width of the thumbnail images */
+    height: 100px;
+    /* Adjust the height of the thumbnail images */
+    margin-right: 10px;
+    /* Adjust the spacing between thumbnail images */
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+.nav-button {
+    background-color: rgb(222, 168, 124);
+    /* Set your desired background color */
+    color: #fff;
+    /* Text color */
+    padding: 5px 15px;
+    margin: 0.5% 2%;
+    font-family: 'Inknut Antiqua';
+    /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    /* Set your desired font size */
+    font-weight: bold;
+    /* Set your desired font weight */
+}
+
+/* Style for Prev button */
+.nav-button:first-child {
+    margin-right: 10px;
+    /* Add spacing between buttons */
+}
+
+/* Hide the scrollbar */
+.thumbnail-list-container::-webkit-scrollbar {
+    display: none;
+}

@@ -290,96 +290,94 @@ const TeamPage = () => {
             <div className="horizontal-scroll">
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg"  />
+                        <img className="prerna"  />
                         <p>Prerna Agarwal</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg"  />
+                        <img className="aastha"  />
                         <p>Aastha Patel</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="sancheti"  />
+                        <p>Aastha Sancheti</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="priyaank"  />
+                        <p>Priyaank Sheth</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="himanshu"  />
+                        <p>Himanshu Nagar</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="jay" />
+                        <p>Jay Arora</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="kinjal"  />
+                        <p>Kinjal Sao</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="aniruddh" />
+                        <p>Aniruddh Goyal</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="agrajah"  />
+                        <p>Agrajah Bhobe</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="garv" />
+                        <p>Grav Gupta</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="shounak"  />
+                        <p>Shounak Dewoolkar</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="vishal" />
+                        <p>Vishal Kumar</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="priyanshi"  />
+                        <p>Priyanshi Garg</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="vaibhavi"  />
+                        <p>Vaibhavi Shinde</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="sanket" />
+                        <p>Sanket Bafna</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="nakul"  />
+                        <p>Nakul Bagrecha</p>
                     </div>
                 </div>
                 <div className="team-column">
                     <div className="team-member">
-                        <img className="prerna" src="team_member1.jpg" />
-                        <p>Prerna Agarwal</p>
+                        <img className="pranita"  />
+                        <p>Pranita Randive</p>
                     </div>
                     <div className="team-member">
-                        <img className="aastha" src="team_member2.jpg" />
-                        <p>Aastha Patel</p>
+                        <img className="akash" />
+                        <p>Akash Banger</p>
                     </div>
                 </div>
-                {/* Repeat the above structure for the other team members */}
-                {/* You should have 9 columns in total */}
             </div>
         </div>
     );
