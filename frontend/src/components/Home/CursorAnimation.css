@@ -13,6 +13,7 @@
     /* Run the animation only once and stay in its final state */
     margin: 0;
     /* Remove margin to eliminate the gap between bubbles */
+    z-index: 1;
 }
 
 @keyframes colorgen {

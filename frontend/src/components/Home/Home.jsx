@@ -32,13 +32,20 @@ export default function Home() {
       margin: "0px",
    };
    const imgstyle = {
-      height: "700px",
+      height: "75%",
       margin: "0px",
+      marginLeft: '0.5%'
+
+   };
+   const imgstylegod = {
+      height: "80%",
+      margin: "0px",
+      marginLeft: '-1%'
 
    };
    const imgstyle1 = {
       height: "500px",
-      marginTop: "-40vh"
+      marginTop: "-40vh",
    };
    const imgstyle2 = {
       height: "700px",
@@ -72,7 +79,8 @@ export default function Home() {
       color: "#FFD6A0",
       fontSize: "35px",
       fontFamily: 'Inknut Antiqua',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      textAlign: 'center'
    };
    const textstyle3 = {
       color: "#F4DEA8",
@@ -159,6 +167,20 @@ export default function Home() {
       marginBottom: "5px",
       marginTop: "1px",
    };
+   const clock1Style = {
+      width: "300px",
+      height: "300px",
+      backgroundSize: "cover",
+      backgroundImage: `url(${counter})`,
+      backgroundPosition: "center",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      opacity: "0.9",
+      margin: "2px",
+      animation: 'rotate 8s linear infinite', // Add rotation animation here
+   };
+
 
    const [counterOn, setcounterOn] = useState(true);
    return (
@@ -171,11 +193,11 @@ export default function Home() {
                <div style={bgstyle}>
 
                   <img src={logo} style={imgstyle} alt="" />
-                  <img src={god} style={imgstyle} alt="" />
+                  <img src={god} style={imgstylegod} alt="" />
 
                   <div style={aboutus}>
                      <h1 style={textstyle}>ABOUT US</h1>
-                     <p style={textstyle1}>A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008. </p>
+                     <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
                   </div>
                   <img src={ig1} style={imgstyle} alt="" />
                   <div >
@@ -207,28 +229,24 @@ export default function Home() {
 
                   <div style={contain}>
                      <div style={hcontain}>
-                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
-                           <div style={clock1}>
-                              <span style={textstyle2}>
-                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
-                              </span>
+                        <div style={clock1Style}>
+                           <div style={clock1Style}>
+                              <span style={textstyle2}>1000 +</span>
                            </div>
                         </div>
 
-                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                        <div style={clock1Style}>
+                           <div style={clock1Style}>
+                              <span style={textstyle2}>1000 +</span>
+                           </div>
+                        </div>
+                        {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
                            <div style={clock1}>
                               <span style={textstyle2}>
                                  {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
                               </span>
                            </div>
-                        </div>
-                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
-                           <div style={clock1}>
-                              <span style={textstyle2}>
-                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
-                              </span>
-                           </div>
-                        </div>
+                        </div> */}
 
                      </div>
                      <div style={hcontain}>
@@ -239,13 +257,13 @@ export default function Home() {
                               </span>
                            </div>
                         </div>
-                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                        {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
                            <div style={clock1}>
                               <span style={textstyle2}>
                                  {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
                               </span>
                            </div>
-                        </div>
+                        </div> */}
 
                      </div>
                   </div>
