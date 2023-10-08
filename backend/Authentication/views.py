@@ -197,12 +197,6 @@ class ProfileView(APIView):
                 return Response(serializer.data, status=status.HTTP_200_OK)
             print(serializer.errors)
             return Response(serializer.errors, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
-        
-        
-        
-        
-        
-        
 
 
 import os

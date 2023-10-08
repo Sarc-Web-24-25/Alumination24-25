@@ -4,13 +4,13 @@ services:
   aluminationbackend:
     restart: unless-stopped
     build:
-      context: ./Backend
+      context: ./backend
       dockerfile: Dockerfile
     ports:
       - "8012:8000"
-    entrypoint: /Backend/wsgi-entrypoint.sh
+    entrypoint: /backend/wsgi-entrypoint.sh
     volumes:
-      - ./Backend:/Backend/
+      - ./backend:/backend/
     expose:
       - 8000
     networks:
@@ -19,12 +19,12 @@ services:
 
   aluminationfrontend:
     build:
-      context: ./Frontend
+      context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "5003:5003"
     volumes:
-      - ./Frontend:/Frontend
+      - ./frontend:/frontend
     networks:
       - mynetwork
 
