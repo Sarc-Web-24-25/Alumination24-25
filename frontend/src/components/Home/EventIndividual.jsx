@@ -23,15 +23,45 @@ function EventIndividual() {
     const { event, error, success, fetchEvent, register } = useIndividualEvent();
 
 
-    const opts = {
+
+
+    const [windowDimensions, setWindowDimensions] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+
+    useEffect(() => {
+        // Add a listener to update dimensions when the window size changes
+        const handleResize = () => {
+          setWindowDimensions({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+
+
+    const opts = windowDimensions.width > 840 ? {
         height: '512',
         width: '840',
-    };
+    }:{ 
+        height: `${0.6*windowDimensions.width}`,
+        width: '100%',
+    }
 
 
     useEffect(() => {
         fetchEvent(key);
     }, [key]);
+
+
 
 
 
@@ -63,12 +93,14 @@ function EventIndividual() {
                         <img src={headingImage} alt="Top Image" className="top-imagee" />
                         <h1 style={{ marginBottom: event.youtube_link === "" && "15vh" }} className="top-titlee">{event.name}</h1>
                     </div>
-                    <div style={{ width: "100vw", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
-                        {event.youtube_link !== "" && <YouTube opts={opts} videoId={event.youtube_link} className="youtube" />}
+                    <div className='main-event' style={{ width: "100vw", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
+                        {event.youtube_link !== "" && <YouTube opts={opts} videoId={event.youtube_link}/>}
                         <div style={{ display: "flex", justifyContent: "center", flexDirection: event.youtube_link != "" ? "column" : "row", alignItems: "center" }}>
                             <img style={{ marginRight: event.youtube_link === "" && "15vw" }} className='poster' src={`http://localhost:8000${event.image}`} alt="" />
                             <div className='event-desc'>
                                 {event.description}
+                                <br />
+                                <p style={{marginBottom: "0", color: "brown", fontWeight: "bold", fontSize:"120%"}}>{event.date}</p>
                                 <button onClick={() => handleRegisterClick(event.id)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%" }}>{event.button_text}</button>
                             </div>
                         </div>

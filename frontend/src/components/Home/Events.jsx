@@ -31,16 +31,15 @@ function EventList() {
             </div>
             <div className="page-content">
                 <ul>
-                    {events.map((event) => (
-                        <li key={event.id} className="event-list-item">
+                    {events.map((event, index) => (
+                        <li key={event.id} style={{flexDirection: index%2 === 0 && "row-reverse"}} className="event-list-item">
                             <div className="event-image">
-                                {/* <img src={event.image} alt={event.name} className="event-image" /> */}
-                                <img src={`http://localhost:8000${event.image}`} alt={event.name} className="event-image" />
+                                <img src={`http://localhost:8000${event.image}`} alt={event.name} width={"100%"} />
                             </div>
-                            <div className="event-info">
+                            <div style={{paddingLeft: index%2!==0 && "20px", paddingRight: index%2===0 && "20px"}} className="event-info">
                                 <h3 className="event-title">{event.name}</h3>
-                                <p className="event-description">{event.description}</p>
-                                <a href={`/${event.id}`}><button className="register-button">Know More</button></a>
+                                <p className="event-description">{event.description}</p> <br />
+                                <a style={{float: index%2 === 0 && "right", marginRight: index%2 === 0 && "20px"}} href={`/${event.id}`}><button style={{marginTop: "-20px"}} className="register-button">Know More</button></a>
                             </div>
                         </li>
                     ))}
