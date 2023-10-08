@@ -20,4 +20,4 @@ RUN yarn build
 RUN yarn global add serve
 
 # Command to serve the built app
-CMD ["serve", "-s", "build", "-l", "5003"]
+CMD ["serve", "-s", "build", "-l", "5006"]
