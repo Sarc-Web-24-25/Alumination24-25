@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
+    overflow: scroll !important;
 }
 
 .center-image img {
@@ -75,4 +76,18 @@
 /* Hide the scrollbar */
 .thumbnail-list-container::-webkit-scrollbar {
     display: none;
+}
+
+@media screen and (max-width: 600px){
+    .center-image img {
+            width: 40vh;
+            height: 40vh;
+            /* Adjust the maximum height as needed */
+            object-fit: contain;
+            scroll-snap-align: start;
+            filter: brightness(1) !important;
+        }
+        .nav-button{
+            margin-top: 10%;
+        }
 }
