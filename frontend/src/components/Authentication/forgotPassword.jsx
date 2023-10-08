@@ -58,7 +58,7 @@ function ForgotPassword() {
 
   const containerStyle = {
     width: '50%',
-    height: '70vh',
+    height: '45vh',
     padding: '30px',
     margin: '20px',
     backgroundColor: '#45382C',
@@ -67,30 +67,30 @@ function ForgotPassword() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  };
-
-  const inputStyle = {
-    width: '50%',
     display: 'flex',
-    flexDirection: 'column',
-    height: '50px',
-    marginBottom: '3%',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    fontSize: '16px',
-    alignItems: 'center',
     justifyContent: 'center',
   };
 
 
-  const inputStyle1 = {
-    width: '50%',
+  const inputStyle = {
+    width: '150px',
     display: 'flex',
     height: '50px',
-    marginBottom: '3%',
+    marginBottom: '1vh',
     border: '1px solid #ccc',
     borderRadius: '5px',
-    fontSize: '16px',
+    fontSize: '2vh',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+  const inputStyle1 = {
+    width: '300px',
+    display: 'flex',
+    height: '50px',
+    marginBottom: '1vh',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    fontSize: '2vh',
     alignItems: 'center',
     justifyContent: 'center',
   };
@@ -126,15 +126,15 @@ function ForgotPassword() {
 
   return (
     <div style={frameStyle}>
-      <div style={containerStyle}>
-        <h1>Forgot Password</h1>
+      <div className='main-container-login' style={containerStyle}>
+        <h1 style={{fontWeight: "bold", color: "black", marginBottom:"30px"}}>Forgot Password</h1>
         {error && <p className="error">{error}</p>}
         {success && <p style={{color: "green"}} className="error">{success}</p>}
         <div style={{ display: "flex" }}>
           <input
             type="text"
             name='username'
-            style={inputStyle1}
+            style={inputStyle}
             placeholder="Email"
             value={email}
             onChange={handleEmailChange}
@@ -142,7 +142,7 @@ function ForgotPassword() {
           <select
             name="emailtype"
             id="emailtype"
-            style={inputStyle1}
+            style={inputStyle}
             onChange={handleEmailTypeChange}
             value={emailtype}
           >

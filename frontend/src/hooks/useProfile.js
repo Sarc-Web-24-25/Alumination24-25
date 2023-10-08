@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { json } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import defaultProfile from './defaultProfile.png';
+import letter from '../components/Home/bgimg/letter.png';
 
 // Define a custom hook for managing the user profile data
 function useProfile() {
@@ -81,6 +82,8 @@ function useProfile() {
           icon: 'error',
           title: 'Error',
           text: response.data.error,
+          iconColor: 'brown',
+          background: `url(${letter})`,
         })
       }
       else if(response.status === 203){
@@ -88,6 +91,8 @@ function useProfile() {
           icon: 'error',
           title: 'Error',
           text: 'Please fill all the fields',
+          iconColor: 'brown',
+          background: `url(${letter})`,
         })
       }
       
@@ -96,6 +101,8 @@ function useProfile() {
           icon: 'success',
           title: 'Profile updated successfully',
           showConfirmButton: true,
+          iconColor: 'brown',
+          background: `url(${letter})`,
         }).then((result) => {
           if (result.isConfirmed) {
             fetchProfileData();

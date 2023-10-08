@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 import useIndividualEvent from '../../hooks/useIndividualEvent';
 import headingImage from './indiEvent.png'
 import Swal from 'sweetalert2';
+import letter from '../Home/bgimg/letter.png'
 
 function EventIndividual() {
     const [selectedEventId, setSelectedEventId] = useState(null);
@@ -73,7 +74,10 @@ function EventIndividual() {
                 title: 'Please Login',
                 text: 'You need to login to register for this event',
                 icon: 'warning',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                iconColor: 'brown',
+                confirmButtonColor: 'brown',
+                background: `url(${letter})`,
             }).then(result => {
                 if (result.isConfirmed) {
                     window.location.href = "/login"

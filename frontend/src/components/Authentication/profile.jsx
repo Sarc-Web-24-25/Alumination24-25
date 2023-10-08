@@ -3,6 +3,7 @@ import '../Authentication/profile.css';
 import backgroundImage from '../Home/bgimg/i1.png';
 import useProfile from '../../hooks/useProfile';
 import Swal from 'sweetalert2';
+import letter from '../Home/bgimg/letter.png'
 
 
 const styles = {
@@ -55,6 +56,8 @@ const styles = {
         justifyContent: 'space-evenly', // Align horizontally
         alignItems: 'center', // Align horizontally
         width: '100%', // Set full width
+        display: 'flex',
+        flexDirection: 'row',
     },
     formContainer: {
         width: '70%',
@@ -65,6 +68,11 @@ const styles = {
         borderRadius: '10vw',
         fontSize: '32px',
         padding: '10px',
+        alignItems: 'center',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+
     },
     profHead: {
         textDecoration: 'none', // Remove underline from the text itself
@@ -321,6 +329,9 @@ function Profile() {
                         icon: 'error',
                         title: 'Invalid File',
                         text: 'Only JPG, JPEG, PNG, or WEBP files are allowed.',
+                        iconColor: 'brown',
+                        confirmButtonColor: 'brown',
+                        background: `url(${letter})`,
                         customClass: {
                             container: 'my-swal-container',
                             title: 'my-swal-title',
@@ -404,7 +415,7 @@ function Profile() {
     console.log("here is the user data")
 
     return (
-        <div style={styles.mainContainer}>
+        <div className='mainContainer' style={styles.mainContainer}>
             <div className="profileform-area" style={styles.profileformArea}>
                 <div className="heading-container" style={styles.headingContainer}>
                     {userData.is_alum ? "Alum Profile" : "User Profile"}
@@ -425,6 +436,7 @@ function Profile() {
                     {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
                         <input
+                            placeholder='Roll Number'
                             id="rollno"
                             name="rollno"
                             type="text"
@@ -436,6 +448,7 @@ function Profile() {
                     <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
                         <input
+                            placeholder='Full Name'
                             id="fullname"
                             name="fullname"
                             type="text"
@@ -449,6 +462,7 @@ function Profile() {
                     <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="email" style={styles.profilelabel}>Email</label>
                         <input
+                            placeholder='Email'
                             id="email"
                             name="email"
                             type="email"
@@ -463,6 +477,7 @@ function Profile() {
                     <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
                         <input
+                            placeholder='Phone no'
                             id="phoneno"
                             name="phoneno"
                             type="text"
@@ -478,6 +493,7 @@ function Profile() {
                     <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
                         <input
+                            placeholder='Personal Email'
                             id="personal_email"
                             name="personal_email"
                             type="email"
@@ -517,6 +533,7 @@ function Profile() {
                     <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="graduation_year" style={styles.profilelabel}>Graduation Year</label>
                         <input
+                            placeholder='Graduation Year'
                             id="graduation_year"
                             name="graduation_year"
                             type="number"
@@ -538,6 +555,7 @@ function Profile() {
                     {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
                         <input
+                            placeholder='Hostel'
                             id="hostel"
                             name="hostel"
                             type="text"

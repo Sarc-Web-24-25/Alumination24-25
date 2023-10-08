@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useForgotPassword from '../hooks/useForgotPassword';
-import bg from "./Authentication/bg.jpg"
+import bg from "./Authentication/bglogin.png"
 
 
 function VerifyEmailView() {
@@ -35,17 +35,17 @@ function VerifyEmailView() {
     const [passwordMatch, setPasswordMatch] = useState(false);
 
     const handleConfirmPasswordChange = (event) => {
-      const confirmPasswordValue = event.target.value;
-      setConfirmPassword(confirmPasswordValue);
-      setPasswordMatch(password === confirmPasswordValue);
+        const confirmPasswordValue = event.target.value;
+        setConfirmPassword(confirmPasswordValue);
+        setPasswordMatch(password === confirmPasswordValue);
     };
-  
-  
+
+
     const allFieldsFilled = () => {
-      return (
-        password !== "" &&
-        passwordMatch
-      );
+        return (
+            password !== "" &&
+            passwordMatch
+        );
     };
 
 
@@ -70,7 +70,7 @@ function VerifyEmailView() {
 
     const containerStyle = {
         width: '50%',
-        height: '70vh',
+        height: '65vh',
         padding: '30px',
         margin: '20px',
         backgroundColor: '#45382C',
@@ -79,30 +79,30 @@ function VerifyEmailView() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-    };
-
-    const inputStyle = {
-        width: '50%',
         display: 'flex',
-        flexDirection: 'column',
-        height: '50px',
-        marginBottom: '3%',
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        fontSize: '16px',
-        alignItems: 'center',
         justifyContent: 'center',
     };
 
 
-    const inputStyle1 = {
-        width: '50%',
+    const inputStyle = {
+        width: '150px',
         display: 'flex',
         height: '50px',
-        marginBottom: '3%',
+        marginBottom: '1vh',
         border: '1px solid #ccc',
         borderRadius: '5px',
-        fontSize: '16px',
+        fontSize: '2vh',
+        alignItems: 'center',
+        justifyContent: 'center',
+    };
+    const inputStyle1 = {
+        width: '300px',
+        display: 'flex',
+        height: '50px',
+        marginBottom: '1vh',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        fontSize: '2vh',
         alignItems: 'center',
         justifyContent: 'center',
     };
@@ -138,8 +138,8 @@ function VerifyEmailView() {
 
     return (
         <div style={frameStyle}>
-            <div style={containerStyle}>
-                <h1>Forgot Password</h1>
+            <div className='main-container-login' style={containerStyle}>
+            <h1 style={{fontWeight: "bold", color: "black", marginBottom:"30px"}}>RESET PASSWORD</h1>
                 {error && <p className="error">{error}</p>}
                 {success && <p style={{ color: "green" }} className="error">{success}</p>}
 
@@ -149,14 +149,14 @@ function VerifyEmailView() {
                     placeholder="Password"
                     value={password}
                     onChange={handlePasswordChange}
-                    style={inputStyle}
+                    style={inputStyle1}
                 />
                 <input
                     type="password"
                     placeholder="Confirm Password"
                     value={confirmPassword}
                     onChange={handleConfirmPasswordChange}
-                    style={inputStyle}
+                    style={inputStyle1}
                 />
 
 

@@ -231,7 +231,7 @@ export default function Home() {
    return (
       <div style={containerStyle}>
          <CursorAnimation />
-         <HorizontalScroll>
+         <HorizontalScroll reverseScroll={true}>
 
             <div style={childStyle}>
 

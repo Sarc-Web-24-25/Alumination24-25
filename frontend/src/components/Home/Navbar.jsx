@@ -43,7 +43,7 @@ export default function CustomNavbar() {
       </Nav>
       <Nav className="justify-content-center apna-nav">
         <Nav.Link href="/" style={text}>Home</Nav.Link>
-        <Nav.Link href="/events" style={text}>Event</Nav.Link>
+        <Nav.Link href="/events" style={text}>Events</Nav.Link>
         <Nav.Link href="/#about" style={text}>About</Nav.Link>
         <Nav.Link href="/team" style={text}>Team</Nav.Link>
         <Nav.Link href="/gallery" style={text}>Gallery</Nav.Link>

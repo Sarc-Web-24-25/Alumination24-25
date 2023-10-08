@@ -34,7 +34,7 @@ function EventList() {
                     {events.map((event, index) => (
                         <li key={event.id} style={{flexDirection: index%2 === 0 && "row-reverse"}} className="event-list-item">
                             <div className="event-image">
-                                <img src={`http://localhost:8000${event.image}`} alt={event.name} width={"100%"} />
+                                <img style={{borderRadius:"20px"}} src={`http://localhost:8000${event.image}`} alt={event.name} width={"100%"} />
                             </div>
                             <div style={{paddingLeft: index%2!==0 && "20px", paddingRight: index%2===0 && "20px"}} className="event-info">
                                 <h3 className="event-title">{event.name}</h3>

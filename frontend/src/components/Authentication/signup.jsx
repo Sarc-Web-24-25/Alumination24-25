@@ -6,19 +6,18 @@ import './signup.css';
 
 
 const containerStyle = {
-  background: '#fff', // Set the background color to white
-  padding: '20px', // Add some padding around the content
-  borderRadius: '10px', // Add rounded corners
-  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', // Add a subtle box shadow
-  opacity: '80%',
+  width: '50%',
+  height: '65vh',
+  padding: '30px',
+  margin: '20px',
   backgroundColor: '#45382C',
-  width: '40%',
-  height: '100vh',
-  display: 'flex', // Add flex display
-  flexDirection: 'column', // Stack items vertically
-  alignItems: 'center', // Center items horizontally
-  marginTop: '4%',
-  marginBottom: '4%'
+  opacity: '80%',
+  borderRadius: '20px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  display: 'flex',
+  justifyContent: 'center',
 };
 
 const inputStyle = {
@@ -174,6 +173,7 @@ function Signup() {
   return (
 
     <div style={formStyle}>
+        <div className='main-container-login' style={containerStyle}>
 
       <h1 style={headingStyle}>REGISTER</h1>
       {error && <p className="error">{error}</p>}
@@ -227,6 +227,7 @@ function Signup() {
 
 
       <button onClick={handleSubmit} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle} disabled={!allFieldsFilled()}>REGISTER</button>
+        </div>
 
     </div>
   );

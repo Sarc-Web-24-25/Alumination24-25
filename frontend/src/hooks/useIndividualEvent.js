@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import letter from "../components/Home/bgimg/letter.png";
 
 function useIndividualEvent() {
   const [event, setEvent] = useState(null);
@@ -35,12 +36,16 @@ function useIndividualEvent() {
           icon: "success",
           title: "Registered Successfully",
           text: "You have been registered successfully for the event",
+          iconColor: "brown",
+          background: `url(${letter})`,
         });
       })
       .catch((error) => {
          Swal.fire({
             icon: "error",
             title: "Error",
+            iconColor: "brown",
+            background: `url(${letter})`,
             text: error.response.data.error,
          });
       });

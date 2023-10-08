@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import letter from './Home/bgimg/letter.png'
 
 function VerifyEmailView() {
     const { key } = useParams();
@@ -20,8 +21,11 @@ function VerifyEmailView() {
             text: 'You can now login',
             width: 600,
             icon:'success',
+            iconColor: 'brown',
+            confirmButtonText: 'OK',
+            confirmButtonColor: 'brown',
             padding: '3em',
-            background: '#fff',
+            background: `url(${letter})`,
             backdrop: `
               rgba(0,0,123,0.4)
               url("https://media.tenor.com/-AyTtMgs2mMAAAAi/nyan-cat-nyan.gif")
@@ -42,6 +46,9 @@ function VerifyEmailView() {
             title: 'Verification Failed',
             text: 'Please contact the developers.',
             icon: 'error',
+            iconColor: 'brown',
+            confirmButtonColor: 'brown',
+            background: `url(${letter})`,
             confirmButtonText: 'OK'
           })
             setVerificationError(true);

@@ -5,6 +5,7 @@ import bg from "./bglogin.png"
 import useLogin from '../../hooks/useLogin';
 import { Navigate } from 'react-router-dom';
 // import loginSound from '../Home/bgimg/background-audio.mp3';
+import './login.css'
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -55,7 +56,7 @@ function Login() {
     alignItems: 'center',
     fontFamily: 'Inter, sans-serif',
     backgroundImage: `url(${bg})`,
-    minHeight: '94.1vh',
+    minHeight: '95vh',
     justifyContent: 'center',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -64,7 +65,7 @@ function Login() {
 
   const containerStyle = {
     width: '50%',
-    height: '70vh',
+    height: '65vh',
     padding: '30px',
     margin: '20px',
     backgroundColor: '#45382C',
@@ -73,30 +74,30 @@ function Login() {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-  };
-
-  const inputStyle = {
-    width: '50%',
     display: 'flex',
-    flexDirection: 'column',
-    height: '50px',
-    marginBottom: '3%',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    fontSize: '16px',
-    alignItems: 'center',
     justifyContent: 'center',
   };
 
 
-  const inputStyle1 = {
-    width: '50%',
+  const inputStyle = {
+    width: '150px',
     display: 'flex',
     height: '50px',
-    marginBottom: '3%',
+    marginBottom: '1vh',
     border: '1px solid #ccc',
     borderRadius: '5px',
-    fontSize: '16px',
+    fontSize: '2vh',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+  const inputStyle1 = {
+    width: '300px',
+    display: 'flex',
+    height: '50px',
+    marginBottom: '1vh',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    fontSize: '2vh',
     alignItems: 'center',
     justifyContent: 'center',
   };
@@ -122,7 +123,7 @@ function Login() {
   const anchorStyle = {
     color: '#fff',
     textDecoration: 'none',
-    fontSize: '20px',
+    fontSize: '17px',
     margin: '5px',
   };
 
@@ -132,15 +133,15 @@ function Login() {
 
   return (
     <div style={frameStyle}>
-      <div style={containerStyle}>
-        <h1>LOGIN</h1>
+      <div className='main-container-login' style={containerStyle}>
+        <h1 style={{fontWeight: "bold", color: "black", marginBottom:"30px"}}>LOGIN</h1>
         {error && <p className="error">{error}</p>}
         {success && <p style={{ color: "white" }} className="success">{success}</p>}
         <div style={{ display: "flex" }}>
           <input
             type="text"
             name='username'
-            style={inputStyle1}
+            style={inputStyle}
             placeholder="Email"
             value={email}
             onChange={handleEmailChange}
@@ -148,7 +149,7 @@ function Login() {
           <select
             name="emailtype"
             id="emailtype"
-            style={inputStyle1}
+            style={inputStyle}
             onChange={handleEmailTypeChange}
             value={emailtype}
           >
@@ -162,15 +163,16 @@ function Login() {
         <input
           name='password'
           type="password"
-          style={inputStyle}
+          style={inputStyle1}
           placeholder="Password"
           value={password}
           onChange={handlePasswordChange}
         />
-        <button style={password !== "" && email !== "" ? buttonStyle: disabledButtonStyle} onClick={handleSubmit} disabled={!(password !== "" && email !== "")}>
+        <a className='links' href='/forgotPassword' style={anchorStyle}>Forgot password?</a>
+        <button className='login-button' style={password !== "" && email !== "" ? buttonStyle: disabledButtonStyle} onClick={handleSubmit} disabled={!(password !== "" && email !== "")}>
           LOGIN
         </button>
-        <a href='#' style={anchorStyle}>Forgot password?</a>
+        <a className='links' href='/signup' style={anchorStyle}>New user ? Register here!</a>
       </div>
     </div>
   );

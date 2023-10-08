@@ -1,0 +1,15 @@
+.links:hover{
+    color: aqua !important;
+    transform: scale(1.02);
+}
+.login-button {
+    margin: 2px !important;
+    transition: 0.2s;
+}
+
+@media screen and (max-width: 768px) {
+    .main-container-login{
+        width: 96vw !important;
+    }
+}
+    
