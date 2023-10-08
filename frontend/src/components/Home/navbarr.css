@@ -1,7 +1,12 @@
-
+.not-apna-nav{
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
     .apna-nav{
         display: none;
+    }
+    .not-apna-nav{
+        display: block;
     }
 }

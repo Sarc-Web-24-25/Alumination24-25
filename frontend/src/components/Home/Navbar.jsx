@@ -72,19 +72,19 @@ export default function CustomNavbar() {
               <NavDropdown.Item href="/profile" style={text}>
                 Profile
               </NavDropdown.Item>
-              <NavDropdown.Item href="/#about" style={text}>
+              <NavDropdown.Item className="not-apna-nav" href="/#about" style={text}>
                 about
               </NavDropdown.Item>
-              <NavDropdown.Item href="/events" style={text}>
+              <NavDropdown.Item className="not-apna-nav" href="/events" style={text}>
                 Events
               </NavDropdown.Item>
-              <NavDropdown.Item href="/gallery" style={text}>
+              <NavDropdown.Item className="not-apna-nav" href="/gallery" style={text}>
                 Gallery
               </NavDropdown.Item>
-              <NavDropdown.Item href="/team" style={text}>
+              <NavDropdown.Item className="not-apna-nav" href="/team" style={text}>
                 Team
               </NavDropdown.Item>
-              <NavDropdown.Item href="/#sponsors" style={text}>
+              <NavDropdown.Item className="not-apna-nav" href="/#sponsors" style={text}>
                 Sponsors
               </NavDropdown.Item>
               {
