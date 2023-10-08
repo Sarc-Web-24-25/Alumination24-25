@@ -224,32 +224,20 @@ def send_mail(subject, userName, userEmail, isWelcome=False):
 <html>
 
 <head>
-    <title>{subject}</title>
+    <title>Alumination 2023 | SARC IIT Bombay</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background-image: linear-gradient(to left top, #734f2f, #825c35, #91693b, #a07742, #ae8548, #b89152, #c39e5c, #cdab67, #d6b878, #dfc689, #e8d39b, #f1e1ad); background-size: cover; background-repeat: no-repeat;">
-    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;">
+    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat;">
         <h1 style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">Welcome to Alumination 2023 | SARC IIT Bombay</h1>
-
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Dear {userName},</p>
-
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Dear User,</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We hope this message finds you well and filled with excitement for the upcoming Alumination 2023 event! As the organizing team, we are thrilled to invite you to this extraordinary two-day fest that promises to be an unforgettable experience.</p>
-
-        <p style="text-align: center; margin: 20px 0;">
-            <a href="http://localhost:3000/events" style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Explore Events</a>
-        </p>
-
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;"><a href="#" style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Explore Events</a></p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We look forward to welcoming you to Alumination 2023 and embarking on this enriching journey together. Get ready to Break The Ice, Learn from the Best, and Illuminate your path to success!</p>
-
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Regards,</p>
-
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Aastha Patel | Prerna Agrawal</p>
-
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Overall Co-ordinators</p>
-
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Student Alumni Relations Cell</p>
-
     </div>
 </body>
 
