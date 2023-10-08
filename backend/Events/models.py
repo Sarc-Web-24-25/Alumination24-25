@@ -20,9 +20,10 @@ def process_image(image_file, name):
 class Event(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/event_images/')
+    image = models.ImageField(upload_to='event_images/')
     youtube_link = models.TextField(default="", blank=True)
     applicants = models.ManyToManyField(MyUser, related_name='applied_events', blank=True)
+    button_text = models.CharField(max_length=255, default="Register Now!")
 
     def __str__(self):
         return self.name

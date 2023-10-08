@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react';
 import { json } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import defaultProfile from './defaultProfile.png';
 
 // Define a custom hook for managing the user profile data
 function useProfile() {
   const [profileData, setProfileData] = useState({
-    "profile_pic": null,
+    "profile_pic": defaultProfile,
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [url, setUrl] = useState(null);
+  const [url, setUrl] = useState(defaultProfile);
 
   const userData = localStorage.getItem('userData');
 
@@ -75,9 +76,22 @@ function useProfile() {
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to update profile data');
-      }else{
+      if (response.status === 404 || response.status === 400) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: response.data.error,
+        })
+      }
+      else if(response.status === 203){
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Please fill all the fields',
+        })
+      }
+      
+      else{
         Swal.fire({
           icon: 'success',
           title: 'Profile updated successfully',
@@ -88,9 +102,6 @@ function useProfile() {
           }
         })
       }
-
-      
-
 
     } catch (error) {
       setError(error);

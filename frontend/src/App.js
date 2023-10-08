@@ -23,6 +23,7 @@ import Logout from "./components/Authentication/Logout";
 import ForgotPassword from "./components/Authentication/forgotPassword";
 import VerifyEmailView from "./components/VerifyEmailView";
 import ChangePasswordView from "./components/ChangePasswordView";
+import EventIndividual from "./components/Home/EventIndividual";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>
         <Route path="/events" element={<Events />} exact={true} />
+        <Route path="/:key" element={<EventIndividual />} exact={true} />
         <Route path="/schedule" element={<Schedule />} exact={true} />
         <Route path="/logout" element={<Logout />} exact={true} />
         <Route path="/forgotPassword" element={<ForgotPassword />} exact={true} />

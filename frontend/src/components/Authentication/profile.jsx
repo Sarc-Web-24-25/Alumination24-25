@@ -44,7 +44,7 @@ const styles = {
         padding: '0', // Remove default padding
         overflow: 'scroll', // Add scroll to the container
         alignItems: 'center', // Horizontally center the items
-        paddingTop: '5vh',
+        paddingTop: '8vh',
     },
 
     profileformArea: {
@@ -111,7 +111,7 @@ const styles = {
         borderRadius: '1rem',
         outline: 'none',
         backgroundColor: "rgb(189 212 231 / 65%)",
-
+        paddingLeft: '15px',
         color: "#000",
         fontSize: '20px'
     },
@@ -139,7 +139,6 @@ const styles = {
         border: 'none',
         alignItems: 'center',
         borderRadius: '50px',
-
         color: '#FFF',
         fontSize: '16px',
     },
@@ -400,14 +399,18 @@ function Profile() {
 
     const [edit, setEdit] = useState(false);
 
+    const userData = JSON.parse(localStorage.getItem('userData'))
+
+    console.log("here is the user data")
+
     return (
         <div style={styles.mainContainer}>
             <div className="profileform-area" style={styles.profileformArea}>
                 <div className="heading-container" style={styles.headingContainer}>
-                    User Profile
-                    <div onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)} onClick={handleImageEdit} className={`user-profile ${edit && "editing"}`}>
-                        {url && <img src={url} className="profile-picture" alt="profile pic" />}
-                        {edit && <div style={{ position: "absolute", color: "black" }}>Edit</div>}
+                    {userData.is_alum ? "Alum Profile" : "User Profile"}
+                    <div style={{ backgroundColor: "black" }} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)} onClick={handleImageEdit} className={`user-profile ${edit && "editing"}`}>
+                        {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={url} className="profile-picture" alt="profile pic" />}
+                        {edit && <div style={{ position: "absolute", color: "black", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
                     </div>
                     <input
                         type="file"
@@ -419,7 +422,7 @@ function Profile() {
                 </div>
 
                 <div className="profileform-container" style={styles.formContainer}>
-                    <div className="pinfo-constituents" style={styles.constituents}>
+                    {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
                         <input
                             id="rollno"
@@ -429,7 +432,7 @@ function Profile() {
                             onChange={handleChange}
                             style={styles.input}
                         />
-                    </div>
+                    </div>}
                     <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
                         <input
@@ -532,7 +535,7 @@ function Profile() {
                         </select>
                     </div>
 
-                    <div className="pinfo-constituents" style={styles.constituents}>
+                    {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
                         <label htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
                         <input
                             id="hostel"
@@ -543,7 +546,7 @@ function Profile() {
                             style={styles.input}
                             required
                         />
-                    </div>
+                    </div>}
 
 
                 </div>

@@ -1,43 +1,11 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
 
-// function EventList() {
-//     const [events, setEvents] = useState([]);
-
-//     useEffect(() => {
-//         axios.get('http://localhost:8000/api/events/')
-//             .then((response) => {
-//                 setEvents(response.data);
-//                 console.log()
-//             })
-//             .catch((error) => {
-//                 console.error(error);
-//             });
-//     }, []);
-
-//     return (
-//         <div>
-//             <h2>Event List</h2>
-//             <ul>
-//                 {events.map((event) => (
-//                     <li key={event.id}>
-//                         <h3>{event.name}</h3>
-//                         <p>{event.description}</p>
-//                         <img src={event.image} alt={event.name} />
-//                     </li>
-//                 ))}
-//             </ul>
-//         </div>
-//     );
-// }
-
-// export default EventList;
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RegistrationForm from './RegistrationForm';
 import "../Home/all.css"
 import topImage from "./bgimg/events_title.png"
 import eventimage from "./bgimg/cfc.png"
+import YouTube from 'react-youtube';
 
 function EventList() {
     const [events, setEvents] = useState([]);
@@ -45,7 +13,7 @@ function EventList() {
 
     useEffect(() => {
         axios
-            .get('http://localhost:8000/api/events/')
+            .get('api/events/')
             .then((response) => {
                 setEvents(response.data);
             })
@@ -54,10 +22,7 @@ function EventList() {
             });
     }, []);
 
-    const handleRegisterClick = (eventId) => {
-        setSelectedEventId(eventId);
-    };
-
+   
     return (
         <div className="event-list-container">
             <div className="top-section">
@@ -70,13 +35,12 @@ function EventList() {
                         <li key={event.id} className="event-list-item">
                             <div className="event-image">
                                 {/* <img src={event.image} alt={event.name} className="event-image" /> */}
-                                <img src={eventimage} alt={event.name} className="event-image" />
+                                <img src={`http://localhost:8000${event.image}`} alt={event.name} className="event-image" />
                             </div>
                             <div className="event-info">
                                 <h3 className="event-title">{event.name}</h3>
                                 <p className="event-description">{event.description}</p>
-                                <button onClick={() => handleRegisterClick(event.id)} className="register-button">Register Here</button>
-                                {selectedEventId === event.id && <RegistrationForm eventId={event.id} />}
+                                <a href={`/${event.id}`}><button className="register-button">Know More</button></a>
                             </div>
                         </li>
                     ))}

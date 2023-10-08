@@ -274,3 +274,9 @@
 .editing{
     opacity: 0.5;
 }
+
+.submitButton:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: #000 !important;
+}
