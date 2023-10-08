@@ -5,7 +5,7 @@ WORKDIR /backend/
 RUN pip install --upgrade pip
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
-COPY poetry.lock pyproject.toml ./
+COPY pyproject.toml ./
 RUN poetry install --no-dev
 COPY wsgi-entrypoint.sh ./
 COPY . ./
