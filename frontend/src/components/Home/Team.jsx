@@ -1,5 +1,6 @@
 import React from 'react';
 import './Team.css'; // Import your CSS file
+import Footers from './Footer';
 
 const TeamPage = () => {
     return (
@@ -16,6 +17,7 @@ const TeamPage = () => {
                     <p>Prerna Agarwal</p>
                 </div>
             </div>
+            <h2> Core Team Members</h2>
             <div className="team-members">
                 <div className='title'>
                     <h2>ASMP</h2>
@@ -128,136 +130,9 @@ const TeamPage = () => {
                 </div>
                 </div>
             </div>
+            <Footers className="footer" />
         </div>
     );
 };
 
 export default TeamPage;
-
-// import React from 'react';
-// import './Team.css'; // Import your CSS file
-
-// const TeamPage = () => {
-//     return (
-//         <div className="team-page">
-//             <h1>Our Team</h1>
-//             <div className="horizontal-scroll">
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="prerna" />
-//                         <p>Prerna Agarwal</p>
-//                         <p>Overall Coordinator</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="aastha" />
-//                         <p>Aastha Patel</p>
-//                         <p>Overall Coordinator</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="aastha" />
-//                         <p>Aastha Patel</p>
-//                         <p>Overall Coordinator</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="sancheti" />
-//                         <p>Aastha Sancheti</p>
-//                         <p>ASMP Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="priyaank" />
-//                         <p>Priyaank Sheth</p>
-//                         <p>ASMP Core Team Member</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="himanshu" />
-//                         <p>Himanshu Nagar</p>
-//                         <p>Design Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="jay" />
-//                         <p>Jay Arora</p>
-//                         <p>Design Core Team Member</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="kinjal" />
-//                         <p>Kinjal Sao</p>
-//                         <p>Events Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="aniruddh" />
-//                         <p>Aniruddh Goyal</p>
-//                         <p>Events Core Team Member</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="agrajah" />
-//                         <p>Agrajah Bhobe</p>
-//                         <p>HDA Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="garv" />
-//                         <p>Grav Gupta</p>
-//                         <p>HDA Core Team Member</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="shounak" />
-//                         <p>Shounak Dewoolkar</p>
-//                         <p>Marketing Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="vishal" />
-//                         <p>Vishal Kumar</p>
-//                         <p>Marketing Core Team Member</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="priyanshi" />
-//                         <p>Priyanshi Garg</p>
-//                         <p>Media & PR Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="vaibhavi" />
-//                         <p>Vaibhavi Shinde</p>
-//                         <p>Media & PR Core Team Member</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="sanket" />
-//                         <p>Sanket Bafna</p>
-//                         <p>Operations Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="nakul" />
-//                         <p>Nakul Bagrecha</p>
-//                         <p>Operations Core Team Member</p>
-//                     </div>
-//                 </div>
-//                 <div className="team-column">
-//                     <div className="team-member">
-//                         <img className="pranita" />
-//                         <p>Pranita Randive</p>
-//                         <p>Web Core Team Member</p>
-//                     </div>
-//                     <div className="team-member">
-//                         <img className="akash" />
-//                         <p>Akash Banger</p>
-//                         <p>Web Core Team Member</p>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default TeamPage;

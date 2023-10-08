@@ -15,6 +15,7 @@ import image12 from './bgimg/mail4.jpg';
 import image13 from './bgimg/mailbg.jpg';
 import image14 from './bgimg/default.jpg';
 import image15 from './bgimg/gallery.jpg';
+import Footers from './Footer';
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState(0);
@@ -39,7 +40,7 @@ const Gallery = () => {
     };
 
     return (
-        <div className="gallery-container">
+        <><div className="gallery-container">
             <div className="center-image">
                 <img src={images[selectedImage]} alt={`Image ${selectedImage + 1}`} />
             </div>
@@ -51,8 +52,7 @@ const Gallery = () => {
                             src={image}
                             alt={`Image ${index + 1}`}
                             className={selectedImage === index ? 'active' : ''}
-                            onClick={() => handleImageClick(index)}
-                        />
+                            onClick={() => handleImageClick(index)} />
                     ))}
                 </div>
             </div>
@@ -62,7 +62,7 @@ const Gallery = () => {
             <button onClick={handleNext} className="nav-button">
                 Next &gt;
             </button>
-        </div>
+        </div><Footers /></>
     );
 };
 
