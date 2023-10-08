@@ -1,0 +1,33 @@
+version: '2.2'
+
+services:
+  aluminationbackend:
+    restart: unless-stopped
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8012:8000"
+    entrypoint: /Backend/wsgi-entrypoint.sh
+    volumes:
+      - ./Backend:/Backend/
+    expose:
+      - 8000
+    networks:
+      - mynetwork
+  
+
+  aluminationfrontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+    volumes:
+      - ./Frontend:/Frontend
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    name: yearbook23_mynetwork
