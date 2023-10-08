@@ -19,7 +19,7 @@ def process_image(image_file, id):
     return File(output)
 
 class MyUser(AbstractUser):
-    is_alum = models.BooleanField(blank=False)
+    is_alum = models.BooleanField(default=False)
 
 
 class Profile(models.Model):
