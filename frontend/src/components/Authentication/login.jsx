@@ -4,19 +4,26 @@ import React, { useState } from 'react';
 import bg from "./bglogin.png"
 import useLogin from '../../hooks/useLogin';
 import { Navigate } from 'react-router-dom';
+// import loginSound from '../Home/bgimg/background-audio.mp3';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailtype, setEmailType] = useState('@iitb.ac.in');
-
+  // const audio = new Audio(loginSound);
 
   const { formData, setFormData, error, success, handleInputChange, login } = useLogin();
+  // const playLoginSound = () => {
+  //   audio.play();
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormData({ ...formData, username: email + emailtype });
     login();
+
+    // // Play the login sound
+    // playLoginSound();
   };
 
   const handleEmailChange = (event) => {

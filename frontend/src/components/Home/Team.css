@@ -1,15 +1,18 @@
-.team-page {
-  background-image: url('./bgimg/teambg.png'); /* Replace 'your_background_image.jpg' with the path to your background image */
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center center;
-  padding: 0px;
-  text-align: center;
-  /* Add additional background styling as needed */
-  overflow-y: auto;
+/* .team-page {
+    background-image: url('./bgimg/teambg.png');
+    
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center center;
+    padding: 0px;
+    text-align: center;
+   
+    overflow-y: auto;
+    height: 100vh;
+    overflow: scroll !important;
 }
 
-.team-page h1{
+.team-page h1 {
     color: rgb(248, 221, 199);
     font-family: 'Inknut Antiqua';
     font-size: 60px;
@@ -19,175 +22,435 @@
 .horizontal-scroll {
     display: flex;
     overflow-x: auto;
-    /* Enable horizontal scrolling */
+   
     white-space: nowrap;
-    /* Prevent line breaks */
+   
     padding: 10px;
-    /* Optional padding for spacing */
+   
 }
 
 .team-column {
     flex-shrink: 0;
-    /* Prevent columns from shrinking */
+   
     margin-right: 5%;
     margin-left: 10%;
-    /* Optional margin between columns */
+    
     text-align: center;
 }
 
 .team-member {
     margin-bottom: 0px;
-    /* Optional margin between team members */
+   
 }
 
-.team-member p{
+.team-member p {
     color: rgb(255, 209, 171);
     font-family: 'Inknut Antiqua';
     font-size: 20px;
+    line-height: 0.7;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
-.prerna{
-    width: 250px;
-    height: 250px;
+.prerna {
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+   
 }
 
 .aastha {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+   
+}
+
+.sancheti {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+   
+}
+
+.priyaank {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+   
+}
+
+.kinjal {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+}
+    
+
+.aniruddh {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+    
+}
+
+.garv {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+   
+}
+
+.agrajah {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+   
+}
+
+.sanket {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+  
+}
+
+.nakul {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+    
+}
+
+.shounak {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+    
+}
+
+.vishal {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+    
+}
+
+.vaibhavi {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+   
+}
+
+.priyanshi {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+  
+}
+
+.jay {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+    
+}
+
+.himanshu {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+   
+}
+
+.pranita {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+    
+}
+
+.akash {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+   
+} */
+
+.team-container {
+    text-align: center;
+    padding: 20px;
+    background-image: url('./bgimg/teambg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center center;
+    height: 100vh;
+    overflow: scroll !important;
+    padding-bottom: 10vh;
+}
+
+.top-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 30vw;
+}
+
+.top-images img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.team-member img{
+    margin: 0 50px ;
+}
+
+.left-column,
+.right-column {
+    
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.team-member p {
+    font-weight: bold;
+}
+
+.title p {
+    font-family: 'Inknut Antiqua';
+    color: #F4DEA8;
+    font-size: 20px;
+}
+
+.title h2{
+    font-family: 'Inknut Antiqua';
+        color: #F4DEA8;
+        font-size: 30px;
+}
+
+.team-container h1{
+    font-family: 'Inknut Antiqua';
+        color: #F4DEA8;
+        font-size: 50px;
+        font-weight: 600;
+}
+
+.team-container h2 {
+    font-family: 'Inknut Antiqua';
+    color: #F4DEA8;
+    font-size: 30px;
+}
+
+.OC p{
+font-family: 'Inknut Antiqua';
+    color: #F4DEA8;
+    font-size: 25px;
+    font-weight: 200;
+}
+.prerna {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+
+}
+
+.aastha {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./bgimg/default.jpg');
+
 }
 .sancheti {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .priyaank {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .kinjal {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
 }
+
+
 .aniruddh {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .garv {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .agrajah {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .sanket {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .nakul {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .shounak {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .vishal {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .vaibhavi {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .priyanshi {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .jay {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .himanshu {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .pranita {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }
+
 .akash {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
-    /* Your background image styles here */
+
 }

@@ -11,8 +11,17 @@ import smoke2 from "./bgimg/smoke2.png";
 import smoke3 from "./bgimg/smoke3.png";
 import counter from "./bgimg/counter.png";
 import feather from "./bgimg/feather.png";
-import frame from "./bgimg/frame.png";
+import sp1 from "./bgimg/sp1.png"
+import sp2 from "./bgimg/sp2.jpg"
+import sp3 from "./bgimg/sp3.jpg"
+import sp4 from "./bgimg/sp4.png"
+import sp5 from "./bgimg/sp5.png"
 import glass from "./bgimg/glass.png";
+import nandan from "./bgimg/nandan.png";
+import bhavish from "./bgimg/bhavish.png";
+import lalit from "./bgimg/lalit.png";
+import nitesh from "./bgimg/nitesh.png";
+import bharat from "./bgimg/bharat.png";
 import '../Home/all.css';
 import CountUp from "react-countup";
 import { useState } from "react";
@@ -62,14 +71,16 @@ export default function Home() {
       height: "800px",
       marginLeft: "550px",
       marginTop: "-900px",
+      opacity: "0"
 
    };
    const imgstyle5 = {
       height: "700px",
-      marginLeft: "950px",
+      marginLeft: "60px",
 
 
    };
+
    const textstyle = {
       color: "#FFE500",
       fontSize: "70px",
@@ -98,7 +109,7 @@ export default function Home() {
       // Adjust the child element width as needed
       backgroundImage: `url(${f1})`,
       height: "100vh",
-      width: "8000px",
+      width: "auto",
       backgroundPosition: 'center',
       margin: "0px",
       display: 'flex',
@@ -107,7 +118,7 @@ export default function Home() {
       //  justifyContent: 'space-evenly',
       backgroundImage: `url(${f1})`,
       height: "100vh",
-      width: "8000px",
+      // width: "7050px",
       backgroundPosition: 'center',
       margin: "0px",
       display: 'flex',
@@ -131,6 +142,7 @@ export default function Home() {
       alignItems: 'center',
       justifyContent: 'center',
       marginLeft: "-600px",
+
    };
    const hcontain = {
 
@@ -151,21 +163,54 @@ export default function Home() {
       margin: "2px",
    };
    const frame1 = {
-      width: "520px",
+      width: "170px",
       height: "220px",
       borderRadius: "15px",
-      backgroundRepeat: "no-repeat",
-      backgroundColor: "#020000",
-      backgroundImage: `url(${frame})`,
-      backgroundPosition: "start",
-      backgroundSize: "contain",
-      display: "flex", // Add flex display
+      display: "flex",
+      flexDirection: "column", // Add flex display
       alignItems: "center", // Center vertically
       justifyContent: "center", // Center horizontally
-      opacity: "0.8",
       margin: "30px",
       marginBottom: "5px",
-      marginTop: "1px",
+      marginTop: "20px",
+   };
+   const frame11 = {
+      width: "170px",
+      height: "220px",
+      borderRadius: "15px",
+      display: "flex",
+      flexDirection: "column", // Add flex display
+      alignItems: "center", // Center vertically
+      justifyContent: "center", // Center horizontally
+      margin: "30px",
+      marginBottom: "5px",
+      marginTop: "-15px",
+      marginLeft: "210px"
+   };
+   const frame12 = {
+      width: "170px",
+      height: "220px",
+      borderRadius: "15px",
+      display: "flex",
+      flexDirection: "column", // Add flex display
+      alignItems: "center", // Center vertically
+      justifyContent: "center", // Center horizontally
+      margin: "30px",
+      marginBottom: "5px",
+      marginTop: "-15px",
+      marginRight: "210px"
+   };
+   const frame2 = {
+      width: "280px",
+      height: "280px",
+      borderRadius: "15px",
+      display: "flex",
+      flexDirection: "column",// Add flex display
+      alignItems: "center", // Center vertically
+      justifyContent: "space-evenly", // Center horizontally
+      margin: "30px",
+      marginBottom: "1px",
+      marginTop: "-10px",
    };
    const clock1Style = {
       width: "300px",
@@ -200,28 +245,25 @@ export default function Home() {
                      <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
                   </div>
                   <img src={ig1} style={imgstyle} alt="" />
-                  <div >
-                     {/* <ScrollTrigger onEnter={()=>setcounterOn(true)} onExit={()=>setcounterOn(false)} >
-              <h1 style={textstyle}>
-               {counterOn && <CountUp start={0} end={1000} duration={5} delay={0} />} +</h1>
-               </ScrollTrigger> */}
+                  <div style={{ marginTop: "-30px" }} >
 
-                     <div style={hcontain}><img src={glass} style={imgstyle4} alt="" /> <span style={textstyle3}> NOTABLE ALUMNI </span> <img src={glass} style={imgstyle4} alt="" /></div>
+
+                     <div style={hcontain}><img src={glass} style={imgstyle4} alt="" /> <span style={textstyle3}> PAST SPEAKERS </span> <img src={glass} style={imgstyle4} alt="" /></div>
                      <div style={hcontain}>
-                        <div style={frame1}></div>
-                        <div style={frame1}></div>
-                        <div style={frame1}></div>
+                        <div style={frame1}> <img src={nandan} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Nandan Nilekani</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Co-Founder Infosys</span></div>
+                        <div style={frame1}> <img src={bhavish} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Bhavish Agrawal</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>CEO OLA</span></div>
+                        <div style={frame1}> <img src={lalit} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Lalit Keshre</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>CEO Groww</span></div>
                      </div>
 
                      <div style={hcontain}>
-                        <div style={frame1}></div>
-                        <div style={frame1}></div>
+                        <div style={frame11}> <img src={nitesh} alt="" style={{ width: "170px", height: "220px", }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Nitesh Tiwari</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Film Director</span></div>
+                        <div style={frame12}> <img src={bharat} alt="" style={{ width: "170px", height: "220px", }} /> <span style={{ color: "#FFD6A0", fontSize: "22px", marginBottom: "-10px" }}>Bharat Desai</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Chairman,Syntel</span></div>
 
                      </div>
 
                      <img src={feather} style={imgstyle3} alt="" />
                   </div>
-                  <img className="wobble-hor-top" src={clock} style={imgstyle1} alt="" />     
+                  <img className="wobble-hor-top" src={clock} style={imgstyle1} alt="" />
                   <img src={smoke1} style={imgstyle2} alt="" />
                   <img src={smoke2} style={imgstyle2} alt="" />
                   <img src={smoke} style={imgstyle2} alt="" />
@@ -267,6 +309,53 @@ export default function Home() {
 
                      </div>
                   </div>
+                  <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
+                     <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
+                     <div style={hcontain}>
+                        <div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Title Sponsor</span></div>
+                        {/* <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>sun</span></div>
+                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>clock</span></div> */}
+                     </div>
+
+                     <div style={hcontain}>
+                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Gold Sponsor</span></div>
+                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Silver Sponsor</span></div>
+
+                     </div>
+
+
+
+                  </div>
+
+                  <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
+                     <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
+                     <div style={hcontain}>
+                        <div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Workshop Partner</span></div>
+                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Travel Partner</span></div>
+                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Travel Partner</span></div>
+                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Social Media Partner</span></div>
+                     </div>
+
+                     <div style={hcontain}>
+                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Women Empowerment Partner</span></div>
+                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Certificate Partner</span></div>
+
+                     </div>
+
+
+
+                  </div>
+                  <div style={{ marginTop: "-300px", marginLeft: "70px" }}>
+                     <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
+
+                     <div style={hcontain}>
+                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Gold Hues</span></div>
+                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Mirror Now</span></div>
+
+                     </div>
+                  </div>
+
+
                   <img src={women} style={imgstyle5} alt="" />
                </div>
             </div>
