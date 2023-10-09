@@ -178,7 +178,7 @@ function Signup() {
 
       <h1 style={headingStyle}>REGISTER</h1>
       {error && <p className="error">{error}</p>}
-      {success && <p style={{color: "green"}} className="error">Signup successful, Please check your webmail for verification link!</p>}
+      {success && <p style={{color: "green"}} className="error">{`Signup successful, Please check your ${emailtype === "@gmail.com" ? "Gmail": "Webmail"} for verification link!`}</p>}
 
       <div style={{ display: "flex", width: "300px" }}>
           <input
