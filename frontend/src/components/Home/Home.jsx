@@ -324,9 +324,9 @@ export default function Home() {
                         </div>
                      </div>
 
-                     <div style={aboutus}>
-                        <h1 style={textstyle}>ABOUT US</h1>
-                        <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
+                     <div id="about" style={aboutus}>
+                           <h1 style={textstyle}>ABOUT US</h1>
+                           <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
                      </div>
                      <img src={ig1} style={imgstylegod} alt="" />
                      <div style={{ marginTop: "-30px" }} >
@@ -393,6 +393,152 @@ export default function Home() {
 
                         </div>
                      </div>
+                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px" }}>
+                        <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
+                        <div style={hcontain}>
+                           <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
+                           {/* <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>sun</span></div>
+      <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>clock</span></div> */}
+                        </div>
+
+                        <div style={hcontain}>
+                           <a href="https://www.bankofbaroda.in/"><div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Sponsor</span></div></a>
+                           <a href="https://www.cdslindia.com/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
+
+                        </div>
+
+
+
+                     </div>
+
+                     <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
+                        <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
+                        <div style={hcontain}>
+                           <a href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
+                           <a href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                           <a href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                           <a href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
+                        </div>
+
+                        <div style={hcontain}>
+                           <a href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
+                           <a href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
+                        </div>
+
+
+
+                     </div>
+                     <div style={{ marginTop: "-300px", marginLeft: "70px" }}>
+                        <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
+
+                        <div style={hcontain}>
+                           <a href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Hues</span></div></a>
+                           <a href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
+                        </div>
+                     </div>
+
+
+
+                     <img src={women} style={imgstyle5} alt="" />
+                  </div>
+               </div>
+            </ScrollComponent> :
+
+
+
+
+
+
+
+
+
+
+               ///phoneeeeeeeeeee
+
+
+
+
+
+
+
+
+
+               <div style={childStyle}>
+
+                  <div className="bgstyle" style={bgstyle}>
+
+                     <img src={logo} style={imgstyle} alt="" />
+                     <img src={god} style={imgstylegod} alt="" />
+
+                     <div style={aboutus}>
+                        <h1 style={textstyle}>ABOUT US</h1>
+                        <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
+                     </div>
+                     <img src={ig1} style={imgstylegod} alt="" />
+                     <div style={{ marginTop: "-30px" }} >
+
+
+                        <div style={hcontain}><img src={glass} style={imgstyle4} alt="" /> <span style={textstyle3}> PAST SPEAKERS </span> <img src={glass} style={imgstyle4} alt="" /></div>
+                        <div style={hcontain}>
+                           <div style={frame1}> <img src={nandan} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Nandan Nilekani</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Co-Founder Infosys</span></div>
+                           <div style={frame1}> <img src={bhavish} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Bhavish Agrawal</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>CEO OLA</span></div>
+                           <div style={frame1}> <img src={lalit} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Lalit Keshre</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>CEO Groww</span></div>
+                        </div>
+
+                        <div style={hcontain}>
+                           <div style={frame11}> <img src={nitesh} alt="" style={{ width: "170px", height: "220px", }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Nitesh Tiwari</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Film Director</span></div>
+                           <div style={frame12}> <img src={bharat} alt="" style={{ width: "170px", height: "220px", }} /> <span style={{ color: "#FFD6A0", fontSize: "22px", marginBottom: "-10px" }}>Bharat Desai</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Chairman,Syntel</span></div>
+
+                        </div>
+
+                        <img src={feather} style={imgstyle3} alt="" />
+                     </div>
+                     <img className="wobble-hor-top" src={clock} style={imgstyle1} alt="" />
+                     <img src={smoke1} style={imgstyle2} alt="" />
+                     <img src={smoke2} style={imgstyle2} alt="" />
+                     <img src={smoke} style={imgstyle2} alt="" />
+                     <img src={smoke3} style={imgstyle2} alt="" />
+
+                     <div style={contain}>
+                        <div style={hcontain}>
+                           <div style={clock1Style}>
+                              <div style={clock1Style}>
+                                 <span style={textstyle2}>1000 +</span>
+                              </div>
+                           </div>
+
+                           <div style={clock1Style}>
+                              <div style={clock1Style}>
+                                 <span style={textstyle2}>1000 +</span>
+                              </div>
+                           </div>
+                           {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+         <div style={clock1}>
+            <span style={textstyle2}>
+               {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+            </span>
+         </div>
+      </div> */}
+
+                        </div>
+                        <div style={hcontain}>
+                           <div >
+                              <div style={clock1}>
+                                 <span style={textstyle2}>
+                                    {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+                                 </span>
+                              </div>
+                           </div>
+                           {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+         <div style={clock1}>
+            <span style={textstyle2}>
+               {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
+            </span>
+         </div>
+      </div> */}
+
+                        </div>
+                     </div>
                      <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
                         <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
@@ -438,155 +584,9 @@ export default function Home() {
                      </div>
 
 
-
                      <img src={women} style={imgstyle5} alt="" />
                   </div>
                </div>
-            </ScrollComponent> :
-            
-
-
-
-
-
-            
-            
-            
-            
-            ///phoneeeeeeeeeee
-            
-
-
-
-
-
-            
-            
-            
-            <div style={childStyle}>
-
-               <div className="bgstyle" style={bgstyle}>
-
-                  <img src={logo} style={imgstyle} alt="" />
-                  <img src={god} style={imgstylegod} alt="" />
-
-                  <div style={aboutus}>
-                     <h1 style={textstyle}>ABOUT US</h1>
-                     <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
-                  </div>
-                  <img src={ig1} style={imgstylegod} alt="" />
-                  <div style={{ marginTop: "-30px" }} >
-
-
-                     <div style={hcontain}><img src={glass} style={imgstyle4} alt="" /> <span style={textstyle3}> PAST SPEAKERS </span> <img src={glass} style={imgstyle4} alt="" /></div>
-                     <div style={hcontain}>
-                        <div style={frame1}> <img src={nandan} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Nandan Nilekani</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Co-Founder Infosys</span></div>
-                        <div style={frame1}> <img src={bhavish} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Bhavish Agrawal</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>CEO OLA</span></div>
-                        <div style={frame1}> <img src={lalit} alt="" style={{ width: "170px", height: "220px", marginTop: "30px" }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Lalit Keshre</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>CEO Groww</span></div>
-                     </div>
-
-                     <div style={hcontain}>
-                        <div style={frame11}> <img src={nitesh} alt="" style={{ width: "170px", height: "220px", }} /> <span style={{ color: "#FFD6A0", fontSize: "23px", marginBottom: "-10px" }}>Nitesh Tiwari</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Film Director</span></div>
-                        <div style={frame12}> <img src={bharat} alt="" style={{ width: "170px", height: "220px", }} /> <span style={{ color: "#FFD6A0", fontSize: "22px", marginBottom: "-10px" }}>Bharat Desai</span><span style={{ color: "#FFD6A0", fontSize: "18px", marginTop: "2px" }}>Chairman,Syntel</span></div>
-
-                     </div>
-
-                     <img src={feather} style={imgstyle3} alt="" />
-                  </div>
-                  <img className="wobble-hor-top" src={clock} style={imgstyle1} alt="" />
-                  <img src={smoke1} style={imgstyle2} alt="" />
-                  <img src={smoke2} style={imgstyle2} alt="" />
-                  <img src={smoke} style={imgstyle2} alt="" />
-                  <img src={smoke3} style={imgstyle2} alt="" />
-
-                  <div style={contain}>
-                     <div style={hcontain}>
-                        <div style={clock1Style}>
-                           <div style={clock1Style}>
-                              <span style={textstyle2}>1000 +</span>
-                           </div>
-                        </div>
-
-                        <div style={clock1Style}>
-                           <div style={clock1Style}>
-                              <span style={textstyle2}>1000 +</span>
-                           </div>
-                        </div>
-                        {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
-         <div style={clock1}>
-            <span style={textstyle2}>
-               {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
-            </span>
-         </div>
-      </div> */}
-
-                     </div>
-                     <div style={hcontain}>
-                        <div >
-                           <div style={clock1}>
-                              <span style={textstyle2}>
-                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
-                              </span>
-                           </div>
-                        </div>
-                        {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
-         <div style={clock1}>
-            <span style={textstyle2}>
-               {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
-            </span>
-         </div>
-      </div> */}
-
-                     </div>
-                  </div>
-                  <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
-                     <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
-                     <div style={hcontain}>
-                        <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
-                        {/* <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>sun</span></div>
-      <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>clock</span></div> */}
-                     </div>
-
-                     <div style={hcontain}>
-                        <a href="https://www.bankofbaroda.in/"><div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Sponsor</span></div></a>
-                        <a href="https://www.cdslindia.com/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
-
-                     </div>
-
-
-
-                  </div>
-
-                  <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
-                     <div style={hcontain}> <span style={textstyle}> OUR  </span></div>
-                     <div style={hcontain}>
-                        <a href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
-                        <a href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
-                        <a href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
-                        <a href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
-                     </div>
-
-                     <div style={hcontain}>
-                        <a href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
-                        <a href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
-                     </div>
-
-
-
-                  </div>
-                  <div style={{ marginTop: "-300px", marginLeft: "70px" }}>
-                     <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
-
-                     <div style={hcontain}>
-                        <a href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Hues</span></div></a>
-                        <a href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
-                     </div>
-                  </div>
-
-
-                  <img src={women} style={imgstyle5} alt="" />
-               </div>
-            </div>
          }
       </div>
    )

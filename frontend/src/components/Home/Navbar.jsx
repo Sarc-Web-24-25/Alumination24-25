@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,8 +16,35 @@ export default function CustomNavbar() {
     fontSize: "25px",
     backgroundColor: "#2B1815",
     fontFamily: 'Inknut Antiqua',
-    padding: '0 10%'
+    padding: '0 7%'
   };
+
+  const [currUrl, setCurrUrl] = useState(window.location.href);
+  const [thisOne, setThisOne] = useState(false);
+
+  useEffect(() => {
+    if(currUrl.includes("events") || currUrl.includes("profile") || currUrl.includes("logout") || currUrl.includes("gallery") || currUrl.includes("team") || currUrl.includes("signup") || currUrl.includes("login") || currUrl.includes("forgotPassword") || currUrl.includes("changePassword")) {
+      setThisOne(true);
+    }else{
+      setThisOne(false);
+    }
+  },[currUrl]);
+
+  const scrollToAbout = () => {
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
+  };
+  
+  const scrollToSponsors = () => {
+      const sponsorsSection = document.getElementById('sponsors');
+      if (sponsorsSection) {
+        sponsorsSection.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'center' });
+      }
+  };
+  
+
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -44,10 +71,10 @@ export default function CustomNavbar() {
       <Nav className="justify-content-center apna-nav">
         <Nav.Link href="/" style={text}>Home</Nav.Link>
         <Nav.Link href="/events" style={text}>Events</Nav.Link>
-        <Nav.Link href="/#about" style={text}>About</Nav.Link>
+        {!thisOne && <Nav.Link onClick={scrollToAbout} style={text}>About</Nav.Link>}
         <Nav.Link href="/team" style={text}>Team</Nav.Link>
         <Nav.Link href="/gallery" style={text}>Gallery</Nav.Link>
-        <Nav.Link href="/#sponsors" style={text}>Sponsors</Nav.Link>
+        {!thisOne && <Nav.Link onClick={scrollToSponsors} style={text}>Sponsors</Nav.Link>}
       </Nav>
       <Nav className="ms-auto">
         <div style={{ position: 'relative', marginRight: "10px" }}>
@@ -72,9 +99,9 @@ export default function CustomNavbar() {
               <NavDropdown.Item href="/profile" style={text}>
                 Profile
               </NavDropdown.Item>
-              <NavDropdown.Item className="not-apna-nav" href="/#about" style={text}>
+              {!thisOne && <NavDropdown.Item className="not-apna-nav" onClick={scrollToAbout} style={text}>
                 about
-              </NavDropdown.Item>
+              </NavDropdown.Item>}
               <NavDropdown.Item className="not-apna-nav" href="/events" style={text}>
                 Events
               </NavDropdown.Item>
@@ -84,9 +111,9 @@ export default function CustomNavbar() {
               <NavDropdown.Item className="not-apna-nav" href="/team" style={text}>
                 Team
               </NavDropdown.Item>
-              <NavDropdown.Item className="not-apna-nav" href="/#sponsors" style={text}>
+              { !thisOne && <NavDropdown.Item onClick={scrollToSponsors} className="not-apna-nav" href="/#sponsors" style={text}>
                 Sponsors
-              </NavDropdown.Item>
+              </NavDropdown.Item>}
               {
                 localStorage.getItem('userData') != null ? <NavDropdown.Item href="/logout" style={text}>Logout</NavDropdown.Item> : <>
                   <NavDropdown.Item href="/login" style={text}>
