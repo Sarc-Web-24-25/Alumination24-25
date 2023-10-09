@@ -6,9 +6,6 @@ function Logout() {
     const handleLogout = () => {
       localStorage.removeItem('userData');
       localStorage.removeItem('profileData');
-
-      // Reload the window
-      window.location.reload();
     };
 
     handleLogout();
