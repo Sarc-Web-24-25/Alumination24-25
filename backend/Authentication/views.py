@@ -211,12 +211,111 @@ SMTP_PORT = 587
 SMTP_USERNAME = "sarc@iitb.ac.in"
 SMTP_PASSWORD = "87638c40a92a794bc81b6de03e5ae86c"  # Replace with your SMTP password
 
-def send_mail(subject, userName, userEmail, isWelcome=False):
+def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isForgot=False, verificationToken=None, forgotToken=None):
     # Create the MIME message
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = SMTP_USERNAME
     msg["To"] = userEmail
+    
+    
+    forgotMail = f'''
+        <!DOCTYPE html>
+<html>
+
+<head>
+    <title>{subject}</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;">
+    <div class="container"
+        style="max-width: 600px; margin: 0 auto; padding: 40px; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+        <h1
+            style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">
+            Forgot Password</h1>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Dear User,</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Below is the link for reseting your password:</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            <a href="koitoroklo.sarc-iitb.org/verify/{forgotToken}"
+                style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
+                Email</a></p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            If you have any questions, please contact
+            our support team at <a style="text-decoration: none; color: rgb(71, 28, 6);"
+                href="mailto:alumination.sarc.iitb@gmail.com">alumination.sarc.iitb@gmail.com</a></p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Regards,</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Aastha Patel | Prerna Agrawal</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Overall Co-ordinators</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Student Alumni Relations Cell</p>
+    </div>
+</body>
+
+</html>
+    '''
+    
+    
+    verificationMail = f'''
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Alumination 2023 | SARC IIT Bombay</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;">
+    <div class="container"
+        style="max-width: 600px; margin: 0 auto; padding: 40px; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+        <h1
+            style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">
+            User Verification of Alumination 2023 | SARC IIT Bombay</h1>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Dear User,</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Thank you for signing up for Alumination. To complete your registration, please click the following link to
+            verify your email address:</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            <a href="koitoroklo.sarc-iitb.org/verify/{verificationToken}"
+                style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
+                Email</a></p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            If you did not sign up for Alumination, please ignore this email. If you have any questions, please contact
+            our support team at <a style="text-decoration: none; color: rgb(71, 28, 6);"
+                href="mailto:alumination.sarc.iitb@gmail.com">alumination.sarc.iitb@gmail.com</a></p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Regards,</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Aastha Patel | Prerna Agrawal</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Overall Co-ordinators</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Student Alumni Relations Cell</p>
+    </div>
+</body>
+
+</html>
+    '''
 
     # Create the HTML email content
     welcomeMail = f'''
@@ -248,6 +347,12 @@ def send_mail(subject, userName, userEmail, isWelcome=False):
     # Attach the HTML content
     if isWelcome:
         msg.attach(MIMEText(welcomeMail, "html"))
+        
+    elif isVerify:
+        msg.attach(MIMEText(verificationMail, "html"))
+    
+    elif isForgot:
+        msg.attach(MIMEText(forgotMail, "html"))
 
     # Create an SMTP connection and send the email
     try:
