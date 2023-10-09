@@ -102,7 +102,7 @@ function EventIndividual() {
                     <div className='main-event' style={{ width: "100vw", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
                         {event.youtube_link !== "" && <YouTube opts={opts} videoId={event.youtube_link}/>}
                         <div style={{ display: "flex", justifyContent: "center", flexDirection: event.youtube_link != "" ? "column" : "row", alignItems: "center" }}>
-                            <img style={{ marginRight: event.youtube_link === "" && "15vw" }} className='poster' src={`http://localhost:8000${event.image}`} alt="" />
+                            <img style={{ marginRight: event.youtube_link === "" && "15vw" }} className='poster' src={`https://koitoroklo.sarc-iitb.org${event.image}`} alt="" />
                             <div className='event-desc'>
                                 {event.description}
                                 <br />

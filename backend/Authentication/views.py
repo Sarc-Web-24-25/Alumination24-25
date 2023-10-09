@@ -219,7 +219,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     msg["Subject"] = subject
     msg["From"] = SMTP_USERNAME
     msg["To"] = userEmail
-    proxy = 'http://localhost:3000'
+    proxy = 'https://koitoroklo.sarc-iitb.org'
     
     
     forgotMail = f'''
