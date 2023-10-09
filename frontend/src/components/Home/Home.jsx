@@ -387,7 +387,7 @@ export default function Home() {
 
                         </div>
                      </div>
-                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px", marginLeft:"30vw"}}>
+                     <div id="sponsors" style={{marginTop: "-1vh", marginLeft:"25vw"}}>
                         <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
                            <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
@@ -405,7 +405,7 @@ export default function Home() {
 
                      </div>
 
-                     <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
+                     <div style={{ marginTop: "-1vh", marginLeft: "70px" }}>
                         <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
                         <div style={hcontain}>
                            <a href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
@@ -422,7 +422,7 @@ export default function Home() {
 
 
                      </div>
-                     <div style={{ marginTop: "-300px", marginLeft: "70px" }}>
+                     <div style={{ marginTop: "-20vh", marginLeft: "70px" }}>
                         <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
 
                         <div style={hcontain}>
