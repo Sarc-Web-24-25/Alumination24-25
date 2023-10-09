@@ -22,11 +22,13 @@ def get_tokens_for_user(user):
 
 def send_verification_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
+    send_mail(subject="Verify your email | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isWelcome=False, isVerify=True, isForgot=False, verificationToken=token.key)
     print(token)
     
     
 def send_forgot_password_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
+    send_mail(subject="Reset Password | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isWelcome=False, isVerify=False, isForgot=True, forgotToken=token.key)
     print(token)
 
 @permission_classes([permissions.AllowAny])
