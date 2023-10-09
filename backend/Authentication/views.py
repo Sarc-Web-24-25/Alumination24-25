@@ -219,6 +219,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     msg["Subject"] = subject
     msg["From"] = SMTP_USERNAME
     msg["To"] = userEmail
+    proxy = 'http://localhost:3000'
     
     
     forgotMail = f'''
@@ -243,7 +244,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             Below is the link for reseting your password:</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            <a href="koitoroklo.sarc-iitb.org/verify/{forgotToken}"
+            <a href="{proxy}/changePassword/{forgotToken}"
                 style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
                 Email</a></p>
         <p
@@ -293,7 +294,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             verify your email address:</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            <a href="koitoroklo.sarc-iitb.org/verify/{verificationToken}"
+            <a href="{proxy}/verify/{verificationToken}"
                 style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
                 Email</a></p>
         <p
@@ -325,7 +326,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
 <html>
 
 <head>
-    <title>Alumination 2023 | SARC IIT Bombay</title>
+    <title>{subject}</title>
 </head>
 
 <body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;">
@@ -333,7 +334,11 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
         <h1 style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">Welcome to Alumination 2023 | SARC IIT Bombay</h1>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Dear User,</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We hope this message finds you well and filled with excitement for the upcoming Alumination 2023 event! As the organizing team, we are thrilled to invite you to this extraordinary two-day fest that promises to be an unforgettable experience.</p>
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;"><a href="#" style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Explore Events</a></p>
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+        
+        <a href="{proxy}/events" style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Explore Events</a>
+        
+        </p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We look forward to welcoming you to Alumination 2023 and embarking on this enriching journey together. Get ready to Break The Ice, Learn from the Best, and Illuminate your path to success!</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Regards,</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Aastha Patel | Prerna Agrawal</p>

@@ -156,3 +156,6 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
+
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://localhost:8000', 'https://alumination.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org/']
