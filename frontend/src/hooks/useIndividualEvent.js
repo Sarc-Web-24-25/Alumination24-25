@@ -38,7 +38,9 @@ function useIndividualEvent() {
           text: "You have been registered successfully for the event",
           iconColor: "brown",
           background: `url(${letter})`,
-        });
+        }).then(() => {
+          window.location.reload();
+        } );
       })
       .catch((error) => {
          Swal.fire({

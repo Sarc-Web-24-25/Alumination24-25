@@ -58,7 +58,6 @@ class Event(models.Model):
     field_pref4 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     field_pref5 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     pref_date = models.CharField(max_length=255, default="", blank=True, choices=DATES.items())
-    
 
     def __str__(self):
         return self.name

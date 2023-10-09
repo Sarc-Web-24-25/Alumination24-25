@@ -65,10 +65,29 @@ function EventIndividual() {
 
 
 
+    const [regBox, setRegBox] = useState(false);
+    const [checkFields, setCheckFields] = useState(false);
+
+    const [pref1, setPref1] = useState("");
+    const [pref2, setPref2] = useState("");
+    const [pref3, setPref3] = useState("");
+
+    const [prefDate, setPrefDate] = useState("");
 
 
+    useEffect(() => {
+        if(pref1 && pref2 && pref3 && prefDate){
+            setCheckFields(true);
+        }else{
+            setCheckFields(false);
+        }
 
-    const handleRegisterClick = (eventId) => {
+    }, [pref1, pref2, pref3, prefDate]);
+
+
+    const handleRegisterClick = (eventId, isRegNeeded) => {
+
+        
 
         if (!userData) {
             Swal.fire({
@@ -84,11 +103,74 @@ function EventIndividual() {
                     window.location.href = "/login"
                 }
             })
-        } else {
+        }
 
-            register(eventId);
+        else if(isRegNeeded && !regBox){
+            setRegBox(true);
+            return;
+        }
+        
+        else {
+            if(checkFields){
+                register(eventId);
+            }else{
+                Swal.fire({
+                    title: 'Please fill all the fields',
+                    text: 'You need to fill all the fields to register for this event',
+                    icon: 'warning',
+                    confirmButtonText: 'OK',
+                    iconColor: 'brown',
+                    confirmButtonColor: 'brown',
+                    background: `url(${letter})`,
+                })
+            }
         }
     };
+
+
+
+    const FIELDS = {
+        "analytics": "Analytics",
+        "consult": "Consulting",
+        "finance": "Finance",
+        "software": "IT/Software",
+        "product": "Product Management",
+        "core": "Core Engineering",
+        "hr": "HR",
+    }
+    
+    
+    const DATES = {
+        "21": "21st October",
+        "22": "22nd October",
+        "both": "Both Works",
+    }
+
+
+    const fieldOptions = Object.keys(FIELDS).map((key) => {
+        return <option value={key}>{FIELDS[key]}</option>
+    });
+
+    const dateOptions = Object.keys(DATES).map((key) => {
+        return <option value={key}>{DATES[key]}</option>
+    });
+
+
+    const handlePref1Change = (e) => {
+        setPref1(e.target.value);
+    }
+
+    const handlePref2Change = (e) => {
+        setPref2(e.target.value);
+    }
+
+    const handlePref3Change = (e) => {
+        setPref3(e.target.value);
+    }
+
+    const handleDateChange = (e) => {
+        setPrefDate(e.target.value);
+    }
 
     return (
         <>
@@ -107,7 +189,25 @@ function EventIndividual() {
                                 {event.description}
                                 <br />
                                 <p style={{marginBottom: "0", color: "brown", fontWeight: "bold", fontSize:"120%"}}>{event.date}</p>
-                                <button disabled={true} onClick={() => handleRegisterClick(event.id)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity:"0.7", cursor:"not-allowed" }}>{event.button_text}</button>
+                                <div style={{display: regBox ? "flex": "none"}} className='fields-container'>
+                                    <select onChange={(e) => handlePref1Change(e)} className='field-input' value={pref1} name="" id="">
+                                        <option value="">Field Preference 1</option>
+                                        {fieldOptions}
+                                    </select>
+                                    <select onChange={(e) => handlePref2Change(e)} className='field-input'  value={pref2} name="" id="">
+                                        <option value="">Field Preference 2</option>
+                                        {fieldOptions}
+                                    </select>
+                                    <select onChange={(e) => handlePref3Change(e)} className='field-input'  value={pref3} name="" id="">
+                                        <option value="">Field Preference 3</option>
+                                        {fieldOptions}
+                                    </select>
+                                    <select onChange={(e) => handleDateChange(e)} className='field-input'  value={prefDate} name="" id="">
+                                        <option value="">Date Preference</option>
+                                        {dateOptions}
+                                    </select>
+                                </div>
+                                <button disabled={!event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: event.isLaunched && "0.7", cursor: event.isLaunched && "not-allowed" }}>{event.button_text}</button>
                             </div>
                         </div>
                     </div>

@@ -529,3 +529,21 @@ body {
   .link-sponsor-underline{
     text-decoration: none !important;
   }
+
+
+  .field-input{
+    width: 90% ;
+    background-color: #533838;
+    color: white;
+    padding: 2%;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .fields-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
