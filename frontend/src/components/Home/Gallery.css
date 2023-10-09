@@ -20,6 +20,7 @@
     object-fit: contain;
     scroll-snap-align: start;
     filter: brightness(1) !important;
+    border: 2px solid #fff;
 }
 
 .thumbnail-list-container {

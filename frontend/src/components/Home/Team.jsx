@@ -113,7 +113,7 @@ const TeamPage = () => {
                     </div>
                     <div className="team-member">
                         <img className='sanket' />
-                        <p>Sanket Bafna</p>
+                        <p>Sanket Bafana</p>
                     </div>
                 </div>
                 </div>

@@ -100,7 +100,7 @@ export default function CustomNavbar() {
                 Profile
               </NavDropdown.Item>
               {!thisOne && <NavDropdown.Item className="not-apna-nav" onClick={scrollToAbout} style={text}>
-                about
+                About
               </NavDropdown.Item>}
               <NavDropdown.Item className="not-apna-nav" href="/events" style={text}>
                 Events

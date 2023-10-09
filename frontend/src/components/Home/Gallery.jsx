@@ -15,6 +15,11 @@ import image12 from './bgimg/AL22.jpg';
 import image13 from './bgimg/AL23.jpg';
 import image14 from './bgimg/AL24.jpg';
 import image15 from './bgimg/AL15.jpg';
+import image16 from './bgimg/AL30.jpeg';
+import image17 from './bgimg/AL31.jpeg';
+import image18 from './bgimg/AL32.jpeg';
+import image19 from './bgimg/AL33.jpeg';
+import image20 from './bgimg/AL34.jpeg';
 import Footers from './Footer';
 import CursorAnimation from "./CursorAnimation"
 
@@ -23,7 +28,7 @@ const Gallery = () => {
 
     const images = [
         image1, image2, image3, image4, image5, image6, image7, image8, image9,
-        image10, image11, image12, image13, image14, image15
+        image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20
     ];
 
     const handleImageClick = (index) => {
