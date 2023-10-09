@@ -7,6 +7,7 @@ import topImage from "./bgimg/events_title.png"
 import eventimage from "./bgimg/cfc.png"
 import YouTube from 'react-youtube';
 
+import CursorAnimation from "./CursorAnimation"
 function EventList() {
     const [events, setEvents] = useState([]);
     const [selectedEventId, setSelectedEventId] = useState(null);
@@ -25,6 +26,7 @@ function EventList() {
    
     return (
         <div className="event-list-container">
+            <CursorAnimation />
             <div className="top-section">
                 <img src={topImage} alt="Top Image" className="top-image" />
                 <h1 className="top-title">EVENTS</h1>
