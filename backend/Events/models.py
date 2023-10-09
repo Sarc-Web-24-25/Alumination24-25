@@ -68,18 +68,18 @@ class Event(models.Model):
             self.image = process_image(self.image, self.name, "event_")
         super().save(*args, **kwargs)
         
-class OtherDetails:
+class OtherDetails(models.Model):
     field_pref1 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     field_pref2 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     field_pref3 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     field_pref4 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     field_pref5 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     pref_date = models.CharField(max_length=255, default="", blank=True, choices=DATES.items())
-    event = models.OneToOneField(Event, on_delete=models.CASCADE, related_name='other_details', null=True, blank=True)
-    user = models.OneToOneField(MyUser, on_delete=models.CASCADE, related_name='other_details', null=True, blank=True)
+    event = models.OneToOneField(Event, on_delete=models.CASCADE)
+    user = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.user.email + " - " + self.event.name
+        return self.user.username + " - " + self.event.name
     
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

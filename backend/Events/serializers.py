@@ -18,4 +18,6 @@ class OtherDetailsSerializer(serializers.Serializer):
     class Meta:
         model = OtherDetails
         fields = ('id', 'field_pref1', 'field_pref2', 'field_pref3', 'field_pref4','field_pref5', 'pref_date', 'event', 'user')
+    def create(self, validated_data):
+        return OtherDetails.objects.create(**validated_data)
         
