@@ -1,5 +1,5 @@
-from .models import Event
-from .serializers import EventSerializer
+from .models import Event, OtherDetails
+from .serializers import EventSerializer, OtherDetailsSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser
 from rest_framework.views import APIView
@@ -44,6 +44,14 @@ class EventList(APIView):
             return Response({"error": "You have not verified your account"}, status=status.HTTP_400_BAD_REQUEST)
         if user in event.applicants.all():
             return Response({"error": "You have already applied for this event"}, status=status.HTTP_400_BAD_REQUEST)
+        other_details = request.data['other_details']
+        other_details['event'] = id
+        other_details['user'] = request.user.id
+        serializer = OtherDetailsSerializer(data=other_details)
+        if serializer.is_valid():
+            serializer.save()
+        else:
+            return Response({"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
         event.applicants.add(user)
         event.save()
         return Response({"message": "You have successfully applied for this event"}, status=status.HTTP_200_OK)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Event, Speaker
+from .models import Event, Speaker, OtherDetails
 
 
 class SpeakerSerializer(serializers.ModelSerializer):
@@ -12,3 +12,9 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         exclude = ("applicants",)
+        
+        
+class OtherDetailsSerializer(serializers.Serializer):
+    class Meta:
+        model = OtherDetails
+        
