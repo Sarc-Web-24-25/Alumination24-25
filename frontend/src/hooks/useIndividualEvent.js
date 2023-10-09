@@ -8,6 +8,7 @@ function useIndividualEvent() {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(null);
+  const [otherDetails, setOtherDetails] = useState({});
   try {
     var userData = localStorage.getItem("userData");
     userData = JSON.parse(userData);
@@ -27,8 +28,9 @@ function useIndividualEvent() {
   };
 
   const register = (key) => {
+    console.log(otherDetails);
     axios
-      .put(`api/events/${key}`,{}, { headers })
+      .put(`api/events/${key}`,otherDetails, { headers })
       .then((response) => {
         console.log(response.data);
         setSuccess("registered successfully"); // Set a success flag to indicate successful login
@@ -76,7 +78,7 @@ function useIndividualEvent() {
       });
   };
 
-  return { event, error, success, fetchEvent, register };
+  return { event,otherDetails, setOtherDetails, error, success, fetchEvent, register };
 }
 
 export default useIndividualEvent;

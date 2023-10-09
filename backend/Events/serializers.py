@@ -11,10 +11,11 @@ class EventSerializer(serializers.ModelSerializer):
     speakers = SpeakerSerializer(many=True, read_only=True)
     class Meta:
         model = Event
-        exclude = ("applicants",)
+        exclude = ("applicants", "isLaunched", "isRegNeeded", "isEnded")
         
         
 class OtherDetailsSerializer(serializers.Serializer):
     class Meta:
         model = OtherDetails
+        fields = ('id', 'field_pref1', 'field_pref2', 'field_pref3', 'field_pref4','field_pref5', 'pref_date', 'event', 'user')
         

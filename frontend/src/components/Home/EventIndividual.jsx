@@ -22,7 +22,7 @@ function EventIndividual() {
         console.log(err);
     }
 
-    const { event, error, success, fetchEvent, register } = useIndividualEvent();
+    const { event, otherDetails, setOtherDetails, error, success, fetchEvent, register } = useIndividualEvent();
 
 
 
@@ -81,14 +81,23 @@ function EventIndividual() {
         }else{
             setCheckFields(false);
         }
+        setOtherDetails(
+            {
+                "other_details": {
+                    "field_pref1": pref1,
+                    "field_pref2": pref2,
+                    "field_pref3": pref3,
+                    "pref_date": prefDate,
+                }
+            }
+        )
 
     }, [pref1, pref2, pref3, prefDate]);
 
 
     const handleRegisterClick = (eventId, isRegNeeded) => {
 
-        
-
+    
         if (!userData) {
             Swal.fire({
                 title: 'Please Login',
@@ -207,7 +216,7 @@ function EventIndividual() {
                                         {dateOptions}
                                     </select>
                                 </div>
-                                <button disabled={!event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: event.isLaunched && "0.7", cursor: event.isLaunched && "not-allowed" }}>{event.button_text}</button>
+                                <button disabled={event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: event.isLaunched && "0.7", cursor: event.isLaunched && "not-allowed" }}>{event.button_text}</button>
                             </div>
                         </div>
                     </div>

@@ -77,4 +77,10 @@ class OtherDetails:
     pref_date = models.CharField(max_length=255, default="", blank=True, choices=DATES.items())
     event = models.OneToOneField(Event, on_delete=models.CASCADE, related_name='other_details', null=True, blank=True)
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE, related_name='other_details', null=True, blank=True)
+    
+    def __str__(self):
+        return self.user.email + " - " + self.event.name
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
             
