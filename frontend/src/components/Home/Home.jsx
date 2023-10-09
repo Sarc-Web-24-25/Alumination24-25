@@ -129,7 +129,7 @@ export default function Home() {
       textAlign: 'center'
    };
    const textstyle3 = {
-      color: "#F4DEA8",
+      color: "#FFE500",
       fontSize: "70px",
       fontFamily: 'Inknut Antiqua',
       fontWeight: '600'
