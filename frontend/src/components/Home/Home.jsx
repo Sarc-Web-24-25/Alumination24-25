@@ -352,7 +352,7 @@ export default function Home() {
                      <img src={smoke1} style={imgstyle2} alt="" />
                      <img src={smoke2} style={imgstyle2} alt="" />
                      <img src={smoke} style={imgstyle2} alt="" />
-                     <img src={smoke3} style={imgstyle2} alt="" />
+                     {/* <img src={smoke3} style={imgstyle2} alt="" /> */}
 
                      <div  style={{...contain, display: "none", width: "0"}}>
                         <div style={hcontain}>
@@ -387,7 +387,7 @@ export default function Home() {
 
                         </div>
                      </div>
-                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px", marginLeft:"-60vw"}}>
+                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px", marginLeft:"30vw"}}>
                         <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
                            <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
