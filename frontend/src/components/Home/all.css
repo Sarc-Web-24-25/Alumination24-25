@@ -494,6 +494,30 @@ body {
         margin-bottom: 45vh !important;
       }
 
+      .event-title{
+        height: auto !important;
+      }
+
+      .event-description{
+        height: auto !important;
+      }
+
+
+      .if-phone{
+        flex-direction: column !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .poster{
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 5vh !important;
+      } 
+
+      .youtube{
+        margin-bottom: 5vh;
+      }
 
 
   }
