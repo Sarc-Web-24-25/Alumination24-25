@@ -46,7 +46,7 @@ const styles = {
         padding: '0', // Remove default padding
         overflow: 'scroll', // Add scroll to the container
         alignItems: 'center', // Horizontally center the items
-        paddingTop: '8vh',
+        paddingTop: '5vh',
     },
 
     profileformArea: {
@@ -141,7 +141,7 @@ const styles = {
         marginTop: '40px',
     },
     submitButton: {
-        marginTop: '3vh',
+        marginTop: '0vh',
         width: '20vw',
         padding: '12px',
         backgroundColor: "rgb(10 62 109 / 92%)",
