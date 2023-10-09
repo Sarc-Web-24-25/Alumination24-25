@@ -1,6 +1,6 @@
 import HorizontalScroll from "react-scroll-horizontal";
 import f1 from "./bgimg/final.jpeg";
-import god from "./bgimg/god.png";
+import god from "./bgimg/statue.png";
 import logo from "./bgimg/logo.png";
 import ig1 from "./bgimg/ig1.png";
 import women from "./bgimg/women.png";
@@ -35,6 +35,13 @@ import "./all.css";
 import CursorAnimation from "./CursorAnimation"
 import { useEffect } from "react";
 import f1Phone from "./bgimg/finalPhone.jpeg";
+import r1 from "./bgimg/r1.png";
+import r2 from "./bgimg/r2.png";
+import r3 from "./bgimg/r3.png";
+import r4 from "./bgimg/r4.png";
+import r5 from "./bgimg/r5.png";
+import r6 from "./bgimg/r6.png";
+import r7 from "./bgimg/r7.png";
 
 
 export default function Home() {
@@ -48,21 +55,42 @@ export default function Home() {
       height: "100vh",
       margin: "0px",
    };
+   const imgDivStyle = {
+      margin: "0px",
+      width: "65vw",
+      marginTop: "-12vh",
+   }
    const imgstyle = {
-      height: "75%",
       margin: "0px",
-      marginLeft: '0.5%'
-
+      marginLeft: '0.2%',
+      width: "65vw",
    };
-   const imgstylegod = {
-      height: "80%",
-      margin: "0px",
-      marginLeft: '-1%'
 
+   const imgStyleDivGod = {
+      height: "110%",
+      margin: "0px",
+      marginLeft: '-1%',
+      position: "relative",
+   }
+   const imgstylegod = {
+      height: "100%",
+      margin: "0px",
+   };
+   const imgstylegodd = {
+      height: "100%",
+      margin: "0px",
    };
    const imgstyle1 = {
       height: "500px",
       marginTop: "-40vh",
+   };
+   const registerNow = {
+      color: "#FFE500",
+      fontSize: "40px",
+      fontFamily: 'Inknut Antiqua',
+      marginLeft: "35vw",
+      marginTop: "-20vh",
+      fontWeight: '600'
    };
    const imgstyle2 = {
       height: "700px",
@@ -83,10 +111,9 @@ export default function Home() {
 
    };
    const imgstyle5 = {
-      height: "700px",
+      height: "90vh",
       marginLeft: "60px",
-
-
+      marginRight: "-6.5vw",
    };
 
    const textstyle = {
@@ -266,14 +293,42 @@ export default function Home() {
 
                   <div style={bgstyle}>
 
-                     <img src={logo} style={imgstyle} alt="" />
-                     <img src={god} style={imgstylegod} alt="" />
+                     <div style={imgDivStyle}>
+                        <img src={logo} style={imgstyle} alt="" />
+                        {/* <div className="registerNow" style={registerNow}>Register Now!</div> */}
+                     </div>
+                     <div style={imgStyleDivGod}>
+                        <div style={{ ...imgstylegodd, position: 'relative' }}>
+                           <img style={{ height: "100%" }} src={god} alt="" />
+                        </div>
+                        <div style={{ ...imgstylegodd, position: 'absolute', top: "-10%", left: "-35%" }}>
+                           <img className="vibrate-animation1" style={{ height: "100%" }} src={r1} alt="" />
+                        </div>
+                        <div style={{ ...imgstylegodd, position: 'absolute', top: "5%", left: "-25%" }}>
+                           <img className="vibrate-animation2" style={{ height: "100%" }} src={r2} alt="" />
+                        </div>
+                        <div style={{ ...imgstylegodd, position: 'absolute', top: "-20%", left: "-25%" }}>
+                           <img className="vibrate-animation3" style={{ height: "100%" }} src={r3} alt="" />
+                        </div>
+                        <div style={{ ...imgstylegodd, position: 'absolute', top: "0%", left: "0%" }}>
+                           <img className="vibrate-animation4" style={{ height: "100%" }} src={r4} alt="" />
+                        </div>
+                        <div style={{ ...imgstylegodd, position: 'absolute', top: "-5%", left: "20%" }}>
+                           <img className="vibrate-animation1" style={{ height: "100%" }} src={r5} alt="" />
+                        </div>
+                        <div style={{ ...imgstylegodd, position: 'absolute', top: "10%", left: "-31%" }}>
+                           <img className="vibrate-animation2" style={{ height: "100%" }} src={r6} alt="" />
+                        </div>
+                        <div style={{ ...imgstylegodd, position: 'absolute', top: "30%", left: "25%" }}>
+                           <img className="vibrate-animation3" style={{ height: "100%" }} src={r7} alt="" />
+                        </div>
+                     </div>
 
                      <div style={aboutus}>
                         <h1 style={textstyle}>ABOUT US</h1>
                         <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
                      </div>
-                     <img src={ig1} style={imgstyle} alt="" />
+                     <img src={ig1} style={imgstylegod} alt="" />
                      <div style={{ marginTop: "-30px" }} >
 
 
@@ -387,7 +442,28 @@ export default function Home() {
                      <img src={women} style={imgstyle5} alt="" />
                   </div>
                </div>
-            </ScrollComponent> : <div style={childStyle}>
+            </ScrollComponent> :
+            
+
+
+
+
+
+            
+            
+            
+            
+            ///phoneeeeeeeeeee
+            
+
+
+
+
+
+            
+            
+            
+            <div style={childStyle}>
 
                <div className="bgstyle" style={bgstyle}>
 
@@ -398,7 +474,7 @@ export default function Home() {
                      <h1 style={textstyle}>ABOUT US</h1>
                      <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
                   </div>
-                  <img src={ig1} style={imgstyle} alt="" />
+                  <img src={ig1} style={imgstylegod} alt="" />
                   <div style={{ marginTop: "-30px" }} >
 
 
@@ -466,7 +542,7 @@ export default function Home() {
                   <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
                      <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                      <div style={hcontain}>
-                        <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua',  }}>Title Sponsor</span></div></a>
+                        <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
                         {/* <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>sun</span></div>
       <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>clock</span></div> */}
                      </div>

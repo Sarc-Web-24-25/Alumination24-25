@@ -350,3 +350,79 @@ body {
       }
     }
   }
+
+
+  .registerNow:hover{
+    color: #ffd1ab !important;
+    cursor: pointer;
+  }
+
+  .registerNow{
+    text-decoration: underline;
+  }
+
+
+  @keyframes vibrate1 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-1px, -1px); }
+    40% { transform: translate(1px, 1px); }
+    60% { transform: translate(-1px, -1px); }
+    80% { transform: translate(1px, 1px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes vibrate2 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(1px, -1px); }
+    40% { transform: translate(1px, -1px); }
+    60% { transform: translate(1px, -1px); }
+    80% { transform: translate(-1px, 1px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  @keyframes vibrate3 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-1px, -1px); }
+    40% { transform: translate(1px, -1px); }
+    60% { transform: translate(1px, 1px); }
+    80% { transform: translate(-1px, 1px); }
+    100% { transform: translate(0, 0); }
+  }
+
+
+  @keyframes vibrate4 {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(1px, -1px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  .vibrate-animation1 {
+    animation-duration: 0.2s; /* Adjust animation duration as needed */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: vibrate1;
+  }
+
+  .vibrate-animation2 {
+    animation-duration: 0.2s; /* Adjust animation duration as needed */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: vibrate2;
+  }
+
+  .vibrate-animation3 {
+    animation-duration: 0.2s; /* Adjust animation duration as needed */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: vibrate3;
+  }
+
+  .vibrate-animation4 {
+    animation-duration: 0.2s; /* Adjust animation duration as needed */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: vibrate4;
+  }
