@@ -523,3 +523,9 @@ body {
 
 
   }
+
+
+
+  .link-sponsor-underline{
+    text-decoration: none !important;
+  }
