@@ -4,6 +4,7 @@ from PIL import Image
 from Authentication.models import MyUser
 from django.core.files import File
 import io
+from .options import FIELDS, DATES
 
 def process_image(image_file, name, prefix):
     image = Image.open(image_file)
@@ -48,6 +49,16 @@ class Event(models.Model):
     button_text = models.CharField(max_length=255, default="Register Now!")
     speakers = models.ManyToManyField(Speaker, related_name='events', blank=True)
     date = models.TextField(default="", blank=True)
+    isLaunched = models.BooleanField(default=False, blank=True)
+    isRegNeeded = models.BooleanField(default=False, blank=True)
+    isEnded = models.BooleanField(default=False, blank=True)
+    field_pref1 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    field_pref2 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    field_pref3 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    field_pref4 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    field_pref5 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    pref_date = models.CharField(max_length=255, default="", blank=True, choices=DATES.items())
+    
 
     def __str__(self):
         return self.name

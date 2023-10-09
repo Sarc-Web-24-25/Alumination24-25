@@ -377,13 +377,6 @@ export default function Home() {
                                  </span>
                               </div>
                            </div>
-                           {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
-                           <div style={clock1}>
-                              <span style={textstyle2}>
-                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
-                              </span>
-                           </div>
-                        </div> */}
 
                         </div>
                      </div>
