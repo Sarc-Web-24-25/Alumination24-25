@@ -388,7 +388,7 @@ export default function Home() {
 
                         </div>
                      </div>
-                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px", marginLeft:"-85vw"}}>
+                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px", marginLeft:"-60vw"}}>
                         <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
                            <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
@@ -464,7 +464,7 @@ export default function Home() {
 
                      <img src={logo} style={{...imgstyle, width: "95vw", marginBottom: "-14vh"}} alt="" />
                      <div style={imgStyleDivGod}>
-                        <div style={{ ...imgstylegodd, position: 'relative' }}>
+                        <div style={{ ...imgstylegodd, position: 'relative', marginLeft:'100vw' }}>
                            <img style={{ height: "100%" }} src={god} alt="" />
                         </div>
                         <div style={{ ...imgstylegodd, position: 'absolute', top: "-10%", left: "-33%" }}>
@@ -490,7 +490,7 @@ export default function Home() {
                         </div>
                      </div>
 
-                     <div className="aboutus" style={{...aboutus}}>
+                     <div className="aboutus" style={{ ...aboutus,textAlign: 'center' }}>
                         <h1 style={textstyle}>ABOUT US</h1>
                         <p className="aboutuspara" style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
                      </div>
