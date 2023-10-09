@@ -94,9 +94,8 @@ export default function Home() {
       fontWeight: '600'
    };
    const imgstyle2 = {
-      height: "700px",
+      height: "100vh",
       margin: "-550px",
-
    };
    const imgstyle4 = {
       height: "100px",
@@ -356,7 +355,7 @@ export default function Home() {
                      <img src={smoke} style={imgstyle2} alt="" />
                      <img src={smoke3} style={imgstyle2} alt="" />
 
-                     <div style={contain}>
+                     <div  style={{...contain, display: "none", width: "0"}}>
                         <div style={hcontain}>
                            <div style={clock1Style}>
                               <div style={clock1Style}>
@@ -369,13 +368,6 @@ export default function Home() {
                                  <span style={textstyle2}>1000 +</span>
                               </div>
                            </div>
-                           {/* <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
-                           <div style={clock1}>
-                              <span style={textstyle2}>
-                                 {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
-                              </span>
-                           </div>
-                        </div> */}
 
                         </div>
                         <div style={hcontain}>
@@ -396,7 +388,7 @@ export default function Home() {
 
                         </div>
                      </div>
-                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px" }}>
+                     <div id="sponsors" style={{ marginTop: "-40px", marginLeft: "70px", marginLeft:"-85vw"}}>
                         <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
                            <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
