@@ -18,6 +18,16 @@ body {
     z-index: 9999;
 }
 
+
+@media screen and (max-width: 600px) {
+    .custom-cursor-circle{
+        display: none;
+    }
+    .custom-cursor-dot{
+        display: none;
+    }
+}
+
 .custom-cursor-circle {
     width: 20px;
     /* Adjust the circle size as needed */
