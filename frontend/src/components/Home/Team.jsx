@@ -15,7 +15,7 @@ const TeamPage = () => {
                 </div>
                 <div className='OC'>
                     <img className='prerna' />
-                    <p>Prerna Agarwal</p>
+                    <p>Prerna Agrawal</p>
                 </div>
             </div>
             <h2> Core Team Members</h2>
