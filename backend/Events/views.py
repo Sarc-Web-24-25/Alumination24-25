@@ -46,6 +46,8 @@ class EventList(APIView):
             return Response({"error": "You have already applied for this event"}, status=status.HTTP_400_BAD_REQUEST)
         request.data['other_details']['user'] = user
         request.data['other_details']['event'] = event
+
+            
         try: 
             OtherDetails.objects.create(**request.data['other_details'])
         except Exception as e:
