@@ -1,10 +1,11 @@
 import React from 'react';
 import './Team.css'; // Import your CSS file
 import Footers from './Footer';
-
+import CursorAnimation from "./CursorAnimation"
 const TeamPage = () => {
     return (
         <div className="team-container">
+            <CursorAnimation />
             <h1>Our Team</h1>
             <h2>Overall Coordinators</h2>
             <div className="top-images">

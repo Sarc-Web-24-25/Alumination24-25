@@ -1,30 +1,36 @@
-/* CursorAnimation.css */
-
-.bubbles {
-    border-radius: 100%;
-    position: absolute;
-    pointer-events: none;
-    background: linear-gradient(45deg, #9a8e77, #f6f4f2);
-    /* Gradient from golden to yellow */
-    box-shadow: 10px 10px 30px rgba(240, 213, 159, 0.8), -10px -10px 30px rgba(246, 244, 243, 0.8);
-    /* Golden shadow */
-    transform: translate(-50%, -50%);
-    animation: colorgen 1s forwards;
-    /* Run the animation only once and stay in its final state */
-    margin: 0;
-    /* Remove margin to eliminate the gap between bubbles */
-    z-index: 1;
+body {
+    cursor: none;
+    /* Hide the default cursor */
 }
 
-@keyframes colorgen {
-    0% {
-        opacity: 1;
-        filter: hue-rotate(0deg);
-    }
+.custom-cursor-dot {
+    width: 6px;
+    /* Adjust the dot size as needed */
+    height: 6px;
+    /* Adjust the dot size as needed */
+    background-color: #FFFFFF;
+    /* Color of the dot */
+    border-radius: 50%;
+    /* Make it a circle */
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
 
-    100% {
-        opacity: 0;
-        filter: hue-rotate(0deg);
-        /* Keep the color constant (golden) */
-    }
+.custom-cursor-circle {
+    width: 20px;
+    /* Adjust the circle size as needed */
+    height: 20px;
+    /* Adjust the circle size as needed */
+    border: 2px solid #FFFFFF;
+    /* Border color of the circle */
+    border-radius: 50%;
+    /* Make it a circle */
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    /* Golden glow */
 }

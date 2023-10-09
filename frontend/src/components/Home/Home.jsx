@@ -14,8 +14,14 @@ import feather from "./bgimg/feather.png";
 import sp1 from "./bgimg/sp1.png"
 import sp2 from "./bgimg/sp2.jpg"
 import sp3 from "./bgimg/sp3.jpg"
-import sp4 from "./bgimg/sp4.png"
-import sp5 from "./bgimg/sp5.png"
+import sp4 from "./bgimg/sp4.jpeg"
+import sp5 from "./bgimg/sp5.jpg"
+import sp6 from "./bgimg/sp6.jpg"
+import sp7 from "./bgimg/sp7.avif"
+import sp8 from "./bgimg/sp8.png"
+import sp9 from "./bgimg/sp9.jpeg"
+import sp10 from "./bgimg/sp10.jpeg"
+import sp11 from "./bgimg/sp11.jpg"
 import glass from "./bgimg/glass.png";
 import nandan from "./bgimg/nandan.png";
 import bhavish from "./bgimg/bhavish.png";
@@ -219,7 +225,7 @@ export default function Home() {
       justifyContent: "center",
       opacity: "0.9",
       margin: "2px",
-      animation: 'rotate 8s linear infinite', // Add rotation animation here
+      // animation: 'rotate 8s linear infinite', // Add rotation animation here
    };
 
 
@@ -441,7 +447,7 @@ export default function Home() {
 
                      </div>
                      <div style={hcontain}>
-                        <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                        <div >
                            <div style={clock1}>
                               <span style={textstyle2}>
                                  {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
@@ -461,14 +467,14 @@ export default function Home() {
                   <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
                      <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                      <div style={hcontain}>
-                        <div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Title Sponsor</span></div>
+                        <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua',  }}>Title Sponsor</span></div></a>
                         {/* <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>sun</span></div>
       <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>clock</span></div> */}
                      </div>
 
                      <div style={hcontain}>
-                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Gold Sponsor</span></div>
-                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Silver Sponsor</span></div>
+                        <a href="https://www.bankofbaroda.in/"><div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Sponsor</span></div></a>
+                        <a href="https://www.cdslindia.com/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
 
                      </div>
 
@@ -479,15 +485,15 @@ export default function Home() {
                   <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
                      <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
                      <div style={hcontain}>
-                        <div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Workshop Partner</span></div>
-                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Travel Partner</span></div>
-                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Travel Partner</span></div>
-                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Social Media Partner</span></div>
+                        <a href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
+                        <a href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                        <a href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                        <a href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
                      </div>
 
                      <div style={hcontain}>
-                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Women Empowerment Partner</span></div>
-                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Certificate Partner</span></div>
+                        <a href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
+                        <a href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
 
                      </div>
 
@@ -498,9 +504,8 @@ export default function Home() {
                      <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
 
                      <div style={hcontain}>
-                        <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Gold Hues</span></div>
-                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Mirror Now</span></div>
-
+                        <a href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Hues</span></div></a>
+                        <a href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
                      </div>
                   </div>
 

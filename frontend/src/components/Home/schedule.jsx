@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './schedule.css'; // Import your CSS file
-
+import CursorAnimation from "./CursorAnimation"
 function Schedule() {
     const [currentPage, setCurrentPage] = useState('day1'); // Track the current schedule page
 
@@ -34,6 +34,7 @@ function Schedule() {
 
     return (
         <div className="schedule-container">
+            <CursorAnimation />
             <div className={`schedule-page ${currentPage}`}>
                 <div className="schedule-header">
                     <h2>{currentPage === 'day1' ? 'Day 1 Schedule' : 'Day 2 Schedule'}</h2>
