@@ -49,6 +49,10 @@ function useIndividualEvent() {
             iconColor: "brown",
             background: `url(${letter})`,
             text: error.response.data.error,
+         }).then(() => {
+            if(error.response.data.error === "Profile does not exist, Please create a profile first"){
+                window.location.href = "/profile";
+            }
          });
       });
   };
