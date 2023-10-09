@@ -297,7 +297,6 @@ export default function Home() {
 
                      <div style={imgDivStyle}>
                         <img src={logo} style={imgstyle} alt="" />
-                        {/* <div className="registerNow" style={registerNow}>Register Now!</div> */}
                      </div>
                      <div style={imgStyleDivGod}>
                         <div style={{ ...imgstylegodd, position: 'relative' }}>
@@ -464,7 +463,7 @@ export default function Home() {
 
                      <img src={logo} style={{...imgstyle, width: "95vw", marginBottom: "-14vh"}} alt="" />
                      <div style={imgStyleDivGod}>
-                        <div style={{ ...imgstylegodd, position: 'relative', marginLeft:'100vw' }}>
+                        <div style={{ ...imgstylegodd }}>
                            <img style={{ height: "100%" }} src={god} alt="" />
                         </div>
                         <div style={{ ...imgstylegodd, position: 'absolute', top: "-10%", left: "-33%" }}>
