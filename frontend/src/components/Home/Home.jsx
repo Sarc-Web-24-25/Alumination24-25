@@ -321,7 +321,7 @@ export default function Home() {
 
                         </div>
                         <div style={hcontain}>
-                           <div style={{ ...clock1, animation: 'rotate 8s linear infinite' }}>
+                           <div>
                               <div style={clock1}>
                                  <span style={textstyle2}>
                                     {counterOn && <CountUp start={0} end={1000} duration={5} delay={5} />} +
@@ -341,14 +341,14 @@ export default function Home() {
                      <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
                         <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
-                           <div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Title Sponsor</span></div>
+                           <a href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
                            {/* <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>sun</span></div>
-                        <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>clock</span></div> */}
+      <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "30px" }}>clock</span></div> */}
                         </div>
 
                         <div style={hcontain}>
-                           <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Gold Sponsor</span></div>
-                           <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Silver Sponsor</span></div>
+                           <a href="https://www.bankofbaroda.in/"><div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Sponsor</span></div></a>
+                           <a href="https://www.cdslindia.com/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
 
                         </div>
 
@@ -357,18 +357,17 @@ export default function Home() {
                      </div>
 
                      <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
-                        <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
+                        <div style={hcontain}> <span style={textstyle}> OUR  </span></div>
                         <div style={hcontain}>
-                           <div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Workshop Partner</span></div>
-                           <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Travel Partner</span></div>
-                           <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Travel Partner</span></div>
-                           <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Social Media Partner</span></div>
+                           <a href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
+                           <a href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                           <a href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                           <a href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
                         </div>
 
                         <div style={hcontain}>
-                           <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Women Empowerment Partner</span></div>
-                           <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Certificate Partner</span></div>
-
+                           <a href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
+                           <a href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
                         </div>
 
 
@@ -378,11 +377,11 @@ export default function Home() {
                         <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
 
                         <div style={hcontain}>
-                           <div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Gold Hues</span></div>
-                           <div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px" }}>Mirror Now</span></div>
-
+                           <a href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Hues</span></div></a>
+                           <a href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
                         </div>
                      </div>
+
 
 
                      <img src={women} style={imgstyle5} alt="" />
@@ -483,7 +482,7 @@ export default function Home() {
                   </div>
 
                   <div style={{ marginTop: "-40px", marginLeft: "70px" }}>
-                     <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
+                     <div style={hcontain}> <span style={textstyle}> OUR  </span></div>
                      <div style={hcontain}>
                         <a href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
                         <a href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
@@ -494,7 +493,6 @@ export default function Home() {
                      <div style={hcontain}>
                         <a href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
                         <a href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
-
                      </div>
 
 

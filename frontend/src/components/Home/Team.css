@@ -78,6 +78,9 @@
     color: #F4DEA8;
     font-size: 30px;
 }
+.OC{
+    margin: 0 20px;
+}
 
 .OC p{
 font-family: 'Inknut Antiqua';
@@ -100,6 +103,7 @@ font-family: 'Inknut Antiqua';
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
+    background-color: black;
 
 }
 
@@ -109,6 +113,7 @@ font-family: 'Inknut Antiqua';
     background-size: cover;
     background-position: center;
     background-image: url('./bgimg/default.jpg');
+    background-color: black;
 
 }
 .sancheti {
@@ -116,7 +121,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/aastha.jpeg');
 
 }
 
@@ -125,7 +130,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/priyaank.jpg');
 
 }
 
@@ -134,7 +139,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/kinjal.jpeg');
 }
 
 
@@ -143,7 +148,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/anni.jpg');
 
 }
 
@@ -152,7 +157,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/garv.jpg');
 
 }
 
@@ -161,7 +166,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/agrajah.jpeg');
 
 }
 
@@ -188,7 +193,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/shounak.jpg');
 
 }
 
@@ -197,7 +202,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/vishal.jpg');
 
 }
 
@@ -206,7 +211,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/vaibhavi.jpg');
 
 }
 
@@ -215,7 +220,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/priyanshi.jpg');
 
 }
 
@@ -224,7 +229,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/jay.jpeg');
 
 }
 
@@ -242,7 +247,7 @@ font-family: 'Inknut Antiqua';
     height: 200px;
     background-size: cover;
     background-position: center;
-    background-image: url('./bgimg/default.jpg');
+    background-image: url('./bgimg/pranita.jpeg');
 
 }
 
