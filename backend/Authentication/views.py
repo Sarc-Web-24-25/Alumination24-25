@@ -22,13 +22,13 @@ def get_tokens_for_user(user):
 
 def send_verification_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
-    send_mail(subject="Verify your email | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isWelcome=False, isVerify=True, isForgot=False, verificationToken=token.key)
+    send_mail(subject="Verify your email | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isVerify=True, verificationToken=token)
     print(token)
     
     
 def send_forgot_password_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
-    send_mail(subject="Reset Password | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isWelcome=False, isVerify=False, isForgot=True, forgotToken=token.key)
+    send_mail(subject="Reset Password | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isForgot=True, forgotToken=token)
     print(token)
 
 @permission_classes([permissions.AllowAny])
@@ -230,9 +230,9 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     <title>{subject}</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container"
-        style="max-width: 600px; margin: 0 auto; padding: 40px; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+        style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat;">
         <h1
             style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">
             Forgot Password</h1>
@@ -279,9 +279,9 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     <title>Alumination 2023 | SARC IIT Bombay</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container"
-        style="max-width: 600px; margin: 0 auto; padding: 40px; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+        style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat; ">
         <h1
             style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">
             User Verification of Alumination 2023 | SARC IIT Bombay</h1>
@@ -329,8 +329,9 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     <title>{subject}</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0;">
-    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; background-size: cover; background-repeat: no-repeat;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply;
+box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-size: cover; background-repeat: no-repeat;">
         <h1 style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">Welcome to Alumination 2023 | SARC IIT Bombay</h1>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Dear User,</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We hope this message finds you well and filled with excitement for the upcoming Alumination 2023 event! As the organizing team, we are thrilled to invite you to this extraordinary two-day fest that promises to be an unforgettable experience.</p>
@@ -367,5 +368,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             smtp.starttls()
             smtp.login(SMTP_USERNAME, SMTP_PASSWORD)
             smtp.sendmail(SMTP_USERNAME, userEmail, msg.as_string())
-    except:
+            print("Email sent successfully")
+    except Exception as e:
+        print("Error sending email", e)
         pass
