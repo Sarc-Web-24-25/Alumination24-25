@@ -107,7 +107,7 @@ function EventIndividual() {
                                 {event.description}
                                 <br />
                                 <p style={{marginBottom: "0", color: "brown", fontWeight: "bold", fontSize:"120%"}}>{event.date}</p>
-                                <button onClick={() => handleRegisterClick(event.id)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%" }}>{event.button_text}</button>
+                                <button disabled={true} onClick={() => handleRegisterClick(event.id)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity:"0.7", cursor:"not-allowed" }}>{event.button_text}</button>
                             </div>
                         </div>
                     </div>
