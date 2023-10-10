@@ -120,7 +120,7 @@ function EventIndividual() {
         }
         
         else {
-            if(checkFields){
+            if((checkFields && isRegNeeded) || (!isRegNeeded)){
                 register(eventId);
             }else{
                 Swal.fire({
