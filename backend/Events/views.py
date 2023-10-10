@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from Authentication.models import MyUser, Profile
 from rest_framework import permissions
+from Authentication.views import send_mail
 
 
 class EventList(APIView):
@@ -55,5 +56,6 @@ class EventList(APIView):
         
         event.applicants.add(user)
         event.save()
+        send_mail(subject="Registration Successful | Alumination | SARC IIT Bombay", userName=profile.fullname, userEmail=user.username, isEvent=True, eventName=event.name)
         return Response({"message": "You have successfully applied for this event"}, status=status.HTTP_200_OK)
     

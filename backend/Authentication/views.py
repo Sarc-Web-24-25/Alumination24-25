@@ -213,13 +213,58 @@ SMTP_PORT = 587
 SMTP_USERNAME = "sarc@iitb.ac.in"
 SMTP_PASSWORD = "87638c40a92a794bc81b6de03e5ae86c"  # Replace with your SMTP password
 
-def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isForgot=False, verificationToken=None, forgotToken=None):
+def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isForgot=False, verificationToken=None, forgotToken=None, isEvent=False, eventName=""):
     # Create the MIME message
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = SMTP_USERNAME
     msg["To"] = userEmail
-    proxy = 'https://koitoroklo.sarc-iitb.org'
+    proxy = 'https://alumination.sarc-iitb.org'
+    
+    eventmail = f'''
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <title>{subject}</title>
+</head>
+
+<body
+    style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+    <div class="container"
+        style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat;">
+        <h1
+            style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">
+            Successfully Registered</h1>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Dear {userName},</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            You have successfully registered for the {eventName}</p>
+            <p
+                style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+                If you have any questions or need further assistance, please contact our support team at
+                alumination.sarc.iitb@gmail.com.</p>
+        
+        
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Regards,</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Aastha Patel | Prerna Agrawal</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Overall Co-ordinators</p>
+        <p
+            style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
+            Student Alumni Relations Cell</p>
+    </div>
+</body>
+
+</html>
+    '''
     
     
     forgotMail = f'''
@@ -361,6 +406,9 @@ box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 
     
     elif isForgot:
         msg.attach(MIMEText(forgotMail, "html"))
+        
+    elif isEvent:
+        msg.attach(MIMEText(eventmail, "html"))
 
     # Create an SMTP connection and send the email
     try:
