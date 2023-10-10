@@ -11,7 +11,7 @@ class EventSerializer(serializers.ModelSerializer):
     speakers = SpeakerSerializer(many=True, read_only=True)
     class Meta:
         model = Event
-        exclude = ("applicants", "isLaunched", "isRegNeeded", "isEnded")
+        exclude = ("applicants",)
         
         
 class OtherDetailsSerializer(serializers.Serializer):

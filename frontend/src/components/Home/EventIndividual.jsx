@@ -97,7 +97,7 @@ function EventIndividual() {
 
     const handleRegisterClick = (eventId, isRegNeeded) => {
 
-    
+        console.log(eventId, isRegNeeded)
         if (!userData) {
             Swal.fire({
                 title: 'Please Login',
@@ -198,7 +198,7 @@ function EventIndividual() {
                                 {event.description}
                                 <br />
                                 <p style={{marginBottom: "0", color: "brown", fontWeight: "bold", fontSize:"120%"}}>{event.date}</p>
-                                <div style={{display: regBox ? "flex": "none"}} className='fields-container'>
+                                <div style={{display: !regBox && "none"}} className='fields-container'>
                                     <select onChange={(e) => handlePref1Change(e)} className='field-input' value={pref1} name="" id="">
                                         <option value="">Field Preference 1</option>
                                         {fieldOptions}
