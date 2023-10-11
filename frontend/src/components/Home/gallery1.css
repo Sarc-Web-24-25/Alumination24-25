@@ -9,9 +9,9 @@
 
 
 .image-gallery-image{
-    height: 100vh;
-    object-fit: fill !important;
-    width: 100vw;
+    /* height: 100vh; */
+    object-fit: cover !important;
+    /* width: 100vw; */
     margin-top: -10vh;
 }
 

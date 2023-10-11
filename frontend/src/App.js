@@ -33,8 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} exact={true} />
         <Route path="/team" element={<Team /> } exact={true} />
-        <Route path="/gallery" element={<Gallery />} exact={true} />
-        <Route path="/galleryysome" element={<Gallery1 />} exact={true} />
+        <Route path="/gallery" element={<Gallery1 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>
         <Route path="/events" element={<Events />} exact={true} />
