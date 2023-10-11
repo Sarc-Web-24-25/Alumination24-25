@@ -11,6 +11,9 @@ from rest_framework import permissions
 from Authentication.views import send_mail
 
 
+
+
+
 class EventList(APIView):
     permission_classes = [permissions.AllowAny]
     def get(self, request, format=None, id=None):
