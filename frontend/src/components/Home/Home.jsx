@@ -380,15 +380,15 @@ export default function Home() {
 
                         </div>
                      </div>
-                     <div id="sponsors" style={{marginTop: "-1vh", marginLeft:"25vw"}}>
+                     <div id="sponsors" style={{marginTop: "-10vh", marginLeft:"15vw"}}>
                         <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "200px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
+                           <a className="link-sponsor-underline" href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "300px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
                         </div>
 
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="https://www.bankofbaroda.in/"><div style={frame2}> <img src={sp2} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Sponsor</span></div></a>
-                           <a className="link-sponsor-underline" href="https://www.cdslindia.com/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.bankofbaroda.in/"><div style={frame2}> <img src={sp2} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Sponsor</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.cdslindia.com/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
 
                         </div>
 
@@ -396,29 +396,29 @@ export default function Home() {
 
                      </div>
 
-                     <div style={{ marginTop: "-1vh", marginLeft: "70px" }}>
+                     <div style={{ marginTop: "-10vh", marginLeft: "70px" }}>
                         <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
-                           <a className="link-sponsor-underline" href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
-                           <a className="link-sponsor-underline" href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
-                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
                         </div>
 
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
-                           <a className="link-sponsor-underline" href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
                         </div>
 
 
 
                      </div>
-                     <div style={{ marginTop: "-20vh", marginLeft: "70px" }}>
+                     <div style={{ marginTop: "-45vh", marginLeft: "70px" }}>
                         <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
 
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Hues</span></div></a>
-                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "200px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
+                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "350px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Hues</span></div></a>
+                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
                         </div>
                      </div>
 
