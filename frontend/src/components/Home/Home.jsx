@@ -417,7 +417,7 @@ export default function Home() {
                         <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
 
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "350px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Hues</span></div></a>
+                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "350px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Global Hues</span></div></a>
                            <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
                         </div>
                      </div>
