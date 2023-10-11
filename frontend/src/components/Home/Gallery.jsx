@@ -48,7 +48,7 @@ const Gallery = () => {
     return (
         <><div className="gallery-container">
             <CursorAnimation />
-            <div className="center-image">
+            <div  className="center-image">
                 <img src={images[selectedImage]} alt={`Image ${selectedImage + 1}`} />
             </div>
             <div className="thumbnail-list-container">

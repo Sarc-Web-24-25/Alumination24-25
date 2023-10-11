@@ -221,7 +221,7 @@ function Signup() {
       />
 
       <div style={{backgroundColor: "rgba(255,255,255,0.3)", padding: "5px", borderRadius: "10px"}}>
-        Are you an alumni? &nbsp;
+        Are you an IITB Alum? &nbsp;
         <input onChange={() => handleAlumChange(true)} type="radio" name='is_alum' checked={is_alum} style={{color: "white"}} required /> Yes
         <input onChange={() => handleAlumChange(false)} type="radio" name='is_alum' checked={!is_alum} style={{color: "white"}} required /> No
       </div>

@@ -13,6 +13,7 @@ import Home from "./components/Home/Home";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
 import Gallery from "./components/Home/Gallery";
+import Gallery1 from "./components/Home/Gallery1";
 import Events from "./components/Home/Events";
 import Schedule from "./components/Home/schedule";
 import Signup from "./components/Authentication/signup";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Home />} exact={true} />
         <Route path="/team" element={<Team /> } exact={true} />
         <Route path="/gallery" element={<Gallery />} exact={true} />
+        <Route path="/galleryysome" element={<Gallery1 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>
         <Route path="/events" element={<Events />} exact={true} />

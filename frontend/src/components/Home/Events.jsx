@@ -12,11 +12,21 @@ function EventList() {
     const [events, setEvents] = useState([]);
     const [selectedEventId, setSelectedEventId] = useState(null);
 
+    const sortEvents = (events) => {
+        events.sort((a, b) => {
+            if (a.isLaunched && !b.isLaunched) return -1;
+            else return 1;
+        })
+        setEvents(events);
+    }
+    
+
     useEffect(() => {
         axios
             .get('api/events/')
             .then((response) => {
                 setEvents(response.data);
+                sortEvents(response.data);
             })
             .catch((error) => {
                 console.error(error);
