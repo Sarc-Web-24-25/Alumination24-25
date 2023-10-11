@@ -237,7 +237,7 @@ function EventIndividual() {
                                         {dateOptions}
                                     </select>
                                 </div>
-                                <button disabled={event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: !event.isLaunched && "0.7", cursor: !event.isLaunched && "not-allowed" }}>{event.button_text}</button>
+                                <button disabled={!event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: !event.isLaunched && "0.7", cursor: !event.isLaunched && "not-allowed" }}>{event.button_text}</button>
                             </div>
                         </div>
                     </div>
