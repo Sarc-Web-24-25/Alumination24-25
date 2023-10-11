@@ -27,4 +27,24 @@
     border: 4px solid brown !important;
 }
 
+@media screen and (max-width: 600px) {
+    .image-gallery-thumbnail-image{
+        width: 10vh;
+        height: 10vh;
+    }
+    .image-gallery-thumbnail{
+        margin-top: 19.5vh;
+    }
+    .image-gallery-slide{
+        margin-top: 20vh;
+    }
+    .main-container{
+        background-repeat: repeat-y !important;
+    }
+    .image-gallery-image{
+        height: 50vh;
+    }
+}
+    
+
 
