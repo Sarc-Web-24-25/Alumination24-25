@@ -1,7 +1,7 @@
 import HorizontalScroll from "react-scroll-horizontal";
 import f1 from "./bgimg/final.jpeg";
 import god from "./bgimg/statue.png";
-import logo from "./bgimg/logo.png";
+import logo from "./bgimg/alumination.png";
 import ig1 from "./bgimg/ig1.png";
 import women from "./bgimg/women.png";
 import clock from "./bgimg/clock.png";
@@ -43,6 +43,7 @@ import r5 from "./bgimg/r5.png";
 import r6 from "./bgimg/r6.png";
 import r7 from "./bgimg/r7.png";
 import React, { Component } from 'react';
+import sarc from './bgimg/sarcPresents.png';
 
 
 export default function Home() {
@@ -60,11 +61,13 @@ export default function Home() {
       margin: "0px",
       width: "65vw",
       marginTop: "-12vh",
+      position: "relative",
    }
    const imgstyle = {
       margin: "0px",
       marginLeft: '0.2%',
       width: "65vw",
+      position: "relative",
    };
 
    const imgStyleDivGod = {
@@ -297,7 +300,11 @@ export default function Home() {
 
                      <div style={imgDivStyle}>
                         <img src={logo} style={imgstyle} alt="" />
+                        <p className="dateHeading" style={{position: "absolute", top: "61%", right: "17%", fontSize: "30px", fontWeight:"bold", }}>21st-22nd October</p>
+                        <img width={"40%"} src={sarc} style={{position: "absolute", top: '23%', left: '13%'}} alt="" />
                      </div>
+
+
                      <div style={imgStyleDivGod}>
                         <div style={{ ...imgstylegodd, position: 'relative' }}>
                            <img style={{ height: "100%" }} src={god} alt="" />
@@ -452,7 +459,18 @@ export default function Home() {
 
                   <div className="bgstyle" style={{...bgstyle, overflowX: "hidden !important"}}>
 
-                     <img src={logo} style={{...imgstyle, width: "95vw", marginBottom: "-14vh"}} alt="" />
+
+                     <div style={{...imgstyle, width: "100vw", marginBottom: "-14vh"}}>
+                        <img src={logo} style={{...imgstyle, width: "100vw"}} alt="" />
+                        <p className="dateHeading" style={{position: "absolute", top: "61%", right: "17%", fontSize: "10px", fontWeight:"bold", }}>21st-22nd October</p>
+                        <img width={"40%"} src={sarc} style={{position: "absolute", top: '23%', left: '13%'}} alt="" />
+                     </div>
+
+
+                     {/* <img src={logo} style={{...imgstyle, width: "95vw", marginBottom: "-14vh"}} alt="" /> */}
+
+
+
                      <div style={imgStyleDivGod}>
                         <div style={{ ...imgstylegodd }}>
                            <img style={{ height: "100%" }} src={god} alt="" />

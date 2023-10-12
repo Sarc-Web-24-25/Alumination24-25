@@ -547,3 +547,11 @@ body {
     align-items: center;
     flex-direction: column;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+  .dateHeading{
+    font-family: 'Young Serif', serif;
+    color: #fcbe6e;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
