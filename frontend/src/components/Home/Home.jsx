@@ -467,7 +467,6 @@ export default function Home() {
                      </div>
 
 
-                     {/* <img src={logo} style={{...imgstyle, width: "95vw", marginBottom: "-14vh"}} alt="" /> */}
 
 
 

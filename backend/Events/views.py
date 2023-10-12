@@ -49,8 +49,9 @@ class EventList(APIView):
         if user in event.applicants.all():
             return Response({"error": "You have already applied for this event"}, status=status.HTTP_400_BAD_REQUEST)
         
-        request.data['other_details']['user'] = user
-        request.data['other_details']['event'] = event
+        if request.data['other_details']:
+            request.data['other_details']['user'] = user
+            request.data['other_details']['event'] = event
         event.applicants.add(user)
         event.save()
         try: 
