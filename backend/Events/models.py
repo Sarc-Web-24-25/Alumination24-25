@@ -30,14 +30,14 @@ class Speaker(models.Model):
     
     def save(self, *args, **kwargs):
         speaker = Speaker.objects.filter(id=self.id).first()
-        if speaker and speaker.image != self.image:
+        if speaker and speaker.profile_image != self.profile_image:
             try:
-                speaker.image.delete(save=False)
+                speaker.profile_image.delete(save=False)
             except Exception as e:
                 print(e)
                 
-        if self.image:
-            self.image = process_image(self.image, self.fullname, "speaker_")
+        if self.profile_image:
+            self.profile_image = process_image(self.profile_image, self.fullname, "speaker_")
         super().save(*args, **kwargs)
 
 class Event(models.Model):

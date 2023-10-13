@@ -81,7 +81,7 @@ function EventIndividual() {
         } else {
             setCheckFields(false);
         }
-        if(event){
+        if (event) {
             setOtherDetails(
                 {
                     "other_details": !event.isGM ? {
@@ -89,7 +89,7 @@ function EventIndividual() {
                         "field_pref2": pref2,
                         "field_pref3": pref3,
                         "pref_date": prefDate,
-                    }: {
+                    } : {
                         "field_pref1_gm": pref1,
                         "field_pref2_gm": pref2,
                         "field_pref3_gm": pref3,
@@ -204,45 +204,72 @@ function EventIndividual() {
     return (
         <>
             {
-                event && <div className="event-list-container">
-                    <CursorAnimation />
-                    <div className="top-section">
-                        <img src={headingImage} alt="Top Image" className="top-imagee" />
-                        <h1 style={{ marginBottom: event.youtube_link === "" && "15vh" }} className="top-titlee">{event.name}</h1>
-                    </div>
-                    <div className='main-event' style={{ width: "100vw", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
-                        {event.youtube_link !== "" && <YouTube className='youtube' opts={opts} videoId={event.youtube_link} />}
-                        <div className='if-phone' style={{ display: "flex", justifyContent: "center", flexDirection: event.youtube_link != "" ? "column" : "row", alignItems: "center" }}>
-                            <img style={{ marginRight: event.youtube_link === "" && "15vw" }} className='poster' src={`https://koitoroklo.sarc-iitb.org${event.image}`} alt="" />
-                            <div className='event-desc'>
-                                {event.description}
-                                <br />
-                                <p style={{ marginBottom: "0", color: "brown", fontWeight: "bold", fontSize: "120%" }}>{event.date}</p>
-                                <div style={{ display: !regBox && "none" }} className='fields-container'>
+                event && <div>
+                    <div className="event-list-container">
+                        <CursorAnimation />
+                        <div className="top-section">
+                            <img src={headingImage} alt="Top Image" className="top-imagee" />
+                            <h1 style={{ marginBottom: event.youtube_link === "" && "15vh" }} className="top-titlee">{event.name}</h1>
+                        </div>
+                        <div className='main-event' style={{ width: "100vw", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
+                            {event.youtube_link !== "" && <YouTube className='youtube' opts={opts} videoId={event.youtube_link} />}
+                            <div className='if-phone' style={{ display: "flex", justifyContent: "center", flexDirection: event.youtube_link != "" ? "column" : "row", alignItems: "center" }}>
+                                <img style={{ marginRight: event.youtube_link === "" && "15vw" }} className='poster' src={`http://127.0.0.1:8000${event.image}`} alt="" />
+                                <div className='event-desc'>
+                                    {event.description}
+                                    <br />
+                                    <p style={{ marginBottom: "0", color: "brown", fontWeight: "bold", fontSize: "120%" }}>{event.date}</p>
+                                    <div style={{ display: !regBox && "none" }} className='fields-container'>
 
                                         <select onChange={(e) => handlePref1Change(e)} className='field-input' value={pref1} name="" id="">
                                             <option value="">Field Preference 1</option>
-                                            {event.isGM ? fieldOptionsGM: fieldOptions}
+                                            {event.isGM ? fieldOptionsGM : fieldOptions}
                                         </select>
                                         <select onChange={(e) => handlePref2Change(e)} className='field-input' value={pref2} name="" id="">
                                             <option value="">Field Preference 2</option>
-                                            {event.isGM ? fieldOptionsGM: fieldOptions}
+                                            {event.isGM ? fieldOptionsGM : fieldOptions}
                                         </select>
                                         <select onChange={(e) => handlePref3Change(e)} className='field-input' value={pref3} name="" id="">
                                             <option value="">Field Preference 3</option>
-                                            {event.isGM ? fieldOptionsGM: fieldOptions}
+                                            {event.isGM ? fieldOptionsGM : fieldOptions}
                                         </select>
-                                    <select onChange={(e) => handleDateChange(e)} className='field-input' value={prefDate} name="" id="">
-                                        <option value="">Date Preference</option>
-                                        {dateOptions}
-                                    </select>
+                                        <select onChange={(e) => handleDateChange(e)} className='field-input' value={prefDate} name="" id="">
+                                            <option value="">Date Preference</option>
+                                            {dateOptions}
+                                        </select>
+                                    </div>
+                                    <button disabled={!event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: !event.isLaunched && "0.7", cursor: !event.isLaunched && "not-allowed" }}>{event.button_text}</button>
                                 </div>
-                                <button disabled={!event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: !event.isLaunched && "0.7", cursor: !event.isLaunched && "not-allowed" }}>{event.button_text}</button>
                             </div>
                         </div>
+
+                        {event.speakers[0] && <div className="speakers-section yellow-box" style={{ color: "#FFD1AB", fontSize: "20px", fontFamily: 'Inknut Antiqua', }}>
+                            <h4 className="speaker-heading">Speakers</h4>
+                            <div className="speakers-list">
+                                {event.speakers.map((speaker) => (
+                                    <li key={speaker.id} className="speaker-item">
+                                        <div className="speaker-info">
+                                            <img src={`http://127.0.0.1:8000${speaker.profile_image}`} alt={speaker.fullname} className="speaker-image" />
+                                            <p className="speaker-name">{speaker.fullname}</p>
+                                            <p className="speaker-ka-desc">{speaker.description}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </div>
+                        </div>}
                     </div>
+
+
+
+
+                    {/* Speakers Section */}
+
+
+
                 </div>
-            }</>
+            }
+
+        </>
     );
 }
 

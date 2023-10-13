@@ -560,3 +560,117 @@ body {
   .heightFont{
     font-size: 2.5rem !important;
   }
+
+
+  .speakers {
+    background-color: #f9f9f9; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+
+  .speaker-list ul{
+    padding-left: 0;
+  }
+  
+  .yellow-box {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .speaker-heading {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  
+  .speaker-item {
+    display: inline-block; 
+    /* margin-right: 20px; */
+    vertical-align: top; 
+  }
+  
+  .speaker-image {
+    width: 250px;
+    height: 250px;
+    border: 2px solid #ffd1ab; 
+    border-radius: 10%; 
+    display: block;
+    margin: 0 auto; 
+    object-fit: cover;
+  }
+  .speaker-name {
+    text-align: center;
+    margin-top: 5px; 
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 0 !important;
+  }
+
+  .speaker-ka-desc{
+    font-size: medium;
+    background-color: #392828;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+  }
+  
+
+
+.speakers-section{
+  margin-top: 10vh !important;
+}
+
+
+.event-list-container::-webkit-scrollbar {
+  width: 5px; /* Adjust the width as needed */
+}
+
+.event-list-container::-webkit-scrollbar-track {
+  background:#392828; /* Change the background color */
+}
+
+.event-list-container::-webkit-scrollbar-thumb {
+  background: #fcbe6e; /* Change the thumb color */
+  border-radius: 8px; /* Adjust the border radius as needed */
+}
+
+.event-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Change the thumb color on hover */
+}
+
+.speakers-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.speaker-item{
+  margin: 5vw;
+}
+
+@media screen and (max-width: 600px) {
+  .speaker-item{
+    margin: 2vw;
+  }
+  .speakers-list{
+    flex-direction: column;
+  }
+  .speakers-list-container{
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .speakers-section{
+    margin-top: 0 !important;
+  }
+
+  .speaker-heading{
+    margin-top: 0 !important;
+  }
+} 
