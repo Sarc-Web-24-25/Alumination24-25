@@ -50,14 +50,15 @@ class EventList(APIView):
             return Response({"error": "You have already applied for this event"}, status=status.HTTP_400_BAD_REQUEST)
         
         try:
-            if request.data and 'other_details' in request.data:
+            print(request.data)
+            if request.data and ('other_details' in request.data):
                 request.data['other_details']['user'] = user
                 request.data['other_details']['event'] = event
-            try: 
-                OtherDetails.objects.create(**request.data['other_details'])
-            except Exception as e:
-                print(e)
-                return Response({"error": "Something went wrong please contact web team"}, status=status.HTTP_400_BAD_REQUEST)
+                try: 
+                    OtherDetails.objects.create(**request.data['other_details'])
+                except Exception as e:
+                    print(e)
+                    return Response({"error": "Something went wrong please contact web team"}, status=status.HTTP_400_BAD_REQUEST)
             event.applicants.add(user)
         except:
             return Response({"error": "Something went wrong please contact team"}, status=status.HTTP_400_BAD_REQUEST)
