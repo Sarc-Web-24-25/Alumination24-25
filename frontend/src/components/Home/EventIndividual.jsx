@@ -214,7 +214,7 @@ function EventIndividual() {
                         <div className='main-event' style={{ width: "100vw", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
                             {event.youtube_link !== "" && <YouTube className='youtube' opts={opts} videoId={event.youtube_link} />}
                             <div className='if-phone' style={{ display: "flex", justifyContent: "center", flexDirection: event.youtube_link != "" ? "column" : "row", alignItems: "center" }}>
-                                <img style={{ marginRight: event.youtube_link === "" && "15vw" }} className='poster' src={`http://127.0.0.1:8000${event.image}`} alt="" />
+                                <img style={{ marginRight: event.youtube_link === "" && "15vw" }} className='poster' src={`https://alumination.sarc-iitb.org${event.image}`} alt="" />
                                 <div className='event-desc'>
                                     {event.description}
                                     <br />
@@ -249,7 +249,7 @@ function EventIndividual() {
                                 {event.speakers.map((speaker) => (
                                     <li key={speaker.id} className="speaker-item">
                                         <div className="speaker-info">
-                                            <img src={`http://127.0.0.1:8000${speaker.profile_image}`} alt={speaker.fullname} className="speaker-image" />
+                                            <img src={`https://alumination.sarc-iitb.org${speaker.profile_image}`} alt={speaker.fullname} className="speaker-image" />
                                             <p className="speaker-name">{speaker.fullname}</p>
                                             <p className="speaker-ka-desc">{speaker.description}</p>
                                         </div>
