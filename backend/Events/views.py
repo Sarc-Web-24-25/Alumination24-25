@@ -57,7 +57,7 @@ class EventList(APIView):
                 OtherDetails.objects.create(**request.data['other_details'])
             except Exception as e:
                 print(e)
-                return Response({"error": "Something went wrong please contact team"}, status=status.HTTP_400_BAD_REQUEST)
+                return Response({"error": "Something went wrong please contact web team"}, status=status.HTTP_400_BAD_REQUEST)
             event.applicants.add(user)
         except:
             return Response({"error": "Something went wrong please contact team"}, status=status.HTTP_400_BAD_REQUEST)
