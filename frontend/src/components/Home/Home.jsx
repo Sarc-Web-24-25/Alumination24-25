@@ -388,7 +388,7 @@ export default function Home() {
                         </div>
                      </div>
                      <div id="sponsors" style={{marginTop: "-10vh", marginLeft:"15vw"}}>
-                        <div style={hcontain}> <span style={textstyle}> OUR SPONSORS </span></div>
+                        <div style={hcontain}> <span className="heightFont" style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
                            <a className="link-sponsor-underline" href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "300px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
                         </div>
@@ -404,7 +404,7 @@ export default function Home() {
                      </div>
 
                      <div style={{ marginTop: "-10vh", marginLeft: "70px" }}>
-                        <div style={hcontain}> <span style={textstyle}> OUR PARTNERS </span></div>
+                        <div style={hcontain}> <span className="heightFont" style={textstyle}> OUR PARTNERS </span></div>
                         <div style={hcontain}>
                            <a className="link-sponsor-underline" href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
                            <a className="link-sponsor-underline" href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
@@ -421,7 +421,7 @@ export default function Home() {
 
                      </div>
                      <div style={{ marginTop: "-45vh", marginLeft: "70px" }}>
-                        <div style={hcontain}> <span style={textstyle}> MEDIA PARTNER </span></div>
+                        <div style={hcontain}> <span className="heightFont" style={textstyle}> MEDIA PARTNERS </span></div>
 
                         <div style={hcontain}>
                            <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "350px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Global Hues</span></div></a>

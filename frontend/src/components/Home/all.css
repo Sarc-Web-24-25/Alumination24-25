@@ -555,3 +555,8 @@ body {
     color: #fcbe6e;
     text-shadow: black 0.1em 0.1em 0.2em;
   }
+
+
+  .heightFont{
+    font-size: 2.5rem !important;
+  }

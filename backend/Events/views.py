@@ -49,17 +49,20 @@ class EventList(APIView):
         if user in event.applicants.all():
             return Response({"error": "You have already applied for this event"}, status=status.HTTP_400_BAD_REQUEST)
         
-        if request.data:
-            request.data['other_details']['user'] = user
-            request.data['other_details']['event'] = event
-        event.applicants.add(user)
-        event.save()
-        try: 
-            OtherDetails.objects.create(**request.data['other_details'])
-        except Exception as e:
-            print(e)
+        try:
+            if request.data and request.data['other_details']:
+                request.data['other_details']['user'] = user
+                request.data['other_details']['event'] = event
+            try: 
+                OtherDetails.objects.create(**request.data['other_details'])
+            except Exception as e:
+                print(e)
+                return Response({"error": "Something went wrong please contact team"}, status=status.HTTP_400_BAD_REQUEST)
+            event.applicants.add(user)
+        except:
             return Response({"error": "Something went wrong please contact team"}, status=status.HTTP_400_BAD_REQUEST)
         
+        event.save()
         send_mail(subject="Registration Successful | Alumination | SARC IIT Bombay", userName=profile.fullname, userEmail=user.username, isEvent=True, eventName=event.name)
         return Response({"message": "You have successfully applied for this event"}, status=status.HTTP_200_OK)
     
