@@ -50,7 +50,7 @@ class EventList(APIView):
             return Response({"error": "You have already applied for this event"}, status=status.HTTP_400_BAD_REQUEST)
         
         try:
-            if request.data and request.data['other_details']:
+            if request.data and 'other_details' in request.data:
                 request.data['other_details']['user'] = user
                 request.data['other_details']['event'] = event
             try: 
