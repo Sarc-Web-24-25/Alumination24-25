@@ -243,15 +243,15 @@ function EventIndividual() {
                             </div>
                         </div>
 
-                        {event.speakers[0] && <div className="speakers-section yellow-box" style={{ color: "#FFD1AB", fontSize: "20px", fontFamily: 'Inknut Antiqua', }}>
-                            <h4 className="speaker-heading">Speakers</h4>
-                            <div className="speakers-list">
+                        {event.speakers[0] && <div className="event-speakers-section yellow-box" style={{ color: "#FFD1AB", fontSize: "20px", fontFamily: 'Inknut Antiqua', }}>
+                            <h4 className="event-speaker-heading">Speakers</h4>
+                            <div className="event-speakers-list">
                                 {event.speakers.map((speaker) => (
-                                    <li key={speaker.id} className="speaker-item">
-                                        <div className="speaker-info">
-                                            <img src={`https://alumination.sarc-iitb.org${speaker.profile_image}`} alt={speaker.fullname} className="speaker-image" />
-                                            <p className="speaker-name">{speaker.fullname}</p>
-                                            <p className="speaker-ka-desc">{speaker.description}</p>
+                                    <li key={speaker.id} className="event-speaker-item">
+                                        <div className="event-speaker-info">
+                                            <img src={`https://alumination.sarc-iitb.org${speaker.profile_image}`} alt={speaker.fullname} className="event-speaker-image" />
+                                            <p className="event-speaker-name">{speaker.fullname}</p>
+                                            <p className="event-speaker-ka-desc">{speaker.description}</p>
                                         </div>
                                     </li>
                                 ))}
