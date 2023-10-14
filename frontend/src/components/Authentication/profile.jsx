@@ -188,6 +188,7 @@ function Profile() {
         "Centre for Formal Design and Verification of Software": "CFDVS",
         "Centre for Research in Nanotechnology and Science": "CRNS",
         "Centre for Technology Alternatives for Rural Areas": "CTARA",
+        "Center for Machine Intelligence and Data Science": "CMIDS",
         "Centre for Urban Science and Engineering": "CUSE",
         "Centre of Studies in Resources Engineering": "CSRE",
         "Chemical Engineering": "Chemical Engg",
