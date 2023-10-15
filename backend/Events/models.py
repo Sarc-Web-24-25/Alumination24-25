@@ -4,7 +4,7 @@ from PIL import Image
 from Authentication.models import MyUser
 from django.core.files import File
 import io
-from .options import FIELDS, DATES, FIELDS_GM
+from .options import FIELDS, DATES, FIELDS_GM, WORKSHOPS
 
 def process_image(image_file, name, prefix):
     image = Image.open(image_file)
@@ -53,6 +53,7 @@ class Event(models.Model):
     isRegNeeded = models.BooleanField(default=False, blank=True)
     isEnded = models.BooleanField(default=False, blank=True)
     isGM = models.BooleanField(default=False, blank=True)
+    isWorkshops = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return self.name
@@ -68,6 +69,9 @@ class Event(models.Model):
         if self.image:
             self.image = process_image(self.image, self.name, "event_")
         super().save(*args, **kwargs)
+
+class Workshops(models.Model):
+    workshop = models.CharField(max_length=255, blank=False, unique=True, choices=WORKSHOPS.items())
         
 class OtherDetails(models.Model):
     field_pref1 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
@@ -79,6 +83,8 @@ class OtherDetails(models.Model):
     field_pref1_gm = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
     field_pref2_gm = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
     field_pref3_gm = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
+    
+    workshops = models.ManyToManyField(Workshops, related_name='workshops', blank=True)
 
     pref_date = models.CharField(max_length=255, default="", blank=True, choices=DATES.items())
     event = models.ForeignKey(Event, on_delete=models.CASCADE)

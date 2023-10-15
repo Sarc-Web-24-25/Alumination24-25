@@ -11,6 +11,8 @@ import headingImage from './indiEvent.png'
 import Swal from 'sweetalert2';
 import letter from '../Home/bgimg/letter.png'
 import CursorAnimation from "./CursorAnimation"
+import MultiSelect from 'react-select';
+
 
 function EventIndividual() {
     const [selectedEventId, setSelectedEventId] = useState(null);
@@ -74,16 +76,20 @@ function EventIndividual() {
 
     const [prefDate, setPrefDate] = useState("");
 
+    const [workshops, setWorkshops] = useState([]);
+
+
 
     useEffect(() => {
-        if (pref1 && pref2 && pref3 && prefDate) {
+        console.log(workshops);
+        if ((pref1 && pref2 && pref3 && prefDate) || (workshops.length > 0)) {
             setCheckFields(true);
         } else {
             setCheckFields(false);
         }
         if (event) {
             setOtherDetails(
-                {
+                !event.isWorkshops ? {
                     "other_details": !event.isGM ? {
                         "field_pref1": pref1,
                         "field_pref2": pref2,
@@ -95,16 +101,19 @@ function EventIndividual() {
                         "field_pref3_gm": pref3,
                         "pref_date": prefDate,
                     }
+                } : {
+                    "other_details": {
+                        "workshops": workshops.map((workshop) => workshop.value),
+                    }
                 }
             )
         }
 
-    }, [pref1, pref2, pref3, prefDate]);
+    }, [pref1, pref2, pref3, prefDate, workshops]);
 
 
     const handleRegisterClick = (eventId, isRegNeeded) => {
 
-        console.log(eventId, isRegNeeded)
         if (!userData) {
             Swal.fire({
                 title: 'Please Login',
@@ -171,6 +180,17 @@ function EventIndividual() {
         "quant": "Quant",
     }
 
+    const WORKSHOPS = {
+        'consult': 'Consulting',
+        'finance': 'Finance',
+        'analytics': 'Analytics',
+        'software': 'IT/Software',
+        'product': 'Product Management',
+        'quant': 'Quant',
+        'blockchain': 'Blockchain',
+        'hr': 'HR',
+    }
+
 
     const fieldOptions = Object.keys(FIELDS).map((key) => {
         return <option value={key}>{FIELDS[key]}</option>
@@ -183,6 +203,13 @@ function EventIndividual() {
     const dateOptions = Object.keys(DATES).map((key) => {
         return <option value={key}>{DATES[key]}</option>
     });
+
+    const workshopOptions = Object.keys(WORKSHOPS).map((key) => {
+        return { value: key, label: WORKSHOPS[key] }
+    });
+
+
+
 
 
     const handlePref1Change = (e) => {
@@ -205,7 +232,7 @@ function EventIndividual() {
         <>
             {
                 event && <div>
-                    <div className="event-list-container">
+                    <div style={{ overflowX: "hidden" }} className="event-list-container">
                         <CursorAnimation />
                         <div className="top-section">
                             <img src={headingImage} alt="Top Image" className="top-imagee" />
@@ -221,23 +248,77 @@ function EventIndividual() {
                                     <p style={{ marginBottom: "0", color: "brown", fontWeight: "bold", fontSize: "120%" }}>{event.date}</p>
                                     <div style={{ display: !regBox && "none" }} className='fields-container'>
 
-                                        <select onChange={(e) => handlePref1Change(e)} className='field-input' value={pref1} name="" id="">
-                                            <option value="">Field Preference 1</option>
-                                            {event.isGM ? fieldOptionsGM : fieldOptions}
-                                        </select>
-                                        <select onChange={(e) => handlePref2Change(e)} className='field-input' value={pref2} name="" id="">
-                                            <option value="">Field Preference 2</option>
-                                            {event.isGM ? fieldOptionsGM : fieldOptions}
-                                        </select>
-                                        <select onChange={(e) => handlePref3Change(e)} className='field-input' value={pref3} name="" id="">
-                                            <option value="">Field Preference 3</option>
-                                            {event.isGM ? fieldOptionsGM : fieldOptions}
-                                        </select>
-                                        <select onChange={(e) => handleDateChange(e)} className='field-input' value={prefDate} name="" id="">
-                                            <option value="">Date Preference</option>
-                                            {dateOptions}
-                                        </select>
+                                        {
+                                            !event.isWorkshops && <>
+                                                <select onChange={(e) => handlePref1Change(e)} className='field-input' value={pref1} name="" id="">
+                                                    <option value="">Field Preference 1</option>
+                                                    {event.isGM ? fieldOptionsGM : fieldOptions}
+                                                </select>
+                                                <select onChange={(e) => handlePref2Change(e)} className='field-input' value={pref2} name="" id="">
+                                                    <option value="">Field Preference 2</option>
+                                                    {event.isGM ? fieldOptionsGM : fieldOptions}
+                                                </select>
+                                                <select onChange={(e) => handlePref3Change(e)} className='field-input' value={pref3} name="" id="">
+                                                    <option value="">Field Preference 3</option>
+                                                    {event.isGM ? fieldOptionsGM : fieldOptions}
+                                                </select>
+                                                <select onChange={(e) => handleDateChange(e)} className='field-input' value={prefDate} name="" id="">
+                                                    <option value="">Date Preference</option>
+                                                    {dateOptions}
+                                                </select></>
+                                        }
+
+
+                                        {
+                                            event.isWorkshops && <>
+                                            <p style={{margin:"0px", marginTop:"10px", color: "brown"}}>Which workshops would you like to attend?</p>
+                                            <MultiSelect
+                                            id="workshops"
+                                            name="workshops"
+                                            isMulti={true}
+                                            options={workshopOptions}
+                                            value={workshops}
+                                            onChange={selectedOptions => {
+                                                setWorkshops(selectedOptions);
+                                            }}
+                                            theme={(theme) => ({
+                                                ...theme,
+                                                borderRadius: 10,
+                                                colors: {
+                                                    ...theme.colors,
+                                                    text: 'orangered',
+                                                    primary25: '#ffd1ab',
+                                                    primary: 'black',
+                                                    background: 'black',
+                                                    backgroundColor: 'black',
+                                                },
+                                            })}
+                                            styles={{
+                                                container: provided => ({
+                                                    ...provided,
+                                                    height: '20%',
+                                                    width: '90%',
+                                                }),
+                                                control: provided => ({
+                                                    ...provided,
+                                                }),
+                                                option: provided => ({
+                                                    ...provided,
+                                                    color: 'black',
+                                                    '&:hover': {
+                                                        backgroundColor:
+                                                            '#FFD1AB',
+                                                        color: 'black',
+                                                    },
+                                                }),
+                                            }}
+                                        />
+                                            </>
+                                        }
+
+
                                     </div>
+
                                     <button disabled={!event.isLaunched} onClick={() => handleRegisterClick(event.id, event.isRegNeeded)} className='register-button' style={{ float: 'right', marginTop: "20px", width: "100%", opacity: !event.isLaunched && "0.7", cursor: !event.isLaunched && "not-allowed" }}>{event.button_text}</button>
                                 </div>
                             </div>

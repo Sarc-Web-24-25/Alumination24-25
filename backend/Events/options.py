@@ -23,3 +23,15 @@ DATES = {
     "22": "22nd October",
     "both": "Both Works",
 }
+
+
+WORKSHOPS = {
+    'consult': 'Consulting',
+    'finance': 'Finance',
+    'analytics': 'Analytics',
+    'software': 'IT/Software',
+    'product': 'Product Management',
+    'quant': 'Quant',
+    'blockchain': 'Blockchain',
+    'hr': 'HR',
+}

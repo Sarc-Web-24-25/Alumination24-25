@@ -1,4 +1,4 @@
-from .models import Event, OtherDetails
+from .models import Event, OtherDetails, Workshops
 from .serializers import EventSerializer, OtherDetailsSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser
@@ -54,8 +54,15 @@ class EventList(APIView):
             if request.data and ('other_details' in request.data):
                 request.data['other_details']['user'] = user
                 request.data['other_details']['event'] = event
+                if 'workshops' in request.data['other_details']:
+                    workshop_names = request.data['other_details']['workshops']
+                    workshops_to_add = Workshops.objects.filter(workshop__in=workshop_names)
+                    del request.data['other_details']['workshops']
                 try: 
-                    OtherDetails.objects.create(**request.data['other_details'])
+                    otherdetails = OtherDetails(**request.data['other_details'])
+                    otherdetails.save()
+                    if(workshops_to_add):
+                        otherdetails.workshops.set(workshops_to_add)
                 except Exception as e:
                     print(e)
                     return Response({"error": "Something went wrong please contact web team"}, status=status.HTTP_400_BAD_REQUEST)

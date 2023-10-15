@@ -1,6 +1,6 @@
 # events/admin.py
 from django.contrib import admin
-from .models import Event, Speaker, OtherDetails
+from .models import Event, Speaker, OtherDetails, Workshops
 from django.http import HttpResponse
 import csv
 from Authentication.models import Profile
@@ -42,3 +42,4 @@ class EventAdmin(admin.ModelAdmin):
 admin.site.register(Event, EventAdmin)
 admin.site.register(Speaker)
 admin.site.register(OtherDetails)
+admin.site.register(Workshops)
