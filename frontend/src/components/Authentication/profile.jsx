@@ -142,6 +142,7 @@ const styles = {
     },
     submitButton: {
         marginTop: '0vh',
+        marginBottom: '20vh',
         width: '20vw',
         padding: '12px',
         backgroundColor: "rgb(10 62 109 / 92%)",

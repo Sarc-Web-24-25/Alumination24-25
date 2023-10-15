@@ -327,3 +327,9 @@
     font-size: 0;
     color: #000;
 }
+
+
+.mainContainer{
+    overflow-y: scroll !important;
+    padding-bottom: 50vh;
+}

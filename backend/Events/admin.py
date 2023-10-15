@@ -16,7 +16,7 @@ class EventAdmin(admin.ModelAdmin):
             response['Content-Disposition'] = f'attachment; filename="{filename}"'
             writer = csv.writer(response)
             header = [
-                'Name', 'Rollno', 'Email', 'Phone', 'Department', 'Program', 'Graduation Year' , 'Preferred Date', 'Field Preference 1', 'Field Preference 2', 'Field Preference 3'
+                'Name', 'Rollno', 'Email', 'Phone', 'Department', 'Program', 'Graduation Year' , 'Preferred Date', 'Field Preference 1', 'Field Preference 2', 'Field Preference 3', 'Field Preference 1 Group Mentoring', 'Field Preference 2 Group Mentoring', 'Field Preference 3 Group Mentoring', 'Workshops'
             ]
             writer.writerow(header)
             for applicant in event.applicants.all():
@@ -31,8 +31,14 @@ class EventAdmin(admin.ModelAdmin):
                 field_pref2 = "" if other_details is None else other_details.field_pref2
                 field_pref3 = "" if other_details is None else other_details.field_pref3
                 
+                field_pref1_gm = "" if other_details is None else other_details.field_pref1_gm
+                field_pref2_gm = "" if other_details is None else other_details.field_pref2_gm
+                field_pref3_gm = "" if other_details is None else other_details.field_pref3_gm
+                
+                workshops = [] if other_details is None else other_details.workshops.all()
+                
                 writer.writerow([
-                    profile.fullname, profile.rollno, applicant.username, profile.phoneno, profile.department, profile.program, profile.graduation_year, pref_date, field_pref1, field_pref2, field_pref3
+                    profile.fullname, profile.rollno, applicant.username, profile.phoneno, profile.department, profile.program, profile.graduation_year, pref_date, field_pref1, field_pref2, field_pref3, field_pref1_gm, field_pref2_gm, field_pref3_gm, workshops
                 ])
         return response
     
