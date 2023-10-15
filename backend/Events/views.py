@@ -54,6 +54,7 @@ class EventList(APIView):
             if request.data and ('other_details' in request.data):
                 request.data['other_details']['user'] = user
                 request.data['other_details']['event'] = event
+                workshops_to_add = None
                 if 'workshops' in request.data['other_details']:
                     workshop_names = request.data['other_details']['workshops']
                     workshops_to_add = Workshops.objects.filter(workshop__in=workshop_names)
