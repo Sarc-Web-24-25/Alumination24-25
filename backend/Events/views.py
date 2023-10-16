@@ -60,6 +60,9 @@ class EventList(APIView):
                     workshops_to_add = Workshops.objects.filter(workshop__in=workshop_names)
                     del request.data['other_details']['workshops']
                 try: 
+                    isOtherDetails = OtherDetails.objects.filter(user=user, event=event)
+                    if isOtherDetails:
+                        isOtherDetails.delete()
                     otherdetails = OtherDetails(**request.data['other_details'])
                     otherdetails.save()
                     if(workshops_to_add):

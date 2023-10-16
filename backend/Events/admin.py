@@ -35,7 +35,12 @@ class EventAdmin(admin.ModelAdmin):
                 field_pref2_gm = "" if other_details is None else other_details.field_pref2_gm
                 field_pref3_gm = "" if other_details is None else other_details.field_pref3_gm
                 
-                workshops = [] if other_details is None else other_details.workshops.all()
+                workshops = None if other_details is None else other_details.workshops.all()
+                
+                if workshops:
+                    workshops = ""
+                else:
+                    workshops = ", ".join([workshop.workshop for workshop in workshops])
                 
                 writer.writerow([
                     profile.fullname, profile.rollno, applicant.username, profile.phoneno, profile.department, profile.program, profile.graduation_year, pref_date, field_pref1, field_pref2, field_pref3, field_pref1_gm, field_pref2_gm, field_pref3_gm, workshops
