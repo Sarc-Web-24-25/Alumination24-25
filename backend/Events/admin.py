@@ -37,7 +37,7 @@ class EventAdmin(admin.ModelAdmin):
                 
                 workshops = None if other_details is None else other_details.workshops.all()
                 
-                if workshops:
+                if not workshops:
                     workshops = ""
                 else:
                     workshops = ", ".join([workshop.workshop for workshop in workshops])
