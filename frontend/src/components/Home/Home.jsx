@@ -409,11 +409,10 @@ export default function Home() {
                            <a className="link-sponsor-underline" href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
                            <a className="link-sponsor-underline" href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
                            <a className="link-sponsor-underline" href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
-                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Connecting Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.soulup.in/"><div style={frame2}> <img src={sp7} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Connecting Partner</span></div></a>
                         </div>
 
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="https://www.lovelocal.in/"><div style={frame2}> <img src={sp8} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
                            <a className="link-sponsor-underline" href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
                         </div>
 
@@ -425,7 +424,6 @@ export default function Home() {
 
                         <div style={hcontain}>
                            <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "350px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Global Hues</span></div></a>
-                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp11} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Mirror Now</span></div></a>
                         </div>
                      </div>
 
