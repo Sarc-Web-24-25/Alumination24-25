@@ -13,11 +13,11 @@ import counter from "./bgimg/counter.png";
 import feather from "./bgimg/feather.png";
 import sp1 from "./bgimg/sp1.png"
 import sp2 from "./bgimg/sp2.jpg"
-import sp3 from "./bgimg/sp3.jpg"
+import sp3 from "./bgimg/cdsl1.jpeg"
 import sp4 from "./bgimg/sp4.jpeg"
 import sp5 from "./bgimg/sp5.jpg"
 import sp6 from "./bgimg/sp6.jpg"
-import sp7 from "./bgimg/sp7.avif"
+import sp7 from "./bgimg/soulup.png"
 import sp8 from "./bgimg/sp8.png"
 import sp9 from "./bgimg/sp9.jpeg"
 import sp10 from "./bgimg/sp10.jpeg"
@@ -390,12 +390,12 @@ export default function Home() {
                      <div id="sponsors" style={{marginTop: "-10vh", marginLeft:"15vw"}}>
                         <div style={hcontain}> <span className="heightFont" style={textstyle}> OUR SPONSORS </span></div>
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="https://strategicerp.com/"><div style={frame2}> <img src={sp1} alt="" style={{ width: "300px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
+                           <a className="link-sponsor-underline" href="https://bit.ly/48VNI3l"><div style={frame2}> <img src={sp1} alt="" style={{ width: "300px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Title Sponsor</span></div></a>
                         </div>
 
                         <div style={hcontain}>
                            <a className="link-sponsor-underline" href="https://www.bankofbaroda.in/"><div style={frame2}> <img src={sp2} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Gold Sponsor</span></div></a>
-                           <a className="link-sponsor-underline" href="https://www.cdslindia.com/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.instagram.com/cdslindia/"><div style={frame2}> <img src={sp3} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Silver Sponsor</span></div></a>
 
                         </div>
 
@@ -409,7 +409,7 @@ export default function Home() {
                            <a className="link-sponsor-underline" href="https://www.codingninjas.com/"><div style={frame2}> <img src={sp4} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Workshop Partner</span></div></a>
                            <a className="link-sponsor-underline" href="https://www.easemytrip.com/"><div style={frame2}> <img src={sp5} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
                            <a className="link-sponsor-underline" href="https://www.abhibus.com/"><div style={frame2}> <img src={sp6} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
-                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp7} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Connecting Partner</span></div></a>
                         </div>
 
                         <div style={hcontain}>
