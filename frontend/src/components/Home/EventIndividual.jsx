@@ -114,6 +114,11 @@ function EventIndividual() {
 
     const handleRegisterClick = (eventId, isRegNeeded) => {
 
+        if(eventId === 2){
+            window.location.href = "https://forms.gle/J4t7hJaB7xViaZKD6"
+            return 
+        }
+
         if (!userData) {
             Swal.fire({
                 title: 'Please Login',
