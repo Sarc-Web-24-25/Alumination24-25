@@ -9,7 +9,7 @@ function Schedule() {
         { time: '4:00 PM', event: 'Alumni Arena' },
         { time: '5:00 PM', event: 'Coming Full Circle' },
         { time: '6:00 PM', event: 'Trailblazers' },
-        { time: '7:30 PM', event: 'Showtime | Vipul Goyal' },
+        { time: '7:30 PM', event: 'Beyond The Horizon | Vipul Goyal' },
         // Add more schedule items for day 1
     ];
 
