@@ -22,6 +22,13 @@ import sp8 from "./bgimg/sp8.png"
 import sp9 from "./bgimg/sp9.jpeg"
 import sp10 from "./bgimg/sp10.jpeg"
 import sp11 from "./bgimg/sp11.jpg"
+import sp21 from "./bgimg/IndExp.jpeg"
+import sp22 from "./bgimg/burger.jpeg"
+import sp23 from "./bgimg/alpha.jpeg"
+import sp24 from "./bgimg/harry.jpeg"
+import sp25 from "./bgimg/vskill.jpeg"
+import sp26 from "./bgimg/nirmala.jpeg"
+import sp27 from "./bgimg/neo.jpeg"
 import glass from "./bgimg/glass.png";
 import nandan from "./bgimg/nandan.png";
 import bhavish from "./bgimg/bhavish.png";
@@ -122,6 +129,12 @@ export default function Home() {
    const textstyle = {
       color: "#FFE500",
       fontSize: "70px",
+      fontFamily: 'Inknut Antiqua'
+   };
+
+   const textstyle22 = {
+      color: "#FFE500",
+      fontSize: "55px",
       fontFamily: 'Inknut Antiqua'
    };
    const textstyle1 = {
@@ -413,18 +426,40 @@ export default function Home() {
                         </div>
 
                         <div style={hcontain}>
-                           <a className="link-sponsor-underline" href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.elearnmarkets.com/"><div style={frame2}> <img src={sp9} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Learning Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.vskills.in/certification/"><div style={frame2}> <img src={sp25} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.mycampusstudyabroad.com/"><div style={frame2}> <img src={sp26} alt="" style={{ width: "370px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Education Partner</span></div></a>
                         </div>
 
 
 
                      </div>
-                     <div style={{ marginTop: "-45vh", marginLeft: "70px" }}>
+                     <div style={{ marginTop: "-10vh", marginLeft: "70px" }}>
                         <div style={hcontain}> <span className="heightFont" style={textstyle}> MEDIA PARTNERS </span></div>
 
                         <div style={hcontain}>
                            <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp10} alt="" style={{ width: "350px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Global Hues</span></div></a>
                         </div>
+                        <div style={hcontain}>
+                           <a className="link-sponsor-underline" href="https://indianexpress.com/"><div style={frame2}> <img src={sp21} alt="" style={{ width: "350px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Indian Express</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.instagram.com/neomediaworks/?hl=en"><div style={frame2}> <img src={sp27} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Official Aftermovie Partner</span></div></a>
+                        </div>
+                     </div>
+
+                     <div id="sponsors" style={{ marginTop: "-10vh", marginLeft: "15vw" }}>
+                        <div style={hcontain}> <span className="heightFont" style={textstyle}> FOOD & BEVERAGES PARTNER </span></div>
+                        <div style={hcontain}>
+                           <a className="link-sponsor-underline" href="https://g.co/kgs/cGcEnx"><div style={frame2}> <img src={sp22} alt="" style={{ width: "300px", height: "200px", textDecoration: "none", }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textDecoration: "none", fontFamily: 'Inknut Antiqua', }}>Food Partner</span></div></a>
+                        </div>
+
+                        <div style={hcontain}>
+                           <a className="link-sponsor-underline" href="#"><div style={frame2}> <img src={sp23} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Beverages Partner</span></div></a>
+                           <a className="link-sponsor-underline" href="https://instagram.com/harryandkarryfoods?igshid=MzRlODBiNWFlZA=="><div style={frame2}> <img src={sp24} alt="" style={{ width: "300px", height: "200px" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Snacks Partner</span></div></a>
+
+                        </div>
+
+
+
                      </div>
 
 
@@ -599,15 +634,16 @@ export default function Home() {
                            <a className="link-sponsor-underline" href="https://www.abhibus.com/"><div style={{...frame2, marginBottom:"20vh", marginLeft:"10vw"}}> <img src={sp6} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Travel Partner</span></div></a>
 
 
-                           <a className="link-sponsor-underline" href="#"><div style={{...frame2, marginBottom:"20vh", marginLeft:"10vw"}}> <img src={sp7} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Social Media Partner</span></div></a>
+                        <a className="link-sponsor-underline" href="#"><div style={{ ...frame2, marginBottom: "20vh", marginLeft: "10vw" }}> <img src={sp7} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Connecting Partner</span></div></a>
+                        
+                        <a className="link-sponsor-underline" href="#"><div style={{ ...frame2, marginBottom: "20vh", marginLeft: "10vw" }}> <img src={sp25} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
+
+                        <a className="link-sponsor-underline" href="#"><div style={{ ...frame2, marginBottom: "20vh", marginLeft: "10vw" }}> <img src={sp26} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Education  Partner</span></div></a>
 
 
 
-                           <a className="link-sponsor-underline" style={{marginBottom: '20vh', marginLeft:"2vw"}} href="https://www.lovelocal.in/"><div style={{...frame2, marginBottom:"20vh"}}> <img src={sp8} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", textAlign:"center" ,fontFamily: 'Inknut Antiqua', }}>Women Empowerment Partner</span></div></a>
 
-
-
-                           <a className="link-sponsor-underline"  href="https://www.elearnmarkets.com/"><div style={{...frame2, marginBottom:"20vh", marginLeft:"10vw"}}> <img src={sp9} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Certificate Partner</span></div></a>
+                           <a className="link-sponsor-underline"  href="https://www.elearnmarkets.com/"><div style={{...frame2, marginBottom:"20vh", marginLeft:"10vw"}}> <img src={sp9} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Learning Partner</span></div></a>
 
 
 
@@ -618,8 +654,24 @@ export default function Home() {
 
                         <div >
                         <a className="link-sponsor-underline" href="#"><div style={{...frame2, marginBottom:"20vh", marginLeft:"10vw"}}> <img src={sp10} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Global Hues</span></div></a>
-                           <a className="link-sponsor-underline" href="#"><div style={{...frame2, marginBottom:"20vh", marginLeft:"10vw"}}> <img src={sp11} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua' }}>Mirror Now</span></div></a>
+                           <a className="link-sponsor-underline" href="https://indianexpress.com/"><div style={{...frame2, marginBottom:"20vh", marginLeft:"10vw"}}> <img src={sp21} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua' }}>Indian Express</span></div></a>
+                           <a className="link-sponsor-underline" href="https://www.instagram.com/neomediaworks/?hl=en"><div style={{ ...frame2, marginBottom: "20vh", marginLeft: "10vw" }}> <img src={sp27} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua' }}>Aftermovie Partner</span></div></a>
                         </div>
+                     </div>
+
+                     <div style={{ marginTop: "2vh" }} className="sponsors">
+                        <div className="speaker-heading" style={hcontain}> <span style={textstyle22}> FOOD & BEVERAGES PARTNER  </span></div>
+
+                        <a className="link-sponsor-underline" href="https://g.co/kgs/cGcEnx"><div style={{ ...frame2, marginBottom: "20vh", marginLeft: "10vw" }}> <img src={sp22} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Food Partner</span></div></a>
+
+
+                        <a className="link-sponsor-underline" href="#"><div style={{ ...frame2, marginBottom: "20vh", marginLeft: "10vw" }}> <img src={sp23} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Beverages Partner</span></div></a>
+
+
+                        <a className="link-sponsor-underline" href="https://instagram.com/harryandkarryfoods?igshid=MzRlODBiNWFlZA=="><div style={{ ...frame2, marginBottom: "20vh", marginLeft: "10vw" }}> <img src={sp24} alt="" style={{ width: "90vw" }} /> <span style={{ color: "#FFD6A0", fontSize: "25px", fontFamily: 'Inknut Antiqua', }}>Snacks Partner</span></div></a>
+
+
+                        
                      </div>
 
 
