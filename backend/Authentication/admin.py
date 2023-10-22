@@ -35,6 +35,7 @@ class MyUserAdmin(UserAdmin):
                 else:
                     user_name = "Student"
                 writer.writerow([user_name, user.username, user.is_alum, user.is_active])
+        return response
     
     export_to_csv.short_description = "Export users to CSV"
 
