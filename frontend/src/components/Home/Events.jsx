@@ -14,19 +14,25 @@ function EventList() {
 
     const sortEvents = (events) => {
         events.sort((a, b) => {
+            // event with ID 16 at the top.
+            if (a.id === 16) return -1;
+            if (b.id === 16) return 1;
+            
             if (a.isLaunched && !b.isLaunched) return -1;
-            else return 1;
+            if (!a.isLaunched && b.isLaunched) return 1;
+            // If all sorting criteria fail, maintain the original order.
+            return 0;
         })
         setEvents(events);
     }
-    
 
     useEffect(() => {
         axios
             .get('api/events/')
             .then((response) => {
-                setEvents(response.data);
-                sortEvents(response.data);
+                const sortedEvents = [...response.data]; // Create a copy of the events array
+                sortEvents(sortedEvents); // Sort the events based on your criteria
+                setEvents(sortedEvents); // Update the state with the sorted array
             })
             .catch((error) => {
                 console.error(error);

@@ -72,6 +72,7 @@ export default function CustomNavbar() {
         <Nav.Link href="/" style={text}>Home</Nav.Link>
         <Nav.Link href="/events" style={text}>Events</Nav.Link>
         {!thisOne && <Nav.Link onClick={scrollToAbout} style={text}>About</Nav.Link>}
+        <Nav.Link href="/schedule" style={text}>Schedule</Nav.Link>
         <Nav.Link href="/team" style={text}>Team</Nav.Link>
         <Nav.Link href="/gallery" style={text}>Gallery</Nav.Link>
         {!thisOne && <Nav.Link onClick={scrollToSponsors} style={text}>Sponsors</Nav.Link>}
@@ -104,6 +105,9 @@ export default function CustomNavbar() {
               </NavDropdown.Item>}
               <NavDropdown.Item className="not-apna-nav" href="/events" style={text}>
                 Events
+              </NavDropdown.Item>
+              <NavDropdown.Item className="not-apna-nav" href="/schedule" style={text}>
+                Schedule
               </NavDropdown.Item>
               <NavDropdown.Item className="not-apna-nav" href="/gallery" style={text}>
                 Gallery

@@ -6,6 +6,7 @@
     background-image: url('./bgimg/backg.png');
     background-size: cover;
     background-repeat: no-repeat;
+    cursor: auto !important;
     background-attachment: fixed;
 }
 
@@ -57,6 +58,18 @@
 .schedule-table th,
 .schedule-table td {
     padding: 8px;
+}
+
+@media screen and (max-width: 600px){
+    .schedule-header h2 {
+        font-size: 25px;
+    }
+    .schedule-page{
+        margin-top: -30vh;
+    }
+    .swipe-button{
+        font-size: 15px;
+    }
 }
 
 /* Add your additional styles as needed */

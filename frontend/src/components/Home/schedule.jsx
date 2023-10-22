@@ -5,26 +5,22 @@ function Schedule() {
     const [currentPage, setCurrentPage] = useState('day1'); // Track the current schedule page
 
     const day1Schedule = [
-        { time: '9:00 AM', event: 'Shadow Program' },
         { time: '10:00 AM', event: 'Workshops' },
-        { time: '9:00 AM', event: 'Shadow Program' },
-        { time: '10:00 AM', event: 'Workshops' },
-        { time: '9:00 AM', event: 'Shadow Program' },
-        { time: '10:00 AM', event: 'Workshops' },
-        { time: '9:00 AM', event: 'Shadow Program' },
-        { time: '10:00 AM', event: 'Workshops' },
+        { time: '4:00 PM', event: 'Alumni Arena' },
+        { time: '5:00 PM', event: 'Coming Full Circle' },
+        { time: '6:00 PM', event: 'Trailblazers' },
+        { time: '7:30 PM', event: 'Beyond The Horizon | Vipul Goyal' },
         // Add more schedule items for day 1
     ];
 
     const day2Schedule = [
-        { time: '9:00 AM', event: 'Workshops' },
-        { time: '11:00 AM', event: 'Panel Discussion' },
-        { time: '9:00 AM', event: 'Shadow Program' },
         { time: '10:00 AM', event: 'Workshops' },
-        { time: '9:00 AM', event: 'Shadow Program' },
-        { time: '11:00 AM', event: 'Panel Discussion' },
-        { time: '9:00 AM', event: 'Shadow Program' },
-        { time: '11:00 AM', event: 'Panel Discussion' },
+        { time: '4:00 PM', event: 'Alumni Arena' },
+        { time: '4:00 PM', event: 'Start it Up' },
+        { time: '6:00 PM', event: 'Spotlight' },
+        { time: '7:30 PM', event: 'Un-Engineering | Sameer Saxena & Jodi Anoorabh' },
+        
+       
         // Add more schedule items for day 2
     ];
 
@@ -33,8 +29,8 @@ function Schedule() {
     };
 
     return (
-        <div className="schedule-container">
-            <CursorAnimation />
+        <><div className='wdniofu'><CursorAnimation /><div className="schedule-container">
+            
             <div className={`schedule-page ${currentPage}`}>
                 <div className="schedule-header">
                     <h2>{currentPage === 'day1' ? 'Day 1 Schedule' : 'Day 2 Schedule'}</h2>
@@ -68,6 +64,7 @@ function Schedule() {
                 </table>
             </div>
         </div>
+        </div></>
     );
 }
 
