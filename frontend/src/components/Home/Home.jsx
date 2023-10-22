@@ -336,7 +336,15 @@ export default function Home() {
                            <h1 style={textstyle}>ABOUT US</h1>
                            <p style={textstyle1}>SARC proudly presents Alumination 2023, IIT Bombay's grandest student-alumni fest. This two-day extravaganza aims to quench your thirst for knowledge, harness the wisdom of our esteemed alumni, and create a bridge between students and our vast alumni network. With a diverse array of activities catering to interests in core, non-core, and unconventional fields, Alumination invites you to transform aspirations into achievements. Join us on October 21st and 22nd to let your dreams take flight and reunite with beloved alumni at their alma mater!</p>
                      </div>
-                     <img src={ig1} style={imgstylegod} alt="" />
+                     <img src={ig1} style={imgstylegod} alt="" /> 
+
+
+
+
+                     
+
+
+
                      <div style={{ marginTop: "-30px" }} >
 
 
