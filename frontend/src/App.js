@@ -9,7 +9,7 @@ import {
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar1 from "./components/Home/Navbar";
-import Home from "./components/Home/Home";
+import Home1 from "./components/Home/Home1";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
 import Gallery from "./components/Home/Gallery";
@@ -29,9 +29,8 @@ import EventIndividual from "./components/Home/EventIndividual";
 function App() {
   return (
     <Router>
-      <Navbar1 />
       <Routes>
-        <Route path="/" element={<Home />} exact={true} />
+        <Route path="/" element={<Home1 />} exact={true} />
         <Route path="/team" element={<Team /> } exact={true} />
         <Route path="/gallery" element={<Gallery1 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
