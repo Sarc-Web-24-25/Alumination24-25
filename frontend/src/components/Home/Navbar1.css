@@ -1,0 +1,96 @@
+.navbarNew{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.homeFlag{
+    height: 100%;
+    width: 15%;
+    /* background-color: rgba(0, 255, 255, 0.852); */
+}
+
+.spaceHome{
+    height: 100%;
+    width: 40%;
+    /* background-color: rgba(236, 197, 125, 0.692); */
+}
+
+.navitems{      
+    height: 100%;
+    width: 32%;
+    /* background-color: rgba(217, 0, 255, 0.514); */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: top;
+}
+
+.profileHome{
+    height: 100%;
+    width: 13%;
+    /* background-color: rgba(144, 0, 255, 0.341); */
+}
+
+
+.navitem1{
+    height: 90%;
+    width: 30%;
+    background-image: url('./photos24/offshort.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    font-size: 110%;   
+    font-weight: 600;
+    color: #700815;
+}
+
+.navitem2{
+    height: 100%;
+    width: 30%;
+    background-image: url('./photos24/offlong.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    font-size: 110%;   
+    font-weight: 600;
+    color: #700815;
+}
+
+.navitem3{height : 90%;width: 30%;
+    background-image: url('./photos24/offshort.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    font-size: 110%;   
+    font-weight: 600;
+    color: #700815;
+}
+
+.active1{
+    transition: 0.15s;
+    background-image: url('./photos24/onshort.png');
+
+}
+.active2{
+    transition: 0.15s;
+
+    background-image: url('./photos24/onLong.png');
+
+}.active3{
+    transition: 0.15s;
+
+    background-image: url('./photos24/onshort.png');
+
+}
