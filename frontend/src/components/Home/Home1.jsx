@@ -5,6 +5,7 @@ import dragon from './photos24/dragon.png';
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
 import cloud3 from './photos24/Clouds3.png';
+import Alumni from './Alumni/Alumni.jsx'
 
 function Home1() {
   return (
@@ -57,6 +58,9 @@ function Home1() {
         A Student-run organization at IIT Bombay, connecting 60k+ Alumni and 12k+ students. Actively strengthens Student-alumni relations through a robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student-alumni community since 2008.
       </div>
       </div>
+
+      <Alumni />
+      
     </div>
   );
 }
