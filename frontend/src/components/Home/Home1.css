@@ -1,5 +1,5 @@
 .newhome{
-    background-image: url('C:\Users\prati\OneDrive\Desktop\sarc\alumination_yash\Alumination24-25\frontend\src\components\Home\photos24\Homepage Alumination 2.png');
+    background-image: url('../Home/photos24/Homepage\ Alumination\ 2.png');
     background-size: cover; 
     background-repeat: no-repeat;
 }
@@ -7,6 +7,5 @@
     margin-top: 800px;
     text-align: center;
     font-size: 100px;
-    color:#700815;
-    
+    color:#700815;   
 }

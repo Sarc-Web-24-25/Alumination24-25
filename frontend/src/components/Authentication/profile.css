@@ -271,7 +271,7 @@
     /* Optional: Add a white border around the circle */
 }
 
-.editing{
+.editing {
     opacity: 0.5;
 }
 
@@ -282,54 +282,58 @@
 }
 
 
-@media screen  and (max-width: 768px) {
-    .profileform-area{
+@media screen and (max-width: 768px) {
+    .profileform-area {
         flex-direction: column !important;
     }
-    label{
+
+    label {
         display: none !important;
     }
-    .profileform-area{
+
+    .profileform-area {
         width: 100vw !important;
         padding: 0 !important;
         margin: 0 !important;
     }
-    .profileform-area input{
+
+    .profileform-area input {
         flex-basis: auto !important;
         margin-bottom: 5px;
         width: 120vw;
     }
 
-    .profileform-area input::placeholder{
+    .profileform-area input::placeholder {
         font-size: 1.2rem !important;
     }
 
-    .profileform-area select, option{
+    .profileform-area select,
+    option {
         flex-basis: auto !important;
         margin-bottom: 5px;
         width: 120%;
     }
 
-    .mainContainer{
+    .mainContainer {
         padding-bottom: 50vh !important;
     }
 
-    .mainContainer button{
+    .mainContainer button {
         margin-top: 10px !important;
         width: 65% !important;
     }
 
 
 }
-    
 
-.profileform-area input::placeholder{
+
+.profileform-area input::placeholder {
     font-size: 0;
     color: #000;
 }
 
 
-.mainContainer{
+.mainContainer {
     overflow-y: scroll !important;
     padding-bottom: 50vh;
 }
