@@ -5,10 +5,15 @@
     background-repeat: no-repeat;
 }
 .About{
-    margin-top: 800px;
     text-align: center;
-    font-size: 100px;
+    font-size: 40px;
     color:#700815;
+    margin-top: 400px;
+    margin-left: 15%;
+    margin-right: 15%;
+    z-index: 500;
+    position: relative;
+
     
 }
 
@@ -53,4 +58,32 @@ align-items: flex-start;}
     right: 0%;
     top: 5%;
 
+}
+.About H1{
+    font-size: 80px;
+}
+.clouds{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  overflow: hidden;
+  z-index: 1;
+}
+.clouds img{
+    position: absolute;
+    max-width: 100%;
+    animation: animate calc(40s * var(--i)) linear infinite;
+    overflow: hidden;
+    
+}
+@keyframes animate{
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(100%);
+    }
 }
