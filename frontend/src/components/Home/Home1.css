@@ -3,6 +3,7 @@
     background-image: url('./photos24/Alumination.png');
     background-size: cover; 
     background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 .About{
     margin-top: 800px;
@@ -51,6 +52,351 @@ align-items: flex-start;}
     /* background-color: rgba(0, 255, 255, 0.323); */
     position: absolute;
     right: 0%;
-    top: 5%;
+    top: 2%;
 
+}
+
+
+/* image stacking code of the castle and the moon :) */
+/* 
+.castleHome{
+    position: absolute;
+    opacity: 0.5;
+    filter: contrast(1.5);
+    top: -30px;
+    left: 18px;
+    z-index: 100;
+}
+
+.moonHome{
+    position: absolute;
+    opacity: 0.5;
+    height: 199%;
+    top: -330px;
+    right: -400px;
+}
+
+@media screen and (max-width: 1286px) {
+
+    .moonHome{
+        height: 170%;
+        top: -278px;
+        right: -360px;
+        transform: rotate(2deg);
+    }
+
+    .castleHome{
+
+        height: 115%;
+        top: -54px;
+        left: -30px;
+    }
+    
+} */
+
+
+
+/* Realistic Flame Effect (left side) */
+.realistic-flame {
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    width: 50px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 119, 0, 0.8) 20%, transparent 70%);
+    animation: flicker 0.5s infinite alternate linear;
+    filter: blur(2px);
+}
+
+@keyframes flicker {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+@media screen and (max-width: 1286px) {
+
+    .realistic-flame {
+        top: 57%;
+    }
+}
+
+@media screen and (max-width: 1275px) {
+
+    .realistic-flame {
+        top: 56%;
+    }
+}
+
+@media screen and (max-width: 1255px) {
+
+    .realistic-flame {
+        top: 55%;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+
+    .realistic-flame {
+        top: 54%;
+    }
+}
+
+@media screen and (max-width: 1205px) {
+
+    .realistic-flame {
+        top: 53%;
+    }
+}
+
+@media screen and (max-width: 1185px) {
+
+    .realistic-flame {
+        top: 52%;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+
+    .realistic-flame {
+        top: 51%;
+    }
+}
+
+
+
+
+/* Semicircle Hover Effect for Moon (right side) */
+.semicircle-moon1 {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    width: 300px;
+    height: 150px; /* Larger size */
+    background-color: transparent;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(15deg); /* Rotate 45% clockwise */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+.semicircle-moon1::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px; /* Adjusted to cover1top part */
+    top: -75px; /* Ensure only top part shows */
+    right: -75px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter */
+    border-top-right-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.semicircle-moon1:hover::before {
+    background: rgba(255, 255, 255, 1); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+}
+
+
+
+.semicircle-moon2 {
+    position: absolute;
+    top: 40%;
+    right: -8.2%;
+    width: 1000px;
+    height: 150px; /* Larger size */
+    background-color: transparent;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(55deg); /* Rotate 45% clockwise */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+.semicircle-moon2::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px; /* Adjusted to cover1top part */
+    top: -105px; /* Ensure only top part shows */
+    right: -105px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter */
+    border-top-right-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.semicircle-moon2:hover::before {
+    background: rgba(255, 255, 255, 1); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+}
+
+.semicircle-moon3 {
+    position: absolute;
+    top: 65%;
+    right: 2%;
+    width: 300px;
+    height: 150px; /* Larger size */
+    background-color: transparent;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(40deg); /* Rotate 45% clockwise */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+.semicircle-moon3::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px; /* Adjusted to cover1top part */
+    top: -105px; /* Ensure only top part shows */
+    right: -105px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter */
+    border-top-right-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.semicircle-moon3:hover::before {
+    background: rgba(255, 255, 255, 1); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+}
+
+
+
+.semicircle-moon4 {
+    position: absolute;
+    top: 60%;
+    right: 2%;
+    width: 300px;
+    height: 150px; /* Larger size */
+    background-color: transparent;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(40deg); /* Rotate 45% clockwise */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+.semicircle-moon4::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px; /* Adjusted to cover1top part */
+    top: -105px; /* Ensure only top part shows */
+    right: -105px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter */
+    border-top-right-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.semicircle-moon4:hover::before {
+    background: rgba(255, 255, 255, 1); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+}
+
+
+.semicircle-moon5 {
+    position: absolute;
+    top: 55%;
+    right: 2.2%;
+    width: 300px;
+    height: 150px; /* Larger size */
+    background-color: transparent;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(40deg); /* Rotate 45% clockwise */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+.semicircle-moon5::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px; /* Adjusted to cover1top part */
+    top: -105px; /* Ensure only top part shows */
+    right: -105px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter */
+    border-top-right-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.semicircle-moon5:hover::before {
+    background: rgba(255, 255, 255, 1); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+}
+
+
+.semicircle-moon6 {
+    position: absolute;
+    top: 70%;
+    right: 1.7%;
+    width: 300px;
+    height: 150px; /* Larger size */
+    background-color: transparent;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(46deg); /* Rotate 45% clockwise */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+.semicircle-moon6::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px; /* Adjusted to cover1top part */
+    top: -105px; /* Ensure only top part shows */
+    right: -105px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter */
+    border-top-right-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.semicircle-moon6:hover::before {
+    background: rgba(255, 255, 255, 1); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+}
+
+
+
+.semicircle-moon7 {
+    position: absolute;
+    top: 67%;
+    right: 1.6%;
+    width: 300px;
+    height: 150px; /* Larger size */
+    background-color: transparent;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    transform: rotate(48deg); /* Rotate 45% clockwise */
+    overflow: hidden;
+    transition: all 0.3s ease; /* Smoother transition */
+}
+
+.semicircle-moon7::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px; /* Adjusted to cover1top part */
+    top: -105px; /* Ensure only top part shows */
+    right: -105px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly brighter */
+    border-top-right-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.semicircle-moon7:hover::before {
+    background: rgba(255, 255, 255, 1); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
 }

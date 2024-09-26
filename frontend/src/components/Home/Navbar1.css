@@ -94,3 +94,15 @@
     background-image: url('./photos24/onshort.png');
 
 }
+
+.navitem1:hover{
+    background-image: url('./photos24/onshort.png');
+    transition: 0.15s;
+}
+.navitem2:hover{
+    background-image: url('./photos24/onLong.png');
+    transition: 0.15s;
+}.navitem3:hover{
+    background-image: url('./photos24/onshort.png');
+    transition: 0.15s;
+}
