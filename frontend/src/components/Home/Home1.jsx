@@ -5,8 +5,8 @@ import dragon from './photos24/dragon.png';
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
 import cloud3 from './photos24/Clouds3.png';
-import Alumni from './Alumni/Alumni.jsx'
-
+import Alumni from './Alumni/Alumni.jsx';
+import Count from './count/Count.jsx';
 function Home1() {
   return (
     <div className="newhome">
@@ -39,6 +39,9 @@ function Home1() {
         <div className="lowerMainHome">
           <div className="registerHome" style={{ fontSize: "25px", color: '#700815' }}>
             REGISTER
+          </div> 
+          <div className="count_k" >
+            <Count />
           </div>
         </div>
       </div>
@@ -57,11 +60,14 @@ function Home1() {
         <h1>About Us</h1>
         A Student-run organization at IIT Bombay, connecting 60k+ Alumni and 12k+ students. Actively strengthens Student-alumni relations through a robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student-alumni community since 2008.
       </div>
+      <Count />
+      
       </div>
 
-      <Alumni />
+      {/* <Alumni /> */}
       
     </div>
+    
   );
 }
 
