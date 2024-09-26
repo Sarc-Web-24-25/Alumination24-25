@@ -1,3 +1,5 @@
+
+
 // import React from "react";
 // import { Parallax } from "react-parallax"; // Import Parallax component
 // import "./Home1.css";
@@ -30,11 +32,17 @@
 //                     </div>
 //                 </div>
 //                 {/* Clouds below Layer 1 */}
-//                 <div className="clouds">
+//                 <div className="clouds" style={{ top: "70%" }}> 
 //                     <img src={cloud1} alt="cloud1" className="cloud" />
 //                     <img src={cloud2} alt="cloud2" className="cloud" />
 //                     <img src={cloud3} alt="cloud3" className="cloud" />
+//                     <img src={cloud2} alt="cloud3" className="cloud" />
+//                     <img src={cloud3} alt="cloud3" className="cloud" />
+//                     <img src={cloud1} alt="cloud1" className="cloud" />
+//                     <img src={cloud3} alt="cloud3" className="cloud" />
 //                 </div>
+//                 {/* Realistic flame effect */}
+//                 <div className="realistic-flame"></div>
 //             </Parallax>
 
 //             {/* Parallax Layer 2 */}
@@ -46,6 +54,10 @@
 //                 <div className="clouds">
 //                     <img src={cloud1} alt="cloud1" className="cloud" />
 //                     <img src={cloud2} alt="cloud2" className="cloud" />
+//                     <img src={cloud3} alt="cloud3" className="cloud" />
+//                     <img src={cloud2} alt="cloud3" className="cloud" />
+//                     <img src={cloud3} alt="cloud3" className="cloud" />
+//                     <img src={cloud1} alt="cloud1" className="cloud" />
 //                     <img src={cloud3} alt="cloud3" className="cloud" />
 //                 </div>
 //             </Parallax>
@@ -63,23 +75,34 @@
 
 // export default Home1;
 
+
+
+// Home1.js
 import React from "react";
 import { Parallax } from "react-parallax"; // Import Parallax component
 import "./Home1.css";
+import "./Petal.css"; // Import the Petal styles
 import layer1 from "./photos24/layer1.png"; // Top layer image
 import layer2 from "./photos24/layer2.png"; // Bottom layer image
 import dragon from "./photos24/dragon.png";
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
 import cloud3 from './photos24/Clouds3.png';
-// Ensure this file exists
+// import Petal from './Petal'; // Import Petal component
+import Petal from './Petal';
+
 
 function Home1() {
+    const petals = Array.from({ length: 30 }).map((_, index) => <Petal key={index} />); // Create petals
+
     return (
         <div className="newhome">
             {/* Parallax Layer 1 */}
             <Parallax bgImage={layer1} strength={300}>
-                <div className="mainHome" style={{ height: "100vh" }}>
+                <div className="mainHome" style={{ height: "100vh", position: 'relative' }}>
+                    {/* Add Petals here */}
+                    {petals}
+
                     <div className="upperMainHome">
                         <div className="dragonHome">
                             <img src={dragon} alt="Dragon" className="dragonImage" />
@@ -96,7 +119,7 @@ function Home1() {
                     </div>
                 </div>
                 {/* Clouds below Layer 1 */}
-                <div className="clouds" style={{ top: "70%" }}> {/* Adjusted for layer 1 */}
+                <div className="clouds" style={{ top: "70%" }}> 
                     <img src={cloud1} alt="cloud1" className="cloud" />
                     <img src={cloud2} alt="cloud2" className="cloud" />
                     <img src={cloud3} alt="cloud3" className="cloud" />
@@ -104,8 +127,9 @@ function Home1() {
                     <img src={cloud3} alt="cloud3" className="cloud" />
                     <img src={cloud1} alt="cloud1" className="cloud" />
                     <img src={cloud3} alt="cloud3" className="cloud" />
-                   
                 </div>
+                {/* Realistic flame effect */}
+                <div className="realistic-flame"></div>
             </Parallax>
 
             {/* Parallax Layer 2 */}
@@ -115,14 +139,13 @@ function Home1() {
                 </div>
                 {/* Clouds above Layer 2 */}
                 <div className="clouds">
-                <img src={cloud1} alt="cloud1" className="cloud" />
+                    <img src={cloud1} alt="cloud1" className="cloud" />
                     <img src={cloud2} alt="cloud2" className="cloud" />
                     <img src={cloud3} alt="cloud3" className="cloud" />
                     <img src={cloud2} alt="cloud3" className="cloud" />
                     <img src={cloud3} alt="cloud3" className="cloud" />
                     <img src={cloud1} alt="cloud1" className="cloud" />
                     <img src={cloud3} alt="cloud3" className="cloud" />
-                   
                 </div>
             </Parallax>
 

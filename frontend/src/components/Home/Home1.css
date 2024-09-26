@@ -3,6 +3,7 @@
     position: relative; /* To position the clouds and layers correctly */
 }
 
+/* Main Home styles */
 .mainHome {
     display: flex;
     justify-content: center;
@@ -114,6 +115,33 @@ h1 {
     }
     100% {
         transform: translateX(100%); /* Move clouds across the screen */
+    }
+}
+
+/* Realistic Flame Effect */
+.realistic-flame {
+    position: absolute;
+    top: 70%; /* Adjust position */
+    left: 25%; /* Adjust position */
+    width: 50px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 119, 0, 0.8) 20%, transparent 70%);
+    animation: flicker 0.5s infinite alternate linear;
+    filter: blur(2px);
+}
+
+@keyframes flicker {
+    0% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.5;
     }
 }
 
