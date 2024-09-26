@@ -1,31 +1,32 @@
 .newhome {
     overflow-x: hidden;
-  }
-  
-  .mainHome {
+    position: relative; /* To position the clouds and layers correctly */
+}
+
+.mainHome {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh; /* Full viewport height */
-    position: relative; /* Position relative to allow absolute children */
-    z-index: 1; /* Ensures this layer is above Layer 2 */
-  }
-  
-  .upperMainHome {
+    position: relative; /* Allow absolute positioning for children */
+    z-index: 1; /* Ensure this layer is above Layer 2 */
+}
+
+.upperMainHome {
     width: 100%;
     height: 70%;
-  }
-  
-  .lowerMainHome {
+}
+
+.lowerMainHome {
     width: 100%;
     height: 30%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-  }
-  
-  .registerHome {
+}
+
+.registerHome {
     height: 35%;
     width: 20%;
     display: flex;
@@ -34,43 +35,98 @@
     background-image: url('./photos24/register.png');
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  
-  .dragonHome {
+}
+
+.dragonHome {
     position: absolute;
     right: 0;
     top: 2%;
-  }
-  
-  .dragonImage {
+}
+
+.dragonImage {
     width: 300px; /* Adjust size */
-  }
-  
-  .headingHome {
+}
+
+.headingHome {
     font-size: 35px;
     position: relative;
     top: 60%;
     right: -55%;
     color: #700815;
     text-align: center;
-  }
-  
-  .aluminationTitle {
+}
+
+.aluminationTitle {
     font-size: 70px;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: white;
-  }
-  
-  /* Add zigzag effect to Layer 2 */
-  .layer2 {
+}
+
+/* Add zigzag effect to Layer 2 */
+.layer2 {
     height: 100vh;
     clip-path: polygon(0 0, 10% 20%, 20% 0, 30% 20%, 40% 0, 50% 20%, 60% 0, 70% 20%, 80% 0, 100% 20%, 100% 100%, 0 100%);
     position: relative;
-    z-index: 0; /* Ensures this layer is beneath Layer 1 */
+    z-index: 0; /* Ensure this layer is beneath Layer 1 */
     background-image: url('./photos24/layer2.png'); /* Use the image directly in CSS */
     background-size: cover; /* Ensure the image covers the entire area */
     background-repeat: no-repeat; /* Prevents image from repeating */
-  }
-  
+}
+
+/* Clouds */
+.clouds {
+    position: absolute;
+    top: -30%; /* Position clouds above Layer 2 */
+    width: 100%;
+    height: 100%; /* Give a height to ensure clouds are visible */
+    overflow: hidden; /* Prevents clouds from overflowing the container */
+    pointer-events: none; /* Ensure no interaction with clouds */
+    z-index: 4; /* Ensure clouds are on top of Layer 2 */
+}
+
+.cloud {
+    position: absolute;
+    animation: moveClouds 20s linear infinite; /* Adjust duration for speed */
+    opacity: 1; /* Slight transparency for a dreamy effect */
+}
+
+/* Position clouds at specific locations */
+.cloud:nth-child(1) {
+    left: 0%;
+    animation-delay: 0s;
+}
+
+.cloud:nth-child(2) {
+    left: 40%;
+    animation-delay: -5s; /* Slightly stagger the animations */
+}
+
+.cloud:nth-child(3) {
+    left: 80%;
+    animation-delay: -10s; /* Slightly stagger the animations */
+}
+
+@keyframes moveClouds {
+    0% {
+        transform: translateX(-100%); /* Start from the left */
+    }
+    100% {
+        transform: translateX(100%); /* Move clouds across the screen */
+    }
+}
+
+/* About Us Card */
+.About {
+    position: absolute;
+    top: 80vh; /* Positioned below Layer 2 */
+    width: 80%;
+    margin: 0 auto; /* Center the card */
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a card effect */
+    z-index: 5; /* Ensure this is on top */
+    text-align: center; /* Center the text */
+}
