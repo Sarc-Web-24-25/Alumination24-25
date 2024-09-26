@@ -1,16 +1,17 @@
 'use client';
 import React from "react";
 import { motion } from "framer-motion"; // Import framer-motion
+import Character from './Character';
 import "./Home1.css";
-import Character from './Character'
+
 import dragon from './photos24/dragon.png';
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
 import cloud3 from './photos24/Clouds3.png';
-
-const paragraph = 'A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.'
 import Alumni from './Alumni/Alumni.jsx';
 import Count from './count/Count.jsx';
+const paragraph = 'A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.'
+
 function Home1() {
   return (
     <div className="newhome">
