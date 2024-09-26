@@ -12,7 +12,7 @@ function Home1() {
       {/* <img src={moon} className="moonHome" alt="" /> */}
       <div className="mainHome">
         {/* Realistic flame element */}
-        {/* <div className="realistic-flame"></div> */}
+        <div className="realistic-flame"></div>
 
         {/* Semicircle moon effect */}
         <div className="semicircle-moon1">1</div>
@@ -23,6 +23,13 @@ function Home1() {
         <div className="semicircle-moon6">6</div>
         <div className="semicircle-moon7">7</div>
         <div className="semicircle-moon8">8</div> 
+        <div className="semicircle-moon9">9</div> 
+        <div className="semicircle-moon10">10</div> 
+        <div className="semicircle-moon11">11</div> 
+        <div className="semicircle-moon12">12</div> 
+        <div className="semicircle-moon13">13</div> 
+
+
         
 
 
@@ -31,7 +38,7 @@ function Home1() {
           
           <div className="dragonHome">
             {/* Use motion.img to animate the dragon */}
-            {/* <motion.img
+            <motion.img
               src={dragon}
               alt=""
               animate={{ y: [0, -20, 0] }} // Move up and down
@@ -41,7 +48,7 @@ function Home1() {
                 repeatType: "reverse",
               }} // Smooth transition
               style={{ width: "300px", height: "auto" }} // Adjust size as needed
-            /> */}
+            />
           </div>
           <div
             className="headingHome"
