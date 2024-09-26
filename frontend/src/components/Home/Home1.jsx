@@ -1,11 +1,14 @@
+'use client';
 import React from "react";
 import { motion } from "framer-motion"; // Import framer-motion
 import "./Home1.css";
+import Character from './Character'
 import dragon from './photos24/dragon.png';
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
 import cloud3 from './photos24/Clouds3.png';
 
+const paragraph = 'A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.'
 function Home1() {
   return (
     <div className="newhome">
@@ -48,13 +51,13 @@ function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" style={{ '--i': 3 }} />
         <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 4 }} />
         <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 5}} />
-        <img src={cloud2} alt="cloud2" className="cloud" style={{ '--i': 6 }} />
+        <img src={cloud2} alt="cloud2" className="cloud" style={{ '--i': 2}} />
         <img src={cloud3} alt="cloud3" className="cloud" style={{ '--i': 4 }} />
       </div>
 
       <div className='About'>
-        <h1>About Us</h1>
-        A Student-run organization at IIT Bombay, connecting 60k+ Alumni and 12k+ students. Actively strengthens Student-alumni relations through a robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student-alumni community since 2008.
+        <h1>About us</h1>
+      <Character paragraph={paragraph} />
       </div>
       </div>
     </div>
