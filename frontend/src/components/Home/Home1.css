@@ -68,7 +68,7 @@ h1 {
 /* Add zigzag effect to Layer 2 */
 .layer2 {
     height: 100vh;
-    clip-path: polygon(0 0, 10% 20%, 20% 0, 30% 20%, 40% 0, 50% 20%, 60% 0, 70% 20%, 80% 0, 100% 20%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 10% 20%, 20% 0, 30% 20%, 40% 0,10% 20%, 20% 0, 30% 20%, 40% 0,10% 20%, 20% 0, 30% 20%, 40% 0,10% 20%, 20% 0, 30% 20%, 40% 0, 50% 20%, 60% 0, 70% 20%, 80% 0, 100% 20%, 100% 100%, 0 100%);
     position: relative;
     z-index: 0; /* Ensure this layer is beneath Layer 1 */
     background-image: url('./photos24/layer2.png'); /* Use the image directly in CSS */
@@ -157,4 +157,11 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a card effect */
     z-index: 5; /* Ensure this is on top */
     text-align: center; /* Center the text */
+}
+
+
+/* Home1.css */
+.mute-button {
+    cursor: pointer;
+    outline: none;
 }
