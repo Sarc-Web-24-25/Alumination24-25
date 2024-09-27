@@ -1,12 +1,82 @@
-.newhome{
-    background-image: url('C:\Users\prati\OneDrive\Desktop\sarc\alumination_yash\Alumination24-25\frontend\src\components\Home\photos24\Homepage Alumination 2.png');
-    background-size: cover; 
+/* Home1.css */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  /* .newhome {
+      background-image: url('./photos24/Homepage2.png'); /* Background image */
+      /* background-size: cover; Ensure the background covers the container */
+      /* background-repeat: no-repeat; */
+      /* height: 700vh; Set to viewport height, adjust if needed */
+      /* display: flex; */
+      /* flex-direction: column; */
+      /* justify-content: space-between; Spaces the content vertically */
+/* } */
+  
+  /* .Landingpage {
+      padding: 100px;
+      font-size: 2em;
+      text-align: center;
+  } */
+  
+  .newhome {
+    background-image: url('./photos24/Homepage2.png'); /* Background image */
+    background-size: cover;
     background-repeat: no-repeat;
-}
-.About{
-    margin-top: 800px;
+    height: 600vh; /* Ensure enough scrolling space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .Landingpage {
+    padding: 100px;
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  .About {
+    margin-top: 800px; /* Adjust based on your layout */
     text-align: center;
     font-size: 100px;
-    color:#700815;
-    
-}
+    color: #700815;
+  }
+  
+  .footer {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Fixed height for the footer */
+    overflow: hidden; /* Prevent overflow issues */
+  }
+  
+  .footerimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .white-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Limit to the footer area */
+    background-color: white;
+    opacity: 0; /* Initially hidden */
+    z-index: 1; /* Ensure it appears above the footer image */
+    pointer-events: none; /* Make sure it doesn't interfere with scrolling */
+    transition: opacity 0.5s ease;
+  }
+  
+  .trailer-wrapper {
+    display: none; /* Initially hidden */
+  }
+  
+  .trailer-wrapper.show {
+    display: block; /* Show trailer when needed */
+  }
+  

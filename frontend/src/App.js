@@ -25,6 +25,9 @@ import ForgotPassword from "./components/Authentication/forgotPassword";
 import VerifyEmailView from "./components/VerifyEmailView";
 import ChangePasswordView from "./components/ChangePasswordView";
 import EventIndividual from "./components/Home/EventIndividual";
+import Trailer from './components/Home/footerex';
+
+
 
 function App() {
   return (
@@ -42,6 +45,7 @@ function App() {
         <Route path="/forgotPassword" element={<ForgotPassword />} exact={true} />
         <Route path="/verify/:key" element={<VerifyEmailView />} exact={true} />
         <Route path="/changePassword/:key" element={<ChangePasswordView />} exact={true} />
+        <Route path="/test" element={<Trailer />} exact={true} />
         <Route element={<UserRestrictedRoute/>}>
           <Route path="/profile" element={<Profile />} exact={true} />
         </Route>

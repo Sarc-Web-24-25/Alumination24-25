@@ -1,0 +1,90 @@
+.flag-container {
+    position: relative;
+    width: 100px; /* Adjust width as per your image */
+    height: auto;
+}
+
+.flag-image {
+    width: 100%;
+    height: auto;
+}
+
+.icon-container {
+    position: absolute;.flag-hidden {
+        transform: translateY(100%); /* Start off-screen */
+        opacity: 0;
+        transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+    }
+    
+    .flag-visible {
+        transform: translateY(0); /* Move into view */
+        opacity: 1;
+    }
+    
+    .trailer-container {
+        position: relative;
+        /* background-size: contain; Ensures the image covers the container */
+        background-position: center; /*Centers the image*/
+        width: 50px; /* Full width of the viewport */
+        height: 100vh; /* Full height of the viewport */
+        display: flex; /* Flexbox layout */
+        /* flex-direction: column; Stacks children vertically */
+        justify-content: center; /* Centers children vertically */
+        align-items: center; /* Centers children horizontally */
+        overflow: hidden; /* Prevents overflow if needed */
+        background-repeat: no-repeat;
+    }
+    
+    .video-wrapper {
+        width: 70%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    .trailer-video {
+        width: 100%;
+        height: auto;
+    }
+    
+    .flag-section {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
+    
+    .flag-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .flag-image {
+        width: 150px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .icon-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+    }
+    
+    top: 30%; /* Adjust positioning of the icons */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icon {
+    width: 40px; /* Adjust size of the icons */
+    height: auto;
+    margin: 10px 0; /* Adjust spacing between icons */
+}
