@@ -8,9 +8,10 @@ import {
 } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import Navbar1 from "./components/Home/Navbar";
+import Navbar1 from "./components/Home/Navbar1";
 import Home1 from "./components/Home/Home1";
 import About from "./components/Home/About";
+import Alumni from "./components/Home/Alumni/Alumni";
 import Team from "./components/Home/Team";
 import Gallery from "./components/Home/Gallery";
 import Gallery1 from "./components/Home/Gallery1";
@@ -32,9 +33,11 @@ import Trailer from './components/Home/footerex';
 function App() {
   return (
     <Router>
+      <Navbar1 />
       <Routes>
         <Route path="/" element={<Home1 />} exact={true} />
         <Route path="/team" element={<Team /> } exact={true} />
+        <Route path="/alumni" element={<Alumni /> } exact={true} />
         <Route path="/gallery" element={<Gallery1 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>
