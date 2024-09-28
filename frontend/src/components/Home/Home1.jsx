@@ -65,7 +65,7 @@ function Home1() {
         <h1>About us</h1>
       <Character paragraph={paragraph} />
       </div>
-      <Count />
+      
       
       </div>
 
