@@ -1,6 +1,8 @@
 .newhome {
     overflow-x: hidden;
     position: relative; /* To position the clouds and layers correctly */
+
+    
 }
 
 /* Main Home styles */
