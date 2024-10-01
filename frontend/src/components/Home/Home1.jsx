@@ -259,7 +259,7 @@
 
 
 
-
+'use client';
 
 import React, { useState, useRef, useEffect } from "react";
 import { Parallax } from "react-parallax"; 
@@ -277,6 +277,8 @@ import cloud3 from './photos24/Clouds3.png';
 import Petal from './Petal'; 
 import backgroundMusic from './photos24/bgm.mp3'; 
 import flagIcon from './photos24/flag.png';
+
+import Character from "./Character";
 
 function Home1() {
     const [isMuted, setIsMuted] = useState(false); 
@@ -335,6 +337,9 @@ function Home1() {
     };
 
     const petals = Array.from({ length: 30 }).map((_, index) => <Petal key={index} />);
+
+    const paragraph = 'A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.'
+
 
     return (
         <div className="newhome">
@@ -407,19 +412,10 @@ function Home1() {
                     <h1 style={{ textAlign: "center", color: "#fff" }}>Layer 2 Content</h1>
 
                     {/* About Us Section */}
-                    <div className="about-section">
-                        <div className="about-box">
-                            <h2>About Us</h2>
-                            <div className="about-scroll">
-                                <p className="scrolling-text">
-                                    A Student-run organization at IIT Bombay, connecting 60k+ Alumni and 12k+ students.
-                                    Actively strengthens Student-alumni relations through a robust calendar of 50+ events 
-                                    conducted throughout the year. Student Alumni Relations Cell has been proudly fostering 
-                                    a vibrant student-alumni community since 2008.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <div className='About'>
+        <h1>About us</h1>
+      <Character paragraph={paragraph} />
+      </div>
                 </div>
 
                 {/* Clouds above Layer 2 */}

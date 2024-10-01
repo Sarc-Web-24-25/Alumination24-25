@@ -2,7 +2,7 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './style.module.scss';
 
-export default function Paragraph({paragraph}) {
+export default function Character({paragraph}) {
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
