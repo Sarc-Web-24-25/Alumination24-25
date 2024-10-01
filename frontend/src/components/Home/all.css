@@ -96,7 +96,8 @@ body {
   background-position: center;
   overflow: scroll;
   height: 100vh;
-  padding-bottom: 20vh;
+  padding: 0px 20%;
+  /* padding-bottom: 20vh; */
 }
 
 .page-content {
@@ -111,6 +112,8 @@ body {
 
 @media screen and (max-width: 768px) {
   .event-list-item {
+    background-color: #515691E5;
+    opacity: 0.9;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
@@ -122,6 +125,7 @@ body {
     height: 60vw !important;
     padding: 0 !important;
   }
+
   ul {
     padding-left: 0;
   }
@@ -142,34 +146,45 @@ body {
   /* Ensure the image fits the container */
   max-height: 100%;
   /* Ensure the image fits the container */
-  height: 350px;
+  height: 40%;
+  width: 100%;
 }
 
 .event-info {
+  background-color: #515691E5;
+  border: 10px solid white;
   flex: 3;
+  opacity: 90%;
+  height: 200px;
 }
 
 .event-title {
-  height: 50px;
-  background-color: #533838;
-  color: #fff;
-  padding: 10px;
-  margin-bottom: 0;
-  border-radius: 20px 20px 0 0;
+  /* height: 50px; */
+  /* background-color: #515691E5; */
+  /* color: #fff; */
+  /* padding: 10px; */
+  /* margin-bottom: 0; */
+  /* border-radius: 20px 20px 0 0; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Inknut Antiqua", serif;
   text-align: center;
-
-  /* Remove margin between title and description */
 }
+
+/* Remove margin between title and description */
 
 .event-description {
-  height: 250px;
-  background-color: #392828;
-  padding: 10px;
-  opacity: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 250px; */
+  background-color: #515691E5;
+  /* padding: 10px; */
   color: #fff;
-  /* Change text color to white */
 }
+
+/* Change text color to white */
 
 .top-section {
   display: flex;

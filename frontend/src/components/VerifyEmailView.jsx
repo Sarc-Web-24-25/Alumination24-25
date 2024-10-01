@@ -13,7 +13,7 @@ function VerifyEmailView() {
     useEffect(() => {
         setIsLoading(true);
 
-        axios.post(`/api/authenticate/verify/${key}/`)
+        axios.post(`http://127.0.0.1:8000/api/authenticate/verify/${key}/`)
 
         .then((response) =>{
           Swal.fire({

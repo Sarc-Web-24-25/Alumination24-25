@@ -9,7 +9,7 @@ import useIndividualEvent from "../../hooks/useIndividualEvent";
 import headingImage from "./indiEvent.png";
 import Swal from "sweetalert2";
 import letter from "../Home/bgimg/letter.png";
-import CursorAnimation from "./CursorAnimation";
+// import CursorAnimation from "./CursorAnimation";
 import MultiSelect from "react-select";
 
 function EventIndividual() {
@@ -227,7 +227,7 @@ function EventIndividual() {
       {event && (
         <div>
           <div style={{ overflowX: "hidden" }} className="event-list-container">
-            <CursorAnimation />
+            {/* <CursorAnimation /> */}
             <div className="top-section">
               <img src={headingImage} alt="Top Image" className="top-imagee" />
               <h1
