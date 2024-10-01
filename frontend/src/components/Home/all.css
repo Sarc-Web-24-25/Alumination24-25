@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
 .wobble-hor-top {
   -webkit-animation: wobble-hor-top 2.8s infinite both;
   animation: wobble-hor-top 2.8s infinite both;
@@ -90,13 +94,13 @@ body {
 /* Add your styles here */
 
 .event-list-container {
-  background-image: url("./indiEventbg.png");
+  background-image: url("./photos24/image\ 5.png");
   background-size: cover;
   background-repeat: repeat-y;
   background-position: center;
   overflow: scroll;
-  height: 100vh;
-  padding: 0px 20%;
+  height: 400vh;
+  padding: 25vh 20%;
   /* padding-bottom: 20vh; */
 }
 
@@ -119,6 +123,8 @@ body {
     align-items: center !important;
   }
   .event-image {
+    background-image: url('./photos24/Group\ 30.png');
+    background-size: cover;
     margin: 0;
     margin-bottom: 20px;
     width: 80vw !important;
@@ -142,12 +148,8 @@ body {
 }
 
 .event-image img {
-  max-width: 100%;
-  /* Ensure the image fits the container */
-  max-height: 100%;
-  /* Ensure the image fits the container */
-  height: 40%;
-  width: 100%;
+  width: 250px;
+  height: 280px;
 }
 
 .event-info {
@@ -158,6 +160,14 @@ body {
   height: 200px;
 }
 
+.border-left {
+  border-left: 0px;
+}
+
+.border-right {
+  border-right: 0px;
+}
+
 .event-title {
   /* height: 50px; */
   /* background-color: #515691E5; */
@@ -166,15 +176,18 @@ body {
   /* margin-bottom: 0; */
   /* border-radius: 20px 20px 0 0; */
   display: flex;
+  font-size: 2em;
   align-items: center;
   justify-content: center;
-  font-family: "Inknut Antiqua", serif;
   text-align: center;
+  font-family: "Kadwa", serif;
 }
 
 /* Remove margin between title and description */
 
 .event-description {
+  font-size: 1em;
+  font-family: "Sansita", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
