@@ -4,8 +4,8 @@ import { motion } from "framer-motion"; // Import framer-motion
 import Character from './Character';
 import "./Home1.css";
 import dragon from "./photos24/dragon.png";
-import castle from "./photos24/CASTLE.png";
-import moon from "./photos24/moon.png";
+// import castle from "./photos24/CASTLE.png";
+// import moon from "./photos24/moon.png";
 import "./Footer.css"
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
