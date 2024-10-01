@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from "framer-motion"; // Import framer-motion
-import Character from './Character';
+import Character from './Character.jsx';
 import "./Home1.css";
 import dragon from "./photos24/dragon.png";
 // import castle from "./photos24/CASTLE.png";
