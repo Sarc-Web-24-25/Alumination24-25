@@ -1,0 +1,94 @@
+.cardContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: -50px;
+  }
+  
+  .cardContainer .card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: fit-content;
+    width: 50%;
+    border-radius: 25px;
+    padding: 3%;
+    transform-origin: top;
+    font-family: 'Katsumi';
+    text-align: left;
+  }
+  
+  .cardName {
+    text-align: center;
+    margin: 0px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: left;
+    line-height: 100%;
+    color: #700815;
+    margin-bottom: 1rem;
+  }
+
+  .cardBranch {
+    text-align: center;
+    margin: 0px;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: left;
+    line-height: 100%;
+    color: white; /* Set text color to white */
+    -webkit-text-stroke: 1.5px #700815; /* Set the border (stroke) color and thickness */
+    text-stroke: 1.5px #700815; /* Optional fallback for other browsers */
+    margin-bottom: 1rem;
+  }
+  
+  .cardContainer .card .body {
+    display: flex;
+    height: 100%;
+    margin-top: 1%;
+    gap: 2.5rem;
+  }
+  
+  .cardContainer .card .body .description {
+    width: 40%;
+    position: relative;
+    top: 10%;
+  }
+  
+  .cardContainer .card .body .description p {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 120%;
+    color: #700815;
+  }
+  
+  .cardContainer .card .body .description span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .cardContainer .card .body .description span a {
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .cardContainer .card .body .imageContainer {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  
+  .cardContainer .card .body .imageContainer .inner {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cardContainer .card .body .imageContainer img {
+    object-fit: cover;
+  }  

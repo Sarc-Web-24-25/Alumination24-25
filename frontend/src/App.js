@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Switch,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Switch, Link } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import Navbar1 from "./components/Home/Navbar1";
