@@ -4,7 +4,7 @@
   "proxy": "https://alumination.sarc-iitb.org",
   "private": true,
   "dependencies": {
-    "@react-three/fiber": "^8.17.8",
+    "@react-three/fiber": "^8.17.9",
     "@studio-freight/lenis": "^1.0.42",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
