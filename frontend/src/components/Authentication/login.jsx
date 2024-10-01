@@ -6,7 +6,7 @@ import useLogin from '../../hooks/useLogin';
 import { Navigate } from 'react-router-dom';
 // import loginSound from '../Home/bgimg/background-audio.mp3';
 import './login.css'
-import CursorAnimation from '../Home/CursorAnimation';
+// import CursorAnimation from '../Home/CursorAnimation';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -134,7 +134,7 @@ function Login() {
 
   return (
     <div style={frameStyle}>
-      <CursorAnimation/>
+      {/* <CursorAnimation/> */}
       <div className='main-container-login' style={containerStyle}>
         <h1 style={{fontWeight: "bold", color: "black", marginBottom:"30px"}}>LOGIN</h1>
         {error && <p className="error">{error}</p>}

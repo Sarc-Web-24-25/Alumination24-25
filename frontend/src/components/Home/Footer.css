@@ -25,7 +25,8 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-top: 1px solid rgb(255, 209, 171);
+    /* border-top: 10px solid rgb(255, 209, 171); */
+    border-top: 10px solid black;
 }
 
 @media (max-height:800px) {

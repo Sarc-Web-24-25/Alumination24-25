@@ -1,15 +1,38 @@
 .newhome{
-    height: 500vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    height: 700vh;
     background-image: url('./photos24/Alumination.png');
     background-size: cover; 
+    overflow-x: hidden;
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
 .About{
-    margin-top: 800px;
+    /* height: 600vh; Ensure enough scrolling space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .Landingpage {
+    padding: 100px;
+    font-size: 2em;
     text-align: center;
-    font-size: 100px;
+  }
+  
+  .About {
+    margin-top: 800px; /* Adjust based on your layout */
+    text-align: center;
+    font-size: 40px;
     color:#700815;
+    margin-top: 400px;
+    margin-left: 15%;
+    margin-right: 15%;
+    z-index: 500;
+    position: relative;
+
     
 }
 
@@ -515,3 +538,67 @@ align-items: flex-start;}
         transform: rotate(-10deg);
     }
 }
+.About H1{
+    font-size: 80px;
+}
+.clouds{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  overflow: hidden;
+  z-index: 1;
+}
+.clouds img{
+    position: absolute;
+    max-width: 100%;
+    animation: animate calc(40s * var(--i)) linear infinite;
+    overflow: hidden;
+    
+}
+@keyframes animate{
+    0%
+    {
+        transform: translateX(-100%);
+    }
+    100%
+    {
+        transform: translateX(100%);
+    }
+}
+   
+  .footer {
+    position: absolute;
+    bottom: calc(-700vh + 500px);
+    width: 100%;
+    height: 500px; 
+    overflow: hidden; 
+  }
+  
+  .footerimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .white-fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /*Limit to the footer area*/
+    background-color: white;
+    opacity: 0; /*Initially hidden*/
+    z-index: 1; /*Ensure it appears above the footer image*/
+    pointer-events: none; /*Make sure it doesn't interfere with scrolling*/
+    transition: opacity 0.5s ease;
+  }
+  
+  .trailer-wrapper {
+    display: none; /* Initially hidden */
+  }
+  
+  .trailer-wrapper.show {
+    display: block; /* Show trailer when needed */
+  }
+  

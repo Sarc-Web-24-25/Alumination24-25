@@ -3,7 +3,7 @@ import bg from "./bglogin.png"
 import useSignup from '../../hooks/useSignup';
 import { Navigate } from 'react-router-dom';
 import './signup.css';
-import CursorAnimation from "../Home/CursorAnimation"
+// import CursorAnimation from "../Home/CursorAnimation"
 
 const containerStyle = {
   width: '50%',
@@ -173,7 +173,7 @@ function Signup() {
   return (
 
     <div style={formStyle}>
-      <CursorAnimation/>
+      {/* <CursorAnimation/> */}
         <div className='main-container-login' style={containerStyle}>
 
       <h1 style={headingStyle}>REGISTER</h1>

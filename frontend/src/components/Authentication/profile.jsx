@@ -4,7 +4,7 @@ import backgroundImage from '../Home/bgimg/i1.png';
 import useProfile from '../../hooks/useProfile';
 import Swal from 'sweetalert2';
 import letter from '../Home/bgimg/letter.png'
-import CursorAnimation from "../Home/CursorAnimation"
+// import CursorAnimation from "../Home/CursorAnimation"
 
 
 const styles = {
@@ -419,7 +419,7 @@ function Profile() {
 
     return (
         <div className='mainContainer' style={styles.mainContainer}>
-            <CursorAnimation/>
+            {/* <CursorAnimation/> */}
             <div className="profileform-area" style={styles.profileformArea}>
                 <div className="heading-container" style={styles.headingContainer}>
                     {userData.is_alum ? "Alum Profile" : "User Profile"}

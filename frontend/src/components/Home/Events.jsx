@@ -1,14 +1,19 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import RegistrationForm from './RegistrationForm';
 import "../Home/all.css"
 import topImage from "./bgimg/events_title.png"
 import eventimage from "./bgimg/cfc.png"
 import YouTube from 'react-youtube';
+import img from '../Home/photos24/image.png'
+import gsap from 'gsap'
 
-import CursorAnimation from "./CursorAnimation"
+// import CursorAnimation from "./CursorAnimation"
+
 function EventList() {
+    const divRefs = useRef([]);
+    // const rightRefs = useRef([]);
     const [events, setEvents] = useState([]);
     const [selectedEventId, setSelectedEventId] = useState(null);
 
@@ -28,36 +33,58 @@ function EventList() {
 
     useEffect(() => {
         axios
-            .get('api/events/')
+            .get('http://127.0.0.1:8000/api/events/')
             .then((response) => {
                 const sortedEvents = [...response.data]; // Create a copy of the events array
                 sortEvents(sortedEvents); // Sort the events based on your criteria
                 setEvents(sortedEvents); // Update the state with the sorted array
+                // console.log(response.data)
             })
             .catch((error) => {
                 console.error(error);
             });
     }, []);
 
-   
+    const handleClick = (index) => {
+        if(divRefs.current[index]){
+            gsap.from(divRefs.current[index], {
+            x: (index%2 === 0) ? 300 : -300, // Slide out by 300px (adjust based on your needs)
+            duration: 1, // Animation duration in seconds
+            ease: 'power3.out', // Easing function for smoothness
+            opacity: 0
+        });
+    }
+      };
+
+    //   const handleClickRight = () => {
+    //     gsap.to(leftRefs.current, {
+    //       x: -300, // Slide out by 300px (adjust based on your needs)
+    //       duration: 1, // Animation duration in seconds
+    //       ease: 'power3.out', // Easing function for smoothness
+    //     });
+    //   };
+
+
     return (
         <div className="event-list-container">
-            <CursorAnimation />
+            {/*<CursorAnimation />*/}
             <div className="top-section">
                 <img src={topImage} alt="Top Image" className="top-image" />
                 <h1 className="top-title">EVENTS</h1>
             </div>
             <div className="page-content">
                 <ul>
+                
                     {events.map((event, index) => (
-                        <li key={event.id} style={{flexDirection: index%2 === 0 && "row-reverse"}} className="event-list-item">
-                            <div className="event-image">
-                                <img style={{borderRadius:"20px"}} src={`https://koitoroklo.sarc-iitb.org${event.image}`} alt={event.name} width={"100%"} />
+                        
+                        <li key={event.id} style={{flexDirection: index%2 !== 0 && "row-reverse"}} className="event-list-item">
+                            <div className="event-image" onClick={() => handleClick(index)}>
+                                <img style={{borderRadius:"20px"}} src={img} alt={event.name} width={"100%"} />
                             </div>
-                            <div style={{paddingLeft: index%2!==0 && "20px", paddingRight: index%2===0 && "20px"}} className="event-info">
+                            <div style={{paddingLeft: index%2!==0 && "20px", paddingRight: index%2===0 && "20px"}} className="event-info" ref={(el) => (divRefs.current[index] = el)}>
                                 <h3 className="event-title">{event.name}</h3>
                                 <p className="event-description">{event.description}</p> <br />
-                                <a style={{float: index%2 === 0 && "right", marginRight: index%2 === 0 && "20px"}} href={`/${event.id}`}><button style={{marginTop: "-20px"}} className="register-button">Know More</button></a>
+                                {/* <a style={{float: index%2 === 0 && "right", marginRight: index%2 === 0 && "20px"}} href={`/${event.id}`}><button style={{marginTop: "-20px"}} className="register-button">Know More</button></a> */}
                             </div>
                         </li>
                     ))}
