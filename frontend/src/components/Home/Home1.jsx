@@ -492,7 +492,7 @@ function Home1() {
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={layer3} strength={150}>
-        <div className="layer3" style={{ height: "100vh" }}>
+        <div className="layer3" style={{ height: "250vh" }}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
