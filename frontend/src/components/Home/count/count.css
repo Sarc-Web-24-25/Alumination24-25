@@ -1,0 +1,41 @@
+.count-container {
+    display: flex;
+    flex-direction: column; /* Stack drops vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 200vh; /* Allow enough scroll space */
+    position: relative;
+    padding: 0 5vw; /* Add some horizontal padding */
+  }
+  
+  .drop {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh; /* Use viewport height for spacing */
+  }
+  
+  .drop-image {
+    width: 15vw; /* Make the image width responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 150px; /* Set a max size for larger screens */
+  }
+  
+  .drop-content {
+    position: absolute;
+    font-size: 2.5vw; /* Scale font size based on viewport width */
+    color: #fff;
+  }
+  
+  /* For very small screens */
+  @media (max-width: 600px) {
+    .drop-image {
+      width: 25vw; /* Make images slightly larger on small screens */
+    }
+  
+    .drop-content {
+      font-size: 6vw; /* Increase font size for readability */
+    }
+  }
+  
