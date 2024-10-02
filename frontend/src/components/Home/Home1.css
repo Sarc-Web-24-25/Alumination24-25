@@ -16,7 +16,15 @@
 
     
 }
-
+.layer2 {
+    height: 100vh;
+   
+    position: relative;
+    z-index: 0; /* Ensure this layer is beneath Layer 1 */
+    background-image: url('./photos24/layer2.png'); /* Use the image directly in CSS */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents image from repeating */
+}
 .mainHome{
     display: flex;
     justify-content: center;

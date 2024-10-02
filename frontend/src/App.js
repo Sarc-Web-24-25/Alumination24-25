@@ -25,16 +25,20 @@ import ForgotPassword from "./components/Authentication/forgotPassword";
 import VerifyEmailView from "./components/VerifyEmailView";
 import ChangePasswordView from "./components/ChangePasswordView";
 import EventIndividual from "./components/Home/EventIndividual";
-
+import Register from "./components/Authentication/register";
+import './components/Authentication/Auth.css'
+console.log(Login)
 function App() {
   return (
     <Router>
-      <Navbar1 />
+      {/* <Navbar1 /> */}
       <Routes>
         <Route path="/" element={<Home1 />} exact={true} />
         <Route path="/team" element={<Team /> } exact={true} />
         <Route path="/gallery" element={<Gallery1 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
+        <Route path="/register" element={<Register />} exact={true} />
+ 
         <Route path="/login" element={<Login />} exact={true}/>
         <Route path="/events" element={<Events />} exact={true} />
         <Route path="/:key" element={<EventIndividual />} exact={true} />

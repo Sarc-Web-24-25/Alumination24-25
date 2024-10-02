@@ -1,12 +1,12 @@
-
-
 import React, { useState } from 'react';
-import bg from "./bglogin.png"
+import bg from "./loginbg.png"
 import useLogin from '../../hooks/useLogin';
 import { Navigate } from 'react-router-dom';
 // import loginSound from '../Home/bgimg/background-audio.mp3';
 import './login.css'
-import CursorAnimation from '../Home/CursorAnimation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+import './Auth.css'
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -54,7 +54,7 @@ function Login() {
   const frameStyle = {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'left',
     fontFamily: 'Inter, sans-serif',
     backgroundImage: `url(${bg})`,
     minHeight: '95vh',
@@ -65,84 +65,111 @@ function Login() {
   };
 
   const containerStyle = {
-    width: '50%',
-    height: '65vh',
+    width: '60%',
+    height: '100vh',
     padding: '30px',
-    margin: '20px',
-    backgroundColor: '#45382C',
-    opacity: '80%',
-    borderRadius: '20px',
+    marginleft: '0px',
+    backgroundColor:'rgba(255, 255, 255, 0.8)',
+    // backgroundColor: '#ffffff',
+    // opacity: '80%',
+    // borderRadius: '20px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'center',
+    // justifyContent: 'center',
+    transition: 'transform 2s ease-in-out',
   };
 
 
   const inputStyle = {
-    width: '150px',
-    display: 'flex',
-    height: '50px',
-    marginBottom: '1vh',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    fontSize: '2vh',
+    width: '50%',
+  
+    border: '1px solid transparent',
+   borderRadius:'100px',
+    fontSize: '3vh',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'transparent',
+    
+    color:'black',
+    marginLeft:'15px',
   };
   const inputStyle1 = {
-    width: '300px',
-    display: 'flex',
-    height: '50px',
-    marginBottom: '1vh',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    fontSize: '2vh',
+    width: '100%',
+    // display: 'flex',
+    // height: '40px',
+    // marginBottom: '3vh',
+    border: '1px solid transparent',
+    borderRadius: '100px',
+    fontSize: '3vh',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
+     backgroundColor:'transparent',
+    // opacity:'80%',
+    color:'black',
+    marginLeft:'15px',
+    padding:'2px'
+  };
+  const inputfield = {
+    width: '60%',
+    display: 'flex',
+    height: '5vh',
+    marginBottom: '3vh',
+    border: '1px solid #ccc',
+    borderRadius: '100px',
+    fontSize: '3vh',
+    alignItems: 'center',
+    // justifyContent: 'center',
+     backgroundColor:'rgba(0, 0, 0, 0.4)',
+    // opacity:'80%',
+    color:'black',
+    padding:'10px'
+    
   };
 
   const buttonStyle = {
-    margin: '15px',
+    margin: '30px',
     width: '150px',
     padding: '12px',
-    backgroundColor: '#3D52D5',
+    backgroundColor: 'rgba(0, 0, 0, 1)',
     border: 'none',
     borderRadius: '5px',
-    color: '#FFF',
+    color: 'white',
     fontSize: '16px',
     cursor: 'pointer',
   };
 
   const disabledButtonStyle = {
     ...buttonStyle,
-    opacity: 0.5, // Lower opacity when button is disabled
+    color:'Black',
+    backgroundColor:"rgba(0, 0, 0, 0.4)", // Lower opacity when button is disabled
     cursor: 'not-allowed', // Change cursor to indicate button is disabled
   };
 
   const anchorStyle = {
-    color: '#fff',
+    color: 'Black',
     textDecoration: 'none',
     fontSize: '17px',
-    margin: '5px',
+    margin: '20px',
   };
-
+const headingstyle={fontWeight: "bold", color: "black", marginBottom:"50px",marginTop:'100px'};
   if (localStorage.getItem('userData')) {
     return <Navigate to="/" />;
   }
 
   return (
     <div style={frameStyle}>
-      <CursorAnimation/>
-      <div className='main-container-login' style={containerStyle}>
-        <h1 style={{fontWeight: "bold", color: "black", marginBottom:"30px"}}>LOGIN</h1>
+      <div className="containerstyle slide-in-right" style={containerStyle} >
+        <h1 className='headingstyle' style={headingstyle}>LOGIN</h1>
         {error && <p className="error">{error}</p>}
         {success && <p style={{ color: "white" }} className="success">{success}</p>}
-        <div style={{ display: "flex" }}>
+        <div className='inputfield' style={inputfield}>
+        <FontAwesomeIcon icon={faUser} />
           <input
             type="text"
             name='username'
+            className='inputstyle'
             style={inputStyle}
             placeholder="Email"
             value={email}
@@ -162,14 +189,18 @@ function Login() {
             <option value="@gmail.com">@gmail.com</option>
           </select>
         </div>
+        <div className='inputfield' style={inputfield}>
+        <FontAwesomeIcon icon={faLock} />
         <input
           name='password'
           type="password"
+          className='inputstyle1'
           style={inputStyle1}
           placeholder="Password"
           value={password}
           onChange={handlePasswordChange}
         />
+        </div>
         <a className='links' href='/forgotPassword' style={anchorStyle}>Forgot password?</a>
         <button className='login-button' style={password !== "" && email !== "" ? buttonStyle: disabledButtonStyle} onClick={handleSubmit} disabled={!(password !== "" && email !== "")}>
           LOGIN
