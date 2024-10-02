@@ -3,7 +3,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion } from "framer-motion"; // Import framer-motion
 import Character from './Character';
 import "./Home1.css";
-import "./Footer.css"
+import "./Footer.css";
+import axios from 'axios';
 import dragon from './photos24/dragon.png';
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
@@ -26,6 +27,7 @@ function Home1() {
   const whiteFadeRef = useRef(null);
   const [showTrailer, setShowTrailer] = useState(false);
   const [showFooter, setShowFooter] = useState(true);
+  const [sponsors, setSponsors] = useState([]);
 
   useEffect(() => {
     
@@ -106,6 +108,27 @@ function Home1() {
     };
   }, [showTrailer]);
 
+  useEffect(() => {
+    axios
+        .get('http://127.0.0.1:8000/api/sponsors/')
+        .then((response) => {
+            const sponsor_list = [...response.data]; // Create a copy of the events array
+            // sortEvents(sortedEvents); // Sort the events based on your criteria
+            setSponsors(sponsor_list); // Update the state with the sorted array
+            // sortedEvents.forEach((element) => {
+            //     // console.log(element.priority);
+            //     if(element.priority)
+            //         setMainEvents((prev) => [...prev, element]);
+            // });
+
+            console.log(sponsor_list);
+            
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+  }, []);
+
   return (
     
     <div className="newhome">
@@ -164,10 +187,15 @@ function Home1() {
       <Character paragraph={paragraph} />
       </div>
 
+    </div>
 
-      
-
+    {sponsors.map((sponsor) => (
+        <div>
+        <img src={'http://127.0.0.1:8000/' + sponsor.image} alt="" />
+        <div style={{color: 'white'}}>{sponsor.name}</div>
       </div>
+      ))}
+      
             
       <div className="footer">
       {showFooter && (

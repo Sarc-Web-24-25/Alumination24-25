@@ -27,6 +27,7 @@ import VerifyEmailView from "./components/VerifyEmailView";
 import ChangePasswordView from "./components/ChangePasswordView";
 import EventIndividual from "./components/Home/EventIndividual";
 import Trailer from './components/Home/footerex';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
