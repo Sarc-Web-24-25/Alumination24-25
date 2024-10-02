@@ -368,24 +368,6 @@ function Home1() {
 
       {/* Parallax Layer 1 */}
       <Parallax bgImage={layer1} strength={300}>
-        {/* <div
-          className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
-          style={{ height: "100vh", position: "relative" }}
-        >
-          {petals}
-          <div className="upperMainHome">
-            <div className="dragonHome">
-              <img src={dragon} alt="Dragon" className="dragonImage" />
-            </div>
-            <div className="headingHome">
-              <div>SARC PRESENTS</div>
-              <div className="aluminationTitle">ALUMINATION</div>
-            </div>
-          </div>
-          <div className="lowerMainHome">
-            <div className="registerHome">REGISTER</div>
-          </div>
-        </div> */}
 
 <div  className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
           style={{ height: "100vh", position: "relative" }}>
