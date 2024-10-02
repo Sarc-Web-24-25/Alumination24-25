@@ -145,11 +145,12 @@ body {
 .event-image {
   flex: 1;
   display: flex;
+  flex-direction: column;
 }
 
 .event-image img {
-  width: 250px;
-  height: 280px;
+  width: 300px;
+  height: 300px;
 }
 
 .event-info {

@@ -15,7 +15,8 @@ function EventList() {
     const divRefs = useRef([]);
     // const rightRefs = useRef([]);
     const [events, setEvents] = useState([]);
-    const [selectedEventId, setSelectedEventId] = useState(null);
+    // const [selectedEventId, setSelectedEventId] = useState(null);
+    const [isOpened, setIsOpened] = useState(false);
 
     const sortEvents = (events) => {
         events.sort((a, b) => {
@@ -45,17 +46,38 @@ function EventList() {
             });
     }, []);
 
-    const handleClick = (index, title, desc) => {
+    const handleClickLess = (index) => {
+        console.log('view less');
+        const viewbtn = document.querySelector('#viewBtnLess' + `${index}`)
+
+        viewbtn.innerHTML = 'View Details';
+        if(divRefs.current[index]){
+            gsap.to(divRefs.current[index], {
+            x: (index%2 === 0) ? -300 : 300, // Slide out by 300px (adjust based on your needs)
+            duration: 2, // Animation duration in seconds
+            ease: 'power3.out', // Easing function for smoothness
+            opacity: 0
+        });
+    }
+    setIsOpened(false);
+
+}
+
+    const handleClickDetails = (index, title, desc) => {
+        console.log('view more');
         const div = document.createElement('div');
         const divParent = document.querySelector('#events' + `${index}`);
+
+        const viewbtn = document.querySelector('#viewBtn' + `${index}`)
+
+        viewbtn.innerHTML = 'View Less';
+        
 
         div.innerHTML = `
             <h3 class="event-title">${title}</h3>
             <p class="event-description">${desc}</p> <br />
         `
-
         div.className = "event-info" + " " + (index%2 === 0 ? 'border-left' : 'border-right')
-
         div.style.paddingRight = "20px";
         div.style.paddingLeft = "20px";
         
@@ -72,6 +94,9 @@ function EventList() {
             opacity: 0
         });
         }
+
+        setIsOpened(true);
+        // viewbtn.onClick = handleClickLess(index);
       };
 
     //   const handleClickRight = () => {
@@ -96,8 +121,10 @@ function EventList() {
                     {events.map((event, index) => (
                         
                         <li key={event.id} style={{flexDirection: index%2 !== 0 && "row-reverse"}} className="event-list-item">
-                            <div className="event-image" onClick={() => handleClick(index, event.name, event.description)}>
-                                <img style={{borderRadius:"20px"}} src={img} alt={event.name} />
+                            <div className="event-image" >
+                                <img style={{borderBottomRightRadius: 0, borderBottomLeftRadius: 0, borderTopRightRadius: "20px", borderTopLeftRadius: "10px" }} src={img} alt={event.name} />
+                                {!isOpened ? <button style={{borderBottomRightRadius: '10px', borderBottomLeftRadius: '10px',borderTopRightRadius: 0, borderTopLeftRadius: 0 , padding: '2px', cursor: 'pointer', backgroundColor: '#8f7bb3', fontFamily: `"Kadwa", serif`, fontSize: '1.25rem'}} onClick={() => handleClickDetails(index, event.name, event.description)} id={'viewBtn' + index}>View Details</button> : <button style={{borderBottomRightRadius: '10px', borderBottomLeftRadius: '10px',borderTopRightRadius: 0, borderTopLeftRadius: 0 , padding: '2px', cursor: 'pointer', backgroundColor: '#8f7bb3', fontFamily: `"Kadwa", serif`, fontSize: '1.25rem'}} onClick={() => handleClickLess(index, event.name, event.description)} id={'viewBtnLess' + index}>View Less</button>}
+                                
                             </div>
                             <div id={'events' + index} style={{width: '100%'}}></div>
                             {/* <div style={{paddingLeft: index%2!==0 && "20px", paddingRight: index%2===0 && "20px"}} className={"event-info" + " " + (index%2 === 0 ? 'border-left' : 'border-right')} ref={(el) => (divRefs.current[index] = el)}>
