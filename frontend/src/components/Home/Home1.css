@@ -149,18 +149,21 @@ h1 {
 
 /* About Us Card */
 .About {
-    position: absolute;
-    top: 80vh; /* Positioned below Layer 2 */
-    width: 80%;
-    margin: 0 auto; /* Center the card */
-    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px; /* Padding inside the card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a card effect */
-    z-index: 5; /* Ensure this is on top */
-    text-align: center; /* Center the text */
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 800px; /* Adjust based on your layout */
+    text-align: center;
+    font-size: 40px;
+    color:#700815;
+    margin-top: 400px;
+    margin-left: 15%;
+    margin-right: 15%;
+    z-index: 500;
+    position: relative;
 
+    
+}
 
 /* Home1.css */
 .mute-button {
