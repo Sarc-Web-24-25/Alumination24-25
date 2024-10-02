@@ -368,7 +368,7 @@ function Home1() {
 
       {/* Parallax Layer 1 */}
       <Parallax bgImage={layer1} strength={300}>
-        <div
+        {/* <div
           className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
           style={{ height: "100vh", position: "relative" }}
         >
@@ -385,7 +385,64 @@ function Home1() {
           <div className="lowerMainHome">
             <div className="registerHome">REGISTER</div>
           </div>
+        </div> */}
+
+<div  className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
+          style={{ height: "100vh", position: "relative" }}>
+        {/* Realistic flame element */}
+        <div className="realistic-flame"></div>
+
+        {/* Semicircle moon effect */}
+        <div className="semicircle-moon1">1</div>
+        <div className="semicircle-moon2">2</div>
+        <div className="semicircle-moon3">3</div>
+        <div className="semicircle-moon4">4</div>
+        <div className="semicircle-moon5">5</div>
+        <div className="semicircle-moon6">6</div>
+        <div className="semicircle-moon7">7</div>
+        <div className="semicircle-moon8">8</div> 
+        <div className="semicircle-moon9">9</div> 
+        <div className="semicircle-moon10">10</div> 
+        <div className="semicircle-moon11">11</div> 
+        <div className="semicircle-moon12">12</div> 
+        <div className="semicircle-moon13">13</div> 
+
+
+        
+
+
+        {petals}
+
+        <div className="upperMainHome">
+          
+         
+          <div
+            className="headingHome"
+            style={{
+              fontSize: "35px",
+              position: "relative",
+              right: "-55%",
+              top: "69%",
+            }}
+          >
+            <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+            <div style={{ fontSize: "70px", color: "#700815" }}>
+              ALUMINATION
+            </div>
+          </div>
         </div>
+        
+        <div className="lowerMainHome">
+          <div
+            className="registerHome"
+            style={{ fontSize: "25px", color: "#700815" }}
+          >
+            REGISTER
+          </div> 
+          
+
+        </div>
+      </div>
 
         {/* Clouds below Layer 1 */}
         <div className="clouds" style={{ top: "70%" }}>
