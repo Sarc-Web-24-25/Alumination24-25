@@ -268,7 +268,7 @@ import cloud3 from "./photos24/Clouds3.png";
 import Petal from "./Petal";
 import backgroundMusic from "./photos24/bgm.mp3";
 import flagIcon from "./photos24/flag.png";
-
+import Count from "./count/Count"
 import Character from "./Character";
 
 function Home1() {
@@ -493,9 +493,10 @@ function Home1() {
       {/* Parallax Layer 3 */}
       <Parallax bgImage={layer3} strength={150}>
         <div className="layer3" style={{ height: "100vh" }}>
-          <h1 style={{ textAlign: "center", color: "#fff" }}>
+          {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
-          </h1>
+          </h1> */}
+          <Count />
         </div>
         <div className="clouds" style={{ top: "70%" }}>
           <img src={cloud1} alt="cloud1" className="cloud" />
