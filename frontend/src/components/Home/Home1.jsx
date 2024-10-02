@@ -13,9 +13,10 @@ import footimg from "./photos24/footerimg.png";
 // import footerimg2 from './photos24/footerimg2.png';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Alumni from "./Alumni2/Alumni2.jsx";
+// import Alumni from "./Alumni2/Alumni2.jsx";
+// import Alumni2 from "./Alumni2/Alumni2.jsx";
+import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor from "./Sponsor/Sponsor.jsx";
-import Alumni2 from "./Alumni2/Alumni2.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -173,9 +174,13 @@ function Home1() {
           <Character paragraph={paragraph} />
         </div>
 
-        <Sponsor />
+        <div style={{height: "190vh"}}></div>
 
-        <Alumni2 />
+        <div className="alumniHomeContainer" style={{ height: "1000px" }}>
+          <Alumni3 />
+        </div>
+
+        <Sponsor />    
       </div>
 
       <div className="footer">
@@ -188,11 +193,7 @@ function Home1() {
         <div ref={whiteFadeRef} className="white-fade"></div>
         {showTrailer && <Trailer />}
       </div>
-      {/* <Alumni /> */}
     </div>
-
-    //   );
-    // }
   );
 }
 

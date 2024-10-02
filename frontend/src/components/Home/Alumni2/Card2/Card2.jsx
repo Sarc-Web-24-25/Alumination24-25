@@ -4,9 +4,9 @@ import './cardStyle.css'
 
 const Card2 = ({ i, name, description, branch, src, color, progress, range, targetScale }) => {
 
-  const container = useRef(null);
+  const alumniContainer = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: container,
+    target: alumniContainer,
     offset: ['start end', 'start start']
   })
 
@@ -15,12 +15,16 @@ const Card2 = ({ i, name, description, branch, src, color, progress, range, targ
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className="cardContainer" >
+    <div ref={alumniContainer} className="alumniCardContainer" >
       <motion.div 
-        className="card"
-        style={{ backgroundColor: color, scale, top: `calc(-5vh + ${i * 25}px)` }}
+        className="alumniCard"
+        style={{ backgroundColor: color, scale, top: `calc(10vh + ${i * 25}px)` }}
+        // style={{
+        //   backgroundColor: color,
+        //   top: `calc(10vh + ${i * 25}px)`,
+        // }}
       >
-        <div className="body">
+        <div className="alumniBody">
           <div className="imageContainer">
             <motion.div
               className="inner"
@@ -37,7 +41,7 @@ const Card2 = ({ i, name, description, branch, src, color, progress, range, targ
           <div className="description">
             <h2 className='cardName'>{name}</h2>
             <h2 className='cardBranch'>{branch}</h2>
-            <p>{description}</p>
+            {/* <p>{description}</p> */}
           </div>
         </div>
       </motion.div>
