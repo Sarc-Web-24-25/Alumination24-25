@@ -1,67 +1,151 @@
 import React, { useEffect, useState } from 'react';
-import bg from "./bglogin.png"
+import bg from "./loginbg.png"
 import useSignup from '../../hooks/useSignup';
 import { Navigate } from 'react-router-dom';
 import './signup.css';
-// import CursorAnimation from "../Home/CursorAnimation"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faAt } from '@fortawesome/free-solid-svg-icons';
+import './Auth.css'
 
-const containerStyle = {
-  width: '50%',
-  height: '65vh',
-  padding: '30px',
-  margin: '20px',
-  backgroundColor: '#45382C',
-  opacity: '80%',
-  borderRadius: '20px',
+const formStyle = {
   display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'right',
+  fontFamily: 'Inter, sans-serif',
+  backgroundImage: `url(${bg})`,
+  minHeight: '95.1vh',
+  justifyContent: 'right',
+  backgroundSize: 'cover', // Scale the image to cover the entire container
+  backgroundPosition: 'center', // Center the background image
+  backgroundAttachment: 'fixed', // Fix the background image in place
+
+};
+const containerStyle = {
+  width: '60%',
+  height: '100vh',
+  padding: '30px',
+  marginLeft: 'auto',
+  marginRight:'0px',
+  backgroundColor:'rgba(255, 255, 255, 0.8)',
+//   backgroundColor: '#45382C',
+  //  backgroundColor: '#ffffff',
+  //  opacity: '80%',
+  // opacity: '80%',
+//   borderRadius: '20px',
+  // display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   display: 'flex',
   justifyContent: 'center',
+  transition: 'transform 2s ease-in-out',
 };
+
+// const inputStyle = {
+//   width: '300px',
+//   padding: '10px',
+//   margin: '5px 0',
+//   border: '1px solid #ccc',
+//   borderRadius: '5px',
+//   fontSize: '16px',
+//   backgroundColor: '#fff',
+
+// };
+// const inputStyle1 = {
+//   width: '150px',
+//   padding: '10px',
+//   margin: '5px 0',
+//   border: '1px solid #ccc',
+//   borderRadius: '5px',
+//   fontSize: '16px',
+//   backgroundColor: '#fff',
+
+// };
 
 const inputStyle = {
-  width: '300px',
-  padding: '10px',
-  margin: '5px 0',
-  border: '1px solid #ccc',
-  borderRadius: '5px',
-  fontSize: '16px',
-  backgroundColor: '#fff',
-
+  width: '50%',
+  // display: 'flex',
+  // height: '40px',
+  // marginBottom: '3vh',
+  border: 'none',
+  // borderRadius: '100px',
+  fontSize: '3vh',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor:'transparent',
+  // opacity:'80%',
+  color:'black',
+  marginLeft:'15px',
 };
 const inputStyle1 = {
-  width: '150px',
-  padding: '10px',
-  margin: '5px 0',
-  border: '1px solid #ccc',
-  borderRadius: '5px',
-  fontSize: '16px',
-  backgroundColor: '#fff',
-
+  width: '100%',
+  // display: 'flex',
+  // height: '40px',
+  // marginBottom: '3vh',
+  border: '1px solid rgba(255, 255, 255, 0)',
+  borderRadius: '100px',
+  fontSize: '3vh',
+  alignItems: 'center',
+  // justifyContent: 'center',
+   backgroundColor:'transparent',
+  // opacity:'80%',
+  color:'black',
+  marginLeft:'15px',
+  padding:'2px'
 };
+const inputfield = {
+  width: '60%',
+  display: 'flex',
+  height: '5vh',
+  marginBottom: '3vh',
+  border: '1px solid #ccc',
+  borderRadius: '100px',
+  fontSize: '3vh',
+  alignItems: 'center',
+  // justifyContent: 'center',
+   backgroundColor:'rgba(0, 0, 0, 0.4)',
+  // opacity:'80%',
+  color:'black',
+  padding:'10px'
+  
+};
+// const buttonStyle = {
+//   margin: '10px',
+//   width: '150px',
+//   padding: '12px',
+//   backgroundColor: '#3D52D5',
+//   border: 'none',
+//   borderRadius: '5px',
+//   color: '#FFF',
+//   fontSize: '16px',
+//   cursor: 'pointer',
+//   opacity: 1, // Set initial opacity to 1 (fully opaque)
+// };
 
+// const disabledButtonStyle = {
+//   ...buttonStyle,
+//   opacity: 0.5, // Lower opacity when button is disabled
+//   cursor: 'not-allowed', // Change cursor to indicate button is disabled
+// };
 
 const buttonStyle = {
-  margin: '10px',
-  width: '150px',
-  padding: '12px',
-  backgroundColor: '#3D52D5',
-  border: 'none',
-  borderRadius: '5px',
-  color: '#FFF',
-  fontSize: '16px',
-  cursor: 'pointer',
-  opacity: 1, // Set initial opacity to 1 (fully opaque)
-};
+    margin: '30px',
+    width: '150px',
+    padding: '12px',
+    backgroundColor: 'rgba(0, 0, 0, 1)',
+    border: 'none',
+    borderRadius: '5px',
+    color: 'white',
+    fontSize: '16px',
+    cursor: 'pointer',
+  };
 
-const disabledButtonStyle = {
-  ...buttonStyle,
-  opacity: 0.5, // Lower opacity when button is disabled
-  cursor: 'not-allowed', // Change cursor to indicate button is disabled
-};
-
-
+  const disabledButtonStyle = {
+    ...buttonStyle,
+    color:'Black',
+    backgroundColor:"rgba(0, 0, 0, 0.4)", // Lower opacity when button is disabled
+    cursor: 'not-allowed', // Change cursor to indicate button is disabled
+  };
 
 function Signup() {
   const [password, setPassword] = useState('');
@@ -89,23 +173,16 @@ function Signup() {
       passwordMatch
     );
   };
-
-
-
-
-  const formStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    fontFamily: 'Inter, sans-serif',
-    backgroundImage: `url(${bg})`,
-    minHeight: '94.1vh',
-    justifyContent: 'center',
-    backgroundSize: 'cover', // Scale the image to cover the entire container
-    backgroundPosition: 'center', // Center the background image
-    backgroundAttachment: 'fixed', // Fix the background image in place
-
+  const anchorStyle = {
+    color: 'Black',
+    textDecoration: 'none',
+    fontSize: '17px',
+    margin: '20px',
   };
+
+
+
+
 
   const headingStyle = {
     fontSize: '26px',
@@ -173,14 +250,14 @@ function Signup() {
   return (
 
     <div style={formStyle}>
-      {/* <CursorAnimation/> */}
-        <div className='main-container-login' style={containerStyle}>
+        <div className="containerstyle slide-in-left" style={containerStyle}>
 
       <h1 style={headingStyle}>REGISTER</h1>
       {error && <p className="error">{error}</p>}
       {success && <p style={{color: "green"}} className="error">{`Signup successful, Please check your ${emailtype === "@gmail.com" ? "Gmail": "Webmail"} for verification link!`}</p>}
 
-      <div style={{ display: "flex", width: "300px" }}>
+      <div className='inputfield' style={inputfield}>
+      <FontAwesomeIcon icon={faUser} />
           <input
             type="text"
             name='username'
@@ -203,7 +280,8 @@ function Signup() {
             <option value="@gmail.com">@gmail.com</option>
           </select>
         </div>
-
+      <div className='inputfield' style={inputfield}>
+      <FontAwesomeIcon icon={faAt} />
       <input
         type="password"
         name='password'
@@ -212,6 +290,9 @@ function Signup() {
         onChange={handlePasswordChange}
         style={inputStyle}
       />
+      </div>
+      <div className='inputfield' style={inputfield}>
+      <FontAwesomeIcon icon={faLock} />
       <input
         type="password"
         placeholder="Confirm Password"
@@ -219,17 +300,47 @@ function Signup() {
         onChange={handleConfirmPasswordChange}
         style={inputStyle}
       />
-
-      <div style={{backgroundColor: "rgba(255,255,255,0.3)", padding: "5px", borderRadius: "10px"}}>
+     </div>
+      {/* <div style={{backgroundColor: "rgba(255,255,255,0.3)", padding: "5px", borderRadius: "10px"}}>
         Are you an IITB Alum? &nbsp;
         <input onChange={() => handleAlumChange(true)} type="radio" name='is_alum' checked={is_alum} style={{color: "white"}} required /> Yes
         <input onChange={() => handleAlumChange(false)} type="radio" name='is_alum' checked={!is_alum} style={{color: "white"}} required /> No
-      </div>
+      </div> */}
+      <div style={{
+    // backgroundColor: "rgba(255,255,255,0.3)",
+    padding: "5px",
+    borderRadius: "10px",
+    display: "flex", // Use flexbox to align items
+    alignItems: "center", // Center align items vertically
+    flexWrap: "nowrap"
+}}>
+    <span style={{whiteSpace: "nowrap"}}> Are you an IITB Alum?</span> {/* Added span for better alignment */}
+    <input 
+        onChange={() => handleAlumChange(true)} 
+        type="radio" 
+        name='is_alum' 
+        checked={is_alum} 
+        style={{ marginRight: "1px", color: "white" }} 
+        required 
+    /> 
+    Yes
+    <input 
+        onChange={() => handleAlumChange(false)} 
+        type="radio" 
+        name='is_alum' 
+        checked={!is_alum} 
+        style={{ marginLeft: "1px", marginRight: "2px", color: "white" }} 
+        required 
+    /> 
+    No
+</div>
+
 
 
       <button onClick={handleSubmit} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle} disabled={!allFieldsFilled()}>REGISTER</button>
+      <a className='links' href='/login' style={anchorStyle}>Already a member ?? Login </a>
         </div>
-
+       
     </div>
   );
 }

@@ -1,4 +1,83 @@
-.links:hover{
+@media (max-width: 768px) {
+    .login-container {
+      padding: 10px; /* Reduce padding on smaller screens */
+    }
+  
+    h1 {
+      font-size: 24px; /* Adjust heading size */
+    }
+  
+    input, select {
+      font-size: 14px; /* Adjust input font size */
+    }
+  
+    button {
+      font-size: 14px; /* Adjust button font size */
+    }
+  
+    .links {
+      font-size: 14px; /* Adjust link font size */
+    }
+    .inputfield{
+        width: 80% !important;
+        height: 3vh !important;
+    }
+.containerstyle{
+    width:75% !important;
+}
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 20px; /* Further adjust heading size for very small screens */
+    }
+  
+    input, select, button {
+      font-size: 12px; /* Further adjust font size */
+      padding: 8px; /* Reduce padding */
+    }
+  
+    .links {
+      font-size: 12px; /* Adjust link font size */
+    }
+    /* .inputfield{
+        height: 3vh !important;
+        width: 100% !important;
+    } */
+  }
+  @media (max-width: 480px) {
+   .containerstyle{
+    width: 100% !important;
+    height: 100vh !important ;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8)!important;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+        align-items: center;
+   }
+   .inputfield{
+       width: 80% !important;
+       display: flex;
+       height: '3vh' !important;
+       border-radius: 100px;
+       border: 1px solid #ccc;
+       color: white !important;
+       background-color:rgba(0, 0, 0, 0.6)!important;
+      
+       margin-left: 5% !important;
+       margin-right: 15% !important;
+   }
+   .inputstyle1{
+
+   }
+  } 
+ 
+  .links:hover{
     color: aqua !important;
     transform: scale(1.02);
 }
@@ -12,4 +91,33 @@
         width: 96vw !important;
     }
 }
-    
+
+input {
+    width: 50%;
+    border: none;
+    font-size: 3vh;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: black;
+    margin-left: 15px;
+}
+
+/* For WebKit browsers (Chrome, Edge) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    background-color: transparent !important;
+    color: black !important;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* For Firefox */
+input:-moz-autofill {
+    background-color: transparent !important;
+    color: black !important;
+}
+input:focus {
+    outline: none; /* Remove the outline when focused */
+}
