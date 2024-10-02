@@ -15,7 +15,8 @@ function EventList() {
     const divRefs = useRef([]);
     // const rightRefs = useRef([]);
     const [events, setEvents] = useState([]);
-    const [selectedEventId, setSelectedEventId] = useState(null);
+    // const [selectedEventId, setSelectedEventId] = useState(null);
+    const [isOpened, setIsOpened] = useState(false);
 
     const sortEvents = (events) => {
         events.sort((a, b) => {
@@ -45,15 +46,57 @@ function EventList() {
             });
     }, []);
 
-    const handleClick = (index) => {
+    const handleClickLess = (index) => {
+        console.log('view less');
+        const viewbtn = document.querySelector('#viewBtnLess' + `${index}`)
+
+        viewbtn.innerHTML = 'View Details';
         if(divRefs.current[index]){
-            gsap.from(divRefs.current[index], {
-            x: (index%2 === 0) ? 300 : -300, // Slide out by 300px (adjust based on your needs)
-            duration: 1, // Animation duration in seconds
+            gsap.to(divRefs.current[index], {
+            x: (index%2 === 0) ? -300 : 300, // Slide out by 300px (adjust based on your needs)
+            duration: 2, // Animation duration in seconds
             ease: 'power3.out', // Easing function for smoothness
             opacity: 0
         });
     }
+    setIsOpened(false);
+
+}
+
+    const handleClickDetails = (index, title, desc) => {
+        console.log('view more');
+        const div = document.createElement('div');
+        const divParent = document.querySelector('#events' + `${index}`);
+
+        const viewbtn = document.querySelector('#viewBtn' + `${index}`)
+
+        viewbtn.innerHTML = 'View Less';
+        
+
+        div.innerHTML = `
+            <h3 class="event-title">${title}</h3>
+            <p class="event-description">${desc}</p> <br />
+        `
+        div.className = "event-info" + " " + (index%2 === 0 ? 'border-left' : 'border-right')
+        div.style.paddingRight = "20px";
+        div.style.paddingLeft = "20px";
+        
+        divRefs.current[index] = div;
+
+
+        divParent.append(div);
+
+        if(divRefs.current[index]){
+            gsap.from(divRefs.current[index], {
+            x: (index%2 === 0) ? -300 : 300, // Slide out by 300px (adjust based on your needs)
+            duration: 2, // Animation duration in seconds
+            ease: 'power3.out', // Easing function for smoothness
+            opacity: 0
+        });
+        }
+
+        setIsOpened(true);
+        // viewbtn.onClick = handleClickLess(index);
       };
 
     //   const handleClickRight = () => {
@@ -68,24 +111,28 @@ function EventList() {
     return (
         <div className="event-list-container">
             {/*<CursorAnimation />*/}
-            <div className="top-section">
-                <img src={topImage} alt="Top Image" className="top-image" />
+            {/* <div className="top-section">
+                <img src={topImage} alt="Top Image" className="top-image"/>
                 <h1 className="top-title">EVENTS</h1>
-            </div>
+            </div> */}
             <div className="page-content">
                 <ul>
                 
                     {events.map((event, index) => (
                         
                         <li key={event.id} style={{flexDirection: index%2 !== 0 && "row-reverse"}} className="event-list-item">
-                            <div className="event-image" onClick={() => handleClick(index)}>
-                                <img style={{borderRadius:"20px"}} src={img} alt={event.name} width={"100%"} />
+                            <div className="event-image" >
+                                <img style={{borderBottomRightRadius: 0, borderBottomLeftRadius: 0, borderTopRightRadius: "20px", borderTopLeftRadius: "10px" }} src={img} alt={event.name} />
+                                {!isOpened ? <button style={{borderBottomRightRadius: '10px', borderBottomLeftRadius: '10px',borderTopRightRadius: 0, borderTopLeftRadius: 0 , padding: '2px', cursor: 'pointer', backgroundColor: '#8f7bb3', fontFamily: `"Kadwa", serif`, fontSize: '1.25rem'}} onClick={() => handleClickDetails(index, event.name, event.description)} id={'viewBtn' + index}>View Details</button> : <button style={{borderBottomRightRadius: '10px', borderBottomLeftRadius: '10px',borderTopRightRadius: 0, borderTopLeftRadius: 0 , padding: '2px', cursor: 'pointer', backgroundColor: '#8f7bb3', fontFamily: `"Kadwa", serif`, fontSize: '1.25rem'}} onClick={() => handleClickLess(index, event.name, event.description)} id={'viewBtnLess' + index}>View Less</button>}
+                                
                             </div>
-                            <div style={{paddingLeft: index%2!==0 && "20px", paddingRight: index%2===0 && "20px"}} className="event-info" ref={(el) => (divRefs.current[index] = el)}>
-                                <h3 className="event-title">{event.name}</h3>
-                                <p className="event-description">{event.description}</p> <br />
-                                {/* <a style={{float: index%2 === 0 && "right", marginRight: index%2 === 0 && "20px"}} href={`/${event.id}`}><button style={{marginTop: "-20px"}} className="register-button">Know More</button></a> */}
-                            </div>
+                            <div id={'events' + index} style={{width: '100%'}}></div>
+                            {/* <div style={{paddingLeft: index%2!==0 && "20px", paddingRight: index%2===0 && "20px"}} className={"event-info" + " " + (index%2 === 0 ? 'border-left' : 'border-right')} ref={(el) => (divRefs.current[index] = el)}>
+                                <h3 className="event-title"></h3>
+                                <p className="event-description"></p> <br />
+                                <a style={{float: index%2 === 0 && "right", marginRight: index%2 === 0 && "20px"}} href={`/${event.id}`}><button style={{marginTop: "-20px"}} className="register-button">Know More</button></a>
+                            </div> */}
+                            
                         </li>
                     ))}
                 </ul>

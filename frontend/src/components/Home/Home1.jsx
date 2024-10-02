@@ -26,50 +26,82 @@ function Home1() {
   const footerImgRef = useRef(null);
   const whiteFadeRef = useRef(null);
   const [showTrailer, setShowTrailer] = useState(false);
+  const [showFooter, setShowFooter] = useState(true);
 
   useEffect(() => {
+    
     const footerImg = footerImgRef.current;
     const whiteFade = whiteFadeRef.current;
-
+    
     // GSAP ScrollTrigger for zoom and transitions
     const zoomEffect = ScrollTrigger.create({
-      trigger: footerImg,
-      start: "top 80%", // Trigger zoom when the top of the image is near the viewport bottom
-      end: "top 20%", // End the effect as it nears the top
+      
+      trigger: '.footer',
+      start: 'top 20%', // Trigger zoom when the top of the image is near the viewport bottom
+      end: 'top -20%',   // End the effect as it nears the top
       scrub: true, // Smooth scrubbing
+      
       onUpdate: (self) => {
+        
         const progress = self.progress; // Scroll progress from 0 to 1
-        console.log(progress);
+        const scaledProgress = Math.pow(self.progress, 0.1);
+        console.log('progress :', progress);
+        console.log('Scaled Progress :', scaledProgress);
+
         // Apply zoom effect on the footer image
         gsap.to(footerImg, {
-          scale: 1 + progress * 1.5, // Increase scale progressively
-          ease: "none",
+          scale: 1 + scaledProgress * 2.0, // Increase scale progressively
+          ease: 'none',
+          transformOrigin: '50% 75%'
         });
 
         // Apply white fade when scrolling past a threshold
-        if (progress > 0.5) {
-          gsap.to(whiteFade, {
-            opacity: 1, // Fade in white overlay
-            duration: 0.5,
-          });
+        // if(progress === 1){
+        //   self.progress = 0;
+        // }
+        if (scaledProgress > 0.95) {
+          // gsap.fromTo(trailerRef, {
+          //   // opacity: 1, // Fade in white overlay
+          //   // duration: 0.3,
+            
+          // });
+
 
           // Show Trailer component
           if (!showTrailer) {
+            console.log("inside if", showTrailer);
             setShowTrailer(true); // Display the Trailer component immediately
+            setShowFooter(false);
           }
-        } else {
+        } 
+        
+        else if(scaledProgress > 0.95) {
+            gsap.fromTo(whiteFade, 
+            { opacity: 0 },  // Starting at opacity 0
+            { opacity: 1, duration: 0.5, repeat: 1, yoyo: true })
+        }
+        else {
+          console.log("inside else", showTrailer);
+          
           // Fade out white overlay and hide Trailer when scrolling up
-          gsap.to(whiteFade, {
-            opacity: 0,
-            duration: 0.5,
-          });
-          if (showTrailer) {
-            setShowTrailer(false); // Hide the Trailer component when scrolling back up
-          }
+          // gsap.fromTo(whiteFade, 
+          //   { opacity: 0 },  // Starting at opacity 0
+          //   { opacity: 1, duration: 0.5, repeat: 1, yoyo: true }
+          // );
+
+          // Revert to showing Footer and hiding Trailer when scrolling up
+        if (showTrailer) {
+          setShowTrailer(false);  // Hide the Trailer component
+          setShowFooter(true);    // Show the Footer component
+        }
+          // if (showTrailer) {
+          //   setShowTrailer(false); // Hide the Trailer component when scrolling back up
+          // }
         }
       },
+      markers: true
     });
-
+    
     return () => {
       zoomEffect.kill();
     };
@@ -184,15 +216,31 @@ function Home1() {
       </div>
 
       <div className="footer">
-        <img
+      {showFooter && (
+    <img
+      ref={footerImgRef}
+      className="footerimg"
+      src={footimg}
+      alt="Footer Image"
+    />
+  )}
+        {/* <img
           ref={footerImgRef}
           className="footerimg"
           src={footimg}
           alt="Footer Image"
-        />
-        <div ref={whiteFadeRef} className="white-fade"></div>
-        {showTrailer && <Trailer />}
+        /> */}
+        <div
+          ref={whiteFadeRef}
+          className="white-fade"
+        ></div>
+        {/* <Trailer /> */}
+        {showTrailer && <Trailer/>} 
       </div>
+      
+      {/* <Alumni /> */}
+      
+      
     </div>
   );
 }

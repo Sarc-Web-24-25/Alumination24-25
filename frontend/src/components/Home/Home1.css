@@ -140,7 +140,7 @@ html, body {
     position: absolute;
     bottom: calc(-700vh + 500px);
     width: 100%;
-    height: 500px; 
+    height: 120vh; 
     overflow: hidden; 
   }
   

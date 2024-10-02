@@ -6,6 +6,7 @@ import flagr from './photos24/FlagR.png'; // Right flag image
 import fb from './photos24/facebook.png'; // Facebook icon
 import yt from './photos24/youtube.png'; // Youtube icon
 import bg2 from './photos24/footerimg2.png'; // Background image for the trailer
+import trailer from './photos24/videos/asmp.mp4'
 
 const FlagL = () => {
     return (
@@ -24,8 +25,10 @@ const FlagL = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
             }}>
-                <img src={insta} alt="Instagram Icon" style={{ width: '40px', height: '40px', margin: '10px 0' }} />
-                <img src={linkedin} alt="LinkedIn Icon" style={{ width: '40px', height: '40px', margin: '10px 0' }} />
+                <a href="https://www.instagram.com/sarc_iitb/?hl=en" target="_blank"><img src={insta} alt="Instagram Icon" style={{ width: '40px', height: '60px', margin: '0px 0' }} /></a>
+                
+                <a href="https://www.linkedin.com/company/sarc-iitbombay/posts/?feedView=all"><img src={linkedin} alt="LinkedIn Icon" style={{ width: '40px', height: '40px', margin: '30px 0',marginBottom: '100%' }} /></a>
+                
             </div>
         </div>
     );
@@ -49,21 +52,23 @@ const FlagR = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
             }}>
-                <img src={yt} alt="Youtube Icon" style={{ width: '60px', height: '60px', marginTop: '17%'}} />
-                <img src={fb} alt="Facebook Icon" style={{ width: '40px', height: '60px'}} />
+                <a href="https://www.youtube.com/@SARCIITBombay" target="_blank"><img src={yt} alt="Youtube Icon" style={{ width: '80px', height: '70px', marginTop: '50%'}} /></a>
+                <a href="https://www.facebook.com/SARC.IITB/" target="_blank"><img src={fb} alt="Facebook Icon" style={{ width: '40px', height: '50px', marginBottom: '80%'}} /></a>
+                
             </div>
         </div>
     );
 };
 
 const Trailer = () => {
+    console.log("inside trailer")
     return (
         <div style={{
             position: 'relative',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '100%',
-            height: '100vh',
+            height: '120vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -76,7 +81,7 @@ const Trailer = () => {
                 marginBottom: '17%',
             }}>
                 <video style={{ width: '60%', height: '100%' }} controls>
-                    <source src="path-to-your-video.mp4" type="video/mp4" />
+                    <source src={trailer} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             </div>
