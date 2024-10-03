@@ -3,16 +3,17 @@
     flex-direction: column; /* Stack drops vertically */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
-    height: 200vh; /* Allow enough scroll space */
-    position: relative;
+    /* height: 200vh; Allow enough scroll space */
+    /* position: relative; */
     padding: 0 5vw; /* Add some horizontal padding */
   }
   
   .drop {
-    position: relative;
+    /* position: relative; */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
     margin-bottom: 5vh; /* Use viewport height for spacing */
   }
   

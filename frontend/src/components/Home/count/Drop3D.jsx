@@ -81,7 +81,7 @@ const RotatingCylinder = ({ maxValue }) => {
 
   return (
     <mesh ref={cylinderRef} rotation={[Math.PI / 2, 0, 0]}>
-      <cylinderGeometry args={[1, 1, 0.1, 32]} />
+      <cylinderGeometry args={[2.5, 2.5, 0.2, 32]} />
       <meshBasicMaterial attachArray="material" />
       <meshBasicMaterial map={combinedTexture} attachArray="material" />
       <meshBasicMaterial map={combinedTexture} attachArray="material" />
@@ -98,11 +98,11 @@ function Drop3D() {
        
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        width: '100%',
-        height: '100vh', // Ensure full viewport height
+        // width: '100%',
+        // height: '100vh', // Ensure full viewport height
       }}
     >
-      <Canvas style={{width: '512px', height: '512px'}} camera={{ fov: 45, position: [3, 3, 6] }}>
+      <Canvas style={{width: '200px', height: '200px', padding: 0}} camera={{ fov: 45, position: [3, 3, 6] }}>
         <ambientLight intensity={0.5} />  
         <pointLight position={[10, 10, 10]} />
         <RotatingCylinder maxValue={40000} />

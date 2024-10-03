@@ -668,6 +668,7 @@ h1 {
 
 .layer1, .layer2, .layer3 {
     scroll-snap-align: start; /* Snap to start */
+    padding: 0;
 }
 
 /* General Styles for Dragon, Register, and Clouds */
