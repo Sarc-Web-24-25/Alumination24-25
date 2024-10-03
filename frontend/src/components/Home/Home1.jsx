@@ -1,7 +1,6 @@
-'use client';
-import React, { useEffect, useState, useRef } from 'react';
-import { motion } from "framer-motion"; // Import framer-motion
-import Character from './Character';
+import React, { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import Character from "./Character";
 import "./Home1.css";
 import "./Footer.css";
 import axios from 'axios';
@@ -14,13 +13,16 @@ import Count from './count/Count.jsx';
 import Trailer from './footerex';
 import footimg from './photos24/footerimg.png';
 // import footerimg2 from './photos24/footerimg2.png';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import Alumni from "./Alumni2/Alumni2.jsx";
+// import Alumni2 from "./Alumni2/Alumni2.jsx";
+import Alumni3 from "./Alumni3/Alumni3.jsx";
+import Sponsor from "./Sponsor/Sponsor.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-const paragraph = 'A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.'
+const paragraph = "A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.";
 
 function Home1() {
   const footerImgRef = useRef(null);
@@ -104,7 +106,7 @@ function Home1() {
     });
     
     return () => {
-      zoomEffect.kill(); // Cleanup on component unmount
+      zoomEffect.kill();
     };
   }, [showTrailer]);
 
@@ -130,73 +132,113 @@ function Home1() {
   }, []);
 
   return (
-    
     <div className="newhome">
       <div>
-      <div className="mainHome">
-        <div className="upperMainHome">
-          <div className="dragonHome">
-            {/* Use motion.img to animate the dragon */}
-            <motion.img 
-              src={dragon} 
-              alt="" 
-              animate={{ y: [0, -20, 0] }} // Move up and down
-              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }} // Smooth transition
-              style={{ width: '300px', height: 'auto' }} // Adjust size as needed
-            />
+        <div className="mainHome">
+          <div className="upperMainHome">
+            <div className="dragonHome">
+              {/* Use motion.img to animate the dragon */}
+              <motion.img
+                src={dragon}
+                alt=""
+                animate={{ y: [0, -20, 0] }} // Move up and down
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }} // Smooth transition
+                style={{ width: "300px", height: "auto" }} // Adjust size as needed
+              />
+            </div>
+            <div
+              className="headingHome"
+              style={{
+                fontSize: "35px",
+                position: "relative",
+                right: "-55%",
+                top: "69%",
+              }}
+            >
+              <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+              <div style={{ fontSize: "70px", color: "#700815" }}>
+                ALUMINATION
+              </div>
+            </div>
           </div>
-          <div
-            className="headingHome"
-            style={{
-              fontSize: "35px",
-              position: "relative",
-              right: "-55%",
-              top: "69%",
-            }}
-          >
-            <div style={{ paddingLeft: '5%' }}>SARC PRESENTS</div>
-            <div style={{ fontSize: "70px", color: '#700815' }}>ALUMINATION</div>
+
+          <div className="lowerMainHome">
+            <div
+              className="registerHome"
+              style={{ fontSize: "25px", color: "#700815" }}
+            >
+              REGISTER
+            </div>
+
+            <div className="count_k">
+              <Count />
+            </div>
           </div>
         </div>
-        
-        <div className="lowerMainHome">
-          <div className="registerHome" style={{ fontSize: "25px", color: '#700815' }}>
-            REGISTER
-          </div> 
-          
-          <div className="count_k" >
-            <Count />
-          </div>
+
+        <div className="clouds">
+          <img
+            src={cloud1}
+            alt="cloud1"
+            className="cloud"
+            style={{ "--i": 1 }}
+          />
+          <img
+            src={cloud2}
+            alt="cloud2"
+            className="cloud"
+            style={{ "--i": 2 }}
+          />
+          <img
+            src={cloud3}
+            alt="cloud3"
+            className="cloud"
+            style={{ "--i": 3 }}
+          />
+          <img
+            src={cloud1}
+            alt="cloud1"
+            className="cloud"
+            style={{ "--i": 4 }}
+          />
+          <img
+            src={cloud1}
+            alt="cloud1"
+            className="cloud"
+            style={{ "--i": 5 }}
+          />
+          <img
+            src={cloud2}
+            alt="cloud2"
+            className="cloud"
+            style={{ "--i": 2 }}
+          />
+          <img
+            src={cloud3}
+            alt="cloud3"
+            className="cloud"
+            style={{ "--i": 4 }}
+          />
         </div>
-      </div>
-      
-      <div className='clouds'>
-      
-        <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 1 }} />
-        <img src={cloud2} alt="cloud2" className="cloud" style={{ '--i': 2 }} />
-        <img src={cloud3} alt="cloud3" className="cloud" style={{ '--i': 3 }} />
-        <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 4 }} />
-        <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 5}} />
-        <img src={cloud2} alt="cloud2" className="cloud" style={{ '--i': 2}} />
-        <img src={cloud3} alt="cloud3" className="cloud" style={{ '--i': 4 }} />
+
+        <div className="About">
+          <h1>About us</h1>
+          <Character paragraph={paragraph} />
+        </div>
+
+        <div style={{height: "190vh"}}></div>
+
+        <div className="alumniHomeContainer" style={{ height: "1000px" }}>
+          <Alumni3 />
+        </div>
+
+        <Sponsor />    
       </div>
 
-      
-      <div className='About'>
-        <h1>About us</h1>
-      <Character paragraph={paragraph} />
-      </div>
-
-    </div>
-
-    {sponsors.map((sponsor) => (
-        <div>
-        <img src={'http://127.0.0.1:8000/' + sponsor.image} alt="" />
-        <div style={{color: 'white'}}>{sponsor.name}</div>
-      </div>
-      ))}
-      
-            
       <div className="footer">
       {showFooter && (
     <img
@@ -224,13 +266,7 @@ function Home1() {
       
       
     </div>
-    
-    
-//   );
-// }
-
   );
 }
 
-export default Home1; 
-
+export default Home1;
