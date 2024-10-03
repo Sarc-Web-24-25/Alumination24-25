@@ -9,14 +9,14 @@ export default function AlumniCard({ name, designation, imageSrc }) {
       >
         <CardItem
           translateZ="50"
-          className="text-xl font-bold text-neutral-600 dark:text-white"
+          className="text-3xl font-bold text-white"
         >
           {name}
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-white text-sm max-w-sm mt-2 dark:text-neutral-300"
         >
           {designation}
         </CardItem>
