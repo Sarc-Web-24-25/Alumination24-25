@@ -115,15 +115,16 @@ function Home1() {
         .get('http://127.0.0.1:8000/api/sponsors/')
         .then((response) => {
             const sponsor_list = [...response.data]; // Create a copy of the events array
-            // sortEvents(sortedEvents); // Sort the events based on your criteria
-            setSponsors(sponsor_list); // Update the state with the sorted array
-            // sortedEvents.forEach((element) => {
-            //     // console.log(element.priority);
-            //     if(element.priority)
-            //         setMainEvents((prev) => [...prev, element]);
-            // });
 
-            console.log(sponsor_list);
+            let sponsors = []
+            sponsor_list.forEach((sponsor) => {
+              sponsors.push({image: `http://127.0.0.1:8000${sponsor.image}`});
+            });
+        
+            setSponsors(sponsors); // Update the state with the sorted array
+          
+
+            console.log(sponsors);
             
         })
         .catch((error) => {
@@ -236,7 +237,7 @@ function Home1() {
           <Alumni3 />
         </div>
 
-        <Sponsor />    
+        <Sponsor sponsors={sponsors}/>    
       </div>
 
       <div className="footer">
