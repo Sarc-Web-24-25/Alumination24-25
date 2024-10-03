@@ -3,13 +3,15 @@ import { motion } from "framer-motion";
 import Character from "./Character";
 import "./Home1.css";
 import "./Footer.css";
-import dragon from "./photos24/dragon.png";
-import cloud1 from "./photos24/Cloud1.png";
-import cloud2 from "./photos24/Clouds2.png";
-import cloud3 from "./photos24/Clouds3.png";
-import Count from "./count/Count.jsx";
-import Trailer from "./footerex";
-import footimg from "./photos24/footerimg.png";
+import axios from 'axios';
+import dragon from './photos24/dragon.png';
+import cloud1 from './photos24/Cloud1.png';
+import cloud2 from './photos24/Clouds2.png';
+import cloud3 from './photos24/Clouds3.png';
+// import Alumni from './Alumni/Alumni.jsx';
+import Count from './count/Count.jsx';
+import Trailer from './footerex';
+import footimg from './photos24/footerimg.png';
 // import footerimg2 from './photos24/footerimg2.png';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -27,6 +29,7 @@ function Home1() {
   const whiteFadeRef = useRef(null);
   const [showTrailer, setShowTrailer] = useState(false);
   const [showFooter, setShowFooter] = useState(true);
+  const [sponsors, setSponsors] = useState([]);
 
   useEffect(() => {
     
@@ -106,6 +109,27 @@ function Home1() {
       zoomEffect.kill();
     };
   }, [showTrailer]);
+
+  useEffect(() => {
+    axios
+        .get('http://127.0.0.1:8000/api/sponsors/')
+        .then((response) => {
+            const sponsor_list = [...response.data]; // Create a copy of the events array
+            // sortEvents(sortedEvents); // Sort the events based on your criteria
+            setSponsors(sponsor_list); // Update the state with the sorted array
+            // sortedEvents.forEach((element) => {
+            //     // console.log(element.priority);
+            //     if(element.priority)
+            //         setMainEvents((prev) => [...prev, element]);
+            // });
+
+            console.log(sponsor_list);
+            
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+  }, []);
 
   return (
     <div className="newhome">

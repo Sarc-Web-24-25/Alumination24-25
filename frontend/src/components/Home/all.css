@@ -99,13 +99,13 @@ body {
   background-repeat: repeat-y;
   background-position: center;
   overflow: scroll;
-  height: 400vh;
-  padding: 25vh 20%;
+  /* height: 400vh; */
+  padding: 23vh 20%;
   /* padding-bottom: 20vh; */
 }
 
 .page-content {
-  padding: 20px;
+  padding: 20vh 0vw 20vh 0vw;
 }
 
 .event-list-item {
