@@ -3,9 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 150px;
     /* Adjust the width and height as needed */
-    height: 250px;
+    height: 150px;
     margin-left: 30px;
     margin-top: 20px;
     border-radius: 50%;

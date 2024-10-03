@@ -440,8 +440,8 @@ function Profile() {
 
                 image.onload = () => {
                     const canvas = document.createElement('canvas');
-                    const maxWidth = 150;
-                    const maxHeight = 150;
+                    const maxWidth = 800;
+                    const maxHeight = 800;
                     let width = image.width;
                     let height = image.height;
 
@@ -512,7 +512,7 @@ function Profile() {
                     
                     <div style={{ backgroundColor: "black" }} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)} onClick={handleImageEdit} className={`user-profile ${edit && "editing"}`}>
                         {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={'http://127.0.0.1:8000' + url} className="profile-picture" alt="profile pic" />}
-                        {edit && <div style={{ position: "absolute", color: "black", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
+                        {edit && <div style={{ position: "absolute", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
                     </div>
                     <input
                         type="file"
@@ -525,13 +525,6 @@ function Profile() {
                     {userData.is_alum ? "Alum Profile" : "User Profile"}
                     </div>
                 </div>
-    <input
-        type="file"
-        id="image"
-        name="image"
-        onChange={event => handleFileChange(event)}
-        style={{ display: "none" }}
-    />
 </div>
 
 
