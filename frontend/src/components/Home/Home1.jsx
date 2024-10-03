@@ -250,8 +250,6 @@
 
 // export default Home1;
 
-"use client";
-
 import React, { useState, useRef, useEffect } from "react";
 import { Parallax } from "react-parallax";
 import "./Home1.css";
@@ -268,8 +266,10 @@ import cloud3 from "./photos24/Clouds3.png";
 import Petal from "./Petal";
 import backgroundMusic from "./photos24/bgm.mp3";
 import flagIcon from "./photos24/flag.png";
-import Count from "./count/Count"
+import Count from "./count/Count";
 import Character from "./Character";
+import Alumni3 from "./Alumni3/Alumni3.jsx";
+import Sponsor from "./Sponsor/Sponsor.jsx";
 
 function Home1() {
   const [isMuted, setIsMuted] = useState(false);
@@ -387,62 +387,56 @@ function Home1() {
           </div>
         </div> */}
 
-<div  className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
-          style={{ height: "100vh", position: "relative" }}>
-        {/* Realistic flame element */}
-        <div className="realistic-flame"></div>
+        <div
+          className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
+          style={{ height: "100vh", position: "relative" }}
+        >
+          {/* Realistic flame element */}
+          <div className="realistic-flame"></div>
 
-        {/* Semicircle moon effect */}
-        <div className="semicircle-moon1">1</div>
-        <div className="semicircle-moon2">2</div>
-        <div className="semicircle-moon3">3</div>
-        <div className="semicircle-moon4">4</div>
-        <div className="semicircle-moon5">5</div>
-        <div className="semicircle-moon6">6</div>
-        <div className="semicircle-moon7">7</div>
-        <div className="semicircle-moon8">8</div> 
-        <div className="semicircle-moon9">9</div> 
-        <div className="semicircle-moon10">10</div> 
-        <div className="semicircle-moon11">11</div> 
-        <div className="semicircle-moon12">12</div> 
-        <div className="semicircle-moon13">13</div> 
+          {/* Semicircle moon effect */}
+          <div className="semicircle-moon1">1</div>
+          <div className="semicircle-moon2">2</div>
+          <div className="semicircle-moon3">3</div>
+          <div className="semicircle-moon4">4</div>
+          <div className="semicircle-moon5">5</div>
+          <div className="semicircle-moon6">6</div>
+          <div className="semicircle-moon7">7</div>
+          <div className="semicircle-moon8">8</div>
+          <div className="semicircle-moon9">9</div>
+          <div className="semicircle-moon10">10</div>
+          <div className="semicircle-moon11">11</div>
+          <div className="semicircle-moon12">12</div>
+          <div className="semicircle-moon13">13</div>
 
+          {petals}
 
-        
+          <div className="upperMainHome">
+            <div
+              className="headingHome"
+              style={{
+                fontSize: "35px",
+                position: "relative",
+                right: "-55%",
+                top: "69%",
+              }}
+            >
+              <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+              <div style={{ fontSize: "70px", color: "#700815" }}>
+                ALUMINATION
+              </div>
+            </div>
+          </div>
 
-
-        {petals}
-
-        <div className="upperMainHome">
-          
-         
-          <div
-            className="headingHome"
-            style={{
-              fontSize: "35px",
-              position: "relative",
-              right: "-55%",
-              top: "69%",
-            }}
-          >
-            <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-            <div style={{ fontSize: "70px", color: "#700815" }}>
-              ALUMINATION
+          <div className="lowerMainHome">
+            <div
+              className="registerHome"
+              style={{ fontSize: "25px", color: "#700815" }}
+            >
+              REGISTER
             </div>
           </div>
         </div>
-        
-        <div className="lowerMainHome">
-          <div
-            className="registerHome"
-            style={{ fontSize: "25px", color: "#700815" }}
-          >
-            REGISTER
-          </div> 
-          
-
-        </div>
-      </div>
 
         {/* Clouds below Layer 1 */}
         <div className="clouds" style={{ top: "70%" }}>
@@ -520,10 +514,10 @@ function Home1() {
 
       {/* Parallax Layer 4 */}
       <Parallax bgImage={layer4} strength={100}>
-        <div className="layer4" style={{ height: "100vh" }}>
-          <h1 style={{ textAlign: "center", color: "#fff" }}>
-            Layer 4 Content
-          </h1>
+        <div className="layer4" style={{ height: "fit-content" }}>
+          <div style={{height: "20vh"}}></div>
+          <Alumni3 />
+          <div style={{height: "10vh"}}></div>
         </div>
 
         <div className="clouds" style={{ top: "70%" }}>
@@ -549,9 +543,7 @@ function Home1() {
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
         <div className="layer5" style={{ height: "100vh" }}>
-          <h1 style={{ textAlign: "center", color: "#fff" }}>
-            Layer 5 Content
-          </h1>
+          <Sponsor />
         </div>
         <div className="clouds">
           <img src={cloud1} alt="cloud1" className="cloud" />
