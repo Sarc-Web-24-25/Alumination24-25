@@ -1,10 +1,11 @@
 
 
 import React, { useState } from 'react';
-import bg from "./bglogin.png"
+import bg from "./loginbg.png"
 import useLogin from '../../hooks/useLogin';
 import { Navigate } from 'react-router-dom';
 import useSendPasswordLink from '../../hooks/useSendPasswordLink';
+import './forgotPassword.css'
 
 function ForgotPassword() {
   const [email, setEmail] = useState('');
@@ -49,7 +50,7 @@ function ForgotPassword() {
     alignItems: 'center',
     fontFamily: 'Inter, sans-serif',
     backgroundImage: `url(${bg})`,
-    minHeight: '94.1vh',
+    minHeight: '100vh',
     justifyContent: 'center',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -61,7 +62,7 @@ function ForgotPassword() {
     height: '45vh',
     padding: '30px',
     margin: '20px',
-    backgroundColor: '#45382C',
+    backgroundColor: 'rgb(255,255,255,0.8)',
     opacity: '80%',
     borderRadius: '20px',
     display: 'flex',
@@ -73,15 +74,18 @@ function ForgotPassword() {
 
 
   const inputStyle = {
-    width: '150px',
+    width: '200px',
     display: 'flex',
     height: '50px',
     marginBottom: '1vh',
     border: '1px solid #ccc',
-    borderRadius: '5px',
-    fontSize: '2vh',
+    borderRadius: '10px',
+    fontSize: '3vh',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'rgb(0,0,0,0.4) ',
+    padding:"5px",
+    color:'black'
   };
   const inputStyle1 = {
     width: '300px',
@@ -99,7 +103,7 @@ function ForgotPassword() {
     margin: '15px',
     width: '150px',
     padding: '12px',
-    backgroundColor: '#3D52D5',
+    backgroundColor: 'rgb(0,0,0,1)',
     border: 'none',
     borderRadius: '5px',
     color: '#FFF',
@@ -109,7 +113,8 @@ function ForgotPassword() {
 
   const disabledButtonStyle = {
     ...buttonStyle,
-    opacity: 0.5, // Lower opacity when button is disabled
+    color:'Black',
+    backgroundColor:"rgba(0, 0, 0, 0.7)", // Lower opacity when button is disabled
     cursor: 'not-allowed', // Change cursor to indicate button is disabled
   };
 
