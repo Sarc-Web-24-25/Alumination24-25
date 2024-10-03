@@ -176,7 +176,7 @@ align-items: flex-start;}
 .semicircle-moon1 {
     position: absolute;
     top: 86%;
-    right: 2%;
+    right: 2.5%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -192,7 +192,7 @@ align-items: flex-start;}
 .semicircle-moon2 {
     position: absolute;
     top: 80%;
-    right: 1.8%;
+    right: 2.8%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -208,7 +208,7 @@ align-items: flex-start;}
 .semicircle-moon3 {
     position: absolute;
     top: 72%;
-    right: 1.6%;
+    right: 2.4%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -225,7 +225,7 @@ align-items: flex-start;}
 .semicircle-moon4 {
     position: absolute;
     top: 65%;
-    right: 1.9%;
+    right: 3%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -241,7 +241,7 @@ align-items: flex-start;}
 .semicircle-moon5 {
     position: absolute;
     top: 57%;
-    right: 2.2%;
+    right: 3.4%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -256,7 +256,7 @@ align-items: flex-start;}
 .semicircle-moon6 {
     position: absolute;
     top: 50%;
-    right: 3.2%;
+    right: 4.5%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -273,7 +273,7 @@ align-items: flex-start;}
 .semicircle-moon7 {
     position: absolute;
     top: 43%;
-    right: 4.6%;
+    right: 5.8%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -287,20 +287,20 @@ align-items: flex-start;}
 .semicircle-moon8 {
     position: absolute;
     top: 35%;
-    right:6.5%;
+    right:7.9%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
     border-top-left-radius: 300px;
     border-top-right-radius: 300px;
-    transform: rotate(21deg); /* Rotate 45% clockwise */
+    transform: rotate(20deg); /* Rotate 45% clockwise */
     overflow: hidden;
     transition: all 0.3s ease; /* Smoother transition */}
 
 .semicircle-moon9 {
     position: absolute;
     top: 30%;
-    right:8.9%;
+    right:10%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -314,7 +314,7 @@ align-items: flex-start;}
     .semicircle-moon10{
         position: absolute;
         top: 25%;
-        right:11.6%;
+        right:12.8%;
         width: 300px;
         height: 150px; /* Larger size */
         background-color: transparent;
@@ -324,23 +324,11 @@ align-items: flex-start;}
         overflow: hidden;
         transition: all 0.3s ease; /* Smoother transition */}
 
-    .semicircle-moon10{
-        position: absolute;
-        top: 25%;
-        right:11.6%;
-        width: 300px;
-        height: 150px; /* Larger size */
-        background-color: transparent;
-        border-top-left-radius: 300px;
-        border-top-right-radius: 300px;
-        transform: rotate(2deg); /* Rotate 45% clockwise */
-        overflow: hidden;
-        transition: all 0.3s ease; /* Smoother transition */}
      
 .semicircle-moon11{
     position: absolute;
     top: 20%;
-    right:14.9%;
+    right:16%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -354,7 +342,7 @@ align-items: flex-start;}
 .semicircle-moon12{
     position: absolute;
     top: 17%;
-    right:17.7%;
+    right:19%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -367,8 +355,8 @@ align-items: flex-start;}
 
 .semicircle-moon13{
     position: absolute;
-    top: 14.6%;
-    right:21.1%;
+    top: 14.8%;
+    right:22%;
     width: 300px;
     height: 150px; /* Larger size */
     background-color: transparent;
@@ -395,8 +383,8 @@ align-items: flex-start;}
 
 .semicircle-moon1:hover::before,
 .semicircle-moon2:hover::before,.semicircle-moon3:hover::before,.semicircle-moon4:hover::before,.semicircle-moon5:hover::before,.semicircle-moon6:hover::before,.semicircle-moon7:hover::before,.semicircle-moon8:hover::before ,.semicircle-moon9:hover::before,.semicircle-moon10:hover::before ,.semicircle-moon11:hover::before ,.semicircle-moon12:hover::before ,.semicircle-moon13:hover::before {
-    background: rgba(255, 255, 255, 0.9); /* Much brighter on hover */
-    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+    background: rgba(244, 221, 160, 0.9); /* Much brighter on hover */
+    box-shadow: 0 0 40px 30px rgba(244, 221, 160, 0.9); /* Stronger glow */
 }
 
 
@@ -409,49 +397,49 @@ align-items: flex-start;}
 
     .semicircle-moon3{
         top: 66%;
-        right: 0.4%;
-        transform: rotate(70deg);
+        right: 1.8%;
+        transform: rotate(65deg);
     }
     .semicircle-moon4{
         top: 60%;
-        right: 0.28%;
-        transform: rotate(60deg);
+        right: 1.9%;
+        transform: rotate(55deg);
     }    .semicircle-moon5{
         top: 53%;
-        right: 0.5%;
+        right: 1.9%;
         transform: rotate(50deg);
     }    .semicircle-moon6{
         top: 46%;
-        right: 1.2%;
+        right: 2.5%;
         transform: rotate(42deg);
     }    .semicircle-moon7{
         top: 40%;
-        right: 2.25%;
+        right: 3.7%;
         transform: rotate(34deg);
     }    .semicircle-moon8{
         top: 33%;
-        right: 4%;
+        right: 5.4%;
         transform: rotate(27deg);
     }    .semicircle-moon9{
         top: 27%;
-        right: 6.5%;
+        right: 7.9%;
         transform: rotate(18deg);
     }    .semicircle-moon10{
         top: 22.4%;
-        right: 9%;
+        right: 10.4%;
         transform: rotate(10deg);
     }    .semicircle-moon11{
         top: 18.1%;
-        right: 12.4%;
+        right: 13.8%;
         transform: rotate(-1deg);
     }
     .semicircle-moon12{
         top: 15%;
-        right: 15%;
+        right: 16%;
         transform: rotate(-10deg);
     } .semicircle-moon13{
         top: 13.3%;
-        right: 18%;
+        right: 19.4%;
         transform: rotate(-14deg);
     }
 }
@@ -466,45 +454,45 @@ align-items: flex-start;}
 
     .semicircle-moon3{
         top: 66%;
-        right: 0.4%;
+        right: 2.4%;
         transform: rotate(70deg);
     }
     .semicircle-moon4{
         top: 60%;
-        right: 0.28%;
+        right: 2.02%;
         transform: rotate(60deg);
     }    .semicircle-moon5{
         top: 53%;
-        right: 0.3%;
+        right: 2%;
         transform: rotate(50deg);
     }    .semicircle-moon6{
         top: 46%;
-        right: 0.8%;
+        right: 2.2%;
         transform: rotate(42deg);
     }    .semicircle-moon7{
         top: 40%;
-        right: 1.7%;
+        right: 3%;
         transform: rotate(34deg);
     }    .semicircle-moon8{
         top: 33%;
-        right: 3.2%;
+        right: 4.6%;
         transform: rotate(27deg);
     }    .semicircle-moon9{
         top: 27%;
-        right: 5.4%;
+        right: 6.9%;
         transform: rotate(18deg);
     }    .semicircle-moon10{
         top: 22.4%;
-        right: 7.8%;
+        right: 9.3%;
         transform: rotate(10deg);
     }    .semicircle-moon11{
         top: 18.1%;
-        right: 11%;
+        right: 12.7%;
         transform: rotate(-1deg);
     }
     .semicircle-moon12{
         top: 15%;
-        right: 14%;
+        right: 16%;
         transform: rotate(-10deg);
     } .semicircle-moon13{
         top: 13.3%;
