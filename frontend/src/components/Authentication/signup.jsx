@@ -23,8 +23,8 @@ const formStyle = {
 };
 const containerStyle = {
   width: '60%',
-  height: '100vh',
-  padding: '30px',
+  height:'100vh',
+  padding: '10px',
   marginLeft: 'auto',
   marginRight:'0px',
   backgroundColor:'rgba(255, 255, 255, 0.8)',
@@ -96,7 +96,7 @@ const inputStyle1 = {
 const inputfield = {
   width: '60%',
   display: 'flex',
-  height: '5vh',
+  height: '6vh',
   marginBottom: '3vh',
   border: '1px solid #ccc',
   borderRadius: '100px',
@@ -187,7 +187,7 @@ function Signup() {
   const headingStyle = {
     fontSize: '26px',
     marginBottom: '20px',
-    backgroundColor: "rgba(255,255,255,0.5)",
+    // backgroundColor: "rgba(255,255,255,0.5)",
     padding: "10px",
     paddingLeft: "20px",
     paddingRight: "20px",

@@ -67,7 +67,7 @@ function Login() {
   const containerStyle = {
     width: '60%',
     height: '100vh',
-    padding: '30px',
+    padding: '10px',
     marginleft: '0px',
     backgroundColor:'rgba(255, 255, 255, 0.8)',
     // backgroundColor: '#ffffff',
@@ -114,7 +114,7 @@ function Login() {
   const inputfield = {
     width: '60%',
     display: 'flex',
-    height: '5vh',
+    height: '6vh',
     marginBottom: '3vh',
     border: '1px solid #ccc',
     borderRadius: '100px',

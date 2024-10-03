@@ -66,4 +66,4 @@ function VerifyEmailView() {
 
 }
 
-export default VerifyEmailView
+export default VerifyEmailView;
