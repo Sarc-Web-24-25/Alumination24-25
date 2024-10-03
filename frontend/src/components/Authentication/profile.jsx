@@ -511,7 +511,7 @@ function Profile() {
             <div className="heading-container" style={styles.headingContainer}>
                     
                     <div style={{ backgroundColor: "black" }} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)} onClick={handleImageEdit} className={`user-profile ${edit && "editing"}`}>
-                        {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={url} className="profile-picture" alt="profile pic" />}
+                        {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={'http://127.0.0.1:8000' + url} className="profile-picture" alt="profile pic" />}
                         {edit && <div style={{ position: "absolute", color: "black", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
                     </div>
                     <input
