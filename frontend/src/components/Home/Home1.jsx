@@ -245,7 +245,7 @@ useEffect(() => {
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={layer3} strength={150}>
-        <div className="layer3" style={{ height: "250vh" }} ref={layerRefs[2]}>
+        <div className="layer3" style={{ height: "120vh" }} ref={layerRefs[2]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}

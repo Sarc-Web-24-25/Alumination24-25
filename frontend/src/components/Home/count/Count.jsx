@@ -16,9 +16,9 @@ const Count = () => {
     const screenHeight = window.innerHeight;
 
     return [
-      { x: screenWidth * -0.02, y: screenHeight * 0.44 }, 
-      { x: screenWidth * 0.025, y: screenHeight * 0.1 },
-      { x: screenWidth * -0.02, y: screenHeight * 0.1 },
+      { x: screenWidth * -0.10, y: screenHeight * 0.2 },  // First coin at 30% of the viewport height
+      { x: screenWidth * 0.12, y: screenHeight * 0.25 },   // Second coin at 50% (middle)
+      { x: screenWidth * -0.10, y: screenHeight * 0.3 },
     ];
   };
 
@@ -36,26 +36,31 @@ const Count = () => {
       dropRefs.forEach((dropRef, index) => {
         const startX = index % 2 === 0 ? -300 : 400;
         const { x: endX, y: endY } = positions[index];
+        console.log('endY = ', endY)
 
         gsap.fromTo(
           dropRef.current,
-          { scale: 0, x: startX, y: 500 },
+          { scale: 0, x: endX, y: -1000 },
           {
             scale: 1,
             x: endX,
             y: endY,
             ease: 'power3.out',
             duration: 2,
+            delay:0.5,
             scrollTrigger: {
               trigger: dropRef.current,
-              start: 'top 80%',
-              end: 'top 20%',
+              start: 'top 10%',
+              end: 'top 90%',
               toggleActions: 'play none none none',
+              // scrub: true,
               // onEnter: () => incrementFootfall(index),
               // onLeave: () => resetFootfall(index),
+              // markers: true
             },
           }
         );
+
       });
     }
     return () => {
@@ -98,6 +103,8 @@ const Count = () => {
           <Drop3D/>
         </div>
       ))}
+
+    
     </div>
   );
 };
