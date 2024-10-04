@@ -207,7 +207,7 @@ function Home1() {
 
             <div style={{ height: "190vh" }}></div>
 
-            <div className="alumniHomeContainer" style={{ height: "1000px" }}>
+            <div className="alumniHomeContainer" >
               <Alumni3 />
             </div>
 
@@ -324,18 +324,7 @@ function Home1() {
             <Sponsor sponsors={sponsors} />
           </div>
 
-          <div className="footer">
-            {showFooter && (
-              <img
-                ref={footerImgRef}
-                className="footerimg"
-                src={footimg}
-                alt="Footer Image"
-              />
-            )}
-            <div ref={whiteFadeRef} className="white-fade"></div>
-            {showTrailer && <Trailer />}
-          </div>
+          
         </div>
       )}
     </>
