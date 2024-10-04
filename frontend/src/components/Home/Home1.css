@@ -5,7 +5,7 @@
   height: 700vh;
   background-image: url('./photos24/Alumination.png');
   background-size: cover; 
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-repeat: no-repeat;
 
 html, body {

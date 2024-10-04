@@ -1,0 +1,22 @@
+
+
+@media screen and (max-width: 768px) {
+
+.newhome{
+  background-image: url('./photos24/homephoneView.jpg');
+  height: fit-content;
+
+
+}
+
+.style_paragraph__FOwrP {
+    font-size: 25px;
+    text-align: center;
+}
+
+.style_word__wkWuz{
+    height: 26px;
+    align-items: center;
+}
+    
+}
