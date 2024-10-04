@@ -27,7 +27,7 @@
     }
     .inputfield{
         width: 80% !important;
-        height: 3vh !important;
+        height:6vh !important;
     }
     .containerstyle{
         width:75% !important;
@@ -35,7 +35,7 @@
    
   }
   @media (max-width: 480px) {
-    .containerstyle{
+    /* .containerstyle{
      width: 100% !important;
      height: 100vh !important ;
      padding: 5px;
@@ -63,7 +63,14 @@
     }
     .inputstyle1{
  
-    }
+    } */
+    .inputfield{
+      width: 100% !important;
+      height: 5vh !important;
+  }
+.containerstyle{
+  width:80% !important;
+}
    } 
    
 input {

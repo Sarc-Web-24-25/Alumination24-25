@@ -40,12 +40,12 @@ const styles = {
         fontSize: '65px',
         flexWrap: 'wrap',
         // Important: media queries for font size adjustments
-        '@media (max-width: 768px)': {
-            fontSize: '45px !important',
-        },
-        '@media (max-width: 480px)': {
-            fontSize: '35px !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     fontSize: '45px !important',
+        // },
+        // '@media (max-width: 480px)': {
+        //     fontSize: '20px !important',
+        // },
     },
 
     headingContainer: {
@@ -55,10 +55,10 @@ const styles = {
         fontSize: '32px',
         gap: '3rem',
         // Important: media queries for font size and gap adjustments
-        '@media (max-width: 768px)': {
-            fontSize: '24px !important',
-            gap: '1.5rem !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     fontSize: '24px !important',
+        //     gap: '1.5rem !important',
+        // },
     },
 
     formContainer: {
@@ -80,45 +80,47 @@ const styles = {
         flexBasis: '40%',
         marginBottom: '20px',
         // Important: media query to adjust width for smaller screens
-        '@media (max-width: 768px)': {
-            width: '100% !important',
-             flexDirection: 'column !important',
-            flexBasis: '100% !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     width: '100% !important',
+        //      flexDirection: 'column !important',
+        //     flexBasis: '100% !important',
+        // },
     },
 
     one: {
+        width:"50%",
         display: 'flex',
         flexDirection: 'row',
         gap: '4rem',
         alignItems: 'flex-end',
-        flexBasis: '35%',
+        flexBasis: '40%',
         paddingRight: '1rem',
         marginBottom: '20px',
         // Important: media query to change layout for smaller screens
-        '@media (max-width: 768px)': {
-            flexDirection: 'column !important',
-            gap: '1rem !important',
-            flexBasis: '100% !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     flexDirection: 'column !important',
+        //     gap: '1rem !important',
+        //     flexBasis: '100% !important',
+        // },
     },
 
     two: {
+        width:'50%',
         right:'0',
         display: 'flex',
         flexDirection: 'row',
         gap: '4rem',
         alignItems: 'flex-end',
-        flexBasis: '35%',
+        flexBasis: '40%',
         paddingRight: '1rem',
         marginBottom: '20px',
         marginLeft: 'auto',
         // Important: media query to change layout for smaller screens
-        '@media (max-width: 768px)': {
-            flexDirection: 'column !important',
-            gap: '1rem !important',
-            flexBasis: '100% !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     flexDirection: 'column !important',
+        //     gap: '1rem !important',
+        //     flexBasis: '100% !important',
+        // },
     },
 
     constituents1: {
@@ -129,11 +131,11 @@ const styles = {
         flexBasis: '40%',
         marginBottom: '20px',
         // Important: media query to adjust width for smaller screens
-        '@media (max-width: 768px)': {
-            width: '100% !important',
-             flexDirection: 'column !important',
-            flexBasis: '100% !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     width: '100% !important',
+        //      flexDirection: 'column !important',
+        //     flexBasis: '100% !important',
+        // },
     },
 
     constituents2: {
@@ -144,11 +146,11 @@ const styles = {
         flexBasis: '40%',
         marginBottom: '20px',
         // Important: media query to adjust width for smaller screens
-        '@media (max-width: 768px)': {
-            width: '100% !important',
-             flexDirection: 'column !important',
-            flexBasis: '100% !important',
-        },
+    //     '@media (max-width: 768px)': {
+    //         width: '100% !important',
+    //          flexDirection: 'column !important',
+    //         flexBasis: '100% !important',
+    //     },
     },
 
     profilelabel: {
@@ -157,9 +159,9 @@ const styles = {
         marginBottom: '5px',
         color: "#fff",
         // Important: media query to reduce font size on smaller screens
-        '@media (max-width: 768px)': {
-            fontSize: '24px !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     fontSize: '24px !important',
+        // },
     },
 
     input: {
@@ -173,10 +175,10 @@ const styles = {
         outline: 'none',
         transition: 'border-color 0.3s',
         // Important: media query to adjust input2 font size for smaller screens
-        '@media (max-width: 768px)': {
-            fontSize: '14px !important',
-             flexDirection: 'column !important'
-        },
+        // '@media (max-width: 768px)': {
+        //     fontSize: '14px !important',
+        //      flexDirection: 'column !important'
+        // },
     },
 
     input2: {
@@ -189,11 +191,11 @@ const styles = {
         color: "#000",
         outline: 'none',
         transition: 'border-color 0.3s',
-        // Important: media query to adjust input2 font size for smaller screens
-        '@media (max-width: 768px)': {
-            fontSize: '14px !important',
-             flexDirection: 'column !important'
-        },
+        // // Important: media query to adjust input2 font size for smaller screens
+        // '@media (max-width: 768px)': {
+        //     fontSize: '14px !important',
+        //      flexDirection: 'column !important'
+        // },
     },
 
     textarea: {
@@ -207,36 +209,37 @@ const styles = {
         color: "#000",
         outline: 'none',
         // Important: media query for textarea font size
-        '@media (max-width: 768px)': {
-            fontSize: '18px !important',
-        },
+    //     '@media (max-width: 768px)': {
+    //         fontSize: '18px !important',
+    //     },
     },
 
     submitButton: {
         // left:0,
         marginTop: '-20vh',
         // marginBottom: '12vh',
-        marginLeft:'-100vh',
+        marginLeft:'-50vh',
         // width: '2vw',
         // height: '10vh',
         flexBasis: '60%',
-        padding: '12px',
-        backgroundColor: "rgba(255, 175, 175, 1)",
+        padding: '10px',
+        backgroundColor: "rgba(255, 175, 175, 0.5)",
         border: 'none',
         borderRadius: '50px',
         color: 'black',
-        fontSize: '32px',
+        fontSize: '28px',
         cursor: 'pointer',
-        transition: 'background-color 0.3s',
+        transition: 'background-color 1s',
+        marginBottom:'2vh',
         // Important: media queries for button width and font size adjustments
-        '@media (max-width: 768px)': {
-            width: '4vw !important',
-            fontSize: '24px !important',
-        },
-        '@media (max-width: 480px)': {
-            width: '6vw !important',
-            fontSize: '18px !important',
-        },
+        // '@media (max-width: 768px)': {
+        //     width: '4vw !important',
+        //     fontSize: '24px !important',
+        // },
+        // '@media (max-width: 480px)': {
+        //     width: '6vw !important',
+        //     fontSize: '18px !important',
+        // },
     },
 };
 
@@ -440,8 +443,8 @@ function Profile() {
 
                 image.onload = () => {
                     const canvas = document.createElement('canvas');
-                    const maxWidth = 150;
-                    const maxHeight = 150;
+                    const maxWidth = 800;
+                    const maxHeight = 800;
                     let width = image.width;
                     let height = image.height;
 
@@ -511,8 +514,8 @@ function Profile() {
             <div className="heading-container" style={styles.headingContainer}>
                     
                     <div style={{ backgroundColor: "black" }} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)} onClick={handleImageEdit} className={`user-profile ${edit && "editing"}`}>
-                        {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={url} className="profile-picture" alt="profile pic" />}
-                        {edit && <div style={{ position: "absolute", color: "black", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
+                        {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={'http://127.0.0.1:8000' + url} className="profile-picture" alt="profile pic" />}
+                        {edit && <div style={{ position: "absolute", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
                     </div>
                     <input
                         type="file"
@@ -525,13 +528,6 @@ function Profile() {
                     {userData.is_alum ? "Alum Profile" : "User Profile"}
                     </div>
                 </div>
-    <input
-        type="file"
-        id="image"
-        name="image"
-        onChange={event => handleFileChange(event)}
-        style={{ display: "none" }}
-    />
 </div>
 
 
@@ -540,7 +536,7 @@ function Profile() {
                 <div className="profileform-container" style={styles.formContainer}>
                     
                     <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
+                        <label className="label" htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
                         <input
                             placeholder='Full Name'
                             id="fullname"
@@ -552,7 +548,7 @@ function Profile() {
                         />
                     </div>
                     {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
+                        <label className="label" htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
                         <input
                             placeholder='Hostel'
                             id="hostel"
@@ -565,7 +561,7 @@ function Profile() {
                         />
                     </div>}
                     {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
+                        <label className="label"htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
                         <input
                             placeholder='Roll Number'
                             id="rollno"
@@ -577,7 +573,7 @@ function Profile() {
                         />
                     </div>}
                     <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
+                        <label className="label"htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
                         <input
                             placeholder='Phone no'
                             id="phoneno"
@@ -592,7 +588,7 @@ function Profile() {
                 
                     
                     <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="email" style={styles.profilelabel}>Email</label>
+                        <label className="label" htmlFor="email" style={styles.profilelabel}>Email</label>
                         <input
                             placeholder='Email'
                             id="email"
@@ -608,7 +604,7 @@ function Profile() {
 
 
                     <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="program" style={styles.profilelabel}>Program</label>
+                        <label className="label" htmlFor="program" style={styles.profilelabel}>Program</label>
                         <select value={profileData.program} onChange={handleChange} style={styles.input} name="program" id="program" required>
                             <option value="" defaultChecked>Select Program</option>
                             {programOptions}
@@ -619,7 +615,7 @@ function Profile() {
                     
                     
                     <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
+                        <label className="label"  htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
                         <input
                             placeholder='Personal Email'
                             id="personal_email"
@@ -633,14 +629,14 @@ function Profile() {
                     </div>
                     <div className="one" style={styles.one}>
                     <div className="pinfo-constituents" style={styles.constituents2}>
-                        <label htmlFor="department" style={styles.profilelabel}>Department</label>
+                        <label className="label"  htmlFor="department" style={styles.profilelabel}>Department</label>
                         <select value={profileData.department} onChange={handleChange} style={styles.input2} name="department" id="department" required>
                             <option value="" defaultChecked>Select Department</option>
                             {departmentOptions}
                         </select>
                     </div>
                     <div className="pinfo-constituents" style={styles.constituents2}>
-                        <label htmlFor="degree" style={styles.profilelabel}>Degree</label>
+                        <label className="label" htmlFor="degree" style={styles.profilelabel}>Degree</label>
                         <select value={profileData.degree} onChange={handleChange} style={styles.input2} name="degree" id="degree" required>
                             <option value="" defaultChecked>Select Degree</option>
                             {degreeOptions}
@@ -650,8 +646,8 @@ function Profile() {
                     </div>
                     
                     <div className="two" style={styles.two}>
-                    <div className="pinfo-constituents" style={styles.constituents1}>
-                        <label htmlFor="graduation_year" style={styles.profilelabel}>Graduation</label>
+                    <div className="pinfo-constituents" style={styles.constituents2}>
+                        <label className="label" htmlFor="graduation_year" style={styles.profilelabel}>Graduation</label>
                         <input
                             placeholder='Graduation Year'
                             id="graduation_year"
@@ -664,8 +660,8 @@ function Profile() {
                         />
                     </div>
 
-                    <div className="pinfo-constituents" style={styles.constituents1}>
-                        <label htmlFor="gender" style={styles.profilelabel}>Gender:</label>
+                    <div className="pinfo-constituents" style={styles.constituents2}>
+                        <label className="label"  htmlFor="gender" style={styles.profilelabel}>Gender:</label>
                         <select value={profileData.gender} onChange={handleChange} style={styles.input2} name="gender" id="gender" required>
                             <option value="" defaultChecked>Select Gender</option>
                             {genderOptions}

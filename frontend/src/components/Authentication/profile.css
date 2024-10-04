@@ -3,13 +3,78 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
+    width: 150px;
     /* Adjust the width and height as needed */
-    height: 250px;
+    height: 150px;
     margin-left: 30px;
     margin-top: 20px;
-    border-radius: 50%;
+    border-radius: 50% !important;
     /* Creates a circular shape */
     overflow: hidden;
     /* Hides the parts of the image outside the circle */
+}
+@media (max-width:560px){
+    .submitButton{
+      width: 18vw!important;
+      font-size: 18px !important;
+      margin-left: -40vh !important;
+      margin-top: 5vh !important;
+
+    }
+    .user{
+        font-size: 40px !important;
+    }
+    .user-profile{
+        width: 100px !important;
+        /* Adjust the width and height as needed */
+        height: 100px !important;
+        margin-left: 10px !important;
+        margin-top: 10px !important;
+    }
+    .pinfo-constituents{
+        width: 100% !important;
+        flex-basis: 100% !important;
+    }
+    .one{
+        width: 100% !important;
+        flex-basis: 100% !important;
+      
+    }
+    .two{
+        width: 100% !important;
+        flex-basis: 100% !important;
+        margin-left: -1vw !important;
+    }
+}
+@media (max-width:580px) {
+    .label{
+        font-size: 15px !important;
+    }
+    .one{
+        gap:2rem !important;
+
+    }
+    .two{
+        gap:2rem !important;
+    }
+
+}
+@media (max-width:480px){
+    .one{
+        gap:2rem !important
+    }
+    .two{
+        gap:2rem !important
+    }
+}
+@media (max-width:350px){
+    .one{
+        gap:1rem !important
+    }
+    .two{
+        gap:1rem !important
+    }
+}
+.submitButton:hover{
+    background-color: rgb(255,175,175,1) !important;
 }

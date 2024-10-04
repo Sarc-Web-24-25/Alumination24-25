@@ -1,9 +1,9 @@
-'use client';
-import React, { useEffect, useState, useRef } from 'react';
-import { motion } from "framer-motion"; // Import framer-motion
-import Character from './Character';
+import React, { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
+import Character from "./Character";
 import "./Home1.css";
-import "./Footer.css"
+import "./Footer.css";
+import axios from 'axios';
 import dragon from './photos24/dragon.png';
 import cloud1 from './photos24/Cloud1.png';
 import cloud2 from './photos24/Clouds2.png';
@@ -13,19 +13,23 @@ import Count from './count/Count.jsx';
 import Trailer from './footerex';
 import footimg from './photos24/footerimg.png';
 // import footerimg2 from './photos24/footerimg2.png';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import Alumni from "./Alumni2/Alumni2.jsx";
+// import Alumni2 from "./Alumni2/Alumni2.jsx";
+import Alumni3 from "./Alumni3/Alumni3.jsx";
+import Sponsor from "./Sponsor/Sponsor.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
-const paragraph = 'A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.'
+const paragraph = "A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.";
 
 function Home1() {
   const footerImgRef = useRef(null);
   const whiteFadeRef = useRef(null);
   const [showTrailer, setShowTrailer] = useState(false);
   const [showFooter, setShowFooter] = useState(true);
+  const [sponsors, setSponsors] = useState([]);
 
   useEffect(() => {
     
@@ -102,73 +106,140 @@ function Home1() {
     });
     
     return () => {
-      zoomEffect.kill(); // Cleanup on component unmount
+      zoomEffect.kill();
     };
   }, [showTrailer]);
 
+  useEffect(() => {
+    axios
+        .get('http://127.0.0.1:8000/api/sponsors/')
+        .then((response) => {
+            const sponsor_list = [...response.data]; // Create a copy of the events array
+
+            let sponsors = []
+            sponsor_list.forEach((sponsor) => {
+              sponsors.push({image: `http://127.0.0.1:8000${sponsor.image}`});
+            });
+        
+            setSponsors(sponsors); // Update the state with the sorted array
+          
+
+            console.log(sponsors);
+            
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+  }, []);
+
   return (
-    
     <div className="newhome">
       <div>
-      <div className="mainHome">
-        <div className="upperMainHome">
-          <div className="dragonHome">
-            {/* Use motion.img to animate the dragon */}
-            <motion.img 
-              src={dragon} 
-              alt="" 
-              animate={{ y: [0, -20, 0] }} // Move up and down
-              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }} // Smooth transition
-              style={{ width: '300px', height: 'auto' }} // Adjust size as needed
-            />
+        <div className="mainHome">
+          <div className="upperMainHome">
+            <div className="dragonHome">
+              {/* Use motion.img to animate the dragon */}
+              <motion.img
+                src={dragon}
+                alt=""
+                animate={{ y: [0, -20, 0] }} // Move up and down
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }} // Smooth transition
+                style={{ width: "300px", height: "auto" }} // Adjust size as needed
+              />
+            </div>
+            <div
+              className="headingHome"
+              style={{
+                fontSize: "35px",
+                position: "relative",
+                right: "-55%",
+                top: "69%",
+              }}
+            >
+              <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+              <div style={{ fontSize: "70px", color: "#700815" }}>
+                ALUMINATION
+              </div>
+            </div>
           </div>
-          <div
-            className="headingHome"
-            style={{
-              fontSize: "35px",
-              position: "relative",
-              right: "-55%",
-              top: "69%",
-            }}
-          >
-            <div style={{ paddingLeft: '5%' }}>SARC PRESENTS</div>
-            <div style={{ fontSize: "70px", color: '#700815' }}>ALUMINATION</div>
+
+          <div className="lowerMainHome">
+            <div
+              className="registerHome"
+              style={{ fontSize: "25px", color: "#700815" }}
+            >
+              REGISTER
+            </div>
+
+            <div className="count_k">
+              <Count />
+            </div>
           </div>
         </div>
-        
-        <div className="lowerMainHome">
-          <div className="registerHome" style={{ fontSize: "25px", color: '#700815' }}>
-            REGISTER
-          </div> 
-          
-          <div className="count_k" >
-            <Count />
-          </div>
+
+        <div className="clouds">
+          <img
+            src={cloud1}
+            alt="cloud1"
+            className="cloud"
+            style={{ "--i": 1 }}
+          />
+          <img
+            src={cloud2}
+            alt="cloud2"
+            className="cloud"
+            style={{ "--i": 2 }}
+          />
+          <img
+            src={cloud3}
+            alt="cloud3"
+            className="cloud"
+            style={{ "--i": 3 }}
+          />
+          <img
+            src={cloud1}
+            alt="cloud1"
+            className="cloud"
+            style={{ "--i": 4 }}
+          />
+          <img
+            src={cloud1}
+            alt="cloud1"
+            className="cloud"
+            style={{ "--i": 5 }}
+          />
+          <img
+            src={cloud2}
+            alt="cloud2"
+            className="cloud"
+            style={{ "--i": 2 }}
+          />
+          <img
+            src={cloud3}
+            alt="cloud3"
+            className="cloud"
+            style={{ "--i": 4 }}
+          />
         </div>
-      </div>
-      
-      <div className='clouds'>
-      
-        <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 1 }} />
-        <img src={cloud2} alt="cloud2" className="cloud" style={{ '--i': 2 }} />
-        <img src={cloud3} alt="cloud3" className="cloud" style={{ '--i': 3 }} />
-        <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 4 }} />
-        <img src={cloud1} alt="cloud1" className="cloud" style={{ '--i': 5}} />
-        <img src={cloud2} alt="cloud2" className="cloud" style={{ '--i': 2}} />
-        <img src={cloud3} alt="cloud3" className="cloud" style={{ '--i': 4 }} />
-      </div>
 
-      
-      <div className='About'>
-        <h1>About us</h1>
-      <Character paragraph={paragraph} />
+        <div className="About">
+          <h1>About us</h1>
+          <Character paragraph={paragraph} />
+        </div>
+
+        <div style={{height: "190vh"}}></div>
+
+        <div className="alumniHomeContainer" style={{ height: "1000px" }}>
+          <Alumni3 />
+        </div>
+
+        <Sponsor sponsors={sponsors}/>    
       </div>
 
-
-      
-
-      </div>
-            
       <div className="footer">
       {showFooter && (
     <img
@@ -196,13 +267,7 @@ function Home1() {
       
       
     </div>
-    
-    
-//   );
-// }
-
   );
 }
 
-export default Home1; 
-
+export default Home1;
