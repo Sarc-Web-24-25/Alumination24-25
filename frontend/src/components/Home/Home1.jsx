@@ -29,21 +29,37 @@ function Home1() {
   const audioRef = useRef(new Audio(backgroundMusic));
 
   // Scroll ref for parallax sections
-  const layerRefs = useRef([]);
+const layerRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
+const previousScrollY = useRef(0); // To track the previous scroll position
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const layer2Position = document
-        .querySelector(".layer2")
-        .getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      setIsLayer2Visible(layer2Position < windowHeight / 2);
-    };
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    const direction = currentScrollY > previousScrollY.current ? "down" : "up"; // Determine scroll direction
+    previousScrollY.current = currentScrollY;
 
-    window.addEventListener("scroll", handleScroll);
+    for (let i = 0; i < layerRefs.length; i++) {
+      const layer = layerRefs[i].current;
+      const layerPosition = layer.getBoundingClientRect().top;
+      const layerHeight = layer.offsetHeight;
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      // Check if 10% of the layer is visible
+      const isLayerVisible = layerPosition <= window.innerHeight * 0.9 && layerPosition >= -layerHeight * 0.1;
+
+      // If scrolling down and the layer below is visible, or scrolling up and the layer above is visible
+      if (isLayerVisible && ((direction === "down" && layerPosition >= 0) || (direction === "up" && layerPosition <= 0))) {
+        window.scrollTo({
+          top: window.scrollY + layerPosition,
+          behavior: "smooth",
+        });
+        break;
+      }
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   useEffect(() => {
     const handleEnded = () => {
@@ -130,6 +146,7 @@ function Home1() {
         <div
           className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
           style={{ height: "100vh", position: "relative" }}
+          ref={layerRefs[0]} // Add ref for scroll detection
         >
           {/* Realistic flame element */}
           <div className="realistic-flame"></div>
@@ -193,7 +210,8 @@ function Home1() {
 
       {/* Parallax Layer 2 */}
       <Parallax bgImage={layer2} strength={200}>
-        <div className="layer2" style={{ height: "100vh" }}>
+        <div className="layer2" style={{ height: "100vh" }}
+        ref={layerRefs[1]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>Layer 2 Content</h1> */}
 
           {/* About Us Section */}
@@ -227,7 +245,7 @@ function Home1() {
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={layer3} strength={150}>
-        <div className="layer3" style={{ height: "250vh" }}>
+        <div className="layer3" style={{ height: "250vh" }} ref={layerRefs[2]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
@@ -255,7 +273,8 @@ function Home1() {
 
       {/* Parallax Layer 4 */}
       <Parallax bgImage={layer4} strength={100}>
-        <div className="layer4" style={{ height: "fit-content" }}>
+        <div className="layer4" style={{ height: "fit-content" }}
+        ref={layerRefs[3]}>
           <div style={{height: "20vh"}}></div>
           <Alumni3 />
           <div style={{height: "10vh"}}></div>
@@ -283,7 +302,7 @@ function Home1() {
 
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
-        <div className="layer5" style={{ height: "100vh" }}>
+        <div className="layer5" style={{ height: "100vh" }} ref={layerRefs[4]}>
           <Sponsor />
         </div>
         <div className="clouds">
@@ -301,3 +320,224 @@ function Home1() {
 }
 
 export default Home1;
+
+
+
+// "use client";
+
+// import React, { useState, useRef, useEffect } from "react";
+// import { Parallax } from "react-parallax";
+// import "./Home1.css";
+// import "./Petal.css";
+// import layer1 from "./photos24/layer1.png";
+// import layer2 from "./photos24/layer2.png";
+// import layer3 from "./photos24/layer3.png";
+// import layer4 from "./photos24/layer4.png";
+// import layer5 from "./photos24/layer5.png";
+// import Petal from "./Petal";
+// import backgroundMusic from "./photos24/bgm.mp3";
+// import flagIcon from "./photos24/flag.png";
+// import Count from "./count/Count";
+// import Character from "./Character";
+
+// function Home1() {
+//   const [isMuted, setIsMuted] = useState(false);
+//   const audioRef = useRef(new Audio(backgroundMusic));
+
+//   // Layer references for scroll detection
+//   const layerRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
+//   const previousScrollY = useRef(0); // To track the previous scroll position
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const currentScrollY = window.scrollY;
+//       const direction = currentScrollY > previousScrollY.current ? "down" : "up"; // Determine scroll direction
+//       previousScrollY.current = currentScrollY;
+
+//       for (let i = 0; i < layerRefs.length; i++) {
+//         const layer = layerRefs[i].current;
+//         const layerPosition = layer.getBoundingClientRect().top;
+//         const layerHeight = layer.offsetHeight;
+
+//         // Check if 10% of the layer is visible
+//         const isLayerVisible = layerPosition <= window.innerHeight * 0.9 && layerPosition >= -layerHeight * 0.1;
+
+//         // If scrolling down and the layer below is visible, or scrolling up and the layer above is visible
+//         if (isLayerVisible && ((direction === "down" && layerPosition >= 0) || (direction === "up" && layerPosition <= 0))) {
+//           window.scrollTo({
+//             top: window.scrollY + layerPosition,
+//             behavior: "smooth",
+//           });
+//           break;
+//         }
+//       }
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   useEffect(() => {
+//     const handleEnded = () => {
+//       audioRef.current.currentTime = 0;
+//       if (!isMuted) {
+//         audioRef.current.play().catch((error) => {
+//           console.error("Audio playback failed:", error);
+//         });
+//       }
+//     };
+
+//     audioRef.current.addEventListener("ended", handleEnded);
+
+//     if (!isMuted) {
+//       audioRef.current.play().catch((error) => {
+//         console.error("Audio autoplay failed:", error);
+//       });
+//     }
+
+//     return () => {
+//       audioRef.current.pause();
+//       audioRef.current.removeEventListener("ended", handleEnded);
+//     };
+//   }, [isMuted]);
+
+//   const toggleMute = () => {
+//     setIsMuted((prev) => !prev);
+//     if (isMuted) {
+//       audioRef.current.play().catch((error) => {
+//         console.error("Audio playback failed:", error);
+//       });
+//     } else {
+//       audioRef.current.pause();
+//     }
+//   };
+
+//   const petals = Array.from({ length: 30 }).map((_, index) => (
+//     <Petal key={index} />
+//   ));
+
+//   const paragraph =
+//     "A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.";
+
+//   return (
+//     <div className="newhome">
+//       {/* Mute Button */}
+//       <button
+//         className="mute-button"
+//         onClick={toggleMute}
+//         style={{
+//           position: "absolute",
+//           top: "20px",
+//           right: "20px",
+//           background: "rgba(255, 255, 255, 0.8)",
+//           border: "2px solid #000",
+//           borderRadius: "5px",
+//           padding: "10px",
+//           cursor: "pointer",
+//           zIndex: 1000,
+//           display: "flex",
+//           alignItems: "center",
+//         }}
+//       >
+//         <img
+//           src={flagIcon}
+//           alt={isMuted ? "Unmute" : "Mute"}
+//           style={{ width: "30px", height: "30px" }}
+//         />
+//         <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
+//           {isMuted ? "Unmute" : "Mute"}
+//         </span>
+//       </button>
+
+//       {/* Parallax Layer 1 */}
+//       <Parallax bgImage={layer1} strength={300}>
+//         <div
+//           className="mainHome"
+//           style={{ height: "100vh", position: "relative" }}
+//           ref={layerRefs[0]} // Add ref for scroll detection
+//         >
+//           <div className="realistic-flame"></div>
+//           <div className="semicircle-moon1">1</div>
+//           {petals}
+//           <div className="upperMainHome">
+//             <div
+//               className="headingHome"
+//               style={{
+//                 fontSize: "35px",
+//                 position: "relative",
+//                 right: "-55%",
+//                 top: "69%",
+//               }}
+//             >
+//               <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+//               <div style={{ fontSize: "70px", color: "#700815" }}>
+//                 ALUMINATION
+//               </div>
+//             </div>
+//           </div>
+//           <div className="lowerMainHome">
+//             <div
+//               className="registerHome"
+//               style={{ fontSize: "25px", color: "#700815" }}
+//             >
+//               REGISTER
+//             </div>
+//           </div>
+//         </div>
+//       </Parallax>
+
+//       {/* Parallax Layer 2 */}
+//       <Parallax bgImage={layer2} strength={200}>
+//         <div
+//           className="layer2"
+//           style={{ height: "100vh" }}
+//           ref={layerRefs[1]} // Add ref for scroll detection
+//         >
+//           <div className="About">
+//             <h1>About us</h1>
+//             <Character paragraph={paragraph} />
+//           </div>
+//         </div>
+//       </Parallax>
+
+//       {/* Parallax Layer 3 */}
+//       <Parallax bgImage={layer3} strength={150}>
+//         <div
+//           className="layer3"
+//           style={{ height: "250vh" }}
+//           ref={layerRefs[2]} // Add ref for scroll detection
+//         >
+//           <Count />
+//         </div>
+//       </Parallax>
+
+//       {/* Parallax Layer 4 */}
+//       <Parallax bgImage={layer4} strength={100}>
+//         <div
+//           className="layer4"
+//           style={{ height: "100vh" }}
+//           ref={layerRefs[3]} // Add ref for scroll detection
+//         >
+//           <h1 style={{ textAlign: "center", color: "#fff" }}>
+//             Layer 4 Content
+//           </h1>
+//         </div>
+//       </Parallax>
+
+//       {/* Parallax Layer 5 */}
+//       <Parallax bgImage={layer5} strength={50}>
+//         <div
+//           className="layer5"
+//           style={{ height: "100vh" }}
+//           ref={layerRefs[4]} // Add ref for scroll detection
+//         >
+//           <h1 style={{ textAlign: "center", color: "#fff" }}>
+//             Layer 5 Content
+//           </h1>
+//         </div>
+//       </Parallax>
+//     </div>
+//   );
+// }
+
+// export default Home1;
