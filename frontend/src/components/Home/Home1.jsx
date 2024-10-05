@@ -1,5 +1,6 @@
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect,} from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Parallax } from "react-parallax";
 import "./Home1.css";
@@ -25,7 +26,7 @@ import Sponsor from "./Sponsor/Sponsor.jsx";
 function Home1() {
   const [isMuted, setIsMuted] = useState(false);
   const [isLayer2Visible, setIsLayer2Visible] = useState(false);
-
+  const [sponsors, setSponsors] = useState([]);
   const audioRef = useRef(new Audio(backgroundMusic));
 
   // Scroll ref for parallax sections
@@ -71,6 +72,8 @@ useEffect(() => {
       }
     };
 
+    
+
     audioRef.current.addEventListener("ended", handleEnded);
 
     if (!isMuted) {
@@ -95,7 +98,22 @@ useEffect(() => {
       audioRef.current.pause();
     }
   };
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/api/sponsors/")
+      .then((response) => {
+        const sponsor_list = [...response.data];
+        let sponsors = [];
+        sponsor_list.forEach((sponsor) => {
+          sponsors.push({ image: `http://127.0.0.1:8000${sponsor.image}` });
+        });
 
+        setSponsors(sponsors);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   const petals = Array.from({ length: 30 }).map((_, index) => (
     <Petal key={index} />
   ));
@@ -305,7 +323,7 @@ useEffect(() => {
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
         <div className="layer5" style={{ height: "100vh" }} ref={layerRefs[4]}>
-          <Sponsor />
+        <Sponsor sponsors={sponsors} />
         </div>
         <div className="clouds">
           <img src={cloud1} alt="cloud1" className="cloud" />

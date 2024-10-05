@@ -23,6 +23,7 @@ urlpatterns = ([
     path("admin/", admin.site.urls),
     path('api/authenticate/',include('Authentication.urls')),
     path('api/events/', include('Events.urls')),
+    path('api/sponsors/', include('Sponsors.urls')),
 ]
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
