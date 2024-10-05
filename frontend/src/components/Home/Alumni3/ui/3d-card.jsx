@@ -60,7 +60,7 @@ export const CardBody = ({ children, className }) => {
         "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
         className
       )}
-      style={{width: "100%"}}
+      style={{width: "95%"}}
     >
       {children}
     </div>
