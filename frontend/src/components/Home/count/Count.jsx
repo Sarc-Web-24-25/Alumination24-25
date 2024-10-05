@@ -40,14 +40,14 @@ const Count = () => {
 
         gsap.fromTo(
           dropRef.current,
-          { scale: 0, x: endX, y: -1000 },
+          { scale: 0, x: endX, y: 0 },
           {
             scale: 1,
             x: endX,
             y: endY,
             ease: 'power3.out',
             duration: 2,
-            delay:0.5,
+            // delay:0.5,
             scrollTrigger: {
               trigger: dropRef.current,
               start: 'top 10%',

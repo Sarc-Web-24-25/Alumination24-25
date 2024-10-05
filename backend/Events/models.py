@@ -54,6 +54,7 @@ class Event(models.Model):
     isEnded = models.BooleanField(default=False, blank=True)
     isGM = models.BooleanField(default=False, blank=True)
     isWorkshops = models.BooleanField(default=False, blank=True)
+    priority = models.BooleanField(default=False, blank=False)
 
     def __str__(self):
         return self.name

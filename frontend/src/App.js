@@ -25,11 +25,12 @@ import ForgotPassword from "./components/Authentication/forgotPassword";
 import VerifyEmailView from "./components/VerifyEmailView";
 import ChangePasswordView from "./components/ChangePasswordView";
 import EventIndividual from "./components/Home/EventIndividual";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Router>
-      <Navbar1 />
+      {/* <Navbar1 /> */}
       <Routes>
         <Route path="/" element={<Home1 />} exact={true} />
         <Route path="/team" element={<Team /> } exact={true} />
