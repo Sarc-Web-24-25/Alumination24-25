@@ -305,19 +305,19 @@ function Home1() {
           <div className="realistic-flame"></div>
 
           {/* Semicircle moon effect */}
-          <div className="semicircle-moon1">1</div>
-          <div className="semicircle-moon2">2</div>
-          <div className="semicircle-moon3">3</div>
-          <div className="semicircle-moon4">4</div>
-          <div className="semicircle-moon5">5</div>
-          <div className="semicircle-moon6">6</div>
-          <div className="semicircle-moon7">7</div>
-          <div className="semicircle-moon8">8</div>
-          <div className="semicircle-moon9">9</div>
-          <div className="semicircle-moon10">10</div>
-          <div className="semicircle-moon11">11</div>
-          <div className="semicircle-moon12">12</div>
-          <div className="semicircle-moon13">13</div>
+          <div className="semicircle-moon1"></div>
+          <div className="semicircle-moon2"></div>
+          <div className="semicircle-moon3"></div>
+          <div className="semicircle-moon4"></div>
+          <div className="semicircle-moon5"></div>
+          <div className="semicircle-moon6"></div>
+          <div className="semicircle-moon7"></div>
+          <div className="semicircle-moon8"></div>
+          <div className="semicircle-moon9"></div>
+          <div className="semicircle-moon10"></div>
+          <div className="semicircle-moon11"></div>
+          <div className="semicircle-moon12"></div>
+          <div className="semicircle-moon13"></div>
 
           {/* {petals} */}
 
