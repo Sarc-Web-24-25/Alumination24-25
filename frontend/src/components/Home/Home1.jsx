@@ -214,52 +214,46 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* Clouds below Layer 1 */}
-        <div className="clouds" style={{ top: "70%" }}>
+
+      </Parallax>
+
+      <div className="clouds" style={{top: "13%"}}>
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud2} alt="cloud2" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
+          {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
+          {/* <img src={cloud3} alt="cloud3" className="cloud" />
           <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
+          <img src={cloud3} alt="cloud3" className="cloud" /> */}
         </div>
-      </Parallax>
 
       {/* Parallax Layer 2 */}
-      <Parallax bgImage={layer2} strength={200}>
-        <div className="layer2" style={{ height: "100vh" }}
+      <Parallax bgImage={layer2} strength={200} zIndex={1000}>
+        <div className="layer2" style={{ height: "100vh"}}
         ref={layerRefs[1]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>Layer 2 Content</h1> */}
 
           {/* About Us Section */}
-          <div className="About">
-            <h1>About us</h1>
+          <div className="About" >
+            <p style={{ fontSize: "150%" }}>About us</p>
             <Character paragraph={paragraph} />
           </div>
         </div>
 
         {/* Clouds above Layer 2 */}
-        <div className="clouds">
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud2} alt="cloud2" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-        </div>
 
-        <div className="clouds" style={{ top: "70%" }}>
+      </Parallax>
+
+
+      <div className="clouds" style={{top: "32%"}}>
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud2} alt="cloud2" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
+          {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
+          {/* <img src={cloud3} alt="cloud3" className="cloud" />
           <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
+          <img src={cloud3} alt="cloud3" className="cloud" /> */}
         </div>
-      </Parallax>
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={layer3} strength={150}>
@@ -267,27 +261,21 @@ useEffect(() => {
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
+          
           <Count />
         </div>
-        <div className="clouds" style={{ top: "70%" }}>
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud2} alt="cloud2" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-        </div>
-        <div className="clouds">
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud2} alt="cloud2" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-        </div>
+
       </Parallax>
+
+      <div className="clouds" style={{top: "52%"}}>
+          <img src={cloud1} alt="cloud1" className="cloud" />
+          <img src={cloud2} alt="cloud2" className="cloud" />
+          <img src={cloud3} alt="cloud3" className="cloud" />
+          {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
+          {/* <img src={cloud3} alt="cloud3" className="cloud" />
+          <img src={cloud1} alt="cloud1" className="cloud" />
+          <img src={cloud3} alt="cloud3" className="cloud" /> */}
+        </div>
 
       {/* Parallax Layer 4 */}
       <Parallax bgImage={layer4} strength={100}>
@@ -298,40 +286,24 @@ useEffect(() => {
           <div style={{height: "10vh"}}></div>
         </div>
 
-        <div className="clouds" style={{ top: "70%" }}>
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud2} alt="cloud2" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-        </div>
-        <div className="clouds">
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud2} alt="cloud2" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-        </div>
       </Parallax>
+
+      <div className="clouds" style={{top: "78%"}}>
+          <img src={cloud1} alt="cloud1" className="cloud" />
+          <img src={cloud2} alt="cloud2" className="cloud" />
+          <img src={cloud3} alt="cloud3" className="cloud" />
+          {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
+          {/* <img src={cloud3} alt="cloud3" className="cloud" />
+          <img src={cloud1} alt="cloud1" className="cloud" />
+          <img src={cloud3} alt="cloud3" className="cloud" /> */}
+        </div>
 
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
         <div className="layer5" style={{ height: "100vh" }} ref={layerRefs[4]}>
         <Sponsor sponsors={sponsors} />
         </div>
-        <div className="clouds">
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud2} alt="cloud2" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud2} alt="cloud3" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
-        </div>
+
       </Parallax>
     </div>
   );
