@@ -1,6 +1,7 @@
 .newhome{
   display: flex;
   flex-direction: column;
+  width: 100vw;
   min-height: 100vh;
   height: 700vh;
   background-image: url('./photos24/Alumination.png');
@@ -12,7 +13,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    overflow-x: hidden; /*Prevent horizontal overflow*/
   }
   
   /* .newhome {

@@ -80,7 +80,7 @@ function Home1() {
           }
         }
       },
-      markers: true,
+      // markers: true,
     });
 
     return () => {
@@ -149,9 +149,7 @@ function Home1() {
                   REGISTER
                 </div>
 
-                <div className="count_k">
-                  <Count />
-                </div>
+                
               </div>
             </div>
 
@@ -205,7 +203,10 @@ function Home1() {
               <Character paragraph={paragraph} />
             </div>
 
-            <div style={{ height: "190vh" }}></div>
+            {/* <div style={{ height: "190vh" }}></div> */}
+            <div className="count_k">
+                  <Count />
+                </div>
 
             <div className="alumniHomeContainer" >
               <Alumni3 />
@@ -219,7 +220,7 @@ function Home1() {
           <div>
             <div className="mainHome">
               <div className="upperMainHome">
-                <div className="dragonHome">
+                {/* <div className="dragonHome">
                   <motion.img
                     src={dragon}
                     alt=""
@@ -231,7 +232,7 @@ function Home1() {
                     }}
                     style={{ width: "300px", height: "auto" }}
                   />
-                </div>
+                </div> */}
                 <div
                   className="headingHome"
                   style={{
