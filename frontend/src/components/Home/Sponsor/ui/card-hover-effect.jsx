@@ -72,7 +72,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const HoverEffect = ({ items, className }) => {
+export const HoverEffect = ({ items = [], className }) => {  // Provide default value for `items`
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
@@ -124,6 +124,7 @@ export const HoverEffect = ({ items, className }) => {
     </div>
   );
 };
+
 
 // CardLink Component to handle the link and animation
 // const CardLink = ({ item, idx, setHoveredIndex, hoveredIndex }) => {
