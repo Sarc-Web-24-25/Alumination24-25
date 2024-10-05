@@ -11,6 +11,7 @@ const RotatingCylinder = ({ maxValue }) => {
   const [combinedTexture, setCombinedTexture] = useState(null);
   const [currentNumber, setCurrentNumber] = useState(0);
   const [isRotating, setIsRotating] = useState(true);
+  const screenWidth = window.innerWidth;
 
   // Load the PNG image texture
   const pngTexture = useLoader(THREE.TextureLoader, group18);
@@ -81,7 +82,8 @@ const RotatingCylinder = ({ maxValue }) => {
 
   return (
     <mesh ref={cylinderRef} rotation={[Math.PI / 2, 0, 0]}>
-      <cylinderGeometry args={[2.5, 2.5, 0.2, 32]} />
+      {screenWidth > 768 ? <cylinderGeometry args={[2.5, 2.5, 0.2, 32]} /> : <cylinderGeometry args={[1.7, 1.7, 0.1, 32]} />} 
+      {/* <cylinderGeometry args={[2.5, 2.5, 0.2, 32]} /> */}
       <meshBasicMaterial attachArray="material" />
       <meshBasicMaterial map={combinedTexture} attachArray="material" />
       <meshBasicMaterial map={combinedTexture} attachArray="material" />

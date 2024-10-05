@@ -112,7 +112,7 @@ function Home1() {
           <div>
             <div className="mainHome">
               <div className="upperMainHome">
-                <div className="dragonHome">
+                {/*<div className="dragonHome">
                   <motion.img
                     src={dragon}
                     alt=""
@@ -124,7 +124,7 @@ function Home1() {
                     }}
                     style={{ width: "300px", height: "auto" }}
                   />
-                </div>
+                </div>*/}
                 <div
                   className="headingHome"
                   style={{
@@ -203,8 +203,8 @@ function Home1() {
               <Character paragraph={paragraph} />
             </div>
 
-            {/* <div style={{ height: "190vh" }}></div> */}
-            <div className="count_k">
+            {/* <div style={{ height: "50vh" }}></div> */}
+            <div className="count_k" style={{height: '290vh'}}>
                   <Count />
                 </div>
 
