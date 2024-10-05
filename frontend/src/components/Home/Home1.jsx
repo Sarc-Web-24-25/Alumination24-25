@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Character from "./Character";
 import "./Home1.css";
@@ -20,6 +21,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Alumni2 from "./Alumni2/Alumni2.jsx";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor from "./Sponsor/Sponsor.jsx";
+import backgroundMusic from "./photos24/videos/back.mp3";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +36,10 @@ function Home1() {
   const [showFooter, setShowFooter] = useState(true);
   const [sponsors, setSponsors] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // State to track screen size
+  const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef(new Audio(backgroundMusic));
+  const navigate = useNavigate(); // Initialize the navigate function
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,6 +52,43 @@ function Home1() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const handleEnded = () => {
+      audioRef.current.currentTime = 0;
+      if (!isMuted) {
+        audioRef.current.play().catch((error) => {
+          console.error("Audio playback failed:", error);
+        });
+      }
+    };
+
+    
+
+    audioRef.current.addEventListener("ended", handleEnded);
+
+    if (!isMuted) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio autoplay failed:", error);
+      });
+    }
+
+    return () => {
+      audioRef.current.pause();
+      audioRef.current.removeEventListener("ended", handleEnded);
+    };
+  }, [isMuted]);
+
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
+    if (isMuted) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio playback failed:", error);
+      });
+    } else {
+      audioRef.current.pause();
+    }
+  };
 
   useEffect(() => {
     const footerImg = footerImgRef.current;
@@ -105,10 +149,18 @@ function Home1() {
       });
   }, []);
 
+  const handleNavClick = (route) => {
+
+    navigate(route); // Navigate to the specified route
+  };
+
+
   return (
     <>
       {isMobile ? (
         <div className="newhome">
+
+
           <div>
             <div className="mainHome">
               <div className="upperMainHome">
@@ -216,51 +268,90 @@ function Home1() {
         </div>
       ) : (
         <div className="newhome">
+
+<button
+        className="mute-button"
+        onClick={toggleMute}
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          background: "rgba(255, 255, 255, 0.8)",
+          border: "2px solid #000",
+          borderRadius: "5px",
+          padding: "10px",
+          cursor: "pointer",
+          zIndex: 1000,
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <img
+          src={dragon}
+          alt={isMuted ? "Unmute" : "Mute"}
+          style={{ width: "30px", height: "30px" }}
+        />
+        <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
+          {isMuted ? "Unmute" : "Mute"}
+        </span>
+      </button>
           <div>
-            <div className="mainHome">
-              <div className="upperMainHome">
-                <div className="dragonHome">
-                  <motion.img
-                    src={dragon}
-                    alt=""
-                    animate={{ y: [0, -20, 0] }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                    }}
-                    style={{ width: "300px", height: "auto" }}
-                  />
-                </div>
-                <div
-                  className="headingHome"
-                  style={{
-                    fontSize: "35px",
-                    position: "relative",
-                    right: "-55%",
-                    top: "69%",
-                  }}
-                >
-                  <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-                  <div style={{ fontSize: "70px", color: "#700815" }}>
-                    ALUMINATION
-                  </div>
-                </div>
-              </div>
+          <div
+          className={`mainHome `}
+          style={{ height: "100vh", position: "relative" }}
+         // Add ref for scroll detection
+        >
+          {/* Realistic flame element */}
+          <div className="realistic-flame"></div>
 
-              <div className="lowerMainHome">
-                <div
-                  className="registerHome"
-                  style={{ fontSize: "25px", color: "#700815" }}
-                >
-                  REGISTER
-                </div>
+          {/* Semicircle moon effect */}
+          <div className="semicircle-moon1">1</div>
+          <div className="semicircle-moon2">2</div>
+          <div className="semicircle-moon3">3</div>
+          <div className="semicircle-moon4">4</div>
+          <div className="semicircle-moon5">5</div>
+          <div className="semicircle-moon6">6</div>
+          <div className="semicircle-moon7">7</div>
+          <div className="semicircle-moon8">8</div>
+          <div className="semicircle-moon9">9</div>
+          <div className="semicircle-moon10">10</div>
+          <div className="semicircle-moon11">11</div>
+          <div className="semicircle-moon12">12</div>
+          <div className="semicircle-moon13">13</div>
 
-                <div className="count_k">
-                  <Count />
-                </div>
+          {/* {petals} */}
+
+          <div className="upperMainHome">
+            <div
+              className="headingHome"
+              style={{
+                fontSize: "35px",
+                position: "relative",
+                right: "-55%",
+                top: "69%",
+              }}
+            >
+              <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+              <div style={{ fontSize: "70px", color: "#700815" }}>
+                ALUMINATION
               </div>
             </div>
+          </div>
+
+          <div className="lowerMainHome">
+            <div
+              className="registerHome"
+              style={{ fontSize: "25px", color: "#700815" }}
+              onClick={() => handleNavClick( '/login')}
+            >
+              REGISTER
+            </div>
+          </div>
+        </div>
+
+            <div className="count_k">
+                  <Count />
+                </div>
 
             <div className="clouds">
               <img
