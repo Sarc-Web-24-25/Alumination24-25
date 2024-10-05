@@ -12,6 +12,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailtype, setEmailType] = useState('@iitb.ac.in');
+  const [isHovered, setIsHovered] = useState(false);
   // const audio = new Audio(loginSound);
 
   const { formData, setFormData, error, success, handleInputChange, login } = useLogin();
@@ -148,10 +149,11 @@ function Login() {
   };
 
   const anchorStyle = {
-    color: 'Black',
+    color: isHovered ? 'red' : 'blue',
     textDecoration: 'none',
     fontSize: '17px',
     margin: '20px',
+    transition: 'color 0.3s',
   };
 const headingstyle={fontWeight: "bold", color: "black", marginBottom:"50px",marginTop:'100px'};
   if (localStorage.getItem('userData')) {
@@ -163,7 +165,7 @@ const headingstyle={fontWeight: "bold", color: "black", marginBottom:"50px",marg
       <div className="containerstyle slide-in-right" style={containerStyle} >
         <h1 className='headingstyle' style={headingstyle}>LOGIN</h1>
         {error && <p className="error">{error}</p>}
-        {success && <p style={{ color: "white" }} className="success">{success}</p>}
+        {success && <p style={{ color: "white" }} className="error">{success}</p>}
         <div className='inputfield' style={inputfield}>
         <FontAwesomeIcon icon={faUser} />
           <input

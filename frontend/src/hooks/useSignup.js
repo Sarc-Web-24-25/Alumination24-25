@@ -36,7 +36,7 @@ function useSignup() {
         if (error.response && error.response.data && error.response.data.error) {
           setError(error.response.data.error);
         } else {
-          setError('An error occurred during signup.');
+          setError('Error encountered during registration');
         }
       });
   };
