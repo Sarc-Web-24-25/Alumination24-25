@@ -7,11 +7,12 @@ import eventimage from "./bgimg/cfc.png"
 import YouTube from 'react-youtube';
 import img from '../Home/photos24/image.png'
 import gsap from 'gsap'
-import EventCarousel from './EventCarousel';
+import ImageCarousel from './EventCarousel';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import frame from './photos24/frame.png';
+// import frame from './photos24/frame.png';
 
 // import CursorAnimation from "./CursorAnimation"
+gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollTrigger);
 
 function EventList() {
@@ -95,7 +96,7 @@ function EventList() {
         
         <div className="event-list-container" style={{padding: '10vh 0'}}>
            
-        <EventCarousel main={mainEvents}/>
+        <ImageCarousel main={mainEvents}/>
         {/* <span className='event-head'>Events</span> */}
             <div className="page-content" style={{zIndex: 0}}>
                 <ul>

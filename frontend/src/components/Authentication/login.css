@@ -20,7 +20,7 @@
     }
     .inputfield{
         width: 80% !important;
-        height: 3vh !important;
+        height:6vh !important;
     }
 .containerstyle{
     width:75% !important;
@@ -33,12 +33,12 @@
     }
   
     input, select, button {
-      font-size: 12px; /* Further adjust font size */
-      padding: 8px; /* Reduce padding */
+      font-size: 10px; /* Further adjust font size */
+      padding: 5px; /* Reduce padding */
     }
   
     .links {
-      font-size: 12px; /* Adjust link font size */
+      font-size: 10px; /* Adjust link font size */
     }
     /* .inputfield{
         height: 3vh !important;
@@ -46,35 +46,13 @@
     } */
   }
   @media (max-width: 480px) {
-   .containerstyle{
-    width: 100% !important;
-    height: 100vh !important ;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.8)!important;
-   
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 0;
-    margin-right: 0;
-    justify-content: center;
-        align-items: center;
-   }
-   .inputfield{
-       width: 80% !important;
-       display: flex;
-       height: '3vh' !important;
-       border-radius: 100px;
-       border: 1px solid #ccc;
-       color: white !important;
-       background-color:rgba(0, 0, 0, 0.6)!important;
-      
-       margin-left: 5% !important;
-       margin-right: 15% !important;
-   }
-   .inputstyle1{
-
-   }
+    .inputfield{
+      width: 100% !important;
+      height: 5vh !important;
+  }
+.containerstyle{
+  width:80% !important;
+}
   } 
  
   .links:hover{

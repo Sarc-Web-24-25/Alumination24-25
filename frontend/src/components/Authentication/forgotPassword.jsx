@@ -74,7 +74,7 @@ function ForgotPassword() {
 
 
   const inputStyle = {
-    width: '200px',
+    width: '160px',
     display: 'flex',
     height: '50px',
     marginBottom: '1vh',
