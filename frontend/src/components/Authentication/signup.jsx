@@ -153,6 +153,7 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [is_alum, setIsAlum] = useState(false);
   const [emailtype, setEmailType] = useState('@iitb.ac.in');
+  const [isHovered, setIsHovered] = useState(false);
 
 
 
@@ -174,7 +175,7 @@ function Signup() {
     );
   };
   const anchorStyle = {
-    color: 'Black',
+    color: isHovered ? 'red' : 'blue',
     textDecoration: 'none',
     fontSize: '17px',
     margin: '20px',
@@ -208,17 +209,14 @@ function Signup() {
   }
 
   const handleAlumChange = (value) => {
-    setIsAlum(value);
-    setFormData({ ...formData, is_alum: value });
-    if(value){
-      if(emailtype === "@iitb.ac.in"){
-        setEmailType("@iitbombay.org");
-      }
-    }else{
-      if(emailtype === "@iitbombay.org"){
-        setIsAlum(true);
-      }
-    }
+    setIsAlum(value); // This will update the state to the value of the selected radio button
+  setFormData({ ...formData, is_alum: value }); // Also update formData
+  // Adjust email type based on whether the user is an alum or not
+  if (value) {
+    setEmailType("@iitbombay.org");
+  } else {
+    setEmailType("@iitb.ac.in"); // Change back to IITB email if not an alum
+  }
   }
 
   const handleEmailTypeChange = (event) => {
@@ -314,16 +312,19 @@ function Signup() {
     alignItems: "center", // Center align items vertically
     flexWrap: "nowrap"
 }}>
-    <span style={{whiteSpace: "nowrap"}}> Are you an IITB Alum?</span> {/* Added span for better alignment */}
+    <span style={{whiteSpace: "nowrap", color: "blue"}}> Are you an IITB Alum?</span> {/* Added span for better alignment */}
+    <label style={{marginLeft:"40px"}}>
     <input 
         onChange={() => handleAlumChange(true)} 
         type="radio" 
         name='is_alum' 
         checked={is_alum} 
-        style={{ marginRight: "1px", color: "white" }} 
+        style={{marginRight: "60px", color: "white" }} 
         required 
     /> 
     Yes
+    </label>
+    <label>
     <input 
         onChange={() => handleAlumChange(false)} 
         type="radio" 
@@ -333,6 +334,7 @@ function Signup() {
         required 
     /> 
     No
+    </label>
 </div>
 
 
