@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect} from "react";
 import { motion } from "framer-motion";
 import Character from "./Character";
 import "./Home1.css";
@@ -30,11 +30,13 @@ function Home1() {
   const [showTrailer, setShowTrailer] = useState(false);
   const [showFooter, setShowFooter] = useState(true);
   const [sponsors, setSponsors] = useState([]);
+  const [hasRefreshed, setHasRefreshed] = useState(false); // State to track refresh
 
   useEffect(() => {
     
     const footerImg = footerImgRef.current;
     const whiteFade = whiteFadeRef.current;
+
     
     // GSAP ScrollTrigger for zoom and transitions
     const zoomEffect = ScrollTrigger.create({
@@ -43,6 +45,16 @@ function Home1() {
       start: 'top 20%', // Trigger zoom when the top of the image is near the viewport bottom
       end: 'top -20%',   // End the effect as it nears the top
       scrub: true, // Smooth scrubbing
+      markers: true,
+      invalidateOnRefresh: true,
+      // onEnter: () => {
+      //   // Refresh the page when the footer comes into view, only if not refreshed already
+      //   if (!hasRefreshed) {
+      //     console.log("Footer is in view, refreshing the page...");
+      //     setHasRefreshed(true); // Update state to indicate refresh has occurred
+      //     window.location.reload(); // Refresh the page
+      //   }
+      // },
       
       onUpdate: (self) => {
         
@@ -102,13 +114,15 @@ function Home1() {
           // }
         }
       },
-      markers: true
+      
     });
     
-    return () => {
-      zoomEffect.kill();
-    };
-  }, [showTrailer]);
+    setTimeout(() => {
+      ScrollTrigger.refresh(); // Ensure ScrollTrigger is updated after refs are set
+    }, 100);
+        
+       return () => zoomEffect.kill();
+    }, [showTrailer,footerImgRef, whiteFadeRef]);
 
   useEffect(() => {
     axios

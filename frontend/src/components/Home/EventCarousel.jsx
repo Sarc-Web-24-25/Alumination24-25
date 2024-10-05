@@ -4,7 +4,7 @@ import { Carousel } from 'react-bootstrap';
 
 const ImageCarousel = ( {main} ) => {
   return (
-    <Carousel>
+    <Carousel className='container' indicators={false} slide={true} style={{height: 'auto', marginBottom: '10vh'}}>
        
         {main.map((event) => (
             // console.log('http://127.0.0.1:8000/' + event.image);
