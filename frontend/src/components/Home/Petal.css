@@ -2,8 +2,8 @@
 .petal {
     position: absolute;
     top: -10%; /* Start above the viewport */
-    width: 20px; /* Adjust size as needed */
-    height: 20px; /* Adjust size as needed */
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
     background-image: url('./photos24/petall.png'); /* Use a flower petal image */
     background-size: cover;
     animation: fall linear infinite;
