@@ -11,6 +11,8 @@ import Swal from "sweetalert2";
 import letter from "../Home/bgimg/letter.png";
 // import CursorAnimation from "./CursorAnimation";
 import MultiSelect from "react-select";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 function EventIndividual() {
   const [selectedEventId, setSelectedEventId] = useState(null);
@@ -57,13 +59,14 @@ function EventIndividual() {
   const opts =
     windowDimensions.width > 840
       ? {
-          height: "512",
-          width: "840",
-        }
+        height: "100%",
+        width: "100%",
+      }
       : {
-          height: `${0.6 * windowDimensions.width}`,
-          width: "100%",
-        };
+        // height: `${0.6 * windowDimensions.width}`,
+        height: "100%",
+        width: "100%",
+      };
 
   useEffect(() => {
     fetchEvent(key);
@@ -91,25 +94,25 @@ function EventIndividual() {
       setOtherDetails(
         !event.isWorkshops
           ? {
-              other_details: !event.isGM
-                ? {
-                    field_pref1: pref1,
-                    field_pref2: pref2,
-                    field_pref3: pref3,
-                    pref_date: prefDate,
-                  }
-                : {
-                    field_pref1_gm: pref1,
-                    field_pref2_gm: pref2,
-                    field_pref3_gm: pref3,
-                    pref_date: prefDate,
-                  },
-            }
-          : {
-              other_details: {
-                workshops: workshops.map((workshop) => workshop.value),
+            other_details: !event.isGM
+              ? {
+                field_pref1: pref1,
+                field_pref2: pref2,
+                field_pref3: pref3,
+                pref_date: prefDate,
+              }
+              : {
+                field_pref1_gm: pref1,
+                field_pref2_gm: pref2,
+                field_pref3_gm: pref3,
+                pref_date: prefDate,
               },
-            }
+          }
+          : {
+            other_details: {
+              workshops: workshops.map((workshop) => workshop.value),
+            },
+          }
       );
     }
   }, [pref1, pref2, pref3, prefDate, workshops]);
@@ -228,7 +231,7 @@ function EventIndividual() {
         <div>
           <div style={{ overflowX: "hidden" }} className="event-list-container">
             {/* <CursorAnimation /> */}
-            <div className="top-section">
+            {/* <div className="top-section">
               <img src={headingImage} alt="Top Image" className="top-imagee" />
               <h1
                 style={{ marginBottom: event.youtube_link === "" && "15vh" }}
@@ -236,50 +239,76 @@ function EventIndividual() {
               >
                 {event.name}
               </h1>
-            </div>
+            </div> */}
             <div
               className="main-event"
               style={{
-                width: "100vw",
-                display: "flex",
-                justifyContent: "space-around",
+                // width: "100vw",
+                height: "100%",
+                // display: "flex",
+                // flexDirection: 'column',
+                justifyContent: "center",
                 alignItems: "center",
+                border: "5px solid white",
               }}
             >
-              {event.youtube_link !== "" && (
+
+              <div style={{ height: 'fit-content' }}>
+                {event.youtube_link !== "" && (
+                  <YouTube
+                    className="youtube"
+                    opts={opts}
+                    videoId={event.youtube_link}
+                    style={{ aspectRatio: '16/9' }}
+                  />
+                )}
+              </div>
+              {/* {event.youtube_link !== "" && (
                 <YouTube
                   className="youtube"
                   opts={opts}
                   videoId={event.youtube_link}
                 />
-              )}
+              )} */}
               <div
                 className="if-phone"
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  flexDirection: event.youtube_link != "" ? "column" : "row",
+                  flexDirection: "row",
                   alignItems: "center",
+                  backgroundColor: "#515691E5"
                 }}
               >
-                <img
-                  style={{ marginRight: event.youtube_link === "" && "15vw" }}
-                  className="poster"
-                  src={`https://alumination.sarc-iitb.org${event.image}`}
-                  alt=""
-                />
+                <div className="event-img">
+                  <img
+                    /*style={{ marginRight: event.youtube_link === "" && "15vw" }}*/
+                    className="poster"
+                    src={`http://127.0.0.1:8000/${event.image}`}
+                    alt=""
+                  />
+                </div>
+
                 <div className="event-desc">
                   {event.description}
                   <br />
                   <p
                     style={{
-                      marginBottom: "0",
-                      color: "brown",
+                      marginTop: "4vh",
+                      width: "fit-content",
+                      color: "#515691E5",
+                      backgroundColor: "rgba(255, 255, 255, 0.8)",  // Semi-transparent white for the blur effect
+                      borderRadius: "12px",  // Rounded corners
                       fontWeight: "bold",
                       fontSize: "120%",
+                      textAlign: "center",  // Center-align the text
+                      padding: "10px",  // Add padding for better spacing inside the box
+                      backdropFilter: "blur(8px)",  // Blur effect for the background
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    {event.date}
+                    <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: "8px", color: "#515691E5" }} />
+                    <span>Date: {event.date}</span>
                   </p>
                   <div
                     style={{ display: !regBox && "none" }}
@@ -332,31 +361,33 @@ function EventIndividual() {
 
                     {event.isWorkshops && (
                       <>
-                        <p
+                        {/* <p
                           style={{
-                            margin: "0px",
-                            marginTop: "10px",
-                            color: "brown",
+                            margin: 0,
+                            marginBottom: "2vh",
+                            marginTop: "2vh",
+                            color: "white",
                           }}
                         >
                           Which workshops would you like to attend?
-                        </p>
+                        </p> */}
                         <MultiSelect
                           id="workshops"
                           name="workshops"
                           isMulti={true}
                           options={workshopOptions}
+                          placeholder="Which workshops would you like to attend?"
                           value={workshops}
                           onChange={(selectedOptions) => {
                             setWorkshops(selectedOptions);
                           }}
                           theme={(theme) => ({
                             ...theme,
-                            borderRadius: 10,
+                            borderRadius: 5,
                             colors: {
                               ...theme.colors,
                               text: "orangered",
-                              primary25: "#ffd1ab",
+                              primary25: "#b8b3e2",
                               primary: "black",
                               background: "black",
                               backgroundColor: "black",
@@ -366,7 +397,9 @@ function EventIndividual() {
                             container: (provided) => ({
                               ...provided,
                               height: "20%",
-                              width: "90%",
+                              width: "100%",
+                              marginTop: "3vh",
+                              marginBottom: "2vh",
                             }),
                             control: (provided) => ({
                               ...provided,
@@ -375,7 +408,7 @@ function EventIndividual() {
                               ...provided,
                               color: "black",
                               "&:hover": {
-                                backgroundColor: "#FFD1AB",
+                                backgroundColor: "#b8b3e2",
                                 color: "black",
                               },
                             }),
@@ -390,14 +423,17 @@ function EventIndividual() {
                     onClick={() =>
                       handleRegisterClick(event.id, event.isRegNeeded)
                     }
-                    className="register-button"
-                    style={{
-                      float: "right",
-                      marginTop: "20px",
-                      width: "100%",
-                      opacity: !event.isLaunched && "0.7",
-                      cursor: !event.isLaunched && "not-allowed",
-                    }}
+                    // className="register-button"
+                    className={`register-button ${event.isLaunched ? 'enabled' : ''}`}
+                  // style={{
+                  //   float: "right",
+                  //   marginTop: "1vh",
+                  //   width: "100%",
+                  //   fontWeight: "bold",
+                  //   fontSize: "1.49em",
+                  //   opacity: !event.isLaunched && "0.7",
+                  //   cursor: !event.isLaunched && "not-allowed",
+                  // }}
                   >
                     {event.button_text}
                   </button>
@@ -415,17 +451,42 @@ function EventIndividual() {
                 }}
               >
                 <h4 className="event-speaker-heading">Speakers</h4>
-                <div className="event-speakers-list">
+                <div className="event-speakers-list" style={{display: 'flex', flexDirection: 'column'}}>
                   {event.speakers.map((speaker) => (
-                    <li key={speaker.id} className="event-speaker-item">
-                      <div className="event-speaker-info">
+                    <li 
+                    key={speaker.id} className="event-list-item"
+                    style={{
+                      display: "flex",
+                    
+                      justifyContent: "center",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      backgroundColor: "rgba(81, 86, 145, 1)",
+                      border: "5px solid white",
+                      textAlign: "left",
+                      fontFamily: "sans-serif",
+
+                    }}
+                    >
+                      <div className="event-img" style={{paddingLeft: '2vw'}}>
                         <img
-                          src={`https://alumination.sarc-iitb.org${speaker.profile_image}`}
+                          src={`http://127.0.0.1:8000/${speaker.profile_image}`}
                           alt={speaker.fullname}
-                          className="event-speaker-image"
+                          // className="event-speaker-image"
+                          // style={{borderRadius:"20px"}} 
+                          width="125vw"
+                          height="auto"
                         />
-                        <p className="event-speaker-name">{speaker.fullname}</p>
-                        <p className="event-speaker-ka-desc">
+                      </div>
+                      <div className="event-desc">
+                        <p 
+                        style={{
+                          fontSize: '2em',
+                          textAlign: 'center',
+                          color: '#ad92dc'
+                        }}
+                        /*className="event-title"*/>{speaker.fullname}</p>
+                        <p /*className="event-desc"*/>
                           {speaker.description}
                         </p>
                       </div>

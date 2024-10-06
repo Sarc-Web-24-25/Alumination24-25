@@ -1,0 +1,19 @@
+/* Petal.css */
+.petal {
+    position: absolute;
+    top: -10%; /* Start above the viewport */
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    background-image: url('./photos24/petall.png'); /* Use a flower petal image */
+    background-size: cover;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh); /* Move down the viewport */
+    }
+}
