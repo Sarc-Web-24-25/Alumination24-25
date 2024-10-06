@@ -22,6 +22,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor from "./Sponsor/Sponsor.jsx";
 import backgroundMusic from "./photos24/videos/back.mp3";
+import Petal from "./Petal.js";
+import './Petal.css'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -154,6 +156,10 @@ function Home1() {
     navigate(route); // Navigate to the specified route
   };
 
+
+  const petals = Array.from({ length: 30 }).map((_, index) => (
+    <Petal key={index} />
+  ));
 
   return (
     <>
@@ -321,7 +327,7 @@ function Home1() {
           <div className="semicircle-moon12"></div>
           <div className="semicircle-moon13"></div>
 
-          {/* {petals} */}
+          {petals}
 
           <div className="upperMainHome">
                 <div
