@@ -2,6 +2,8 @@
     display: flex;
     justify-items: center;
     align-items: center;
+    height: 30%;
+    
 }
 
 .homeFlag{
@@ -105,4 +107,13 @@
 }.navitem3:hover{
     background-image: url('./photos24/onshort.png');
     transition: 0.15s;
+}
+
+
+@media screen and (max-width: 786px) {
+    .navbarNew{
+        height: 15%;
+    }
+
+
 }

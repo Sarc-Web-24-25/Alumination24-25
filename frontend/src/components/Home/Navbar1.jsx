@@ -14,7 +14,7 @@ function Navbar1() {
   };
 
   return (
-    <div className='navbarNew' style={{position:'fixed',top:'0',left:'0',width:'100%',height:'30%',zIndex:'1000'}}>
+    <div className='navbarNew' style={{position:'fixed',top:'0',left:'0',width:'100%',zIndex:'1000'}}>
       <div className='homeFlag' onClick={() => handleNavClick('flag', ' ')}>
         <img src={flag} alt="" style={{width:'200px',height:'260px'}}/>
       </div>
