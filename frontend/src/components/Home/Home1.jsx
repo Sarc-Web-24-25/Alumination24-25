@@ -220,9 +220,9 @@ function Home1() {
                     top: "69%",
                   }}
                 >
-                  <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+                  {/* <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div> */}
                   <div style={{ fontSize: "70px", color: "#700815" }}>
-                    ALUMINATION
+                    {/* ALUMINATION */}
                   </div>
                 </div>
               </div>
