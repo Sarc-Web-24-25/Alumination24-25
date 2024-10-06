@@ -21,7 +21,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Alumni2 from "./Alumni2/Alumni2.jsx";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor from "./Sponsor/Sponsor.jsx";
-import backgroundMusic from "./photos24/videos/back.mp3";
+import backgroundMusic from "./photos24/videos/bgm.mp3";
 import Petal from "./Petal.js";
 import './Petal.css'
 import flagIcon from "./photos24/flag.png";
