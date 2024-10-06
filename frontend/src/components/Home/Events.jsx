@@ -13,6 +13,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // import CursorAnimation from "./CursorAnimation"
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
 function EventList() {
     const [mainEvents, setMainEvents] = useState([]);
@@ -76,7 +77,7 @@ function EventList() {
                         end: "top 30%",
                         scrub: true,
                         toggleActions: "play reverse play reverse",
-                        markers: true,
+                        // markers: true,
                     },
                     duration: 1,
                     ease: "power3.out",
@@ -93,9 +94,10 @@ function EventList() {
      // Use `events` dependency instead of `divRefs.current`
     return (
         
-        <div className="event-list-container">
+        <div className="event-list-container" style={{padding: '10vh 0'}}>
            
         <ImageCarousel main={mainEvents}/>
+        {/* <span className='event-head'>Events</span> */}
             <div className="page-content" style={{zIndex: 0}}>
                 <ul>
 
