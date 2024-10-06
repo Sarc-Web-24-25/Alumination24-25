@@ -46,7 +46,6 @@ function App() {
         <Route element={<UserRestrictedRoute/>}>
           <Route path="/profile" element={<Profile />} exact={true} />
         </Route>
-
       </Routes>
     </Router>
   );

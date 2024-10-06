@@ -39,13 +39,23 @@ import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 
 export default function Alumni3({ name, designation, imageSrc }) {
   return (
-    <CardContainer className="inter-var">
+    <CardContainer
+      className="inter-var"
+      style={{
+        perspective: "1000px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+      }}
+    >
       <CardBody
-        className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
+        className="bg-[rgba(249,250,251,0.5)] relative group/card border-white/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
       >
         <CardItem
           translateZ="30"
-          className="text-xl font-bold text-neutral-600 dark:text-white"
+          style={{ color: '#700815' }}
+          className="text-xl font-bold"
         >
           {name}
         </CardItem>
@@ -53,7 +63,8 @@ export default function Alumni3({ name, designation, imageSrc }) {
         <CardItem
           as="p"
           translateZ="30"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          style={{ color: '#700815' }}
+          className="text-sm max-w-sm mt-2"
         >
           {designation}
         </CardItem>

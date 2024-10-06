@@ -19,7 +19,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import Alumni from "./Alumni2/Alumni2.jsx";
 // import Alumni2 from "./Alumni2/Alumni2.jsx";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
-import Sponsor from "./Sponsor/Sponsor.jsx";
+// import Sponsor from "./Sponsor/Sponsor.jsx";
+import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,9 +96,9 @@ function Home1() {
         const sponsor_list = [...response.data];
         let sponsors = [];
         sponsor_list.forEach((sponsor) => {
-          sponsors.push({ image: `http://127.0.0.1:8000${sponsor.image}` });
+          sponsors.push(`http://127.0.0.1:8000${sponsor.image}`);
         });
-
+        console.log(sponsors);
         setSponsors(sponsors);
       })
       .catch((error) => {
@@ -211,7 +212,8 @@ function Home1() {
               <Alumni3 />
             </div>
 
-            <Sponsor sponsors={sponsors} />
+            {/* <Sponsor sponsors={sponsors} /> */}
+            <Sponsor2 sponsors={sponsors}/>
           </div>
         </div>
       ) : (
@@ -321,10 +323,9 @@ function Home1() {
               <Alumni3 />
             </div>
 
-            <Sponsor sponsors={sponsors} />
-          </div>
-
-          
+            {/* <Sponsor sponsors={sponsors} /> */}
+            <Sponsor2 sponsors={sponsors}/>
+          </div>          
         </div>
       )}
     </>
