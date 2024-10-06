@@ -46,30 +46,30 @@ function EventList() {
                 setEvents(sortedEvents); // Update the state with the sorted array
                 sortedEvents.forEach((element) => {
                     // console.log(element.priority);
-                    if(element.priority)
+                    if (element.priority)
                         setMainEvents((prev) => [...prev, element]);
                 });
 
 
-                
+
             })
             .catch((error) => {
                 console.error(error);
             });
     }, []);
- 
+
 
     useEffect(() => {
         if (divRefs.current.length !== events.length) return; // Ensure refs are properly set
         divRefs.current.forEach((ref, index) => {
             if (!ref) return; // Skip if any refs are undefined or null
-            gsap.fromTo(ref, 
+            gsap.fromTo(ref,
                 {
-                    x: index % 2 === 0 ? -200 : 200, 
+                    x: index % 2 === 0 ? -200 : 200,
                     opacity: 0,
                 },
                 {
-                    x: 0, 
+                    x: 0,
                     opacity: 1,
                     scrollTrigger: {
                         trigger: ref,
@@ -84,40 +84,56 @@ function EventList() {
                 }
             );
         });
-        
+
         ScrollTrigger.refresh(); // Ensure ScrollTrigger is updated after refs are set
-        
+
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         }
     }, [events]);
-     // Use `events` dependency instead of `divRefs.current`
+    // Use `events` dependency instead of `divRefs.current`
     return (
-        
-        <div className="event-list-container" style={{padding: '10vh 0'}}>
-           
-        <ImageCarousel main={mainEvents}/>
-        {/* <span className='event-head'>Events</span> */}
-            <div className="page-content" style={{zIndex: 0}}>
+
+        <div className="event-list-container" style={{ padding: '10vh 0' }}>
+
+            <ImageCarousel main={mainEvents} />
+            {/* <span className='event-head'>Events</span> */}
+            <div className="page-content" style={{ zIndex: 0 }}>
                 <ul>
 
                     {events.map((event, index) => (
-                        
-                        <li key={event.id} style={{ flexDirection: index % 2 !== 0 && "row-reverse" }} className="event-list-item">
-                            
-                            <div className="event-image">
-                                <img style={{ borderBottomRightRadius: '20px', borderBottomLeftRadius: '20px', borderTopRightRadius: "20px", borderTopLeftRadius: "20px", zIndex: 10,
-                                 }} src={'http://127.0.0.1:8000/' + event.image} alt={event.name} />
-                              
 
+                        <li key={event.id} style={{ flexDirection: index % 2 !== 0 && "row-reverse" }} className="event-list-item">
+
+                            <div className="event-image" style={{position: 'relative'}}>
+                                <img style={{
+                                    borderBottomRightRadius: '20px', borderBottomLeftRadius: '20px', borderTopRightRadius: "20px", borderTopLeftRadius: "20px", zIndex: 10,
+                                }} src={'http://127.0.0.1:8000/' + event.image} alt={event.name} />
+                                
+                                <a
+                                    style={{
+                                        float: index%2 === 0 && "right", 
+                                        marginRight: index%2 === 0 && "20px",
+                                        position: 'absolute',
+                                        bottom: '7%',
+                                        left: '25%',
+                                        zIndex: 10,
+                                    }}
+                                    href={`/${event.id}`}
+                                >
+                                    <button style={{marginTop: "-20px", padding: ""}} className="register-button">
+                                        Know More
+                                    </button>
+                                </a>
                             </div>
 
                             {/* <div id={'events' + index} style={{ width: '100%'}}></div> */}
-                           <div ref={el => divRefs.current[index] = el} className={"event-info" + " " + (index % 2 === 0 ? 'border-left' : 'border-right')}>
-                           <h3 class="event-title">{event.name}</h3>
-                           <p class="event-description">{event.description}</p> <br />
-                           </div>
-                        
+                            <div ref={el => divRefs.current[index] = el} className={"event-info" + " " + (index % 2 === 0 ? 'border-left' : 'border-right')}>
+                                <h3 class="event-title">{event.name}</h3>
+                                <p class="event-description">{event.description}</p> <br />
+                                {/* <a style={{float: index%2 === 0 && "right", marginRight: index%2 === 0 && "20px"}} href={`/${event.id}`}><button style={{marginTop: "-20px"}} className="register-button">Know More</button></a> */}
+                            </div>
+
                         </li>
                     ))}
                 </ul>

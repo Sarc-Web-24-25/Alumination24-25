@@ -113,6 +113,7 @@ body {
   align-items: center;
   margin-bottom: 10vh;
   overflow-x: hidden;
+  /* background-color: rgba(81, 86, 145, 1); */
 }
 
 @media screen and (max-width: 770px) {
@@ -178,8 +179,18 @@ body {
   opacity: 90%;
   padding-top: 20px;
   /* height: 200px; */
-  min-height: 25vh;
+  /* min-height: 25vh; */
   height: fit-content;
+}
+
+.event-image a {
+  transition: scale 0.3s ease;
+}
+
+.event-image:hover {
+  a {
+    scale: 1.2 !important;
+  }
 }
 
 .border-left {
@@ -252,10 +263,15 @@ body {
     height: 80vw;
     margin-top: 4vh;
   }
-  .event-desc {
+
+  .event-image a {
+    left: '2%';
+    opacity: 1
+  }
+  /* .event-desc {
     width: 80vw !important;
     margin-bottom: 20vh;
-  }
+  } */
 }
 
 /* Style for the top image */
@@ -299,20 +315,47 @@ body {
   margin-bottom: 3vh;
 }
 
-.register-button {
-  background-color: #533838;
+/* .register-button {
+  background-color: #3f47a0;
   color: #fff;
   padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin: 5px;
+
 }
 
 .register-button:hover {
   background-color: #392828;
-  /* Change color on hover if desired */
+} */
+.register-button {
+  float: right;
+  margin-top: 1vh;
+  padding: 0.3rem 0.6rem;
+  width: 100%;
+  background-color: #3f47a0;
+  border: 2px white solid;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.49em;
+  opacity: 0.7;
+  cursor: not-allowed;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+.register-button.enabled {
+  opacity: 1;  /* Full opacity when the button is enabled */
+  cursor: pointer;
+}
+
+.register-button.enabled:hover {
+  background-color: white;
+  color: #3f47a0;
+}
+
 @keyframes moveBackground {
   0% {
     background-position: 0 0;
@@ -365,16 +408,17 @@ body {
 }
 
 .event-desc {
-  background-color: #ffd1ab;
-  min-height: 40vh;
+  background-color: #515691E5;
+  color: white;
+  /* min-height: 40vh; */
   padding: 20px;
-  border-radius: 20px;
-  width: 30vw;
+  border-radius: 5px;
+  /* width: 30vw; */
 }
 
 .poster {
-  width: 25vw;
-  border-radius: 20px;
+  width: 20vw;
+  border-radius: 5px;
   margin-bottom: 20px;
 }
 
@@ -558,7 +602,7 @@ body {
 
       .if-phone{
         flex-direction: column !important;
-        margin: 0 !important;
+        margin: 100px !important;
         padding: 0 !important;
       }
 
@@ -570,6 +614,7 @@ body {
 
       .youtube{
         margin-bottom: 5vh;
+        margin-top: 10vh;
       }
 
 
@@ -584,10 +629,11 @@ body {
 
   .field-input{
     width: 90% ;
-    background-color: #533838;
-    color: white;
+    background-color: #7894ac;
+    border: 3px solid white;
+    color: black;
     padding: 2%;
-    border-radius: 20px;
+    border-radius: 5px;
     margin-top: 2%;
     margin-bottom: 2%;
   }
@@ -663,9 +709,10 @@ body {
 
   .event-speaker-ka-desc{
     font-size: medium;
-    background-color: #392828;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    background-color: transparent;
+    /* padding-top: 5px; */
+    /* padding-bottom: 5px; */
+    /* padding: 1em; */
     border-radius: 10px;
   }
   
@@ -701,7 +748,21 @@ body {
 }
 
 .event-speaker-item{
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  margin-bottom: 10vh;
+  overflow-x: hidden;
   margin: 5vw;
+}
+
+.event-speaker-info {
+  background-color: #3f47a0;
+  min-height: 25vh;
+  height: 'fit-content';
+  border: 5px solid white;
+  padding: 10px;
+  width: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -779,5 +840,8 @@ body {
   /* width: fit-content; */
 }
 
-
+.event-img {
+  /* border-right: 5px solid white; */
+  padding: 10px;
+}
 
