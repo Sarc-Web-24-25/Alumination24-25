@@ -24,6 +24,7 @@ import Sponsor from "./Sponsor/Sponsor.jsx";
 import backgroundMusic from "./photos24/videos/back.mp3";
 import Petal from "./Petal.js";
 import './Petal.css'
+import flagIcon from "./photos24/flag.png";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -166,9 +167,36 @@ function Home1() {
       {isMobile ? (
         <div className="newhome">
 
-
+<button
+        className="mute-button"
+        onClick={toggleMute}
+        style={{
+          position: "absolute",
+          top: "20px",
+          right: "20px",
+          background: "rgba(255, 255, 255, 0.8)",
+          border: "2px solid #000",
+          borderRadius: "5px",
+          padding: "10px",
+          cursor: "pointer",
+          zIndex: 1000,
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <img
+          src={flagIcon}
+          alt={isMuted ? "Unmute" : "Mute"}
+          style={{ width: "30px", height: "30px" }}
+        />
+        <span style={{ marginLeft: "10px", fontWeight: "bold" ,display: 'flex', alignItems: 'center',height: '30px',fontSize: '20px'}}>
+          {isMuted ? "Unmute" : "Mute"}
+        </span>
+      </button>
           <div>
             <div className="mainHome">
+          {petals}
+
               <div className="upperMainHome">
                 {/*<div className="dragonHome">
                   <motion.img
@@ -294,11 +322,11 @@ function Home1() {
         }}
       >
         <img
-          src={dragon}
+          src={flagIcon}
           alt={isMuted ? "Unmute" : "Mute"}
           style={{ width: "30px", height: "30px" }}
         />
-        <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
+        <span style={{ marginLeft: "10px", fontWeight: "bold" ,display: 'flex', alignItems: 'center',height: '30px',fontSize: '20px'}}>
           {isMuted ? "Unmute" : "Mute"}
         </span>
       </button>

@@ -97,6 +97,16 @@ html, body {
     background-position: top;
     }
 
+@media screen and (max-width: 768px) {
+  .registerHome{
+    width: 200%;
+    /* height: 35%; */
+
+    /* max-width: 300px; */
+  }
+  
+}
+
 .dragonHome{
     height: 60%;
     width: 20%;
@@ -515,4 +525,9 @@ html, body {
       right: 16%;
       transform: rotate(-10deg);
   }
+}
+
+.mute-button {
+  cursor: pointer;
+  outline: none;
 }
