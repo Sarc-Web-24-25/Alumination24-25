@@ -84,7 +84,8 @@ html, body {
 
 .registerHome{
     height: 35%;
-    width: 20%;
+    width: 28%;
+    max-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -390,7 +391,7 @@ html, body {
   top: -75px; /* Ensure only top part shows */
   right: -75px;
   /* background: rgba(255, 255, 255, 0.3);  */
-  background: rgba(108, 15, 15, 0.46); 
+  /* background: rgba(108, 15, 15, 0.46);  */
 
   border-top-right-radius: 50%;
   transition: all 0.3s ease;

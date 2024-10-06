@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef, useLayoutEffect} from "react";
-import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Character from "./Character";
@@ -298,36 +297,7 @@ function Home1() {
         </span>
       </button>
           <div>
-            <div className="mainHome">
-              <div className="upperMainHome">
-                {/* <div className="dragonHome">
-                  <motion.img
-                    src={dragon}
-                    alt=""
-                    animate={{ y: [0, -20, 0] }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                    }}
-                    style={{ width: "300px", height: "auto" }}
-                  />
-                </div> */}
-                <div
-                  className="headingHome"
-                  style={{
-                    fontSize: "35px",
-                    position: "relative",
-                    right: "-55%",
-                    top: "69%",
-                  }}
-                >
-                  <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-                  <div style={{ fontSize: "70px", color: "#700815" }}>
-                    ALUMINATION
-                  </div>
-                </div>
-              </div>
+            
           <div
           className={`mainHome `}
           style={{ height: "100vh", position: "relative" }}
@@ -354,21 +324,21 @@ function Home1() {
           {/* {petals} */}
 
           <div className="upperMainHome">
-            <div
-              className="headingHome"
-              style={{
-                fontSize: "35px",
-                position: "relative",
-                right: "-55%",
-                top: "69%",
-              }}
-            >
-              <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-              <div style={{ fontSize: "70px", color: "#700815" }}>
-                ALUMINATION
+                <div
+                  className="headingHome"
+                  style={{
+                    fontSize: "35px",
+                    position: "relative",
+                    right: "-55%",
+                    top: "69%",
+                  }}
+                >
+                  <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
+                  <div style={{ fontSize: "70px", color: "#700815" }}>
+                    ALUMINATION
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
           <div className="lowerMainHome">
             <div
