@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useLayoutEffect} from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Character from "./Character";
@@ -24,9 +24,8 @@ import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import backgroundMusic from "./photos24/videos/back.mp3";
 import Petal from "./Petal.js";
-import './Petal.css'
+import "./Petal.css";
 import flagIcon from "./photos24/flag.png";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +42,6 @@ function Home1() {
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(new Audio(backgroundMusic));
   const navigate = useNavigate(); // Initialize the navigate function
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,8 +64,6 @@ function Home1() {
         });
       }
     };
-
-    
 
     audioRef.current.addEventListener("ended", handleEnded);
 
@@ -154,10 +150,8 @@ function Home1() {
   }, []);
 
   const handleNavClick = (route) => {
-
     navigate(route); // Navigate to the specified route
   };
-
 
   const petals = Array.from({ length: 30 }).map((_, index) => (
     <Petal key={index} />
@@ -167,36 +161,44 @@ function Home1() {
     <>
       {isMobile ? (
         <div className="newhome">
-
-<button
-        className="mute-button"
-        onClick={toggleMute}
-        style={{
-          position: "absolute",
-          top: "20px",
-          right: "20px",
-          background: "rgba(255, 255, 255, 0.8)",
-          border: "2px solid #000",
-          borderRadius: "5px",
-          padding: "10px",
-          cursor: "pointer",
-          zIndex: 1000,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <img
-          src={flagIcon}
-          alt={isMuted ? "Unmute" : "Mute"}
-          style={{ width: "30px", height: "30px" }}
-        />
-        <span style={{ marginLeft: "10px", fontWeight: "bold" ,display: 'flex', alignItems: 'center',height: '30px',fontSize: '20px'}}>
-          {isMuted ? "Unmute" : "Mute"}
-        </span>
-      </button>
+          <button
+            className="mute-button"
+            onClick={toggleMute}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "rgba(255, 255, 255, 0.8)",
+              border: "2px solid #000",
+              borderRadius: "5px",
+              padding: "10px",
+              cursor: "pointer",
+              zIndex: 1000,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={flagIcon}
+              alt={isMuted ? "Unmute" : "Mute"}
+              style={{ width: "30px", height: "30px" }}
+            />
+            <span
+              style={{
+                marginLeft: "10px",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                height: "30px",
+                fontSize: "20px",
+              }}
+            >
+              {isMuted ? "Unmute" : "Mute"}
+            </span>
+          </button>
           <div>
             <div className="mainHome">
-          {petals}
+              {petals}
 
               <div className="upperMainHome">
                 {/*<div className="dragonHome">
@@ -232,12 +234,10 @@ function Home1() {
                 <div
                   className="registerHome"
                   style={{ fontSize: "25px", color: "#700815" }}
-                  onClick={() => handleNavClick( '/signup')}
+                  onClick={() => handleNavClick("/signup")}
                 >
                   REGISTER
                 </div>
-
-                
               </div>
             </div>
 
@@ -292,75 +292,82 @@ function Home1() {
             </div>
 
             {/* <div style={{ height: "50vh" }}></div> */}
-            <div className="count_k" style={{height: '290vh'}}>
-                  <Count />
-                </div>
+            <div className="count_k" style={{ height: "290vh" }}>
+              <Count />
+            </div>
 
-            <div className="alumniHomeContainer" >
+            <div className="alumniHomeContainer">
               <Alumni3 />
             </div>
 
             {/* <Sponsor sponsors={sponsors} /> */}
-            <Sponsor2 sponsors={sponsors}/>
+            <Sponsor2 sponsors={sponsors} />
           </div>
         </div>
       ) : (
         <div className="newhome">
-
-<button
-        className="mute-button"
-        onClick={toggleMute}
-        style={{
-          position: "absolute",
-          top: "20px",
-          right: "20px",
-          background: "rgba(255, 255, 255, 0.8)",
-          border: "2px solid #000",
-          borderRadius: "5px",
-          padding: "10px",
-          cursor: "pointer",
-          zIndex: 1000,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <img
-          src={flagIcon}
-          alt={isMuted ? "Unmute" : "Mute"}
-          style={{ width: "30px", height: "30px" }}
-        />
-        <span style={{ marginLeft: "10px", fontWeight: "bold" ,display: 'flex', alignItems: 'center',height: '30px',fontSize: '20px'}}>
-          {isMuted ? "Unmute" : "Mute"}
-        </span>
-      </button>
+          <button
+            className="mute-button"
+            onClick={toggleMute}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "rgba(255, 255, 255, 0.8)",
+              border: "2px solid #000",
+              borderRadius: "5px",
+              padding: "10px",
+              cursor: "pointer",
+              zIndex: 1000,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={flagIcon}
+              alt={isMuted ? "Unmute" : "Mute"}
+              style={{ width: "30px", height: "30px" }}
+            />
+            <span
+              style={{
+                marginLeft: "10px",
+                fontWeight: "bold",
+                display: "flex",
+                alignItems: "center",
+                height: "30px",
+                fontSize: "20px",
+              }}
+            >
+              {isMuted ? "Unmute" : "Mute"}
+            </span>
+          </button>
           <div>
-            
-          <div
-          className={`mainHome `}
-          style={{ height: "100vh", position: "relative" }}
-         // Add ref for scroll detection
-        >
-          {/* Realistic flame element */}
-          <div className="realistic-flame"></div>
+            <div
+              className={`mainHome `}
+              style={{ height: "100vh", position: "relative" }}
+              // Add ref for scroll detection
+            >
+              {/* Realistic flame element */}
+              <div className="realistic-flame"></div>
 
-          {/* Semicircle moon effect */}
-          <div className="semicircle-moon1"></div>
-          <div className="semicircle-moon2"></div>
-          <div className="semicircle-moon3"></div>
-          <div className="semicircle-moon4"></div>
-          <div className="semicircle-moon5"></div>
-          <div className="semicircle-moon6"></div>
-          <div className="semicircle-moon7"></div>
-          <div className="semicircle-moon8"></div>
-          <div className="semicircle-moon9"></div>
-          <div className="semicircle-moon10"></div>
-          <div className="semicircle-moon11"></div>
-          <div className="semicircle-moon12"></div>
-          <div className="semicircle-moon13"></div>
+              {/* Semicircle moon effect */}
+              <div className="semicircle-moon1"></div>
+              <div className="semicircle-moon2"></div>
+              <div className="semicircle-moon3"></div>
+              <div className="semicircle-moon4"></div>
+              <div className="semicircle-moon5"></div>
+              <div className="semicircle-moon6"></div>
+              <div className="semicircle-moon7"></div>
+              <div className="semicircle-moon8"></div>
+              <div className="semicircle-moon9"></div>
+              <div className="semicircle-moon10"></div>
+              <div className="semicircle-moon11"></div>
+              <div className="semicircle-moon12"></div>
+              <div className="semicircle-moon13"></div>
 
-          {petals}
+              {petals}
 
-          <div className="upperMainHome">
+              <div className="upperMainHome">
                 <div
                   className="headingHome"
                   style={{
@@ -377,20 +384,16 @@ function Home1() {
                 </div>
               </div>
 
-          <div className="lowerMainHome">
-            <div
-              className="registerHome"
-              style={{ fontSize: "25px", color: "#700815" }}
-              onClick={() => handleNavClick( '/login')}
-            >
-              REGISTER
-            </div>
-          </div>
-        </div>
-
-            <div className="count_k">
-                  <Count />
+              <div className="lowerMainHome">
+                <div
+                  className="registerHome"
+                  style={{ fontSize: "25px", color: "#700815" }}
+                  onClick={() => handleNavClick("/login")}
+                >
+                  REGISTER
                 </div>
+              </div>
+            </div>
 
             <div className="clouds">
               <img
@@ -435,12 +438,18 @@ function Home1() {
                 className="cloud"
                 style={{ "--i": 4 }}
               />
-            </div>
+            </div>        
 
             <div className="About">
               <h1>About us</h1>
               <Character paragraph={paragraph} />
-            </div>
+            </div>  
+
+            <div className="count_k" style={{ marginTop: '-120vh',
+    marginBottom: '50vh', marginLeft: '20vw'
+ }}>
+              <Count />
+            </div>          
 
             <div style={{ height: "190vh" }}></div>
 
@@ -452,8 +461,8 @@ function Home1() {
             </div>
 
             {/* <Sponsor sponsors={sponsors} /> */}
-            <Sponsor2 sponsors={sponsors}/>
-          </div>          
+            <Sponsor2 sponsors={sponsors} />
+          </div>
         </div>
       )}
     </>
