@@ -30,7 +30,7 @@ function useIndividualEvent() {
   const register = (key) => {
     console.log(otherDetails);
     axios
-      .put(`api/events/${key}`,otherDetails, { headers })
+      .put(`http://127.0.0.1:8000/api/events/${key}`,otherDetails, { headers })
       .then((response) => {
         console.log(response.data);
         setSuccess("registered successfully"); // Set a success flag to indicate successful login
@@ -61,7 +61,7 @@ function useIndividualEvent() {
 
   const fetchEvent = (key) => {
     axios
-      .get(`api/events/${key}`)
+      .get(`http://127.0.0.1:8000/api/events/${key}`)
       .then((response) => {
         setEvent(response.data);
       })

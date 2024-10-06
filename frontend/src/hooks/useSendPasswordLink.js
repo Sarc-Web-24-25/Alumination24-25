@@ -16,7 +16,7 @@ function useSendPasswordLink() {
 
   const forgotPassword = () => {
     axios
-      .post('/api/authenticate/sendForgotPasswordLink', formData, { headers })
+      .post('http://127.0.0.1:8000/api/authenticate/sendForgotPasswordLink', formData, { headers })
       .then((response) => {
         console.log(response.data);
         setSuccess("Password link sent to email"); // Set a success flag to indicate successful login

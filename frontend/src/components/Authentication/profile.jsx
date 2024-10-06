@@ -1,158 +1,249 @@
 import React, { useEffect, useState } from 'react';
 import '../Authentication/profile.css';
-import backgroundImage from '../Home/bgimg/i1.png';
+import backgroundImage from '../Authentication/bglogin.png';
 import useProfile from '../../hooks/useProfile';
 import Swal from 'sweetalert2';
 import letter from '../Home/bgimg/letter.png'
-import CursorAnimation from "../Home/CursorAnimation"
-
 
 const styles = {
-
-    '@media (max-width: 600px)': {
-        formContainer: {
-            width: '90%', // Adjust width for smaller screens
-            padding: '10px', // Decrease padding for smaller screens
-        },
-        profilelabel: {
-            flexBasis: '100%', // Full width for labels on mobile
-            marginBottom: '5px',
-            // Reduce spacing between label and input
-            fontSize: '10px !important'
-        },
-        profileinput: {
-            width: '100%', // Full width for input fields on mobile
-        },
-        textarea: {
-            width: '100%', // Full width for textareas on mobile
-        },
-        submitButton: {
-            width: '100%', // Full width for submit button on mobile
-        },
-        headingContainer: {
-            margin: '10vh 20vw !important',
-        }
-    },
-
     mainContainer: {
         backgroundImage: `url(${backgroundImage})`,
-        display: 'flex', // Use flex to position items to the center
-        flexDirection: 'column', // Stack the items vertically
-        width: '100vw', // Set full width
-        height: '100vh', // Set full height
-        backgroundPosition: 'center', // Position the background image
-        backgroundSize: 'cover', // Cover the entire area of the container
-        margin: '0', // Remove default margin
-        padding: '0', // Remove default padding
-        overflow: 'scroll', // Add scroll to the container
-        alignItems: 'center', // Horizontally center the items
-        paddingTop: '5vh',
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100vw',
+        height: '100vh',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        margin: '0',
+        paddingLeft: '2rem',
+        paddingRight: '2rem',
+        overflow: 'scroll',
+        alignItems: 'center',
+        paddingTop: '0vh',
+        top: '0',
     },
 
     profileformArea: {
         color: 'white',
-        fontFamily: "'Inknut Antiqua",
-        textAlign: 'center', // Align the content to the center
-        display: 'flex', // Use flex to align items to the center
-        justifyContent: 'space-evenly', // Align horizontally
-        alignItems: 'center', // Align horizontally
-        width: '100%', // Set full width
+        fontFamily: 'Japan Daisuki',
+        textAlign: 'center',
+        display: 'flex',
+        alignItems: 'flex-start',
+        width: '100%',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        padding: '20px',
+    },
+
+    user: {
+        display: 'flex',
+        fontSize: '65px',
+        flexWrap: 'wrap',
+        // Important: media queries for font size adjustments
+        // '@media (max-width: 768px)': {
+        //     fontSize: '45px !important',
+        // },
+        // '@media (max-width: 480px)': {
+        //     fontSize: '20px !important',
+        // },
+    },
+
+    headingContainer: {
+        top: '0',
+        display: 'flex',
+        alignItems: 'center',
+        fontSize: '32px',
+        gap: '3rem',
+        // Important: media queries for font size and gap adjustments
+        // '@media (max-width: 768px)': {
+        //     fontSize: '24px !important',
+        //     gap: '1.5rem !important',
+        // },
+    },
+
+    formContainer: {
+        width: '90%',
+        fontFamily: 'Hahmlet',
+        maxWidth: '1200px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '0rem',
+        justifyContent: 'space-between',
+        borderRadius: '18px',
+    },
+
+    constituents: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        width: '50%',
+        flexBasis: '40%',
+        marginBottom: '20px',
+        // Important: media query to adjust width for smaller screens
+        // '@media (max-width: 768px)': {
+        //     width: '100% !important',
+        //      flexDirection: 'column !important',
+        //     flexBasis: '100% !important',
+        // },
+    },
+
+    one: {
+        width:"50%",
         display: 'flex',
         flexDirection: 'row',
+        gap: '4rem',
+        alignItems: 'flex-end',
+        flexBasis: '40%',
+        paddingRight: '1rem',
+        marginBottom: '20px',
+        // Important: media query to change layout for smaller screens
+        // '@media (max-width: 768px)': {
+        //     flexDirection: 'column !important',
+        //     gap: '1rem !important',
+        //     flexBasis: '100% !important',
+        // },
     },
-    formContainer: {
-        width: '70%',
-        borderRadius: '20px',
-    },
-    headingContainer: {
-        textAlign: 'center',
-        borderRadius: '10vw',
-        fontSize: '32px',
-        padding: '10px',
-        alignItems: 'center',
+
+    two: {
+        width:'50%',
+        right:'0',
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: 'row',
+        gap: '4rem',
+        alignItems: 'flex-end',
+        flexBasis: '40%',
+        paddingRight: '1rem',
+        marginBottom: '20px',
+        marginLeft: 'auto',
+        // Important: media query to change layout for smaller screens
+        // '@media (max-width: 768px)': {
+        //     flexDirection: 'column !important',
+        //     gap: '1rem !important',
+        //     flexBasis: '100% !important',
+        // },
+    },
+
+    constituents1: {
+        display: 'flex',
         flexDirection: 'column',
+        alignItems: 'flex-start',
+        width: '50%',
+        flexBasis: '40%',
+        marginBottom: '20px',
+        // Important: media query to adjust width for smaller screens
+        // '@media (max-width: 768px)': {
+        //     width: '100% !important',
+        //      flexDirection: 'column !important',
+        //     flexBasis: '100% !important',
+        // },
+    },
 
-    },
-    profHead: {
-        textDecoration: 'none', // Remove underline from the text itself
-    },
-    constituents: {
-        display: 'flex', // Use flex to place label and input on the same line
-        alignItems: 'center', // Vertically center the content
-        // margin: '10px 0',
-        margin: '1%',
-        width: '100%',
-
-        // Add space between label and input field
-    },
-    constituents3: {
-        display: 'flex', // Use flex to place label and input on the same line
-        alignItems: 'center', // Vertically center the content
-        // margin: '10px 0',
-        margin: '10px 225px',
-        width: '709px',
-
-        // Add space between label and input field
-    },
     constituents2: {
-        display: 'flex', // Use flex to place label and input on the same line
-        alignItems: 'center', // Vertically center the content
-        margin: '10px 100px',
-        width: '600px',
-        // Add space between label and input field
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        width: '50%',
+        flexBasis: '40%',
+        marginBottom: '20px',
+        // Important: media query to adjust width for smaller screens
+    //     '@media (max-width: 768px)': {
+    //         width: '100% !important',
+    //          flexDirection: 'column !important',
+    //         flexBasis: '100% !important',
+    //     },
     },
-    profilelabel: {
-        flexBasis: '20%', // Adjust the label width as needed
-        marginRight: '10px',
-        // marginleft: '1000px',
-        width: '10px',
-        color: "#fff",
 
-        fontSize: '20px'
+    profilelabel: {
+        fontSize: '32px',
+        fontWeight: '600',
+        marginBottom: '5px',
+        color: "#fff",
+        // Important: media query to reduce font size on smaller screens
+        // '@media (max-width: 768px)': {
+        //     fontSize: '24px !important',
+        // },
     },
+
     input: {
-        flexBasis: '70%', // Adjust the input width as needed
-        border: 'none',
-        borderBottom: '1px solid #ccc',
-        padding: '5px',
-        borderRadius: '1rem',
-        outline: 'none',
-        backgroundColor: "rgb(189 212 231 / 65%)",
-        paddingLeft: '15px',
+        width: '100%',
+        border: '1px solid rgba(255, 175, 175, 1)',
+        borderRadius: '18px',
+        padding: '10px',
+        fontSize: '16px',
+        backgroundColor: "rgba(255, 175, 175, 1)",
         color: "#000",
-        fontSize: '20px'
+        outline: 'none',
+        transition: 'border-color 0.3s',
+        // Important: media query to adjust input2 font size for smaller screens
+        // '@media (max-width: 768px)': {
+        //     fontSize: '14px !important',
+        //      flexDirection: 'column !important'
+        // },
     },
+
+    input2: {
+        width: '100%',
+        border: '1px solid rgba(255, 175, 175, 1)',
+        borderRadius: '18px',
+        padding: '10px',
+        fontSize: '16px',
+        backgroundColor: "rgba(255, 175, 175, 1)",
+        color: "#000",
+        outline: 'none',
+        transition: 'border-color 0.3s',
+        // // Important: media query to adjust input2 font size for smaller screens
+        // '@media (max-width: 768px)': {
+        //     fontSize: '14px !important',
+        //      flexDirection: 'column !important'
+        // },
+    },
+
     textarea: {
         width: '100%',
-        border: 'none',
-        borderBottom: '1px solid #ccc',
+        border: '1px solid rgba(255, 175, 175, 1)',
         padding: '10px',
-        borderRadius: '2rem',
+        borderRadius: '18px',
+        backgroundColor: "rgba(255, 175, 175, 1)",
+        height: '150px',
+        fontSize: '28px',
+        color: "#000",
         outline: 'none',
+        // Important: media query for textarea font size
+    //     '@media (max-width: 768px)': {
+    //         fontSize: '18px !important',
+    //     },
+    },
 
-        backgroundColor: "rgb(189 212 231 / 65%)",
-        height: '150px'
-    },
-    textCenter: {
-        textAlign: 'center',
-        marginBottom: '20px',
-        marginTop: '40px',
-    },
     submitButton: {
-        marginTop: '0vh',
-        marginBottom: '20vh',
-        width: '20vw',
-        padding: '12px',
-        backgroundColor: "rgb(10 62 109 / 92%)",
+        // left:0,
+        marginTop: '-20vh',
+        // marginBottom: '12vh',
+        marginLeft:'-50vh',
+        // width: '2vw',
+        // height: '10vh',
+        flexBasis: '60%',
+        padding: '10px',
+        backgroundColor: "rgba(255, 175, 175, 0.5)",
         border: 'none',
-        alignItems: 'center',
         borderRadius: '50px',
-        color: '#FFF',
-        fontSize: '16px',
+        color: 'black',
+        fontSize: '28px',
+        cursor: 'pointer',
+        transition: 'background-color 1s',
+        marginBottom:'2vh',
+        // Important: media queries for button width and font size adjustments
+        // '@media (max-width: 768px)': {
+        //     width: '4vw !important',
+        //     fontSize: '24px !important',
+        // },
+        // '@media (max-width: 480px)': {
+        //     width: '6vw !important',
+        //     fontSize: '18px !important',
+        // },
     },
 };
+
+
 
 
 
@@ -298,10 +389,10 @@ function Profile() {
         "idddp": "Inter-Disciplinary Dual Degree",
     }
 
-    const programOptions = Object.entries(PROGRAM).map(([key, value]) => (
-        <option key={value} value={key}>
-            {value}
-        </option>
+    const programOptions = Object.keys(PROGRAM)
+    .filter(key => key !== 'program') // Exclude the 'program' key
+    .map(key => (
+        <option key={key} value={key}>{PROGRAM[key]}</option>
     ));
 
 
@@ -419,13 +510,12 @@ function Profile() {
 
     return (
         <div className='mainContainer' style={styles.mainContainer}>
-            <CursorAnimation/>
             <div className="profileform-area" style={styles.profileformArea}>
-                <div className="heading-container" style={styles.headingContainer}>
-                    {userData.is_alum ? "Alum Profile" : "User Profile"}
+            <div className="heading-container" style={styles.headingContainer}>
+                    
                     <div style={{ backgroundColor: "black" }} onMouseEnter={() => setEdit(true)} onMouseLeave={() => setEdit(false)} onClick={handleImageEdit} className={`user-profile ${edit && "editing"}`}>
-                        {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={url} className="profile-picture" alt="profile pic" />}
-                        {edit && <div style={{ position: "absolute", color: "black", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
+                        {url && <img style={{ backgroundColor: "black", borderWidth: "0" }} src={'http://127.0.0.1:8000' + url} className="profile-picture" alt="profile pic" />}
+                        {edit && <div style={{ position: "absolute", backgroundColor: "rgba(255,255,255,0.6)", padding: "5px", borderRadius: "5px" }}>Edit</div>}
                     </div>
                     <input
                         type="file"
@@ -434,23 +524,19 @@ function Profile() {
                         onChange={event => handleFileChange(event)}
                         style={{ display: "none" }}
                     ></input>
+                    <div className="user" style={styles.user}>
+                    {userData.is_alum ? "Alum Profile" : "User Profile"}
+                    </div>
                 </div>
+</div>
+
+
+
 
                 <div className="profileform-container" style={styles.formContainer}>
-                    {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
-                        <input
-                            placeholder='Roll Number'
-                            id="rollno"
-                            name="rollno"
-                            type="text"
-                            value={profileData.rollno}
-                            onChange={handleChange}
-                            style={styles.input}
-                        />
-                    </div>}
+                    
                     <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
+                        <label className="label" htmlFor="fullname" style={styles.profilelabel}>Full Name</label>
                         <input
                             placeholder='Full Name'
                             id="fullname"
@@ -461,103 +547,8 @@ function Profile() {
                             style={styles.input}
                         />
                     </div>
-
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="email" style={styles.profilelabel}>Email</label>
-                        <input
-                            placeholder='Email'
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={profileData.email}
-                            onChange={handleChange}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
-                        <input
-                            placeholder='Phone no'
-                            id="phoneno"
-                            name="phoneno"
-                            type="text"
-                            value={profileData.phoneno}
-                            onChange={handleChange}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-
-
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
-                        <input
-                            placeholder='Personal Email'
-                            id="personal_email"
-                            name="personal_email"
-                            type="email"
-                            value={profileData.personal_email}
-                            onChange={handleChange}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="department" style={styles.profilelabel}>Department</label>
-                        <select value={profileData.department} onChange={handleChange} style={styles.input} name="department" id="department" required>
-                            <option value="" defaultChecked>Select Department</option>
-                            {departmentOptions}
-                        </select>
-                    </div>
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="degree" style={styles.profilelabel}>Degree</label>
-                        <select value={profileData.degree} onChange={handleChange} style={styles.input} name="degree" id="degree" required>
-                            <option value="" defaultChecked>Select Degree</option>
-                            {degreeOptions}
-                        </select>
-                    </div>
-
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="program" style={styles.profilelabel}>Program</label>
-                        <select value={profileData.program} onChange={handleChange} style={styles.input} name="program" id="program" required>
-                            <option value="" defaultChecked>Select Program</option>
-                            {programOptions}
-                        </select>
-                    </div>
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="graduation_year" style={styles.profilelabel}>Graduation Year</label>
-                        <input
-                            placeholder='Graduation Year'
-                            id="graduation_year"
-                            name="graduation_year"
-                            type="number"
-                            value={profileData.graduation_year}
-                            onChange={handleChange}
-                            style={styles.input}
-                            required
-                        />
-                    </div>
-
-                    <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="gender" style={styles.profilelabel}>Gender:</label>
-                        <select value={profileData.gender} onChange={handleChange} style={styles.input} name="gender" id="gender" required>
-                            <option value="" defaultChecked>Select Gender</option>
-                            {genderOptions}
-                        </select>
-                    </div>
-
                     {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
-                        <label htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
+                        <label className="label" htmlFor="hostel" style={styles.profilelabel}>Hostel</label>
                         <input
                             placeholder='Hostel'
                             id="hostel"
@@ -569,10 +560,116 @@ function Profile() {
                             required
                         />
                     </div>}
+                    {!userData.is_alum && <div className="pinfo-constituents" style={styles.constituents}>
+                        <label className="label"htmlFor="rollno" style={styles.profilelabel}>Roll Number</label>
+                        <input
+                            placeholder='Roll Number'
+                            id="rollno"
+                            name="rollno"
+                            type="text"
+                            value={profileData.rollno}
+                            onChange={handleChange}
+                            style={styles.input}
+                        />
+                    </div>}
+                    <div className="pinfo-constituents" style={styles.constituents}>
+                        <label className="label"htmlFor="phoneno" style={styles.profilelabel}>Phone no:</label>
+                        <input
+                            placeholder='Phone no'
+                            id="phoneno"
+                            name="phoneno"
+                            type="text"
+                            value={profileData.phoneno}
+                            onChange={handleChange}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                
+                    
+                    <div className="pinfo-constituents" style={styles.constituents}>
+                        <label className="label" htmlFor="email" style={styles.profilelabel}>Email</label>
+                        <input
+                            placeholder='Email'
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={profileData.email}
+                            onChange={handleChange}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    
 
 
-                </div>
+                    <div className="pinfo-constituents" style={styles.constituents}>
+                        <label className="label" htmlFor="program" style={styles.profilelabel}>Program</label>
+                        <select value={profileData.program} onChange={handleChange} style={styles.input} name="program" id="program" required>
+                            <option value="" defaultChecked>Select Program</option>
+                            {programOptions}
+                        </select>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div className="pinfo-constituents" style={styles.constituents}>
+                        <label className="label"  htmlFor="personal_email" style={styles.profilelabel}>Personal Email:</label>
+                        <input
+                            placeholder='Personal Email'
+                            id="personal_email"
+                            name="personal_email"
+                            type="email"
+                            value={profileData.personal_email}
+                            onChange={handleChange}
+                            style={styles.input}
+                            required
+                        />
+                    </div>
+                    <div className="one" style={styles.one}>
+                    <div className="pinfo-constituents" style={styles.constituents2}>
+                        <label className="label"  htmlFor="department" style={styles.profilelabel}>Department</label>
+                        <select value={profileData.department} onChange={handleChange} style={styles.input2} name="department" id="department" required>
+                            <option value="" defaultChecked>Select Department</option>
+                            {departmentOptions}
+                        </select>
+                    </div>
+                    <div className="pinfo-constituents" style={styles.constituents2}>
+                        <label className="label" htmlFor="degree" style={styles.profilelabel}>Degree</label>
+                        <select value={profileData.degree} onChange={handleChange} style={styles.input2} name="degree" id="degree" required>
+                            <option value="" defaultChecked>Select Degree</option>
+                            {degreeOptions}
+                        </select>
+                    </div>
 
+                    </div>
+                    
+                    <div className="two" style={styles.two}>
+                    <div className="pinfo-constituents" style={styles.constituents2}>
+                        <label className="label" htmlFor="graduation_year" style={styles.profilelabel}>Graduation</label>
+                        <input
+                            placeholder='Graduation Year'
+                            id="graduation_year"
+                            name="graduation_year"
+                            type="number"
+                            value={profileData.graduation_year}
+                            onChange={handleChange}
+                            style={styles.input2}
+                            required
+                        />
+                    </div>
+
+                    <div className="pinfo-constituents" style={styles.constituents2}>
+                        <label className="label"  htmlFor="gender" style={styles.profilelabel}>Gender:</label>
+                        <select value={profileData.gender} onChange={handleChange} style={styles.input2} name="gender" id="gender" required>
+                            <option value="" defaultChecked>Select Gender</option>
+                            {genderOptions}
+                        </select>
+                    </div>
+                    </div>
+
+                
             </div>
             <button
                 type="submit"

@@ -29,7 +29,7 @@ function useProfile() {
 
   const fetchProfileData = async () => {
     try {
-      const response = await fetch('/api/authenticate/profile', {
+      const response = await fetch('http://127.0.0.1:8000/api/authenticate/profile', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -42,6 +42,7 @@ function useProfile() {
       }
 
       const data = await response.json();
+      
       setProfileData(data);
       setUrl(data.profile_pic);
       console.log(data);
@@ -68,7 +69,7 @@ function useProfile() {
       }
 
 
-      const response = await fetch('/api/authenticate/profile', {
+      const response = await fetch('http://127.0.0.1:8000/api/authenticate/profile', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${accessToken}`, 
