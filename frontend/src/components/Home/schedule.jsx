@@ -14,8 +14,8 @@ function Schedule() {
           <div className="schedule_time1">Time</div>
         </div>
         <div className="schedule_item">
-          <div className="schedule_event"></div>
-          <div className="schedule_time"></div>
+          <div className="schedule_event">GROUP MENTORING</div>
+          <div className="schedule_time">8:00 - 9:00</div>
         </div>
         <div className="schedule_item">
           <div className="schedule_event"></div>

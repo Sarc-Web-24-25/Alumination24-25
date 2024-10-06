@@ -59,7 +59,8 @@
     align-items: center;
     flex-direction: row;
     border-radius: 20px;
-
+    color: black;
+    font-size: 20px;
 }
 
 .schedule_event{
@@ -69,6 +70,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 2%;
+    
 }
 
 .schedule_time{
