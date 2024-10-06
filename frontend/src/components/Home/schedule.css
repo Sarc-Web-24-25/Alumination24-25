@@ -1,75 +1,112 @@
-.schedule-container {
+.schedule_container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
+    width: 100vw;
     background-image: url('./bgimg/backg.png');
-    background-size: cover;
+    background-size: cover; 
+    overflow-x: hidden;
     background-repeat: no-repeat;
-    cursor: auto !important;
-    background-attachment: fixed;
+    overflow-x: hidden;
+
 }
 
-.schedule-page {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 80%;
-    max-width: 600px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.schedule-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.schedule-header h2{
-    font-size: 38px;
-    font-weight: 600;
-    font-family: 'Inknut Antiqua', serif;
-    color: #533838;
-}
-
-.swipe-button {
-    background-color: #533838;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.swipe-button:hover {
-    background-color: #392828;
-}
-
-.schedule-table {
+.schedule_upper {
+    height: 15%;
     width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    /* background-color: rgba(0, 255, 255, 0.53); */
+    font-size: 400%;
+    padding-top: 2%;
+}
+.schedule_middle{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 17%;
+    align-items: center;
+    font-size: 250%;
+    color: white;
+}
+.schedule_lower{
+    height: 80vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    /* background-color: rgba(255, 0, 217, 0.273); */
 }
 
-/* Style for table content */
-.schedule-table th,
-.schedule-table td {
-    padding: 8px;
+.schedule_item {
+    height: 7%;
+    width: 70%;
+
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+
 }
 
-@media screen and (max-width: 600px){
-    .schedule-header h2 {
-        font-size: 25px;
-    }
-    .schedule-page{
-        margin-top: -30vh;
-    }
-    .swipe-button{
-        font-size: 15px;
-    }
+.schedule_event{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2%;
 }
 
-/* Add your additional styles as needed */
+.schedule_time{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.schedule_event1{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3%;
+
+    font-size: 150%;
+}
+
+.schedule_time1{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 150%;
+
+}
+
+.schedule_item1{
+    height: 7%;
+    width: 70%;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+}
