@@ -217,7 +217,7 @@ useEffect(() => {
 
       </Parallax>
 
-      <div className="clouds" style={{top: "13%"}}>
+      <div className="clouds1" >
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud2} alt="cloud2" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" />
@@ -245,7 +245,7 @@ useEffect(() => {
       </Parallax>
 
 
-      <div className="clouds" style={{top: "32%"}}>
+      <div className="clouds2" >
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud2} alt="cloud2" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" />
@@ -267,7 +267,7 @@ useEffect(() => {
 
       </Parallax>
 
-      <div className="clouds" style={{top: "52%"}}>
+      <div className="clouds3" >
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud2} alt="cloud2" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" />
@@ -288,7 +288,7 @@ useEffect(() => {
 
       </Parallax>
 
-      <div className="clouds" style={{top: "78%"}}>
+      <div className="clouds4" >
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud2} alt="cloud2" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" />
