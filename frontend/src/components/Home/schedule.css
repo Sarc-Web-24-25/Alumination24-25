@@ -5,8 +5,8 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-image: url('./photos24/image.png');
-    background-size: cover; 
+    background-image: url('./photos24/sched.jpg');
+    background-size: 100% 100%;   
     overflow-x: hidden;
     background-repeat: no-repeat;
     overflow-x: hidden;
@@ -59,8 +59,7 @@
     align-items: center;
     flex-direction: row;
     border-radius: 20px;
-    color: black;
-    font-size: 20px;
+
 }
 
 .schedule_event{
@@ -70,7 +69,8 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 2%;
-    
+    color: black;
+    font-size: 20px;
 }
 
 .schedule_time{
@@ -79,6 +79,9 @@
     display: flex;
     justify-content:center;
     align-items: center;
+    color: black;
+    font-size: 20px;
+
 }
 
 .schedule_event1{

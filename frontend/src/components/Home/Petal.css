@@ -7,7 +7,6 @@
     background-image: url('./photos24/petall.png'); /* Use a flower petal image */
     background-size: cover;
     animation: fall linear infinite;
-
 }
 
 @keyframes fall {
@@ -18,3 +17,4 @@
         transform: translateY(100vh); /* Move down the viewport */
     }
 }
+
