@@ -6,8 +6,10 @@ import { Parallax } from "react-parallax";
 import "./Home1.css";
 import "./Petal.css";
 import layer1 from "./photos24/layer1.png";
+import layer1PH from "./photos24/parallaxLandingPH.jpg"
 import layer2 from "./photos24/layer2.png";
 import layer3 from "./photos24/layer3.png";
+import layer3PH from "./photos24/coinParallaxPH.jpg"
 import layer4 from "./photos24/layer4.png"; // New layer
 import layer5 from "./photos24/layer5.png"; // New layer
 import dragon from "./photos24/dragon.png";
@@ -33,10 +35,51 @@ function Home1() {
 const layerRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
 const previousScrollY = useRef(0); // To track the previous scroll position
 
+// useEffect(() => {
+//   const handleScroll = () => {
+//     const currentScrollY = window.scrollY;
+//     const direction = currentScrollY > previousScrollY.current ? "down" : "up"; // Determine scroll direction
+//     previousScrollY.current = currentScrollY;
+
+//     for (let i = 0; i < layerRefs.length; i++) {
+//       const layer = layerRefs[i].current;
+//       const layerPosition = layer.getBoundingClientRect().top;
+//       const layerHeight = layer.offsetHeight;
+
+//       // Check if 10% of the layer is visible
+//       const isLayerVisible = layerPosition <= window.innerHeight * 0.9 && layerPosition >= -layerHeight * 0.1;
+
+//       // If scrolling down and the layer below is visible, or scrolling up and the layer above is visible
+//       if (isLayerVisible && ((direction === "down" && layerPosition >= 0) || (direction === "up" && layerPosition <= 0))) {
+//         window.scrollTo({
+//           top: window.scrollY + layerPosition,
+//           behavior: "smooth",
+//         });
+//         break;
+//       }
+//     }
+//   };
+
+//   window.addEventListener("scroll", handleScroll);
+//   return () => window.removeEventListener("scroll", handleScroll);
+// }, []);
+
 useEffect(() => {
-  const handleScroll = () => {
+  const debounce = (func, wait) => {
+    let timeout;
+    return (...args) => {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
+
+  const handleScroll = debounce(() => {
     const currentScrollY = window.scrollY;
-    const direction = currentScrollY > previousScrollY.current ? "down" : "up"; // Determine scroll direction
+    const direction = currentScrollY > previousScrollY.current ? "down" : "up";
     previousScrollY.current = currentScrollY;
 
     for (let i = 0; i < layerRefs.length; i++) {
@@ -44,10 +87,8 @@ useEffect(() => {
       const layerPosition = layer.getBoundingClientRect().top;
       const layerHeight = layer.offsetHeight;
 
-      // Check if 10% of the layer is visible
-      const isLayerVisible = layerPosition <= window.innerHeight * 0.9 && layerPosition >= -layerHeight * 0.1;
+      const isLayerVisible = layerPosition <= window.innerHeight * 0.95 && layerPosition >= -layerHeight * 0.05;
 
-      // If scrolling down and the layer below is visible, or scrolling up and the layer above is visible
       if (isLayerVisible && ((direction === "down" && layerPosition >= 0) || (direction === "up" && layerPosition <= 0))) {
         window.scrollTo({
           top: window.scrollY + layerPosition,
@@ -56,11 +97,12 @@ useEffect(() => {
         break;
       }
     }
-  };
+  }, 20); // Adjust the delay to 100ms for debouncing
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
 
   useEffect(() => {
     const handleEnded = () => {
@@ -128,6 +170,33 @@ useEffect(() => {
       navigate(route); // Navigate to the specified route
     };
 
+
+    const [bgImage1, setBgImage1] = useState(layer1); // Default background image
+    const [bgImage3, setBgImage3] = useState(layer3); // Default background image
+
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth < 786) {
+          setBgImage1(layer1PH); // Use small image for screens smaller than 786px
+          setBgImage3(layer3PH); // Use small image for screens smaller than 786px
+        } else {
+          setBgImage1(layer1); // Use default image for larger screens
+          setBgImage3(layer3); // Use default image for larger screens
+        }
+      };
+  
+      // Call the function on initial load
+      handleResize();
+  
+      // Add event listener to handle resize
+      window.addEventListener("resize", handleResize);
+  
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
+
   return (
     <div className="newhome">
       {/* Mute Button */}
@@ -159,7 +228,7 @@ useEffect(() => {
       </button>
 
       {/* Parallax Layer 1 */}
-      <Parallax bgImage={layer1} strength={300}>
+      <Parallax bgImage={bgImage1} strength={200}>
 
         <div
           className={`mainHome ${isLayer2Visible ? "moveDown" : ""}`}
@@ -256,7 +325,7 @@ useEffect(() => {
         </div>
 
       {/* Parallax Layer 3 */}
-      <Parallax bgImage={layer3} strength={150}>
+      <Parallax bgImage={bgImage3} strength={150}>
         <div className="layer3" style={{ height: "120vh" }} ref={layerRefs[2]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content

@@ -789,4 +789,9 @@ h1 {
   }
 }
 
+.layer2, .layer3, .layer4, .layer5 {
+    will-change: transform; /* Helps optimize rendering */
+  }
+  
+
 
