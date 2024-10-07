@@ -37,16 +37,19 @@ const alumniList = [
 const Alumni3 = () => {
   return (
     <>
-        <h1 style={{ color: '#700815' }} className="text-5xl font-bold text-center">
+        <h1
+          style={{ color: '#700815' }}
+          className="text-5xl font-bold text-center"
+        >
           Esteemed Alumni
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 p-6 mx-50">
         {alumniList.map((alumni, index) => (
             <AlumniCard
-            key={index}
-            name={alumni.name}
-            designation={alumni.designation}
-            imageSrc={alumni.imageSrc}
+              key={index}
+              name={alumni.name}
+              designation={alumni.designation}
+              imageSrc={alumni.imageSrc}
             />
         ))}
         </div>
