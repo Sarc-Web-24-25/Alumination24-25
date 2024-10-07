@@ -1,5 +1,6 @@
 import React from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes, css, createGlobalStyle } from "styled-components";
+import japanDaisukiFont from '../../../assets/fonts/JapanDaisuki-8OeaZ.woff' 
 
 export default function Sponsor2({ sponsors }) {
   // const row1 = [
@@ -30,6 +31,7 @@ export default function Sponsor2({ sponsors }) {
   return (
     <AppContainer>
       <Wrapper>
+        <GlobalStyles />
         <Text>Our Sponsors</Text>
         <Marquee>
           <MarqueeGroup>
@@ -69,6 +71,15 @@ export default function Sponsor2({ sponsors }) {
   );
 }
 
+const GlobalStyles = createGlobalStyle`
+  @font-face {
+    font-family: 'Japan Daisuki Regular';
+    src: url(${japanDaisukiFont}) format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+`;
+
 const AppContainer = styled.div`
   position: relative;
   display: flex;
@@ -86,10 +97,13 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 3rem;
-  font-weight: bold;
+  font-family: 'Japan Daisuki Regular', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
   text-align: center;
-  color: #700815;
+  color: white;
+  -webkit-text-stroke: 1px #700815;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
 `;
 

@@ -233,7 +233,6 @@ function Home1() {
               <div className="lowerMainHome">
                 <div
                   className="registerHome"
-                  style={{ fontSize: "25px", color: "#700815" }}
                   onClick={() => handleNavClick("/signup")}
                 >
                   REGISTER
@@ -288,7 +287,7 @@ function Home1() {
 
             <div className="About">
               <h1>About us</h1>
-              <Character paragraph={paragraph} />
+              <Character className="aboutCharacter" paragraph={paragraph} />
             </div>
 
             {/* <div style={{ height: "50vh" }}></div> */}
@@ -296,7 +295,10 @@ function Home1() {
               <Count />
             </div>
 
-            <div className="alumniHomeContainer">
+            <div
+              className="alumniHomeContainer"
+              style={{ height: "fit-content" }}
+            >
               <Alumni3 />
             </div>
 
@@ -378,16 +380,13 @@ function Home1() {
                   }}
                 >
                   <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-                  <div style={{ fontSize: "70px", color: "#700815" }}>
-                    ALUMINATION
-                  </div>
+                  <div style={{ fontSize: "70px", color: "#700815" }}>ALUMINATION</div>
                 </div>
               </div>
 
               <div className="lowerMainHome">
                 <div
                   className="registerHome"
-                  style={{ fontSize: "25px", color: "#700815" }}
                   onClick={() => handleNavClick("/login")}
                 >
                   REGISTER
@@ -438,18 +437,23 @@ function Home1() {
                 className="cloud"
                 style={{ "--i": 4 }}
               />
-            </div>        
+            </div>
 
             <div className="About">
               <h1>About us</h1>
               <Character paragraph={paragraph} />
-            </div>  
+            </div>
 
-            <div className="count_k" style={{ marginTop: '-120vh',
-    marginBottom: '50vh', marginLeft: '20vw'
- }}>
+            <div
+              className="count_k"
+              style={{
+                marginTop: "-120vh",
+                marginBottom: "50vh",
+                marginLeft: "20vw",
+              }}
+            >
               <Count />
-            </div>          
+            </div>
 
             <div style={{ height: "190vh" }}></div>
 

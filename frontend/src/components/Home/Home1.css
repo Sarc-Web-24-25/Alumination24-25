@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Japan Daisuki Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Japan Daisuki Regular'), url('../../assets/fonts/JapanDaisuki-8OeaZ.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Katsumi';
+  src: url('../../assets/fonts/KATSUMI.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .newhome{
   display: flex;
   flex-direction: column;
@@ -52,10 +66,25 @@ html, body {
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
-  font-size: 40px;
-  color:#700815;
   z-index: 500;
-  position: relative;    
+  position: relative;
+  padding-top: 15px;  
+}
+
+.About h1{
+  font-family: 'Japan Daisuki Regular', sans-serif;
+  font-weight: bolder;
+  font-size: 100px;
+  color: white;
+  -webkit-text-stroke: 1px #700815;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /*horizontal and vertical offset, blur, colour*/
+}
+
+.About p {
+  font-family: 'Katsumi', sans-serif;
+  font-weight: bolder;
+  font-size: 40px;
+  color: #700815;
 }
 
 .mainHome{
@@ -83,19 +112,24 @@ html, body {
 }
 
 .registerHome{
-    height: 35%;
-    width: 28%;
-    max-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: rgba(0, 255, 255, 0.323);  */
-    margin-top: 1%;
-    background-image: url('./photos24/register.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    }
+  height: 35%;
+  width: 28%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(0, 255, 255, 0.323);  */
+  margin-top: 5%;
+  background-image: url('./photos24/register.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  font-family: 'Japan Daisuki Regular', sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  color: #700815;
+  padding-top: 15px;
+}
 
 @media screen and (max-width: 768px) {
   .registerHome{
@@ -116,9 +150,7 @@ html, body {
     top: 5%;
 
 }
-.About h1{
-    font-size: 80px;
-}
+
 .clouds{
   position: absolute;
   left: 0;

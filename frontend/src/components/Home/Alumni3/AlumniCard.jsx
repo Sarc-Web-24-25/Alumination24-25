@@ -1,41 +1,43 @@
-// import React from "react";
-// import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
-
-// export default function AlumniCard({ name, designation, imageSrc }) {
-//   return (
-//     <CardContainer className="inter-var">
-//       <CardBody
-//         className="bg-white/30 relative backdrop-blur-lg group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black/30 dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
-//       >
-//         <CardItem
-//           translateZ="50"
-//           className="text-3xl font-bold text-white"
-//         >
-//           {name}
-//         </CardItem>
-//         <CardItem
-//           as="p"
-//           translateZ="60"
-//           className="text-white text-sm max-w-sm mt-2 dark:text-neutral-300"
-//         >
-//           {designation}
-//         </CardItem>
-//         <CardItem translateZ="100" className="w-full mt-4">
-//           <img
-//             src={imageSrc}
-//             height="1000"
-//             width="1000"
-//             className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
-//             alt="thumbnail"
-//           />
-//         </CardItem>
-//       </CardBody>
-//     </CardContainer>
-//   );
-// }
-
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import japanDaisukiFont from '../../../assets/fonts/JapanDaisuki-8OeaZ.woff' 
+import katsumiFont from '../../../assets/fonts/KATSUMI.otf'
+
+const styles = {
+  '@font-face': {
+    fontFamily: 'Japan Daisuki Regular',
+    src: `url(${japanDaisukiFont}) format('opentype')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+  },
+
+  '@font-face': {
+    fontFamily: 'Katsumi',
+    src: `url(${katsumiFont}) format('')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+  },
+
+  name: {
+    fontFamily: 'Japan Daisuki Regular, sans-serif',
+    color: '#700815',
+    textShadow: '2px 2px 5px rgba(255, 255, 255, 0.5)',
+    fontSize: "2rem",
+    lineHeight: "1.75rem",
+    fontWeight: "700",
+    textAlign: "center",
+  },
+
+  designation: {
+    fontFamily: 'Katsumi, sans-serif',
+    color: '#700815',
+    fontSize: "1.35rem",
+    lineHeight: "1.25rem",
+    fontWeight: "700",
+    textAlign: "center",
+    marginTop: "0.9rem",
+  }
+};
 
 export default function Alumni3({ name, designation, imageSrc }) {
   return (
@@ -54,8 +56,7 @@ export default function Alumni3({ name, designation, imageSrc }) {
       >
         <CardItem
           translateZ="30"
-          style={{ color: '#700815' }}
-          className="text-xl font-bold"
+          style={styles.name}
         >
           {name}
         </CardItem>
@@ -63,8 +64,8 @@ export default function Alumni3({ name, designation, imageSrc }) {
         <CardItem
           as="p"
           translateZ="30"
-          style={{ color: '#700815' }}
-          className="text-sm max-w-sm mt-2"
+          style={styles.designation}
+          // className="text-sm max-w-sm mt-2"
         >
           {designation}
         </CardItem>
