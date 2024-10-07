@@ -1,5 +1,6 @@
 import React from 'react'
 import AlumniCard from './AlumniCard'
+import japanDaisukiFont from '../../../assets/fonts/JapanDaisuki-8OeaZ.woff' 
 
 const alumniList = [  
   {
@@ -34,19 +35,41 @@ const alumniList = [
   },
 ];
 
+const styles = {
+  '@font-face': {
+    fontFamily: 'Japan Daisuki Regular',
+    src: `url(${japanDaisukiFont}) format('woff')`,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+  },
+
+  heading: {
+    fontFamily: 'Japan Daisuki Regular, sans-serif',
+    color: 'white',
+    WebkitTextStroke: '1px #700815',
+    textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)',
+    fontSize: "5rem",
+    fontWeight: "700",
+    textAlign: "center",
+  }
+};
+
 const Alumni3 = () => {
   return (
     <>
-        <h1 style={{ color: '#700815' }} className="text-5xl font-bold text-center">
+        <h1
+          style={styles.heading}
+          // className="text-5xl font-bold text-center"
+        >
           Esteemed Alumni
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 p-6 mx-50">
         {alumniList.map((alumni, index) => (
             <AlumniCard
-            key={index}
-            name={alumni.name}
-            designation={alumni.designation}
-            imageSrc={alumni.imageSrc}
+              key={index}
+              name={alumni.name}
+              designation={alumni.designation}
+              imageSrc={alumni.imageSrc}
             />
         ))}
         </div>

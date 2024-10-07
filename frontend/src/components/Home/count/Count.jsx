@@ -8,21 +8,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Count = () => {
   const dropRefs = [useRef(null), useRef(null), useRef(null)];
-  // const [footfall, setFootfall] = useState([0, 0, 0]);
   const [positions, setPositions] = useState([]);
 
   const calculatePositions = () => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
 
-    return screenWidth > 768 ? 
-      [{ x: screenWidth * -0.20, y: screenHeight * 1.9 },  
-      { x: screenWidth * 0.02, y: screenHeight * 1.95 },  
-      { x: screenWidth * -0.20, y: screenHeight * 2 }] :
-      [{ x: screenWidth * -0.1, y: screenHeight * 0.3 },  
-      { x: screenWidth * 0.09, y: screenHeight * 0.6 },  
-      { x: screenWidth * -0.1, y: screenHeight * 0.9 }
-      ]
+    if (screenWidth > 1024) {
+      // Laptop view
+      return [
+        { x: screenWidth * -0.20, y: screenHeight * 1.5 },  
+      { x: screenWidth * 0.02, y: screenHeight * 1.45},  
+      { x: screenWidth * -0.20, y: screenHeight * 1.5 }
+      ];
+    } else if (screenWidth > 768) {
+      // Tablet view
+      return [
+        { x: screenWidth * -0.15, y: screenHeight * 1.7 },
+        { x: screenWidth * 0.04, y: screenHeight * 1.85 },
+        { x: screenWidth * -0.15, y: screenHeight * 1.9 }
+      ];
+    } else {
+      // Phone view
+      return [
+        { x: screenWidth * -0.1, y: screenHeight * 0.2 },
+        { x: screenWidth * 0.09, y: screenHeight * 0.15 },
+        { x: screenWidth * -0.1, y: screenHeight * 0.15 }
+      ];
+    }
   };
 
   useEffect(() => {
@@ -37,9 +50,7 @@ const Count = () => {
   useEffect(() => {
     if (positions.length > 0) {
       dropRefs.forEach((dropRef, index) => {
-        const startX = index % 2 === 0 ? -300 : 400;
         const { x: endX, y: endY } = positions[index];
-        console.log('endY = ', endY)
 
         gsap.fromTo(
           dropRef.current,
@@ -50,20 +61,14 @@ const Count = () => {
             y: endY,
             ease: 'power3.out',
             duration: 2,
-            // delay:0.5,
             scrollTrigger: {
               trigger: dropRef.current,
               start: 'top 10%',
               end: 'top 90%',
               toggleActions: 'play none none none',
-              // scrub: true,
-              // onEnter: () => incrementFootfall(index),
-              // onLeave: () => resetFootfall(index),
-              // markers: true
             },
           }
         );
-
       });
     }
     return () => {
@@ -71,45 +76,16 @@ const Count = () => {
     };
   }, [positions]);
 
-  // const incrementFootfall = (index) => {
-  //   let start = 0;
-  //   const end = 40000;
-  //   const duration = 2;
-  //   const increment = Math.ceil(end / (60 * duration));
-
-  //   const counter = setInterval(() => {
-  //     start += increment;
-  //     if (start >= end) {
-  //       start = end;
-  //       clearInterval(counter);
-  //     }
-  //     setFootfall((prev) => {
-  //       const newValues = [...prev];
-  //       newValues[index] = start;
-  //       return newValues;
-  //     });
-  //   }, 1000 / 60);
-  // };
-
-  // const resetFootfall = (index) => {
-  //   setFootfall((prev) => {
-  //     const newValues = [...prev];
-  //     newValues[index] = 0;
-  //     return newValues;
-  //   });
-  // };
-
   return (
     <div className="count-container">
       {dropRefs.map((dropRef, index) => (
         <div key={index} className="drop" ref={dropRef}>
-          <Drop3D/>
+          <Drop3D />
         </div>
       ))}
-
-    
     </div>
   );
 };
+
  
 export default Count;

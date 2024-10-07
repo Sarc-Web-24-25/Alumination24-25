@@ -3,22 +3,18 @@
   flex-direction: column; /* Stack drops vertically */
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
-  /* height: 200vh; Allow enough scroll space */
-  /* position: relative; */
-  padding: 0 5vw; /* Add some horizontal padding */
+  height: 100vh; /* Limit height to full viewport */
+  padding: 0 5vw; /* Add horizontal padding */
 }
 
 .drop {
-  /* position: relative; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  margin-bottom: 5vh; /* Use viewport height for spacing */
+  margin-bottom: 3vh; /* Reduce vertical spacing between drops */
 }
 
 .drop-image {
-  width: 15vw; /* Make the image width responsive */
+  width: 15vw; /* Image size based on viewport width */
   height: auto; /* Maintain aspect ratio */
   max-width: 150px; /* Set a max size for larger screens */
 }
@@ -29,13 +25,63 @@
   color: #fff;
 }
 
-/* For very small screens */
-@media (max-width: 600px) {
+/* Phone view (max-width: 480px) */
+@media (max-width: 480px) {
+  .count-container {
+    padding: 0 3vw; /* Adjust padding for smaller screens */
+    height: fit-content; /* Maintain full viewport height */
+  }
+
+  .drop {
+    margin-bottom: 3vh; /* Reduce vertical spacing */
+  }
+
   .drop-image {
-    width: 25vw; /* Make images slightly larger on small screens */
+    width: 25vw; /* Larger images on small screens */
+    max-width: 120px; /* Set a lower max width */
   }
 
   .drop-content {
-    font-size: 6vw; /* Increase font size for readability */
+    font-size: 5vw; /* Increase font size for readability */
+  }
+}
+
+/* Tablet view (481px - 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .count-container {
+    height: 100vh; /* Full height on tablets */
+  }
+
+  .drop {
+    margin-bottom: 4vh; /* Adjust spacing between drops */
+  }
+
+  .drop-image {
+    width: 20vw; /* Larger image size for tablets */
+    max-width: 180px; /* Higher max size */
+  }
+
+  .drop-content {
+    font-size: 3.5vw; /* Adjust font size */
+  }
+}
+
+/* Laptop view (above 1024px) */
+@media (min-width: 1025px) {
+  .count-container {
+    height: 100vh; /* Maintain full viewport height */
+  }
+
+  .drop {
+    margin-bottom: 3vh; /* Keep smaller margin for larger screens */
+  }
+
+  .drop-image {
+    width: 12vw; /* Smaller images on large screens */
+    max-width: 200px; /* Higher max size */
+  }
+
+  .drop-content {
+    font-size: 2vw; /* Manageable font size */
   }
 }
