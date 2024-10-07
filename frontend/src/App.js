@@ -11,7 +11,7 @@ import "./App.css";
 import Navbar1 from "./components/Home/Navbar1";
 import Home1 from "./components/Home/Home1";
 import About from "./components/Home/About";
-import Team from "./components/Home/Team";
+import Team2 from "./components/Home/Team2/Team2";
 import Gallery from "./components/Home/Gallery";
 import Gallery1 from "./components/Home/Gallery1";
 import Events from "./components/Home/Events";
@@ -33,7 +33,7 @@ function App() {
       <Navbar1 />
       <Routes>
         <Route path="/" element={<Home1 />} exact={true} />
-        <Route path="/team" element={<Team /> } exact={true} />
+        <Route path="/team" element={<Team2 /> } exact={true} />
         <Route path="/gallery" element={<Gallery1 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>
