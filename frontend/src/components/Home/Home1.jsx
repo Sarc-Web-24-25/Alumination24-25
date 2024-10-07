@@ -23,6 +23,8 @@ import Count from "./count/Count";
 import Character from "./Character";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
+import Footer from "./Footer.jsx";
+
 
 
 function Home1() {
@@ -372,8 +374,9 @@ useEffect(() => {
         <div className="layer5" style={{ height: "100vh" }} ref={layerRefs[4]}>
         <Sponsor2 sponsors={sponsors}/>
         </div>
-
+        <Footer></Footer>
       </Parallax>
+            
     </div>
   );
 }

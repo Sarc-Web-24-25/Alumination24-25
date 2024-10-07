@@ -5,6 +5,135 @@
     margin: 0;
 }
 
+.footer-distributed {
+    /* background-image: url('footerbg'); */
+    /* padding: 20px; */
+    display: flex;
+    text-align: center;
+    border-radius: 50px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    min-height: 150px; /* Or any value suitable for your design */
+    background-size: cover; /* Ensure the image covers the container */
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sylfaen', sans-serif;
+    /* flex-direction: column; */
+}
+
+.footer-left {
+    margin: 20px 0;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-left h3 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: black;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff66ff /* Accent color on hover */
+}
+
+.contact-details {
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    /* line-height: 1.8; */
+}
+
+.contact-details i {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    background-color: black;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.footer-bottom p {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.heart {
+    color: red;
+    font-size: 18px;
+}
+
+.contact-info {
+    margin-right: 5rem;
+    margin-bottom: 0rem;
+}
+/* Styles for larger screens */
+
+
+/* Media query for very small screens */
+@media (max-width: 600px) {
+    footer {
+        display: flex;
+        flex-direction: column !important;
+        border-top: 0px !important;
+    }
+
+    .footer-distributed .footer-left {
+        display: flex !important;
+        flex-direction: column;
+        width: 100% !important;
+        margin-bottom: 40px !important;
+        text-align: center !important;
+        height: auto;
+    }
+
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-center1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+    }
+
+    .contact-details {
+        width: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        margin-top: 0.5rem;
+        margin-bottom: 0rem;
+        font-size: 18px;
+        gap: 0;
+    }
+    .contact-info {
+        margin: 0.5rem auto; /* Top/Bottom margin: 0.5rem, horizontal margin: auto */
+    }
+
+    .contact-details {
+        text-align: center; /* Optional: Center the text for better alignment */
+    }
+}
+
+/* Add additional styles as needed... */
+
+/* 
 .footer-center {
     margin-left: 5%;
 }
@@ -53,11 +182,11 @@ footer {
 .footer-distributed .footer-right {
     display: inline-block;
     vertical-align: top;
-}
+} */
 
 /* Footer left */
 
-.footer-distributed .footer-left {
+/* .footer-distributed .footer-left {
     width: 30%;
 }
 
@@ -70,10 +199,10 @@ footer {
 
 .footer-distributed h3 span {
     color: rgb(255, 209, 171);
-}
+} */
 
 /* Footer links */
-
+/* 
 .footer-distributed .footer-links {
     color: #ffffff;
     margin: 20px 0 12px;
@@ -95,10 +224,10 @@ footer {
 
 .footer-company-name {
     margin-left: 8% !important;
-}
+} */
 
 /* Footer Center */
-
+/* 
 .footer-distributed .footer-center {
     width: 35%;
 }
@@ -147,10 +276,10 @@ footer {
     color: rgb(255, 209, 171);
     text-decoration: none;
     ;
-}
+} */
 
 /* Footer Right */
-
+/* 
 .footer-distributed .footer-right {
     width: 30%;
 }
@@ -380,4 +509,4 @@ footer {
         margin-right: -4%;
         align-items: justify;
     }
-}
+} */
