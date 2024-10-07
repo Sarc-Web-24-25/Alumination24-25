@@ -276,7 +276,7 @@ useEffect(() => {
             <div
               className="registerHome"
               style={{ fontSize: "25px", color: "#700815" }}
-              onClick={() => handleNavClick( '/login')}
+              onClick={() => handleNavClick( '/signup')}
             >
               REGISTER
             </div>

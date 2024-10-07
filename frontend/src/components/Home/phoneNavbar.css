@@ -1,0 +1,135 @@
+.phoneNavbar{
+    height: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgba(0, 255, 255, 0.384); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.phoneLinesNav{
+
+    height: 40%;
+    width: 100%;
+    background-color: #515691;
+}
+.phoneLinesNav0{
+
+    height: 20%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.722);
+}
+
+.phoneCircular1, .phoneCircular2{
+
+    height: 150px;
+    width: 150px;
+    background-color: #515691;
+    z-index: 1000;
+    border-radius: 50%;
+    position: fixed;
+}
+
+.phoneCircular1{
+    top: -75px;
+    left: -75px;
+}
+.phoneCircular2{
+    top: -75px;
+    right: -75px;
+}
+
+.phoneCircular1 img {
+    position: relative;
+    top: 85px;
+    left: 80px;
+    height: 50px;
+}
+.custom-hamburger {
+    /* Centering the hamburger icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Positioning */
+    position: relative;
+    top: 80px;
+    right: 25px;
+    z-index: 1001; /* Make sure it's above other content if needed */
+  
+  }
+
+  .mobileMenu {
+    position: fixed;
+    top: -270px;
+    right: -270px;
+    height: 100vh;
+    width: 100vw;       
+    background-color: #5f65a9;
+    z-index: 999;
+    animation: slideIn 0.5s ease-out forwards; 
+    height: 550px;
+    width: 550px;
+    border-radius: 50%;
+    border: 4px solid rgb(255, 255, 255);
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translate(200px, -200px);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  .innerMobile{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 5%;
+    height: 300px;
+    width: 300px;
+    z-index: 1000;
+    /* background-color: rgba(0, 255, 255, 0.374); */
+
+    margin-top: 220px;
+
+    color: white;
+    font-size: 140%;
+
+  }
+
+  .phoneNavEvents{
+    margin-left: 11%;
+    cursor: pointer;
+  }
+
+  .phoneNavGallery{
+    margin-left: 15%;
+    cursor: pointer;
+  }
+  .phoneNavTeam{
+    margin-left: 27%;
+    cursor: pointer;
+  }
+  .phoneNavSchedule{
+    margin-left: 40%;
+    cursor: pointer;
+  }
+
+  .phoneNavProfile{
+    margin-left: 59%;
+    cursor: pointer;
+  }
+
+  .phoneNavLogin{
+    margin-left: 59%;
+    cursor: pointer;
+  }

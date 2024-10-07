@@ -787,11 +787,17 @@ h1 {
   .About p{
     font-size: 20px;
   }
+
+button.mute-button{
+    display: none !important;
+}
 }
 
 .layer2, .layer3, .layer4, .layer5 {
     will-change: transform; /* Helps optimize rendering */
   }
-  
+
+
+
 
 
