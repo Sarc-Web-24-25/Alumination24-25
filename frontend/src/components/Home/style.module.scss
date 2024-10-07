@@ -2,6 +2,11 @@
     display: flex;
     font-size: 33px;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+
     .word{
       position: relative;
       margin-right: 12px;

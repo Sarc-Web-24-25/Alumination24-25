@@ -32,8 +32,8 @@ const Count = () => {
       // Phone view
       return [
         { x: screenWidth * -0.1, y: screenHeight * 0.2 },
-        { x: screenWidth * 0.09, y: screenHeight * 0.15 },
-        { x: screenWidth * -0.1, y: screenHeight * 0.15 }
+        { x: screenWidth * 0.09, y: screenHeight * 0.2 },
+        { x: screenWidth * -0.1, y: screenHeight * 0.2 }
       ];
     }
   };
@@ -60,12 +60,13 @@ const Count = () => {
             x: endX,
             y: endY,
             ease: 'power3.out',
-            duration: 2,
+            duration: 1,
             scrollTrigger: {
               trigger: dropRef.current,
-              start: 'top 10%',
-              end: 'top 90%',
+              start: 'top 50%',
+              end: 'top 100%',
               toggleActions: 'play none none none',
+              // markers: true
             },
           }
         );

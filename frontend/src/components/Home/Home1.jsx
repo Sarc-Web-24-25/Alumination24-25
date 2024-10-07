@@ -287,7 +287,7 @@ function Home1() {
 
             <div className="About">
               <h1>About us</h1>
-              <Character className="aboutCharacter" paragraph={paragraph} />
+              <Character className="aboutCharacter" paragraph={paragraph} isMobile={isMobile}/>
             </div>
 
             {/* <div style={{ height: "50vh" }}></div> */}

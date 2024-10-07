@@ -78,6 +78,8 @@ html, body {
   color: white;
   -webkit-text-stroke: 1px #700815;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /*horizontal and vertical offset, blur, colour*/
+  margin-top: 15vh;
+  
 }
 
 .About p {
@@ -85,6 +87,7 @@ html, body {
   font-weight: bolder;
   font-size: 40px;
   color: #700815;
+  margin-bottom: 15vh;
 }
 
 .mainHome{
@@ -230,7 +233,7 @@ html, body {
       margin-top: -30vh;
       margin-bottom: 10vh;
       margin-left: 10vw;
-    }
+    } 
     .laptop-height {
       height: 0vh;
     }
