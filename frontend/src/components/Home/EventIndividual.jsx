@@ -231,19 +231,19 @@ function EventIndividual() {
         <div>
           <div style={{ overflowX: "hidden" }} className="event-list-container">
             {/* <CursorAnimation /> */}
-            {/* <div className="top-section">
-              <img src={headingImage} alt="Top Image" className="top-imagee" />
+            <div className="top-section">
+              {/* <img src={headingImage} alt="Top Image" className="top-imagee" /> */}
               <h1
                 style={{ marginBottom: event.youtube_link === "" && "15vh" }}
                 className="top-titlee"
               >
                 {event.name}
               </h1>
-            </div> */}
+            </div>
             <div
               className="main-event"
               style={{
-                // width: "100vw",
+                // width: "100%",
                 height: "100%",
                 // display: "flex",
                 // flexDirection: 'column',
@@ -253,7 +253,7 @@ function EventIndividual() {
               }}
             >
 
-              <div style={{ height: 'fit-content' }}>
+              <div style={{ /*height: 'fit-content'*/ width: '100%' }}>
                 {event.youtube_link !== "" && (
                   <YouTube
                     className="youtube"
@@ -277,7 +277,8 @@ function EventIndividual() {
                   justifyContent: "center",
                   flexDirection: "row",
                   alignItems: "center",
-                  backgroundColor: "#515691E5"
+                  backgroundColor: "#515691E5",
+                  width: '100%'
                 }}
               >
                 <div className="event-img">
@@ -286,6 +287,9 @@ function EventIndividual() {
                     className="poster"
                     src={`http://127.0.0.1:8000/${event.image}`}
                     alt=""
+                    style={{
+                      // width: '100%'
+                    }}
                   />
                 </div>
 
@@ -446,7 +450,7 @@ function EventIndividual() {
                 className="event-speakers-section yellow-box"
                 style={{
                   color: "#FFD1AB",
-                  fontSize: "20px",
+                  fontSize: "1rem",
                   fontFamily: "Inknut Antiqua",
                 }}
               >
@@ -457,7 +461,7 @@ function EventIndividual() {
                     key={speaker.id} className="event-list-item"
                     style={{
                       display: "flex",
-                    
+                      
                       justifyContent: "center",
                       flexDirection: "row",
                       alignItems: "center",
@@ -472,6 +476,7 @@ function EventIndividual() {
                         <img
                           src={`http://127.0.0.1:8000/${speaker.profile_image}`}
                           alt={speaker.fullname}
+                          // style={{fontSize: '2em'}}
                           // className="event-speaker-image"
                           // style={{borderRadius:"20px"}} 
                           width="125vw"
