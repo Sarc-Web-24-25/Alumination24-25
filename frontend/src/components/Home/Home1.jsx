@@ -20,7 +20,7 @@ import flagIcon from "./photos24/flag.png";
 import Count from "./count/Count";
 import Character from "./Character";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
-import Sponsor from "./Sponsor/Sponsor.jsx";
+import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 
 
 function Home1() {
@@ -105,7 +105,7 @@ useEffect(() => {
         const sponsor_list = [...response.data];
         let sponsors = [];
         sponsor_list.forEach((sponsor) => {
-          sponsors.push({ image: `http://127.0.0.1:8000${sponsor.image}` });
+          sponsors.push(`http://127.0.0.1:8000${sponsor.image}`);
         });
 
         setSponsors(sponsors);
@@ -301,7 +301,7 @@ useEffect(() => {
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
         <div className="layer5" style={{ height: "100vh" }} ref={layerRefs[4]}>
-        <Sponsor sponsors={sponsors} />
+        <Sponsor2 sponsors={sponsors}/>
         </div>
 
       </Parallax>
