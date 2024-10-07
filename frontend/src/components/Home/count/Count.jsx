@@ -19,9 +19,9 @@ const Count = () => {
       [{ x: screenWidth * -0.20, y: screenHeight * 1.9 },  
       { x: screenWidth * 0.02, y: screenHeight * 1.95 },  
       { x: screenWidth * -0.20, y: screenHeight * 2 }] :
-      [{ x: screenWidth * -0.1, y: screenHeight * 0.3 },  
-      { x: screenWidth * 0.09, y: screenHeight * 0.6 },  
-      { x: screenWidth * -0.1, y: screenHeight * 0.9 }
+      [{ x: screenWidth * -0.1, y: screenHeight * 0.6 },  
+      { x: screenWidth * 0.09, y: screenHeight * 0.9 },  
+      { x: screenWidth * -0.1, y: screenHeight * 1.2 }
       ]
   };
 

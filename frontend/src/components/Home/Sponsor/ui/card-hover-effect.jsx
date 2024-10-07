@@ -121,6 +121,21 @@ export const HoverEffect = ({ items, className }) => {
           ))}
         </div>
       </div>
+
+      {/* Fourth Row: 2 Columns Centrally Aligned */}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {items.slice(8, 10).map((item, idx) => (
+            <CardLink
+              key={item?.link}
+              item={item}
+              idx={idx + 8} // Adjust index for the second row
+              setHoveredIndex={setHoveredIndex}
+              hoveredIndex={hoveredIndex}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
@@ -208,7 +223,7 @@ export const Card = ({ className, children }) => {
       )}
     >
       <div className="relative z-50 flex items-center justify-center">
-        <div className="p-4">
+        <div className="p-0">
           {children}
         </div>
       </div>
