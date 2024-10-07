@@ -291,7 +291,7 @@ function Home1() {
             </div>
 
             {/* <div style={{ height: "50vh" }}></div> */}
-            <div className="count_k" style={{ height: "290vh" }}>
+            <div className="count_k" >
               <Count />
             </div>
 
@@ -444,18 +444,12 @@ function Home1() {
               <Character paragraph={paragraph} />
             </div>
 
-            <div
-              className="count_k"
-              style={{
-                marginTop: "-120vh",
-                marginBottom: "50vh",
-                marginLeft: "20vw",
-              }}
-            >
-              <Count />
-            </div>
+            <div className="count_k">
+  <Count />
+</div>
 
-            <div style={{ height: "190vh" }}></div>
+<div className="laptop-height"></div>
+
 
             <div
               className="alumniHomeContainer"
