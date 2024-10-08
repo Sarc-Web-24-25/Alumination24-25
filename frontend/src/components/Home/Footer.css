@@ -10,7 +10,7 @@
     /* padding: 20px; */
     display: flex;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 50px 50px 0 0;
     font-family: 'Roboto', sans-serif;
     position: relative;
     min-height: 150px; /* Or any value suitable for your design */
@@ -62,10 +62,12 @@
 }
 
 .footer-bottom {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px 0;
     width: 100%;
-    border-radius: 50px;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    bottom: 0;
 }
 
 .footer-bottom p {

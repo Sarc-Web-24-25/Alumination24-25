@@ -21,7 +21,6 @@ const Gallery2 = () => {
     ];
 
     const items2 = [
-        { img: 'images/img1.jpg', title: 'DESIGN SLIDER', description: 'Description 1' },
         { img: 'images/img2.jpg', title: 'DESIGN SLIDER', description: 'Description 2' },
         { img: 'images/img3.jpg', title: 'DESIGN SLIDER', description: 'Description 3' },
         { img: 'images/img4.jpg', title: 'DESIGN SLIDER', description: 'Description 4' },
@@ -30,14 +29,26 @@ const Gallery2 = () => {
         { img: 'images/rock.jpg', title: 'DESIGN SLIDER', description: 'Description 7' },
         { img: 'images/tree.jpg', title: 'DESIGN SLIDER', description: 'Description 8' },
         { img: 'images/water.jpg', title: 'DESIGN SLIDER', description: 'Description 9' },
+        { img: 'images/img1.jpg', title: 'DESIGN SLIDER', description: 'Description 1' },
     ];
     
+    // const handleThumbnailClick = (index) => {
+    //     setCurrentIndex(index);
+    //     const itemSlider = listItemDom.current.querySelectorAll('.carousel .list .item');
+    //     while (itemSlider[0] !== itemSlider[index]) {
+    //         listItemDom.current.appendChild(itemSlider[0]);
+    //     }
+    // };
     const handleThumbnailClick = (index) => {
-        setCurrentIndex(index);
-        const itemSlider = listItemDom.current.querySelectorAll('.carousel .list .item');
-        while (itemSlider[0] !== itemSlider[index]) {
-            listItemDom.current.appendChild(itemSlider[0]);
-        }
+        document.querySelectorAll('.list .item').forEach((list, idx) => {
+            gsap.to(list, {
+                zIndex: -1,
+            });
+        });
+    
+        gsap.to(`#thumb${index}`, {
+            zIndex: 50,
+        });
     };
 
     const nextRef = useRef(null);
@@ -93,6 +104,7 @@ const Gallery2 = () => {
                         {items.map((item, index) => (
                             <div
                                 className={`item ${index === currentIndex ? 'active' : ''}`}
+                                id={`thumb${index}`}
                                 key={index}
                             >
                                 <img src={item.img} alt={item.title} />
@@ -107,6 +119,12 @@ const Gallery2 = () => {
                     </div>
 
                     <div className="thumbnail" ref={thumbnailDom}>
+
+                        <div className="arrows">
+                            <button ref={prevRef} onClick={() => showSlider('prev')} id="prev">&lt;</button>
+                            <button ref={nextRef} onClick={() => showSlider('next')} id="next">&gt;</button>
+                        </div>
+
                         {items2.map((item, index) => (
                             <div className="item" key={index}   
                             onClick={() => handleThumbnailClick(index)} 
@@ -118,12 +136,7 @@ const Gallery2 = () => {
                                 </div> */}
                             </div>
                         ))}
-                    </div>
-
-                    <div className="arrows">
-                        <button ref={prevRef} onClick={() => showSlider('prev')} id="prev">&lt;</button>
-                        <button ref={nextRef} onClick={() => showSlider('next')} id="next">&gt;</button>
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </>
@@ -131,6 +144,7 @@ const Gallery2 = () => {
 };
 
 export default Gallery2;
+
 // import React, { useEffect, useRef, useState } from 'react';
 // import './gallery2.css';
 // import gsap from 'gsap';

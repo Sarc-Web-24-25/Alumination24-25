@@ -7,7 +7,6 @@ import Home1 from "./components/Home/Home1";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
 import Team2 from "./components/Home/Team2/Team2";
-import Team3 from "./components/Home/Team3/Team3";
 import Gallery from "./components/Home/Gallery";
 import Gallery2 from "./components/Home/gallery2";
 import Events from "./components/Home/Events";
@@ -24,6 +23,7 @@ import EventIndividual from "./components/Home/EventIndividual";
 import Trailer from './components/Home/footerex';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/Authentication/Auth.css'
+
 function App() {
   return (
     <Router>
