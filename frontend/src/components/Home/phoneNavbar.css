@@ -64,9 +64,7 @@
   .mobileMenu {
     position: fixed;
     top: -270px;
-    right: -270px;
-    height: 100vh;
-    width: 100vw;       
+    right: -270px;    
     background-color: #5f65a9;
     z-index: 999;
     animation: slideIn 0.5s ease-out forwards; 

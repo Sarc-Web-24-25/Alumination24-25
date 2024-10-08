@@ -1,26 +1,26 @@
 .navbarNew{
     display: flex;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
     height: 30%;
     
 }
 
 .homeFlag{
     height: 100%;
-    width: 15%;
+    width: 10%;
     /* background-color: rgba(0, 255, 255, 0.852); */
 }
 
 .spaceHome{
     height: 100%;
-    width: 40%;
+    width: 55%;
     /* background-color: rgba(236, 197, 125, 0.692); */
 }
 
 .navitems{      
-    height: 100%;
-    width: 32%;
+    height: 80%;
+    width: 22%;
     /* background-color: rgba(217, 0, 255, 0.514); */
     display: flex;
     justify-content: space-evenly;
@@ -31,6 +31,10 @@
     height: 100%;
     width: 13%;
     /* background-color: rgba(144, 0, 255, 0.341); */
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+    margin-top: 1%;
 }
 
 
@@ -45,9 +49,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    font-size: 110%;   
+    font-size: 90%;   
     font-weight: 600;
     color: #700815;
+    /* padding: 25px 0; */
 }
 
 .navitem2{
@@ -61,9 +66,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;   
-    font-size: 110%;   
+    font-size: 90%;   
     font-weight: 600;
     color: #700815;
+    /* padding: 50px 0; */
+
+}
+.letterhome{
+    height: 18px;
 }
 
 .navitem3{height : 90%;width: 30%;
@@ -75,7 +85,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;   
-    font-size: 110%;   
+    font-size: 90%;   
     font-weight: 600;
     color: #700815;
 }
@@ -85,6 +95,7 @@
     background-image: url('./photos24/onshort.png');
 
 }
+
 .active2{
     transition: 0.15s;
 
@@ -110,10 +121,120 @@
 }
 
 
-@media screen and (max-width: 786px) {
-    .navbarNew{
-        height: 15%;
+
+@media screen and (max-width: 1286px) {
+    .spaceHome{
+        height: 100%;
+        width: 53%;
+        /* background-color: rgba(236, 197, 125, 0.692); */
+    }
+    
+    .navitems{      
+        height: 80%;
+        width: 24%;
+
     }
 
 
+}
+
+
+@media screen and (max-width: 1200px) {
+    .spaceHome{
+        height: 100%;
+        width: 50%;
+        /* background-color: rgba(236, 197, 125, 0.692); */
+    }
+    
+    .navitems{      
+        height: 80%;
+        width: 27%;
+
+    }
+
+
+}
+@media screen and (max-width: 1060px) {
+    .spaceHome{
+        height: 100%;
+        width: 47%;
+        /* background-color: rgba(236, 197, 125, 0.692); */
+    }
+    
+    .navitems{      
+        height: 75%;
+        width: 30%;
+
+    }
+
+
+}
+
+
+.menuHamburger{
+    height: 65px;
+    width: 65px ;
+    background-color: rgba(239, 200, 117, 0.605);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #700815;
+    z-index: 1000;
+
+}
+
+.menuProfile{
+
+
+    position: fixed;
+    height: 30%;
+    width: 12%;
+    background-color: rgba(139, 110, 107, 0.548);
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #700815;
+    font-size: 130%;
+    font-weight: 600;
+    animation: slideDown 0.8s ease-out forwards;
+}
+
+.scheduleLaptop{
+    cursor: pointer;
+}
+.scheduleLaptop:hover{
+    color: rgb(255, 255, 255);
+}
+.menuLapProfile{
+    cursor: pointer;
+}
+.menuLapProfile:hover{
+    color: rgb(255, 255, 255);
+}
+.menuLapLogin{
+    cursor: pointer;
+}
+.menuLapLogin:hover{
+    color: rgb(255, 255, 255);
+}
+
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.activate{
+    color: white;
 }
