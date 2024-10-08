@@ -1,14 +1,8 @@
-@media screen and (max-width: 1024px) {
-  .count-container {
-    margin-top: -160vh;
-    margin-bottom: 100vh;
-  }
-}
-
 @media screen and (max-width: 768px) {
 
 .newhome{
-  height: 1000vh;
+  background-image: url('./photos24/homephoneView.jpg');
+  /* height: 1000vh; */
 }
 
 .style_paragraph__Iux0c {
@@ -35,10 +29,6 @@
 align-items: center;
 }
 
-.count-container {
-  margin-top: 80vh;
-  margin-bottom: 160vh;
-}
 
 }
 @media screen and (max-width: 480px) {
@@ -73,4 +63,3 @@ align-items: center;
 }
 
 }
-

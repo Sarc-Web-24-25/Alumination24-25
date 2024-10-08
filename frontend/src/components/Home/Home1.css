@@ -17,10 +17,17 @@
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  height: 700vh;
-  background-size: cover; 
+  height: 800vh;
+  /* background-image: url('./photos24/Alumination.png'); */
+  background-size: "cover";
+  background-position: "center";
+  background-size: cover;  
   overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative; /* To position the clouds and layers correctly */
+  overflow-y: hidden;
   background-repeat: no-repeat;
+}
 
 html, body {
     margin: 0;
@@ -224,7 +231,6 @@ html, body {
     position: absolute;
     right: 0%;
     top: 5%;
-
 }
 
 .clouds{
@@ -252,10 +258,6 @@ html, body {
         transform: translateX(100%);
     }
 }
-    font-size: 100px;
-    color: #700815;
-  }
-  
   .footer {
     position: absolute;
     bottom: calc(-700vh + 500px);
@@ -291,11 +293,11 @@ html, body {
     display: block; /* Show trailer when needed */
   }
   .laptop-height {
-    height: 190vh;
+    height: 120vh;
   }
   .count_k {
-    margin-top: -120vh;
-    margin-bottom: 50vh;
+    margin-top: -175vh;
+    margin-bottom: 65vh;
     margin-left: 20vw;
   }
   
@@ -308,19 +310,19 @@ html, body {
       margin-left: 10vw;
     } 
     .laptop-height {
-      height: 0vh;
+      height: 0vh !important;
     }
   }
   
   /* For extra small screens */
   @media (max-width: 480px) {
     .count_k {
-      margin-top: 0vh;
+      margin-top: -30vh;
       margin-bottom: 20vh;
       margin-left: 5vw;
     }
     .laptop-height {
-      height: 0vh;
+      height: 0vh !important;
     }
   }
   
@@ -671,4 +673,3 @@ html, body {
   cursor: pointer;
   outline: none;
 }
-

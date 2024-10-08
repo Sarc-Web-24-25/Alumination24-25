@@ -27,13 +27,30 @@ import Petal from "./Petal.js";
 import "./Petal.css";
 import flagIcon from "./photos24/flag.png";
 import Footer from "./Footer.jsx";
-import photo from './photos24/Alumination.png';
-import photo2 from './photos24/homephoneView.jpg';
+import photoo from './photos24/Alumination.png'
+import photoo2 from './photos24/homephoneView.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const paragraph =
   "A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.";
+
+  const styles = {
+    newHomee: {
+      backgroundImage: `url(${photoo})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      width: "100%",
+    },
+    newHomee2: {
+      backgroundImage: `url(${photoo})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      width: "100%",
+    },
+  }
 
 function Home1() {
   const footerImgRef = useRef(null);
@@ -45,24 +62,6 @@ function Home1() {
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(new Audio(backgroundMusic));
   const navigate = useNavigate(); // Initialize the navigate function
-
-
-  const styles ={
-    newHome:{
-      backgroundImage: `url(${photo})`,
-      backgroundSize: 'cover',     // Ensures the image covers the entire container
-    backgroundPosition: 'center', // Center the image in the container
-    backgroundRepeat: 'no-repeat', // Prevents tiling of the image
-    },
-    newHome2:{
-      backgroundImage: `url(${photo2})`,
-      backgroundSize: 'cover',     // Ensures the image covers the entire container
-    backgroundPosition: 'center', // Center the image in the container
-    backgroundRepeat: 'no-repeat', // Prevents tiling of the image
-    }
-    
-  }
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -181,7 +180,7 @@ function Home1() {
   return (
     <>
       {isMobile ? (
-        <div className="newhome" style={styles.newHome2}>
+        <div className="newhome" style={styles.newHomee2}>
           <button
             className="mute-button"
             onClick={toggleMute}
@@ -261,7 +260,7 @@ function Home1() {
               </div>
             </div>
 
-            <div className="clouds">
+            {/* <div className="clouds">
               <img
                 src={cloud1}
                 alt="cloud1"
@@ -304,7 +303,7 @@ function Home1() {
                 className="cloud"
                 style={{ "--i": 4 }}
               />
-            </div>
+            </div> */}
 
             <div className="About">
               <h1>About us</h1>
@@ -315,7 +314,7 @@ function Home1() {
             <div className="count_k" >
               <Count />
             </div>
-
+            <div className="laptop-height"></div>
             <div
               className="alumniHomeContainer"
               style={{ height: "fit-content" }}
@@ -330,7 +329,7 @@ function Home1() {
           </div>
         </div>
       ) : (
-        <div className="newhome" style={styles.newHome}>
+        <div className="newhome" style={styles.newHomee}>
           <button
             className="mute-button"
             onClick={toggleMute}
@@ -389,7 +388,6 @@ function Home1() {
               <div className="semicircle-moon11"></div>
               <div className="semicircle-moon12"></div>
               <div className="semicircle-moon13"></div>
-
               {petals}
 
               <div className="upperMainHome">
@@ -417,7 +415,7 @@ function Home1() {
               </div>
             </div>
 
-            <div className="clouds">
+            {/* <div className="clouds">
               <img
                 src={cloud1}
                 alt="cloud1"
@@ -460,7 +458,7 @@ function Home1() {
                 className="cloud"
                 style={{ "--i": 4 }}
               />
-            </div>
+            </div> */}
 
             <div className="About">
               <h1>About us</h1>
@@ -497,4 +495,3 @@ function Home1() {
 }
 
 export default Home1;
-
