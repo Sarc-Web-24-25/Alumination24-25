@@ -7,6 +7,7 @@ import Home1 from "./components/Home/Home1";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
 import Team2 from "./components/Home/Team2/Team2";
+import Team3 from "./components/Home/Team3/Team3";
 import Gallery1 from "./components/Home/Gallery1";
 import Events from "./components/Home/Events";
 import Schedule from "./components/Home/schedule";

@@ -119,16 +119,13 @@ function EventList() {
                     marginRight: index % 2 === 0 && "20px",
                     position: "absolute",
                     bottom: "7%",
-                    left: "25%",
+                    left: "20%",
                     zIndex: 10,
                   }}
                   href={`/${event.id}`}
                 >
-                  <button
-                    style={{ marginTop: "-20px", padding: "" }}
-                    className="register-button"
-                  >
-                    Know More
+                  <button className="register-button shiny-cta">
+                    <span>Know More</span>
                   </button>
                 </a>
               </div>

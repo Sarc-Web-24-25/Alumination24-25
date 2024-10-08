@@ -121,6 +121,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap'
 import './Team2.css';
+import Team3 from '../Team3/Team3';
 
 const Team2 = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -143,7 +144,6 @@ const Team2 = () => {
             });
         });
     
-        // Set zIndex of the clicked thumbnail to 50
         gsap.to(`#thumb${index}`, {
             zIndex: 50,
         });
@@ -172,7 +172,7 @@ const Team2 = () => {
                         ))}
                     </div>
 
-                    <div className="thumbnail">
+                    {/* <div className="thumbnail">
                         {items.map((item, index) => (
                             <div
                                 className='item'
@@ -187,7 +187,8 @@ const Team2 = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
+                    <Team3 handleThumbnailClick={handleThumbnailClick} />
                 </div>
             </div>
         </>
