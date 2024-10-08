@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Japan Daisuki Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Japan Daisuki Regular'), url('../../assets/fonts/JapanDaisuki-8OeaZ.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Katsumi';
+  src: url('../../assets/fonts/KATSUMI.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .newhome {
     overflow-x: hidden;
     position: relative; /* To position the clouds and layers correctly */
@@ -97,27 +112,33 @@ margin-bottom: 10%;
         height: 75% ;
     }
 }
-.lowerMainHome{width: 100%; height: 30%;
-/* background-color: rgba(153, 255, 0, 0.374); */
-display: flex;
-justify-content: center;
-align-items: flex-start;}
+.lowerMainHome{
+    width: 100%;
+    height: 30%;
+    /* background-color: rgba(153, 255, 0, 0.374); */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 
 .registerHome{
     height: 35%;
-    width: 25%;
-    max-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: rgba(0, 255, 255, 0.323);  */
-    margin-top: 1%;
-    background-image: url('./photos24/register.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    position: relative;
-    left: 0%;
+  width: 28%;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(0, 255, 255, 0.323);  */
+  margin-top: 5%;
+  background-image: url('./photos24/register.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  font-family: 'Japan Daisuki Regular', sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  color: #700815;
+  padding-top: 15px;
 
     }
 
@@ -745,6 +766,7 @@ h1 {
 .About {
     /* height: 100%;
     width: 100%; */
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -756,15 +778,20 @@ h1 {
     margin-left: 15%;
     margin-right: 15%;
     z-index: 500;
-    position: relative;
-    
+    position: relative;   
+}
+/* 
+.About p{
+    font-family: 'Japan Daisuki Regular', sans-serif;
+} */
 
-    
+.Abouth{
+    font-family: 'Japan Daisuki Regular', sans-serif;
 }
 
-
-
-
+.Aboutp{
+    font-family: 'Katsumi', sans-serif;
+}
 /* Home1.css */
 .mute-button {
     cursor: pointer;
@@ -797,6 +824,7 @@ h1 {
     margin-bottom: 20px;
     font-size: 2rem;
     color: #333;
+    font-family: 'Japan Daisuki Regular', sans-serif;
 }
 
 .about-scroll {

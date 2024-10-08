@@ -300,8 +300,12 @@ useEffect(() => {
 
           {/* About Us Section */}
           <div className="About" >
-            <p style={{ fontSize: "150%" }}>About us</p>
+            <div className="Abouth">
+            <p style={{ fontSize: "150%" }}>About us</p> 
+            </div>
+            <div className="Aboutp">
             <Character paragraph={paragraph} />
+            </div>
           </div>
         </div>
 
