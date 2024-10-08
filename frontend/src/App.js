@@ -7,7 +7,8 @@ import Home1 from "./components/Home/Home1";
 import About from "./components/Home/About";
 import Team from "./components/Home/Team";
 import Team2 from "./components/Home/Team2/Team2";
-import Gallery1 from "./components/Home/Gallery1";
+import Gallery from "./components/Home/Gallery";
+import Gallery2 from "./components/Home/gallery2";
 import Events from "./components/Home/Events";
 import Schedule from "./components/Home/schedule";
 import Signup from "./components/Authentication/signup";
@@ -22,6 +23,7 @@ import EventIndividual from "./components/Home/EventIndividual";
 import Trailer from './components/Home/footerex';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/Authentication/Auth.css'
+
 function App() {
   return (
     <Router>
@@ -30,7 +32,7 @@ function App() {
         <Route path="/" element={<Home1 />} exact={true} />
         {/* <Route path="/team" element={<Team /> } exact={true} /> */}
         <Route path="/team" element={<Team2 /> } exact={true} />
-        {/* <Route path="/gallery" element={<Gallery2 />} exact={true} /> */}
+        <Route path="/gallery" element={<Gallery2 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>
         <Route path="/events" element={<Events />} exact={true} />

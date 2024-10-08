@@ -26,6 +26,7 @@ import backgroundMusic from "./photos24/videos/back.mp3";
 import Petal from "./Petal.js";
 import "./Petal.css";
 import flagIcon from "./photos24/flag.png";
+import Footer from "./Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -287,7 +288,7 @@ function Home1() {
 
             <div className="About">
               <h1>About us</h1>
-              <Character className="aboutCharacter" paragraph={paragraph} />
+              <Character className="aboutCharacter" paragraph={paragraph} isMobile={isMobile}/>
             </div>
 
             {/* <div style={{ height: "50vh" }}></div> */}
@@ -304,6 +305,8 @@ function Home1() {
 
             {/* <Sponsor sponsors={sponsors} /> */}
             <Sponsor2 sponsors={sponsors} />
+
+            <Footer />
           </div>
         </div>
       ) : (
@@ -459,7 +462,13 @@ function Home1() {
             </div>
 
             {/* <Sponsor sponsors={sponsors} /> */}
+            <div>
+
             <Sponsor2 sponsors={sponsors} />
+            </div>
+
+          <Footer> </Footer>
+            
           </div>
         </div>
       )}
@@ -468,3 +477,4 @@ function Home1() {
 }
 
 export default Home1;
+
