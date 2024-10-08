@@ -25,7 +25,7 @@ import './components/Authentication/Auth.css'
 function App() {
   return (
     <Router>
-      {/* <Navbar1 /> */}
+      <Navbar1 />
       <Routes>
         <Route path="/" element={<Home1 />} exact={true} />
         {/* <Route path="/team" element={<Team /> } exact={true} /> */}
