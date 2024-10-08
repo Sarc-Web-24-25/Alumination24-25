@@ -24,6 +24,7 @@ import Character from "./Character";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
+import Aluminatiom from './photos24/AluminationLogo.png'
 
 
 
@@ -260,17 +261,10 @@ useEffect(() => {
           <div className="upperMainHome">
             <div
               className="headingHome"
-              style={{
-                fontSize: "35px",
-                position: "relative",
-                right: "-55%",
-                top: "69%",
-              }}
+        
             >
-              <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-              <div style={{ fontSize: "70px", color: "#700815" }}>
-                ALUMINATION
-              </div>
+              <img src={Aluminatiom} alt="" />
+              <div className="noren">Noren of Nostalgia</div>
             </div>
           </div>
 

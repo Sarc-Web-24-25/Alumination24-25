@@ -17,8 +17,86 @@ overflow-y: hidden;
 
 .upperMainHome{width: 100%; height: 70%;
 /* background-color: rgba(0, 255, 255, 0.323); */
+display: flex;
+justify-content: flex-end;
+align-items: center;
+flex-direction: column;
+margin-bottom: 10%;
 }
 
+.headingHome{
+    height: 30%;
+    width: 100%;
+    /* background-color: rgba(0, 255, 255, 0.323); */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-right: 20%;
+}
+
+.headingHome img{
+    height: 120% ;
+}
+
+.headingHome .noren{
+    font-size: 220%;
+    color: #700815;
+    font-weight: 600;
+    padding-right: 2.7%;
+    margin-top: -13px;
+}
+
+@media screen and (max-width: 1286px) {
+    .noren{
+        font-size: 200%;
+        color: #700815;
+        font-weight: 600;
+        padding-right: 2.7%;
+    }
+    .headingHome img{
+        height: 95% ;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .headingHome{
+        margin-bottom: 10%;
+    }
+    .headingHome .noren{
+        font-size: 170%;
+        font-weight: 600;
+        padding-right: 4.3%;
+    }
+    .headingHome img{
+        height: 95% ;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .headingHome{
+        margin-bottom: 10%;
+    }
+    .headingHome img{
+        height: 85% ;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .headingHome{
+        margin-bottom: 30%;
+        align-items: center;
+        margin-right: 0;
+    }
+    .headingHome .noren{
+        font-size: 170%;
+        font-weight: 600;
+        padding-right: 5.8%;
+    }
+    .headingHome img{
+        height: 75% ;
+    }
+}
 .lowerMainHome{width: 100%; height: 30%;
 /* background-color: rgba(153, 255, 0, 0.374); */
 display: flex;
@@ -49,7 +127,11 @@ align-items: flex-start;}
         /* height: 35%; */
     
         max-width: 270px;
+        margin-top: -10%;
       }
+      .realistic-flame{
+        display: none;
+    }
       
     }
     
@@ -518,9 +600,6 @@ align-items: flex-start;}
     
   }
 
-  .newhome .headingHome{
-    display: none;
-  }
 }
 
 h1 {
