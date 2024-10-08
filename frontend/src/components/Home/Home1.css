@@ -78,6 +78,8 @@ html, body {
   color: white;
   -webkit-text-stroke: 1px #700815;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /*horizontal and vertical offset, blur, colour*/
+  margin-top: 15vh;
+  
 }
 
 .About p {
@@ -85,6 +87,7 @@ html, body {
   font-weight: bolder;
   font-size: 40px;
   color: #700815;
+  margin-bottom: 15vh;
 }
 
 .mainHome{
@@ -214,8 +217,40 @@ html, body {
   .trailer-wrapper.show {
     display: block; /* Show trailer when needed */
   }
+  .laptop-height {
+    height: 190vh;
+  }
+  .count_k {
+    margin-top: -120vh;
+    margin-bottom: 50vh;
+    margin-left: 20vw;
+  }
   
-
+  /* For smaller screens */
+  @media (max-width: 768px) {
+    .count_k {
+      /* height: 190vh; */
+      margin-top: -30vh;
+      margin-bottom: 10vh;
+      margin-left: 10vw;
+    } 
+    .laptop-height {
+      height: 0vh;
+    }
+  }
+  
+  /* For extra small screens */
+  @media (max-width: 480px) {
+    .count_k {
+      margin-top: 0vh;
+      margin-bottom: 20vh;
+      margin-left: 5vw;
+    }
+    .laptop-height {
+      height: 0vh;
+    }
+  }
+  
 
   
 /* Semicircle Hover Effect for Moon (right side) */
