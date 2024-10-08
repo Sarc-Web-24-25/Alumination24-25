@@ -44,7 +44,7 @@ const paragraph =
       width: "100%",
     },
     newHomee2: {
-      backgroundImage: `url(${photoo})`,
+      backgroundImage: `url(${photoo2})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
@@ -260,7 +260,7 @@ function Home1() {
               </div>
             </div>
 
-            {/* <div className="clouds">
+            <div className="clouds">
               <img
                 src={cloud1}
                 alt="cloud1"
@@ -303,7 +303,7 @@ function Home1() {
                 className="cloud"
                 style={{ "--i": 4 }}
               />
-            </div> */}
+            </div>
 
             <div className="About">
               <h1>About us</h1>
@@ -415,7 +415,7 @@ function Home1() {
               </div>
             </div>
 
-            {/* <div className="clouds">
+            <div className="clouds">
               <img
                 src={cloud1}
                 alt="cloud1"
@@ -458,7 +458,7 @@ function Home1() {
                 className="cloud"
                 style={{ "--i": 4 }}
               />
-            </div> */}
+            </div>
 
             <div className="About">
               <h1>About us</h1>
