@@ -93,7 +93,7 @@ function EventList() {
       <ImageCarousel main={mainEvents} />
       {/* <span className='event-head'>Events</span> */}
       <div className="page-content" style={{ zIndex: 0 }}>
-        <ul>
+        <ul style={{paddingLeft: "1rem"}}>
           {events.map((event, index) => (
             <li
               key={event.id}
@@ -116,7 +116,7 @@ function EventList() {
                 <a
                   style={{
                     float: index % 2 === 0 && "right",
-                    marginRight: index % 2 === 0 && "20px",
+                    // marginRight: index % 2 === 0 && "20px",
                     position: "absolute",
                     bottom: "7%",
                     left: "20%",
@@ -134,9 +134,7 @@ function EventList() {
               <div
                 ref={(el) => (divRefs.current[index] = el)}
                 className={
-                  "event-info" +
-                  " " +
-                  (index % 2 === 0 ? "border-left" : "border-right")
+                  "event-info" + " " + (index % 2 === 0 ? "border-left" : "border-right")
                 }
               >
                 <h3 class="event-title">{event.name}</h3>
