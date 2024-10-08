@@ -26,6 +26,7 @@ import backgroundMusic from "./photos24/videos/back.mp3";
 import Petal from "./Petal.js";
 import "./Petal.css";
 import flagIcon from "./photos24/flag.png";
+import Footer from "./Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -459,7 +460,13 @@ function Home1() {
             </div>
 
             {/* <Sponsor sponsors={sponsors} /> */}
+            <div>
+
             <Sponsor2 sponsors={sponsors} />
+            </div>
+
+          <Footer> </Footer>
+            
           </div>
         </div>
       )}
