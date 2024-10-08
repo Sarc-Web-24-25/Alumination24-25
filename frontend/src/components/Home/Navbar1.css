@@ -142,7 +142,7 @@
 @media screen and (max-width: 1200px) {
     .spaceHome{
         height: 100%;
-        width: 50%;
+        width: 48%;
         /* background-color: rgba(236, 197, 125, 0.692); */
     }
     
@@ -151,13 +151,17 @@
         width: 27%;
 
     }
+    .homeFlag{
+        width: 12%;
+    }
+    
 
 
 }
 @media screen and (max-width: 1060px) {
     .spaceHome{
         height: 100%;
-        width: 47%;
+        width: 46%;
         /* background-color: rgba(236, 197, 125, 0.692); */
     }
     
@@ -165,6 +169,28 @@
         height: 75%;
         width: 30%;
 
+    }
+    .homeFlag{
+        width: 13%;
+    }
+
+
+}
+
+@media screen and (max-width: 900px) {
+    .spaceHome{
+        height: 100%;
+        width: 45%;
+        /* background-color: rgba(236, 197, 125, 0.692); */
+    }
+    
+    .navitems{      
+        height: 75%;
+        width: 30%;
+
+    }
+    .homeFlag{
+        width: 14%;
     }
 
 
