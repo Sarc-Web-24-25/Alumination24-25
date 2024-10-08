@@ -17,7 +17,7 @@
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  height: 800vh;
+  /* height: 800vh */
   /* background-image: url('./photos24/Alumination.png'); */
   background-size: "cover";
   background-position: "center";
@@ -296,7 +296,7 @@ html, body {
     height: 120vh;
   }
   .count_k {
-    margin-top: -175vh;
+    margin-top: -155vh;
     margin-bottom: 65vh;
     margin-left: 20vw;
   }
