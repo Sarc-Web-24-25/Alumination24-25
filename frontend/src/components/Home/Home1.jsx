@@ -27,6 +27,8 @@ import Petal from "./Petal.js";
 import "./Petal.css";
 import flagIcon from "./photos24/flag.png";
 import Footer from "./Footer.jsx";
+import photo from './photos24/Alumination.png';
+import photo2 from './photos24/homephoneView.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +45,24 @@ function Home1() {
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(new Audio(backgroundMusic));
   const navigate = useNavigate(); // Initialize the navigate function
+
+
+  const styles ={
+    newHome:{
+      backgroundImage: `url(${photo})`,
+      backgroundSize: 'cover',     // Ensures the image covers the entire container
+    backgroundPosition: 'center', // Center the image in the container
+    backgroundRepeat: 'no-repeat', // Prevents tiling of the image
+    },
+    newHome2:{
+      backgroundImage: `url(${photo2})`,
+      backgroundSize: 'cover',     // Ensures the image covers the entire container
+    backgroundPosition: 'center', // Center the image in the container
+    backgroundRepeat: 'no-repeat', // Prevents tiling of the image
+    }
+    
+  }
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -161,7 +181,7 @@ function Home1() {
   return (
     <>
       {isMobile ? (
-        <div className="newhome">
+        <div className="newhome" style={styles.newHome2}>
           <button
             className="mute-button"
             onClick={toggleMute}
@@ -308,7 +328,7 @@ function Home1() {
           </div>
         </div>
       ) : (
-        <div className="newhome">
+        <div className="newhome" style={styles.newHome}>
           <button
             className="mute-button"
             onClick={toggleMute}
