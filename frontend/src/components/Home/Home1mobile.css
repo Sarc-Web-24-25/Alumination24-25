@@ -1,77 +1,65 @@
-@media screen and (max-width: 1024px) {
-  .count-container {
-    margin-top: -160vh;
-    margin-bottom: 100vh;
-  }
-}
-
 @media screen and (max-width: 768px) {
 
-.newhome{
-  background-image: url('./photos24/homephoneView.jpg');
-  /* height: 1000vh; */
-}
-
-.style_paragraph__Iux0c {
-    font-size: 25px;
-    text-align: center;
-}
-
-.style_word__3eyp7{
-    height: 26px;
-    align-items: center;
-}
-    
-.About p{
-    font-size: 12px;
-}
-
-.newhome .About h1{
-  margin-top: 40vh;
-
-  font-size: 70px;
-}
-
-.newhome .lowerMainHome{
-align-items: center;
-}
-
-.count-container {
-  margin-top: 80vh;
-  margin-bottom: 160vh;
-}
-
-}
-@media screen and (max-width: 480px) {
-
-.newhome{
-  background-image: url('./photos24/homephoneView.jpg');
-  height: 1000vh;
-
-
-}
-
-.style_paragraph__Iux0c {
-    font-size: 25px;
-    text-align: center;
-}
-
-.style_word__3eyp7{
-    height: 26px;
-    align-items: center;
-}
-    
-.About p{
-    font-size: 22px;
-}
-
-.newhome .About h1{
-  font-size: 60px;
-}
-
-.newhome .lowerMainHome{
-align-items: center;
-}
-
-}
-
+  .newhome{
+    background-image: url('./photos24/homephoneView.jpg');
+    height: fit-content;
+  }
+  
+  .style_paragraph__Iux0c {
+      font-size: 25px;
+      text-align: center;
+  }
+  
+  .style_word__3eyp7{
+      height: 26px;
+      align-items: center;
+  }
+      
+  .About p{
+      font-size: 12px;
+  }
+  
+  .newhome .About h1{
+    margin-top: 40vh;
+  
+    font-size: 70px;
+  }
+  
+  .newhome .lowerMainHome{
+  align-items: center;
+  }
+  
+  
+  }
+  @media screen and (max-width: 480px) {
+  
+  .newhome{
+    background-image: url('./photos24/homephoneView.jpg');
+    /* height: 1000vh; */
+    height: fit-content;
+  
+  }
+  
+  .style_paragraph__Iux0c {
+      font-size: 25px;
+      text-align: center;
+  }
+  
+  .style_word__3eyp7{
+      height: 26px;
+      align-items: center;
+  }
+      
+  .About p{
+      font-size: 22px;
+  }
+  
+  .newhome .About h1{
+    font-size: 60px;
+  }
+  
+  .newhome .lowerMainHome{
+  align-items: center;
+  }
+  
+  }
