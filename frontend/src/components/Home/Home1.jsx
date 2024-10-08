@@ -336,8 +336,8 @@ function Home1() {
             onClick={toggleMute}
             style={{
               position: "absolute",
-              top: "20px",
-              right: "20px",
+              top: "10px",
+              left: "110px",
               background: "rgba(255, 255, 255, 0.8)",
               border: "2px solid #000",
               borderRadius: "5px",
