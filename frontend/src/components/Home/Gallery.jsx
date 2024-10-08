@@ -1,75 +1,76 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap'
 import './Gallery.css';
-import image1 from './bgimg/AL2.jpg';
-import image2 from './bgimg/AL3.jpg';
-import image3 from './bgimg/AL5.jpg';
-import image4 from './bgimg/AL6.jpg';
-import image5 from './bgimg/AL7.jpg';
-import image6 from './bgimg/AL9.jpg';
-import image7 from './bgimg/AL10.jpg';
-import image8 from './bgimg/AL15.jpg';
-import image9 from './bgimg/AL16.jpg';
-import image10 from './bgimg/AL20.jpg';
-import image11 from './bgimg/AL21.jpg';
-import image12 from './bgimg/AL22.jpg';
-import image13 from './bgimg/AL23.jpg';
-import image14 from './bgimg/AL24.jpg';
-import image15 from './bgimg/AL15.jpg';
-import image16 from './bgimg/AL30.jpeg';
-import image17 from './bgimg/AL31.jpeg';
-import image18 from './bgimg/AL32.jpeg';
-import image19 from './bgimg/AL33.jpeg';
-import image20 from './bgimg/AL34.jpeg';
-import Footers from './Footer';
-import CursorAnimation from "./CursorAnimation"
 
 const Gallery = () => {
-    const [selectedImage, setSelectedImage] = useState(0);
-
-    const images = [
-        image1, image2, image3, image4, image5, image6, image7, image8, image9,
-        image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20
+    const [currentIndex, setCurrentIndex] = useState(0);
+    
+    const items = [
+        { img: 'images/img1.jpg', title: 'DESIGN SLIDER', description: 'Description 1' },
+        { img: 'images/img2.jpg', title: 'DESIGN SLIDER', description: 'Description 2' },
+        { img: 'images/img3.jpg', title: 'DESIGN SLIDER', description: 'Description 3' },
+        { img: 'images/img4.jpg', title: 'DESIGN SLIDER', description: 'Description 4' },
+        { img: 'images/cactus.jpg', title: 'DESIGN SLIDER', description: 'Description 5' },
+        { img: 'images/house.jpg', title: 'DESIGN SLIDER', description: 'Description 6' },
+        { img: 'images/rock.jpg', title: 'DESIGN SLIDER', description: 'Description 7' },
+        { img: 'images/tree.jpg', title: 'DESIGN SLIDER', description: 'Description 8' },
     ];
 
-    const handleImageClick = (index) => {
-        setSelectedImage(index);
-    };
-
-    const handleNext = () => {
-        setSelectedImage((prevImage) => (prevImage + 1) % images.length);
-    };
-
-    const handlePrev = () => {
-        setSelectedImage((prevImage) =>
-            prevImage === 0 ? images.length - 1 : prevImage - 1
-        );
+    const handleThumbnailClick = (index) => {
+        document.querySelectorAll('.list .item').forEach((list, idx) => {
+            gsap.to(list, {
+                zIndex: -1,
+            });
+        });
+    
+        // Set zIndex of the clicked thumbnail to 50
+        gsap.to(`#thumb${index}`, {
+            zIndex: 50,
+        });
     };
 
     return (
-        <><div className="gallery-container">
-            <CursorAnimation />
-            <div  className="center-image">
-                <img src={images[selectedImage]} alt={`Image ${selectedImage + 1}`} />
-            </div>
-            <div className="thumbnail-list-container">
-                <div className="thumbnail-list">
-                    {images.map((image, index) => (
-                        <img
-                            key={index}
-                            src={image}
-                            alt={`Image ${index + 1}`}
-                            className={selectedImage === index ? 'active' : ''}
-                            onClick={() => handleImageClick(index)} />
-                    ))}
+        <>
+            <div className="teamCarouselContainer">
+                <div className="carousel">
+                    
+                    <div className="list">
+                        {items.map((item, index) => (
+                            <div
+                                className='item'
+                                id={`thumb${index}`}
+                                key={index}
+                            >
+                                <img src={item.img} alt={item.title} />
+                                {/* <div className="content">
+                                    <div className="author">LUNDEV</div>
+                                    <div className="title">{item.title}</div>
+                                    <div className="topic">ANIMAL</div>
+                                    <div className="des">{item.description}</div>
+                                </div> */}
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="thumbnail">
+                        {items.map((item, index) => (
+                            <div
+                                className='item'
+                                key={index}
+                                onClick={() => handleThumbnailClick(index)}
+                                style={{ cursor: "pointer", zIndex: "100" }}
+                            >
+                                <img src={item.img} alt={item.title} />
+                                {/* <div className="content">
+                                    <div className="title">Name Slider</div>
+                                    <div className="description">Description</div>
+                                </div> */}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
-            <button onClick={handlePrev} className="nav-button">
-                &lt; Prev
-            </button>
-            <button onClick={handleNext} className="nav-button">
-                Next &gt;
-            </button>
-        </div><Footers /></>
+        </>
     );
 };
 
