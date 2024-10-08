@@ -1,0 +1,180 @@
+.teamCarouselContainer{
+    margin: 0;
+    color: #eee;
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+}
+
+/* carousel */
+.carousel{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+
+}
+
+.carousel .list .item .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.carousel .list .item .topic{
+    color: #f1683a;
+}
+.thumbnailContainer {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%; /* Set to the width you want for the visible area */
+    scroll-behavior: smooth; /* Optional for smooth scrolling */
+}
+
+.thumbnail {
+    display: inline-flex; /* Display thumbnails in a row */
+}
+
+.thumbnail .item {
+    display: inline-block; /* Allow thumbnails to be inline */
+    margin: 0 5px; /* Space between thumbnails */
+}
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    bottom: 30px;
+    left: 4%;
+    /* width: max-content; */
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    z-index: 100 !important;
+
+    /* overflow: hidden; */
+    transition: transform 0.5s ease;
+}
+
+.thumbnail .item{
+    width: 10%;
+    height: 10%;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    position: relative;
+
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20%;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .thumbnail .item {
+        width: 20%;
+        height: 20%; 
+    }
+} 
+
+/* @media screen and (max-width: 768px) {
+    .thumbnail .item {
+        width: 20%;
+        height: 20%; 
+    }
+}  */
+
+
+
+.thumbnail .item .content{
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item .content .title{
+    font-weight: 500;
+}
+.thumbnail .item .content .description{
+    font-weight: 100;
+}
+
+/* arrows */
+.arrows{
+    position: absolute;
+    top: -50%;
+    left: 0%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: #555;
+}
+
+/* animation */
+/* so that first item is active by default */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0 !important;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+    .carousel .list .item img{
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+    }
+}

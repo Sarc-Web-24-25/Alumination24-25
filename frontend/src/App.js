@@ -9,6 +9,7 @@ import Team from "./components/Home/Team";
 import Team2 from "./components/Home/Team2/Team2";
 import Gallery from "./components/Home/Gallery";
 import Gallery2 from "./components/Home/gallery2";
+import Gallery3 from "./components/Home/Gallery/Gallery3";
 import Events from "./components/Home/Events";
 import Schedule from "./components/Home/schedule";
 import Signup from "./components/Authentication/signup";
@@ -32,7 +33,7 @@ function App() {
         <Route path="/" element={<Home1 />} exact={true} />
         {/* <Route path="/team" element={<Team /> } exact={true} /> */}
         <Route path="/team" element={<Team2 /> } exact={true} />
-        <Route path="/gallery" element={<Gallery2 />} exact={true} />
+        <Route path="/gallery" element={<Gallery3 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>
         <Route path="/events" element={<Events />} exact={true} />
