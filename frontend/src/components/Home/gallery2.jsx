@@ -86,7 +86,6 @@ const Gallery2 = () => {
             // Optionally, you can add a class to highlight the active slide
             carouselDom.current.classList.add('index');
         }
-    
 
         clearTimeout(runTimeOut);
         runTimeOut = setTimeout(() => {
@@ -120,25 +119,25 @@ const Gallery2 = () => {
                                 id={`thumb${index}`}
                                 key={index}
                             >
-                                <img src={item.img} alt={item.title} />
-                               
+                                <img src={item.img} alt={item.title} />                               
                             </div>
                         ))}
                     </div>
 
                     <div className="thumbnail" ref={thumbnailDom}>
-
                         <div className="arrows">
                             <button ref={prevRef} onClick={() => showSlider('prev')} id="prev">&lt;</button>
                             <button ref={nextRef} onClick={() => showSlider('next')} id="next">&gt;</button>
                         </div>
 
                         {items2.map((item, index) => (
-                            <div className="item" key={index}   
-                            onClick={() => showSlider('index',index)} 
-                            style={{ cursor: "pointer", zIndex: "100" }}>
-                                <img src={item.img} alt={item.title} />
-                            
+                            <div
+                                className="item"
+                                key={index}   
+                                onClick={() => showSlider('index', index)} 
+                                style={{ cursor: "pointer", zIndex: "100" }}
+                            >
+                                <img src={item.img} alt={item.title} />                            
                             </div>
                         ))}
                     </div>                    
