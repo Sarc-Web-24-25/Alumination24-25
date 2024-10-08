@@ -23,6 +23,7 @@ import EventIndividual from "./components/Home/EventIndividual";
 import Trailer from './components/Home/footerex';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/Authentication/Auth.css'
+
 function App() {
   return (
     <Router>

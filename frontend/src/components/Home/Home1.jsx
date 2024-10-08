@@ -325,6 +325,8 @@ function Home1() {
 
             {/* <Sponsor sponsors={sponsors} /> */}
             <Sponsor2 sponsors={sponsors} />
+
+            <Footer />
           </div>
         </div>
       ) : (

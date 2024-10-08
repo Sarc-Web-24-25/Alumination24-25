@@ -1,11 +1,11 @@
-import { useScroll, useTransform, motion, useState } from 'framer-motion';
+import { useViewportScroll, useTransform, motion, useState } from 'framer-motion';
 import React, { useRef } from 'react';
 import styles from './style.module.scss';
 
 export default function Paragraph({paragraph, isMobile}) {
 
   const container = useRef(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress } = useViewportScroll({
     target: container,
     offset: ["start 0.8", "start start"]
   })
