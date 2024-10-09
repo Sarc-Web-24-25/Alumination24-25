@@ -174,19 +174,6 @@ function Home1() {
               {petals}
 
               <div className="upperMainHome">
-                {/*<div className="dragonHome">
-                  <motion.img
-                    src={dragon}
-                    alt=""
-                    animate={{ y: [0, -20, 0] }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                    }}
-                    style={{ width: "300px", height: "auto" }}
-                  />
-                </div>*/}
                 <div className="headingHome">
                   <img src={Alumination} alt="" />
                   <div className="noren">Noren of Nostalgia</div>
@@ -338,20 +325,6 @@ function Home1() {
               {petals}
 
               <div className="upperMainHome">
-                {/* <div
-                  className="headingHome"
-                  style={{
-                    fontSize: "35px",
-                    position: "relative",
-                    right: "-55%",
-                    top: "69%",
-                  }}
-                >
-                  <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-                  <div style={{ fontSize: "70px", color: "#700815" }}>
-                    ALUMINATION
-                  </div>
-                </div> */}
                 <div className="headingHome">
                   <img src={Alumination} alt="" />
                   <div className="noren">Noren of Nostalgia</div>
