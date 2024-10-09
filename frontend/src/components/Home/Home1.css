@@ -12,6 +12,11 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Sylfaen';
+  src: url('../../assets/fonts/sylfaen.woff') format('woff');
+}
+
 
 .newhome {
     overflow-x: hidden;
@@ -60,6 +65,7 @@ margin-bottom: 10%;
     font-weight: 600;
     padding-right: 2.7%;
     margin-top: -13px;
+    font-family: 'Sylfaen', sans-serif;
 }
 
 @media screen and (max-width: 1286px) {
@@ -138,7 +144,7 @@ margin-bottom: 10%;
   font-weight: bold;
   font-size: 35px;
   color: #700815;
-  padding-top: 15px;
+  /* padding-top: 15px; */
 
     }
 
