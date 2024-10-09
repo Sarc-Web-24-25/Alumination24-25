@@ -10,6 +10,13 @@
   src: url('../../assets/fonts/KATSUMI.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+
+
+}
+
+@font-face {
+  font-family: 'Sylfaen';
+  src: url('../../assets/fonts/sylfaen.woff');
 }
 
 .newhome{
@@ -143,7 +150,8 @@ html, body {
     color: #700815;
     font-weight: 600;
     padding-right: 2.7%;
-    margin-top: -13px;
+    margin-top: -15px;
+    font-family: 'Sylfaen',sans-serif;
 }
 
 @media screen and (max-width: 1286px) {
