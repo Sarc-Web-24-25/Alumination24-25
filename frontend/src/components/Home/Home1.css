@@ -17,8 +17,7 @@
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  /* height: 800vh */
-  /* background-image: url('./photos24/Alumination.png'); */
+  height: 800vh;  /* background-image: url('./photos24/Alumination.png'); */
   background-size: "cover";
   background-position: "center";
   background-size: cover;  
