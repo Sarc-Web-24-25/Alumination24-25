@@ -50,7 +50,7 @@ const styles = {
     textShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)',
     fontSize: "5rem",
     fontWeight: "700",
-    textAlign: "center",
+    textAlign: "center"
   }
 };
 

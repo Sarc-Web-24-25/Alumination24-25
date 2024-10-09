@@ -25,11 +25,11 @@ export default function Sponsor2({ sponsors }) {
   const row1 = sponsors.slice(0, middleIndex); // First half
   const row2 = sponsors.slice(middleIndex); // Second half
 
-  console.log("row1: ", row1);
-  console.log("row2: ", row2);
+  // console.log("row1: ", row1);
+  // console.log("row2: ", row2);
 
   return (
-    <AppContainer>
+    <AppContainer style={{marginBottom: '80vh'}}>
       <Wrapper>
         <GlobalStyles />
         <Text>Our Sponsors</Text>

@@ -1,20 +1,20 @@
 .paragraph{
-    display: flex;
-    font-size: 33px;
-    flex-wrap: wrap;
-
-    @media (max-width: 768px) {
-      font-size: 20px;
-    }
-
-    .word{
-      position: relative;
-      margin-right: 12px;
-      margin-top: 12px;
-      .shadow{
-        position: absolute;
-        opacity: 10%;
-      }
-    }
-    
+  display: flex;
+  font-size: 40px;
+  flex-wrap: wrap;
+  // min-height: 200vh;
+  @media (max-width: 768px) {
+    font-size: 28px; // Styles for screens smaller than 768px
   }
+
+  .word{
+    position: relative;
+    margin-right: 12px;
+    margin-top: 12px;
+    .shadow{
+      position: absolute;
+      opacity: 20%;
+    }
+  }
+  
+}

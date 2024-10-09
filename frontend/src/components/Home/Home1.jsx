@@ -12,8 +12,6 @@ import cloud2 from "./photos24/Clouds2.png";
 import cloud3 from "./photos24/Clouds3.png";
 // import Alumni from './Alumni/Alumni.jsx';
 import Count from "./count/Count.jsx";
-import Trailer from "./footerex";
-import footimg from "./photos24/footerimg.png";
 // import footerimg2 from './photos24/footerimg2.png';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -35,28 +33,24 @@ gsap.registerPlugin(ScrollTrigger);
 const paragraph =
   "A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.";
 
-  const styles = {
-    newHomee: {
-      backgroundImage: `url(${photoo})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      width: "100%",
-    },
-    newHomee2: {
-      backgroundImage: `url(${photoo2})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      width: "100%",
-    },
-  }
+const styles = {
+  newHomee: {
+    backgroundImage: `url(${photoo})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+  },
+  newHomee2: {
+    backgroundImage: `url(${photoo2})`,
+    backgroundSize: "cover",
+    // backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    width: "100%",
+  },
+}
 
 function Home1() {
-  const footerImgRef = useRef(null);
-  const whiteFadeRef = useRef(null);
-  const [showTrailer, setShowTrailer] = useState(false);
-  const [showFooter, setShowFooter] = useState(true);
   const [sponsors, setSponsors] = useState([]);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // State to track screen size
   const [isMuted, setIsMuted] = useState(false);
@@ -109,48 +103,6 @@ function Home1() {
       audioRef.current.pause();
     }
   };
-
-  useEffect(() => {
-    const footerImg = footerImgRef.current;
-    const whiteFade = whiteFadeRef.current;
-
-    const zoomEffect = ScrollTrigger.create({
-      trigger: ".footer",
-      start: "top 20%",
-      end: "top -20%",
-      scrub: true,
-
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const scaledProgress = Math.pow(self.progress, 0.1);
-        console.log("progress :", progress);
-        console.log("Scaled Progress :", scaledProgress);
-
-        gsap.to(footerImg, {
-          scale: 1 + scaledProgress * 2.0,
-          ease: "none",
-          transformOrigin: "50% 75%",
-        });
-
-        if (scaledProgress > 0.95) {
-          if (!showTrailer) {
-            setShowTrailer(true);
-            setShowFooter(false);
-          }
-        } else {
-          if (showTrailer) {
-            setShowTrailer(false);
-            setShowFooter(true);
-          }
-        }
-      },
-      // markers: true,
-    });
-
-    return () => {
-      zoomEffect.kill();
-    };
-  }, [showTrailer]);
 
   useEffect(() => {
     axios
@@ -307,7 +259,7 @@ function Home1() {
 
             <div className="About">
               <h1>About us</h1>
-              <Character className="aboutCharacter" paragraph={paragraph} isMobile={isMobile}/>
+              <Character className="aboutCharacter" paragraph={paragraph} isMobile={isMobile} />
             </div>
 
             {/* <div style={{ height: "50vh" }}></div> */}
@@ -317,13 +269,13 @@ function Home1() {
             <div className="laptop-height"></div>
             <div
               className="alumniHomeContainer"
-              style={{ height: "fit-content" }}
+              style={{ height: "fit-content",  }}
             >
               <Alumni3 />
             </div>
 
             {/* <Sponsor sponsors={sponsors} /> */}
-            <Sponsor2 sponsors={sponsors} />
+            <Sponsor2 sponsors={sponsors}/>
 
             <Footer />
           </div>
@@ -367,9 +319,9 @@ function Home1() {
           </button>
           <div>
             <div
-              className={`mainHome `}
+              className={`mainHome`}
               style={{ height: "100vh", position: "relative" }}
-              // Add ref for scroll detection
+            // Add ref for scroll detection
             >
               {/* Realistic flame element */}
               <div className="realistic-flame"></div>
@@ -466,10 +418,10 @@ function Home1() {
             </div>
 
             <div className="count_k">
-  <Count />
-</div>
+              <Count />
+            </div>
 
-<div className="laptop-height"></div>
+            <div className="laptop-height"></div>
 
 
             <div
@@ -482,11 +434,11 @@ function Home1() {
             {/* <Sponsor sponsors={sponsors} /> */}
             <div>
 
-            <Sponsor2 sponsors={sponsors} />
+              <Sponsor2 sponsors={sponsors} />
             </div>
 
-          <Footer> </Footer>
-            
+            <Footer> </Footer>
+
           </div>
         </div>
       )}

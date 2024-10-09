@@ -12,46 +12,50 @@
   font-style: normal;
 }
 
-.newhome{
+.newhome {
   display: flex;
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
-  height: 800vh;  /* background-image: url('./photos24/Alumination.png'); */
+  height: 700vh;
+  /* background-image: url('./photos24/Alumination.png'); */
   background-size: "cover";
   background-position: "center";
-  background-size: cover;  
+  background-size: cover;
   overflow-x: hidden;
   overflow-y: hidden;
-  position: relative; /* To position the clouds and layers correctly */
+  position: relative;
+  /* To position the clouds and layers correctly */
   overflow-y: hidden;
   background-repeat: no-repeat;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden; /*Prevent horizontal overflow*/
-  }
-  
-  /* .newhome {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  /*Prevent horizontal overflow*/
+}
+
+/* .newhome {
       background-image: url('./photos24/Homepage2.png'); /* Background image */
-      /* background-size: cover; Ensure the background covers the container */
-      /* background-repeat: no-repeat; */
-      /* height: 700vh; Set to viewport height, adjust if needed */
-      /* display: flex; */
-      /* flex-direction: column; */
-      /* justify-content: space-between; Spaces the content vertically */
+/* background-size: cover; Ensure the background covers the container */
+/* background-repeat: no-repeat; */
+/* height: 700vh; Set to viewport height, adjust if needed */
+/* display: flex; */
+/* flex-direction: column; */
+/* justify-content: space-between; Spaces the content vertically */
 /* } */
-  
-  /* .Landingpage {
+
+/* .Landingpage {
       padding: 100px;
       font-size: 2em;
       text-align: center;
   } */
-  
-  /* .newhome {
+
+/* .newhome {
     background-image: url('./photos24/Homepage2.png'); Background image
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,24 +71,25 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 250px;
+  /* margin-top: 250px; */
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
   z-index: 500;
   position: relative;
-  padding-top: 15px;  
+  padding-top: 15px;
+  /* height: 200vh; */
 }
 
-.About h1{
+.About h1 {
   font-family: 'Japan Daisuki Regular', sans-serif;
   font-weight: bolder;
   font-size: 100px;
   color: white;
   -webkit-text-stroke: 1px #700815;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /*horizontal and vertical offset, blur, colour*/
-  margin-top: 15vh;
-  
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  /*horizontal and vertical offset, blur, colour*/
+  margin-top: 10vh;
 }
 
 .About p {
@@ -95,22 +100,22 @@ html, body {
   margin-bottom: 15vh;
 }
 
-.mainHome{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    flex-direction: column;
+.mainHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
 }
 
-.upperMainHome{
+.upperMainHome {
   width: 100%;
   height: 70%;
   /* background-color: rgba(0, 255, 255, 0.323); */
 }
 
-.lowerMainHome{
+.lowerMainHome {
   width: 100%;
   height: 30%;
   /* background-color: rgba(153, 255, 0, 0.374); */
@@ -119,81 +124,30 @@ html, body {
   align-items: flex-start;
 }
 
-.headingHome{
-    height: 30%;
-    width: 100%;
-    /* background-color: rgba(0, 255, 255, 0.323); */
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-direction: column;
-    margin-right: 20%;
+.headingHome {
+  height: 30%;
+  width: 100%;
+  /* background-color: rgba(0, 255, 255, 0.323); */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-right: 20%;
 }
 
-.headingHome img{
-    height: 120% ;
+.headingHome img {
+  height: 120%;
 }
 
-.headingHome .noren{
-    font-size: 220%;
-    color: #700815;
-    font-weight: 600;
-    padding-right: 2.7%;
-    margin-top: -13px;
+.headingHome .noren {
+  font-size: 220%;
+  color: #700815;
+  font-weight: 600;
+  padding-right: 2.7%;
+  margin-top: -13px;
 }
 
-@media screen and (max-width: 1286px) {
-    .noren{
-        font-size: 200%;
-        color: #700815;
-        font-weight: 600;
-        padding-right: 2.7%;
-    }
-    .headingHome img{
-        height: 95% ;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .headingHome{
-        margin-bottom: 10%;
-    }
-    .headingHome .noren{
-        font-size: 170%;
-        font-weight: 600;
-        padding-right: 4.3%;
-    }
-    .headingHome img{
-        height: 95% ;
-    }
-}
-
-@media screen and (max-width: 660px) {
-    .headingHome{
-        margin-bottom: 10%;
-    }
-    .headingHome img{
-        height: 85% ;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .headingHome{
-        margin-bottom: 30%;
-        align-items: center;
-        margin-right: 0;
-    }
-    .headingHome .noren{
-        font-size: 170%;
-        font-weight: 600;
-        padding-right: 5.8%;
-    }
-    .headingHome img{
-        height: 75% ;
-    }
-}
-
-.registerHome{
+.registerHome {
   height: 35%;
   width: 28%;
   max-width: 300px;
@@ -213,133 +167,111 @@ html, body {
   padding-top: 15px;
 }
 
-@media screen and (max-width: 768px) {
-  .registerHome{
-    width: 200%;
-    /* height: 35%; */
 
-    /* max-width: 300px; */
-  }
-  
+.dragonHome {
+  height: 60%;
+  width: 20%;
+  /* background-color: rgba(0, 255, 255, 0.323); */
+  position: absolute;
+  right: 0%;
+  top: 5%;
 }
 
-.dragonHome{
-    height: 60%;
-    width: 20%;
-    /* background-color: rgba(0, 255, 255, 0.323); */
-    position: absolute;
-    right: 0%;
-    top: 5%;
-}
-
-.clouds{
+.clouds {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 200%;
+  /* height: 200%; */
   overflow: hidden;
   z-index: 1;
 }
-.clouds img{
-    position: absolute;
-    max-width: 100%;
-    animation: animate calc(40s * var(--i)) linear infinite;
-    overflow: hidden;
-    
-}
-@keyframes animate{
-    0%
-    {
-        transform: translateX(-100%);
-    }
-    100%
-    {
-        transform: translateX(100%);
-    }
-}
-  .footer {
-    position: absolute;
-    bottom: calc(-700vh + 500px);
-    width: 100%;
-    height: 120vh; 
-    overflow: hidden; 
-  }
-  
-  .footerimg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .white-fade {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /*Limit to the footer area*/
-    background-color: white;
-    opacity: 0; /*Initially hidden*/
-    z-index: 1; /*Ensure it appears above the footer image*/
-    pointer-events: none; /*Make sure it doesn't interfere with scrolling*/
-    transition: opacity 0.5s ease;
-  }
-  
-  .trailer-wrapper {
-    display: none; /* Initially hidden */
-  }
-  
-  .trailer-wrapper.show {
-    display: block; /* Show trailer when needed */
-  }
-  .laptop-height {
-    height: 120vh;
-  }
-  .count_k {
-    margin-top: -155vh;
-    margin-bottom: 65vh;
-    margin-left: 20vw;
-  }
-  
-  /* For smaller screens */
-  @media (max-width: 768px) {
-    .count_k {
-      /* height: 190vh; */
-      margin-top: -30vh;
-      margin-bottom: 10vh;
-      margin-left: 10vw;
-    } 
-    .laptop-height {
-      height: 0vh !important;
-    }
-  }
-  
-  /* For extra small screens */
-  @media (max-width: 480px) {
-    .count_k {
-      margin-top: -30vh;
-      margin-bottom: 20vh;
-      margin-left: 5vw;
-    }
-    .laptop-height {
-      height: 0vh !important;
-    }
-  }
-  
 
-  
+.clouds img {
+  position: absolute;
+  max-width: 100%;
+  animation: animate calc(40s * var(--i)) linear infinite;
+  overflow: hidden;
+
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: calc(-700vh + 500px);
+  width: 100%;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.footerimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.white-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*Limit to the footer area*/
+  background-color: white;
+  opacity: 0;
+  /*Initially hidden*/
+  z-index: 1;
+  /*Ensure it appears above the footer image*/
+  pointer-events: none;
+  /*Make sure it doesn't interfere with scrolling*/
+  transition: opacity 0.5s ease;
+}
+
+.trailer-wrapper {
+  display: none;
+  /* Initially hidden */
+}
+
+.trailer-wrapper.show {
+  display: block;
+  /* Show trailer when needed */
+}
+
+.laptop-height {
+  height: 120vh;
+}
+
+.count_k {
+  margin-top: -155vh;
+  margin-bottom: 65vh;
+  margin-left: 20vw;
+}
+
+
 /* Semicircle Hover Effect for Moon (right side) */
 .semicircle-moon1 {
   position: absolute;
   top: 86%;
   right: 2%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(72deg); /* Rotate 45% clockwise */
+  transform: rotate(72deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
 
@@ -349,13 +281,16 @@ html, body {
   top: 80%;
   right: 1.8%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(57deg); /* Rotate 45% clockwise */
+  transform: rotate(57deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
 
@@ -365,13 +300,16 @@ html, body {
   top: 72%;
   right: 1.6%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(50deg); /* Rotate 45% clockwise */
+  transform: rotate(50deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
 
@@ -382,13 +320,16 @@ html, body {
   top: 65%;
   right: 1.9%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(40deg); /* Rotate 45% clockwise */
+  transform: rotate(40deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
 
@@ -398,13 +339,16 @@ html, body {
   top: 57%;
   right: 2.2%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(38deg); /* Rotate 45% clockwise */
+  transform: rotate(38deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
 
@@ -413,13 +357,16 @@ html, body {
   top: 50%;
   right: 3.2%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(30deg); /* Rotate 45% clockwise */
+  transform: rotate(30deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
 
@@ -430,116 +377,159 @@ html, body {
   top: 43%;
   right: 4.6%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(25deg); /* Rotate 45% clockwise */
+  transform: rotate(25deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
 .semicircle-moon8 {
   position: absolute;
   top: 35%;
-  right:6.5%;
+  right: 6.5%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(21deg); /* Rotate 45% clockwise */
+  transform: rotate(21deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */}
+  transition: all 0.3s ease;
+  /* Smoother transition */
+}
 
 .semicircle-moon9 {
   position: absolute;
   top: 30%;
-  right:8.9%;
+  right: 8.9%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(10deg); /* Rotate 45% clockwise */
+  transform: rotate(10deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */}
-  
-
-  .semicircle-moon10{
-      position: absolute;
-      top: 25%;
-      right:11.6%;
-      width: 300px;
-      height: 150px; /* Larger size */
-      background-color: transparent;
-      border-top-left-radius: 300px;
-      border-top-right-radius: 300px;
-      transform: rotate(2deg); /* Rotate 45% clockwise */
-      overflow: hidden;
-      transition: all 0.3s ease; /* Smoother transition */}
-
-  .semicircle-moon10{
-      position: absolute;
-      top: 25%;
-      right:11.6%;
-      width: 300px;
-      height: 150px; /* Larger size */
-      background-color: transparent;
-      border-top-left-radius: 300px;
-      border-top-right-radius: 300px;
-      transform: rotate(2deg); /* Rotate 45% clockwise */
-      overflow: hidden;
-      transition: all 0.3s ease; /* Smoother transition */}
-   
-.semicircle-moon11{
-  position: absolute;
-  top: 20%;
-  right:14.9%;
-  width: 300px;
-  height: 150px; /* Larger size */
-  background-color: transparent;
-  border-top-left-radius: 300px;
-  border-top-right-radius: 300px;
-  transform: rotate(-5deg); /* Rotate 45% clockwise */
-  overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
-}      
-
-.semicircle-moon12{
-  position: absolute;
-  top: 17%;
-  right:17.7%;
-  width: 300px;
-  height: 150px; /* Larger size */
-  background-color: transparent;
-  border-top-left-radius: 300px;
-  border-top-right-radius: 300px;
-  transform: rotate(-10deg); /* Rotate 45% clockwise */
-  overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */
+  transition: all 0.3s ease;
+  /* Smoother transition */
 }
 
-.semicircle-moon13{
+
+.semicircle-moon10 {
+  position: absolute;
+  top: 25%;
+  right: 11.6%;
+  width: 300px;
+  height: 150px;
+  /* Larger size */
+  background-color: transparent;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  transform: rotate(2deg);
+  /* Rotate 45% clockwise */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  /* Smoother transition */
+}
+
+.semicircle-moon10 {
+  position: absolute;
+  top: 25%;
+  right: 11.6%;
+  width: 300px;
+  height: 150px;
+  /* Larger size */
+  background-color: transparent;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  transform: rotate(2deg);
+  /* Rotate 45% clockwise */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  /* Smoother transition */
+}
+
+.semicircle-moon11 {
+  position: absolute;
+  top: 20%;
+  right: 14.9%;
+  width: 300px;
+  height: 150px;
+  /* Larger size */
+  background-color: transparent;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  transform: rotate(-5deg);
+  /* Rotate 45% clockwise */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  /* Smoother transition */
+}
+
+.semicircle-moon12 {
+  position: absolute;
+  top: 17%;
+  right: 17.7%;
+  width: 300px;
+  height: 150px;
+  /* Larger size */
+  background-color: transparent;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  transform: rotate(-10deg);
+  /* Rotate 45% clockwise */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  /* Smoother transition */
+}
+
+.semicircle-moon13 {
   position: absolute;
   top: 14.6%;
-  right:21.1%;
+  right: 21.1%;
   width: 300px;
-  height: 150px; /* Larger size */
+  height: 150px;
+  /* Larger size */
   background-color: transparent;
-  border-top-left-radius: 300px;  
+  border-top-left-radius: 300px;
   border-top-right-radius: 300px;
-  transform: rotate(-20deg); /* Rotate 45% clockwise */
+  transform: rotate(-20deg);
+  /* Rotate 45% clockwise */
   overflow: hidden;
-  transition: all 0.3s ease; /* Smoother transition */}
+  transition: all 0.3s ease;
+  /* Smoother transition */
+}
 
 
-.semicircle-moon1::before,.semicircle-moon2::before,.semicircle-moon3::before,.semicircle-moon4::before,.semicircle-moon5::before,.semicircle-moon6::before,.semicircle-moon7::before,.semicircle-moon8::before,.semicircle-moon9::before ,.semicircle-moon10::before ,.semicircle-moon11::before ,.semicircle-moon12::before,.semicircle-moon13::before {
+.semicircle-moon1::before,
+.semicircle-moon2::before,
+.semicircle-moon3::before,
+.semicircle-moon4::before,
+.semicircle-moon5::before,
+.semicircle-moon6::before,
+.semicircle-moon7::before,
+.semicircle-moon8::before,
+.semicircle-moon9::before,
+.semicircle-moon10::before,
+.semicircle-moon11::before,
+.semicircle-moon12::before,
+.semicircle-moon13::before {
   content: '';
   position: absolute;
   width: 150px;
-  height: 150px; /* Adjusted to cover1top part */
-  top: -75px; /* Ensure only top part shows */
+  height: 150px;
+  /* Adjusted to cover1top part */
+  top: -75px;
+  /* Ensure only top part shows */
   right: -75px;
   /* background: rgba(255, 255, 255, 0.3);  */
   /* background: rgba(108, 15, 15, 0.46);  */
@@ -549,126 +539,315 @@ html, body {
 }
 
 .semicircle-moon1:hover::before,
-.semicircle-moon2:hover::before,.semicircle-moon3:hover::before,.semicircle-moon4:hover::before,.semicircle-moon5:hover::before,.semicircle-moon6:hover::before,.semicircle-moon7:hover::before,.semicircle-moon8:hover::before ,.semicircle-moon9:hover::before,.semicircle-moon10:hover::before ,.semicircle-moon11:hover::before ,.semicircle-moon12:hover::before ,.semicircle-moon13:hover::before {
-  background: rgba(255, 255, 255, 0.9); /* Much brighter on hover */
-  box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9); /* Stronger glow */
+.semicircle-moon2:hover::before,
+.semicircle-moon3:hover::before,
+.semicircle-moon4:hover::before,
+.semicircle-moon5:hover::before,
+.semicircle-moon6:hover::before,
+.semicircle-moon7:hover::before,
+.semicircle-moon8:hover::before,
+.semicircle-moon9:hover::before,
+.semicircle-moon10:hover::before,
+.semicircle-moon11:hover::before,
+.semicircle-moon12:hover::before,
+.semicircle-moon13:hover::before {
+  background: rgba(255, 255, 255, 0.9);
+  /* Much brighter on hover */
+  box-shadow: 0 0 40px 30px rgba(255, 255, 255, 0.9);
+  /* Stronger glow */
 }
 
-
-
-@media screen and (max-width: 1287px) {
-  
-  .semicircle-moon1,.semicircle-moon2{
-      display: none;
-  }
-
-  .semicircle-moon3{
-      top: 66%;
-      right: 0.4%;
-      transform: rotate(70deg);
-  }
-  .semicircle-moon4{
-      top: 60%;
-      right: 0.28%;
-      transform: rotate(60deg);
-  }    .semicircle-moon5{
-      top: 53%;
-      right: 0.5%;
-      transform: rotate(50deg);
-  }    .semicircle-moon6{
-      top: 46%;
-      right: 1.2%;
-      transform: rotate(42deg);
-  }    .semicircle-moon7{
-      top: 40%;
-      right: 2.25%;
-      transform: rotate(34deg);
-  }    .semicircle-moon8{
-      top: 33%;
-      right: 4%;
-      transform: rotate(27deg);
-  }    .semicircle-moon9{
-      top: 27%;
-      right: 6.5%;
-      transform: rotate(18deg);
-  }    .semicircle-moon10{
-      top: 22.4%;
-      right: 9%;
-      transform: rotate(10deg);
-  }    .semicircle-moon11{
-      top: 18.1%;
-      right: 12.4%;
-      transform: rotate(-1deg);
-  }
-  .semicircle-moon12{
-      top: 15%;
-      right: 15%;
-      transform: rotate(-10deg);
-  } .semicircle-moon13{
-      top: 13.3%;
-      right: 18%;
-      transform: rotate(-14deg);
-  }
-}
-
-
-
-@media screen and (max-width: 1200px) {
-  
-  .semicircle-moon1,.semicircle-moon2{
-      display: none;
-  }
-
-  .semicircle-moon3{
-      top: 66%;
-      right: 0.4%;
-      transform: rotate(70deg);
-  }
-  .semicircle-moon4{
-      top: 60%;
-      right: 0.28%;
-      transform: rotate(60deg);
-  }    .semicircle-moon5{
-      top: 53%;
-      right: 0.3%;
-      transform: rotate(50deg);
-  }    .semicircle-moon6{
-      top: 46%;
-      right: 0.8%;
-      transform: rotate(42deg);
-  }    .semicircle-moon7{
-      top: 40%;
-      right: 1.7%;
-      transform: rotate(34deg);
-  }    .semicircle-moon8{
-      top: 33%;
-      right: 3.2%;
-      transform: rotate(27deg);
-  }    .semicircle-moon9{
-      top: 27%;
-      right: 5.4%;
-      transform: rotate(18deg);
-  }    .semicircle-moon10{
-      top: 22.4%;
-      right: 7.8%;
-      transform: rotate(10deg);
-  }    .semicircle-moon11{
-      top: 18.1%;
-      right: 11%;
-      transform: rotate(-1deg);
-  }
-  .semicircle-moon12{
-      top: 15%;
-      right: 14%;
-      transform: rotate(-10deg);
-  } .semicircle-moon13{
-      top: 13.3%;
-      right: 16%;
-      transform: rotate(-10deg);
-  }
-}
 
 .mute-button {
   cursor: pointer;
   outline: none;
+}
+
+@media screen and (max-width: 1287px) {
+
+  .semicircle-moon1,
+  .semicircle-moon2 {
+    display: none;
+  }
+
+  .semicircle-moon3 {
+    top: 66%;
+    right: 0.4%;
+    transform: rotate(70deg);
+  }
+
+  .semicircle-moon4 {
+    top: 60%;
+    right: 0.28%;
+    transform: rotate(60deg);
+  }
+
+  .semicircle-moon5 {
+    top: 53%;
+    right: 0.5%;
+    transform: rotate(50deg);
+  }
+
+  .semicircle-moon6 {
+    top: 46%;
+    right: 1.2%;
+    transform: rotate(42deg);
+  }
+
+  .semicircle-moon7 {
+    top: 40%;
+    right: 2.25%;
+    transform: rotate(34deg);
+  }
+
+  .semicircle-moon8 {
+    top: 33%;
+    right: 4%;
+    transform: rotate(27deg);
+  }
+
+  .semicircle-moon9 {
+    top: 27%;
+    right: 6.5%;
+    transform: rotate(18deg);
+  }
+
+  .semicircle-moon10 {
+    top: 22.4%;
+    right: 9%;
+    transform: rotate(10deg);
+  }
+
+  .semicircle-moon11 {
+    top: 18.1%;
+    right: 12.4%;
+    transform: rotate(-1deg);
+  }
+
+  .semicircle-moon12 {
+    top: 15%;
+    right: 15%;
+    transform: rotate(-10deg);
+  }
+
+  .semicircle-moon13 {
+    top: 13.3%;
+    right: 18%;
+    transform: rotate(-14deg);
+  }
+}
+
+@media screen and (max-width: 1286px) {
+  .noren {
+    font-size: 200%;
+    color: #700815;
+    font-weight: 600;
+    padding-right: 2.7%;
+  }
+
+  .headingHome img {
+    height: 95%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .semicircle-moon1,
+  .semicircle-moon2 {
+    display: none;
+  }
+
+  .semicircle-moon3 {
+    top: 66%;
+    right: 0.4%;
+    transform: rotate(70deg);
+  }
+
+  .semicircle-moon4 {
+    top: 60%;
+    right: 0.28%;
+    transform: rotate(60deg);
+  }
+
+  .semicircle-moon5 {
+    top: 53%;
+    right: 0.3%;
+    transform: rotate(50deg);
+  }
+
+  .semicircle-moon6 {
+    top: 46%;
+    right: 0.8%;
+    transform: rotate(42deg);
+  }
+
+  .semicircle-moon7 {
+    top: 40%;
+    right: 1.7%;
+    transform: rotate(34deg);
+  }
+
+  .semicircle-moon8 {
+    top: 33%;
+    right: 3.2%;
+    transform: rotate(27deg);
+  }
+
+  .semicircle-moon9 {
+    top: 27%;
+    right: 5.4%;
+    transform: rotate(18deg);
+  }
+
+  .semicircle-moon10 {
+    top: 22.4%;
+    right: 7.8%;
+    transform: rotate(10deg);
+  }
+
+  .semicircle-moon11 {
+    top: 18.1%;
+    right: 11%;
+    transform: rotate(-1deg);
+  }
+
+  .semicircle-moon12 {
+    top: 15%;
+    right: 14%;
+    transform: rotate(-10deg);
+  }
+
+  .semicircle-moon13 {
+    top: 13.3%;
+    right: 16%;
+    transform: rotate(-10deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .newhome {
+    height: 550vh;
+  }
+
+  .About {
+    margin-top: -10vh;
+    margin-bottom: 10vh;
+  }
+
+  .count_k {
+    margin-top: -220vh;
+    margin-bottom: 100vh;
+    margin-left: 5vw;
+  }
+
+  .alumniHomeContainer {
+    margin-top: 15vh;
+    margin-bottom: 20vh;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .About {
+    margin-top: 30vh;
+    margin-bottom: 50vh;
+  }
+
+
+  .headingHome {
+    margin-bottom: 10%;
+  }
+
+  .headingHome .noren {
+    font-size: 170%;
+    font-weight: 600;
+    padding-right: 4.3%;
+  }
+
+  .headingHome img {
+    height: 95%;
+  }
+
+  .registerHome {
+    width: 200%;
+    /* height: 35%; */
+
+    /* max-width: 300px; */
+  }
+
+  .count_k{
+		margin-top: -110vh;
+    margin-bottom: 100vh;
+		margin-left: 5vw;
+	}
+
+  .laptop-height {
+    height: 0vh !important;
+  }
+
+
+}
+
+@media screen and (max-width: 660px) {
+  .headingHome {
+    margin-bottom: 10%;
+  }
+
+  .headingHome img {
+    height: 85%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .headingHome {
+    margin-bottom: 30%;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .headingHome .noren {
+    font-size: 170%;
+    font-weight: 600;
+    padding-right: 5.8%;
+  }
+
+  .headingHome img {
+    height: 75%;
+  }
+}
+
+/* For extra small screens */
+@media (max-width: 480px) {
+  .count_k {
+    margin-top: 0vh;
+    margin-bottom: 100vh;
+    margin-left: 5vw;
+  }
+
+  .About {
+    margin-top: 60vh;
+    margin-bottom: 50vh;
+  }
+
+
+  .laptop-height {
+    height: 0vh !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .About {
+    margin-top: 100vh;
+    margin-bottom: 50vh;
+  }
+
+  .count_k {
+    margin-top: 120vh;
+    margin-bottom: 100vh;
+    margin-left: 5vw;
+  }
+
 }

@@ -16,7 +16,7 @@ const Footer = () => {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       />
-      <div className="footer-distributed" style={{ backgroundImage: `url(${footerbg})`, marginTop: "10vh" }}>
+      <div className="footer-distributed" style={{ backgroundImage: `url(${footerbg})`, width: '100vw', position: 'absolute', bottom: 0 }}>
         <div className="footer-left">
           {/* <img src={sarclogo} alt="SARC Logo" className="footer-logo" /> */}
           <img src={headfooter} alt="Alumination" style={{ height: `6rem`, margin: "0 auto" }}/>
