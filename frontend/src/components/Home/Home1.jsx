@@ -20,8 +20,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 // import Sponsor from "./Sponsor/Sponsor.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
-import backgroundMusic from "./photos24/videos/bgm.mp3";
+import Alumination from "./photos24/AluminationLogo.png";
 import Petal from "./Petal.js";
+import backgroundMusic from "./photos24/videos/bgm.mp3";
 import "./Petal.css";
 import flagIcon from "./photos24/flag.png";
 import Footer from "./Footer.jsx";
@@ -186,19 +187,9 @@ function Home1() {
                     style={{ width: "300px", height: "auto" }}
                   />
                 </div>*/}
-                <div
-                  className="headingHome"
-                  style={{
-                    fontSize: "35px",
-                    position: "relative",
-                    right: "-55%",
-                    top: "69%",
-                  }}
-                >
-                  {/* <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div> */}
-                  <div style={{ fontSize: "70px", color: "#700815" }}>
-                    {/* ALUMINATION */}
-                  </div>
+                <div className="headingHome">
+                  <img src={Alumination} alt="" />
+                  <div className="noren">Noren of Nostalgia</div>
                 </div>
               </div>
 
@@ -347,7 +338,7 @@ function Home1() {
               {petals}
 
               <div className="upperMainHome">
-                <div
+                {/* <div
                   className="headingHome"
                   style={{
                     fontSize: "35px",
@@ -360,6 +351,10 @@ function Home1() {
                   <div style={{ fontSize: "70px", color: "#700815" }}>
                     ALUMINATION
                   </div>
+                </div> */}
+                <div className="headingHome">
+                  <img src={Alumination} alt="" />
+                  <div className="noren">Noren of Nostalgia</div>
                 </div>
               </div>
 
