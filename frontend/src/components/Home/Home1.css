@@ -105,9 +105,13 @@ html, body {
 }
 
 .upperMainHome{
-  width: 100%;
-  height: 70%;
+  width: 100%; height: 70%;
   /* background-color: rgba(0, 255, 255, 0.323); */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10%;
 }
 
 .lowerMainHome{
@@ -193,36 +197,88 @@ html, body {
     }
 }
 
-.registerHome{
-  height: 35%;
-  width: 28%;
-  max-width: 300px;
+@media screen and (max-width: 430px) {
+  .headingHome{
+      margin-bottom: 30%;
+      align-items: center;
+      margin-right: 0;
+  }
+  .headingHome .noren{
+      font-size: 170%;
+      font-weight: 600;
+      padding-right: 5.8%;
+  }
+  .headingHome img{
+      height: 65% ;
+  }
+}
+
+.lowerMainHome{
+  width: 100%;
+  height: 30%;
+  /* background-color: rgba(153, 255, 0, 0.374); */
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* background-color: rgba(0, 255, 255, 0.323);  */
-  margin-top: 5%;
-  background-image: url('./photos24/register.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  font-family: 'Japan Daisuki Regular', sans-serif;
-  font-weight: bold;
-  font-size: 35px;
-  color: #700815;
-  padding-top: 15px;
+  align-items: flex-start;
 }
 
-@media screen and (max-width: 768px) {
-  .registerHome{
-    width: 200%;
-    /* height: 35%; */
+.registerHome{
+  height: 45%;
+width: 28%;
+max-width: 300px;
+display: flex;
+justify-content: center;
+align-items: center;
+/* background-color: rgba(0, 255, 255, 0.323);  */
+/* margin-top: 5%; */
+background-image: url('./photos24/register.png');
+background-repeat: no-repeat;
+background-size: cover;
+background-position: top;
+font-family: 'Japan Daisuki Regular', sans-serif;
+font-weight: bold;
+font-size: 35px;
+color: #700815;
+/* padding-top: 15px; */
 
-    /* max-width: 300px; */
+  }
+
+  @media screen and (max-width: 1050px) {
+      .registerHome{
+          height: 40%;
+      }
+  }
+
+  @media screen and (max-width: 932px) {
+    .registerHome{
+        height: 35%;
+    }
+}
+
+
+
+  @media screen and (max-width: 768px) {
+    .registerHome{
+      width: 100%;
+      /* height: 35%; */
+  
+      max-width: 270px;
+      margin-top: -10%;
+      height: 35%;
+    }
+    .realistic-flame{
+      display: none;
+  }
+    
+  }
+
+  @media screen and (max-width: 500px) {
+      .registerHome{
+          height: 35%;
+          margin-bottom: 45%;
+      }
   }
   
-}
-
 .dragonHome{
     height: 60%;
     width: 20%;

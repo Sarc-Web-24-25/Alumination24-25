@@ -53,6 +53,7 @@
     font-weight: 600;
     color: #700815;
     /* padding: 25px 0; */
+    cursor: pointer;
 }
 
 .navitem2{
@@ -70,6 +71,7 @@
     font-weight: 600;
     color: #700815;
     /* padding: 50px 0; */
+    cursor: pointer;
 
 }
 .letterhome{
@@ -88,6 +90,7 @@
     font-size: 90%;   
     font-weight: 600;
     color: #700815;
+    cursor: pointer;
 }
 
 .active1{
@@ -158,24 +161,7 @@
 
 
 }
-@media screen and (max-width: 1060px) {
-    .spaceHome{
-        height: 100%;
-        width: 46%;
-        /* background-color: rgba(236, 197, 125, 0.692); */
-    }
-    
-    .navitems{      
-        height: 75%;
-        width: 30%;
 
-    }
-    .homeFlag{
-        width: 13%;
-    }
-
-
-}
 
 @media screen and (max-width: 900px) {
     .spaceHome{

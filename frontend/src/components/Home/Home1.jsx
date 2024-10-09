@@ -29,6 +29,10 @@ import flagIcon from "./photos24/flag.png";
 import Footer from "./Footer.jsx";
 import photoo from './photos24/Alumination.png'
 import photoo2 from './photos24/homephoneView.jpg'
+import mute from './photos24/mute.png'
+import unmute from './photos24/speaker.png'
+import Aluminatiom from './photos24/AluminationLogo.png'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -186,11 +190,11 @@ function Home1() {
             onClick={toggleMute}
             style={{
               position: "absolute",
-              top: "20px",
-              right: "20px",
-              background: "rgba(255, 255, 255, 0.8)",
-              border: "2px solid #000",
-              borderRadius: "5px",
+              top: "80px",
+              left: "7px",
+              background: "rgba(255, 255, 255, 0.6)",
+              border: "0px solid #000",
+              borderRadius: "50%",
               padding: "10px",
               cursor: "pointer",
               zIndex: 1000,
@@ -198,23 +202,15 @@ function Home1() {
               alignItems: "center",
             }}
           >
-            <img
-              src={flagIcon}
-              alt={isMuted ? "Unmute" : "Mute"}
-              style={{ width: "30px", height: "30px" }}
-            />
-            <span
-              style={{
-                marginLeft: "10px",
-                fontWeight: "bold",
-                display: "flex",
-                alignItems: "center",
-                height: "30px",
-                fontSize: "20px",
-              }}
-            >
-              {isMuted ? "Unmute" : "Mute"}
-            </span>
+
+            {isMuted ? (
+                            <img src={mute} alt="" style={{ width: "22px", height: "22px" }}/>
+
+            ): (
+              <img src={unmute} alt=""  style={{ width: "22px", height: "22px" }}/>
+
+            )}
+
           </button>
           <div>
             <div className="mainHome">
@@ -234,20 +230,13 @@ function Home1() {
                     style={{ width: "300px", height: "auto" }}
                   />
                 </div>*/}
-                <div
-                  className="headingHome"
-                  style={{
-                    fontSize: "35px",
-                    position: "relative",
-                    right: "-55%",
-                    top: "69%",
-                  }}
-                >
-                  {/* <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div> */}
-                  <div style={{ fontSize: "70px", color: "#700815" }}>
-                    {/* ALUMINATION */}
-                  </div>
-                </div>
+           <div
+              className="headingHome"
+        
+            >
+              <img src={Aluminatiom} alt="" />
+              <div className="noren">Noren of Nostalgia</div>
+            </div>
               </div>
 
               <div className="lowerMainHome">
@@ -389,18 +378,13 @@ function Home1() {
               {petals}
 
               <div className="upperMainHome">
-                <div
-                  className="headingHome"
-                  style={{
-                    fontSize: "35px",
-                    position: "relative",
-                    right: "-55%",
-                    top: "69%",
-                  }}
-                >
-                  <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-                  <div style={{ fontSize: "70px", color: "#700815" }}>ALUMINATION</div>
-                </div>
+              <div
+              className="headingHome"
+        
+            >
+              <img src={Aluminatiom} alt="" />
+              <div className="noren">Noren of Nostalgia</div>
+            </div>
               </div>
 
               <div className="lowerMainHome">
