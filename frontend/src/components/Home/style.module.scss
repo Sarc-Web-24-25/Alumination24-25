@@ -1,4 +1,4 @@
-.paragraph{
+.about_paragraph{
   display: flex;
   font-size: 40px;
   flex-wrap: wrap;
@@ -7,11 +7,11 @@
     font-size: 28px; // Styles for screens smaller than 768px
   }
 
-  .word{
+  .about_word{
     position: relative;
     margin-right: 12px;
     margin-top: 12px;
-    .shadow{
+    .about_shadow{
       position: absolute;
       opacity: 20%;
     }

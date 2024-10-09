@@ -20,13 +20,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 // import Sponsor from "./Sponsor/Sponsor.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
-import backgroundMusic from "./photos24/videos/back.mp3";
+import backgroundMusic from "./photos24/videos/bgm.mp3";
 import Petal from "./Petal.js";
 import "./Petal.css";
 import flagIcon from "./photos24/flag.png";
 import Footer from "./Footer.jsx";
-import photoo from './photos24/Alumination.png'
-import photoo2 from './photos24/homephoneView.jpg'
+import photoo from "./photos24/Alumination.png";
+import photoo2 from "./photos24/homephoneView.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,7 +48,7 @@ const styles = {
     backgroundRepeat: "no-repeat",
     width: "100%",
   },
-}
+};
 
 function Home1() {
   const [sponsors, setSponsors] = useState([]);
@@ -259,23 +259,27 @@ function Home1() {
 
             <div className="About">
               <h1>About us</h1>
-              <Character className="aboutCharacter" paragraph={paragraph} isMobile={isMobile} />
+              <Character
+                className="aboutCharacter"
+                paragraph={paragraph}
+                isMobile={isMobile}
+              />
             </div>
 
             {/* <div style={{ height: "50vh" }}></div> */}
-            <div className="count_k" >
+            <div className="count_k">
               <Count />
             </div>
             <div className="laptop-height"></div>
             <div
               className="alumniHomeContainer"
-              style={{ height: "fit-content",  }}
+              style={{ height: "fit-content" }}
             >
               <Alumni3 />
             </div>
 
             {/* <Sponsor sponsors={sponsors} /> */}
-            <Sponsor2 sponsors={sponsors}/>
+            <Sponsor2 sponsors={sponsors} />
 
             <Footer />
           </div>
@@ -321,7 +325,7 @@ function Home1() {
             <div
               className={`mainHome`}
               style={{ height: "100vh", position: "relative" }}
-            // Add ref for scroll detection
+              // Add ref for scroll detection
             >
               {/* Realistic flame element */}
               <div className="realistic-flame"></div>
@@ -353,7 +357,9 @@ function Home1() {
                   }}
                 >
                   <div style={{ paddingLeft: "5%" }}>SARC PRESENTS</div>
-                  <div style={{ fontSize: "70px", color: "#700815" }}>ALUMINATION</div>
+                  <div style={{ fontSize: "70px", color: "#700815" }}>
+                    ALUMINATION
+                  </div>
                 </div>
               </div>
 
@@ -423,7 +429,6 @@ function Home1() {
 
             <div className="laptop-height"></div>
 
-
             <div
               className="alumniHomeContainer"
               style={{ height: "fit-content" }}
@@ -433,12 +438,10 @@ function Home1() {
 
             {/* <Sponsor sponsors={sponsors} /> */}
             <div>
-
               <Sponsor2 sponsors={sponsors} />
             </div>
 
             <Footer> </Footer>
-
           </div>
         </div>
       )}

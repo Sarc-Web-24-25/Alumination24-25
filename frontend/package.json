@@ -19,7 +19,7 @@
     "axios": "^1.5.1",
     "bootstrap": "^5.3.3",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.4",
+    "framer-motion": "^11.11.7",
     "gsap": "^3.12.5",
     "hamburger-react": "^2.5.1",
     "jquery": "^3.7.1",
