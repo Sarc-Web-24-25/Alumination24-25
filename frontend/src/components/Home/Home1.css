@@ -793,23 +793,28 @@ h1 {
     text-align: center;
     font-size: 40px;
     color:#700815;
-    margin-top: 200px;
+    margin: 30vh;
     margin-left: 15%;
     margin-right: 15%;
     z-index: 500;
     position: relative;   
 }
-/* 
-.About p{
-    font-family: 'Japan Daisuki Regular', sans-serif;
-} */
 
-.Abouth{
+.About_Heading{
     font-family: 'Japan Daisuki Regular', sans-serif;
+    font-weight: bolder;
+    font-size: 100px;
+    color: white;
+    -webkit-text-stroke: 1px #700815;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
 }
 
-.Aboutp{
+.About_Paragraph{
     font-family: 'Katsumi', sans-serif;
+    font-weight: bolder;
+    font-size: 150%;
+    color: #700815;
+    margin-bottom: 150vh;
 }
 /* Home1.css */
 .mute-button {
@@ -911,7 +916,6 @@ h1 {
 
 @media screen and (max-width: 1000px) {
     .About p{
-        font-size: 35px;
       }
 }
 
@@ -937,8 +941,3 @@ h1 {
 .layer2, .layer3, .layer4, .layer5 {
     will-change: transform; /* Helps optimize rendering */
   }
-
-
-
-
-

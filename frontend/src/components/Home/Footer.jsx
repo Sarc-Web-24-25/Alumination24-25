@@ -1,68 +1,144 @@
-import React from 'react';
-import './Footer.css';
-import sarclogo from '../../logo.png';
-import footerbg from '../../components/Home/photos24/footerbg.png';
-import headfooter from '../../components/Home/photos24/headfooter.png';
-import facebook from '../../components/Home/photos24/facebookfoot.png';
+// import React from "react";
+// import "./Footer.css";
+// import sarclogo from "../../logo.png";
+// import footerbg from "../../components/Home/photos24/footerbg.png";
+// import headfooter from "../../components/Home/photos24/headfooter.png";
+// import facebook from "../../components/Home/photos24/facebookfoot.png";
+
+// const Footer = () => {
+//   const handleLocationClick = () => {
+//     window.open("https://maps.app.goo.gl/ZKp4vxWRyfpx5fLD9", "_blank");
+//   };
+
+//   return (
+//     <>
+//       <link
+//         rel="stylesheet"
+//         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+//       />
+//       <div
+//         className="footer-distributed"
+//         style={{ backgroundImage: `url(${footerbg})` }}
+//       >
+//         <div className="footer-left">
+//           {/* <img src={sarclogo} alt="SARC Logo" className="footer-logo" /> */}
+//           <img
+//             src={headfooter}
+//             alt="Alumination"
+//             style={{ height: `8rem`, margin: "0 auto" }}
+//           />
+
+//           <div className="social-icons">
+//             <a href="https://www.facebook.com/SARC.IITB/">
+//               <i className="fab fa-facebook" />
+//             </a>
+//             <a href="https://www.youtube.com/c/SARCIITBombay">
+//               <i className="fab fa-youtube" />
+//             </a>
+//             <a href="https://www.instagram.com/sarc_iitb/">
+//               <i className="fab fa-instagram" />
+//             </a>
+//             <a href="https://in.linkedin.com/company/student-alumni-relations-cell">
+//               <i className="fab fa-linkedin" />
+//             </a>
+//           </div>
+
+//           <p className="contact-details">
+//             <i className="fa fa-phone" />
+//             <p className="contact-info">+91 77348 44289</p>
+//             <br />
+//             <i className="fa fa-map-marker" onClick={handleLocationClick} />
+//             <p className="contact-info">SARC Room, Old SAC, IIT Bombay</p>
+//             <br />
+//             <i className="fa fa-envelope" />
+//             <a href="mailto:sarc@iitb.ac.in">
+//               <p
+//                 className="contact-info"
+//                 style={{ color: "black", marginRight: "auto" }}
+//               >
+//                 sarc@iitb.ac.in
+//               </p>
+//             </a>
+//           </p>
+//         </div>
+//       </div>
+//       <div className="footer-bottom">
+//         <p>
+//           Made with <span className="heart">❤️</span> by <strong>SARC</strong>
+//         </p>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Footer;
+
+import React from "react";
+import "./Footer.css";
+import sarclogo from "../../logo.png";
+import footerbg from "../../components/Home/photos24/footerbg.png";
+import headfooter from "../../components/Home/photos24/headfooter.png";
+import facebook from "../../components/Home/photos24/facebookfoot.png";
 
 const Footer = () => {
+  const handleLocationClick = () => {
+    window.open("https://maps.app.goo.gl/ZKp4vxWRyfpx5fLD9", "_blank");
+  };
 
-    const handleLocationClick = () => {
-        window.open('https://maps.app.goo.gl/ZKp4vxWRyfpx5fLD9', '_blank');
-    };
+  return (
+    <>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      />
+      <div className="footer-distributed" style={{ backgroundImage: `url(${footerbg})`, width: '100vw', position: 'absolute', bottom: 0 }}>
+        <div className="footer-left">
+          {/* <img src={sarclogo} alt="SARC Logo" className="footer-logo" /> */}
+          <img src={headfooter} alt="Alumination" style={{ height: `6rem`, margin: "0 auto" }}/>
 
-    return (
-        <>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        />
-            <div className="footer-distributed" style={{ backgroundImage: `url(${footerbg})`}}>
-                <div className="footer-left">
-                    {/* <img src={sarclogo} alt="SARC Logo" className="footer-logo" /> */}
-                    <img src={headfooter} alt="Alumination" style={{ height: `8rem`, margin: '0 auto'}}/>
+          <div className="social-icons">
+            <a href="https://www.facebook.com/SARC.IITB/">
+              <i className="fab fa-facebook" />
+            </a>
+            <a href="https://www.youtube.com/c/SARCIITBombay">
+              <i className="fab fa-youtube" />
+            </a>
+            <a href="https://www.instagram.com/sarc_iitb/">
+              <i className="fab fa-instagram" />
+            </a>
+            <a href="https://in.linkedin.com/company/student-alumni-relations-cell">
+              <i className="fab fa-linkedin" />
+            </a>
+          </div>
 
-                    <div className="social-icons">
-
-                        <a href="https://www.facebook.com/SARC.IITB/">
-                            <i className="fab fa-facebook" />
-                        </a>
-                        <a href="https://www.youtube.com/c/SARCIITBombay">
-                            <i className="fab fa-youtube" />
-                        </a>
-                        <a href="https://www.instagram.com/sarc_iitb/">
-                            <i className="fab fa-instagram" />
-                        </a>
-                        <a href="https://in.linkedin.com/company/student-alumni-relations-cell">
-                            <i className="fab fa-linkedin" />
-                        </a>
-                    </div>
-            
-                    <p className="contact-details">
-    <i className="fa fa-phone" />
-    <p className="contact-info">+91 77348 44289</p>
-    <br />
-    <i className="fa fa-map-marker" onClick={handleLocationClick} />
-    <p className="contact-info">SARC Room, Old SAC, IIT Bombay</p>
-    <br />
-    <i className="fa fa-envelope" />
-    <a href="mailto:sarc@iitb.ac.in">
-        <p className="contact-info" style={{ color: 'black', marginRight:'auto'}}>sarc@iitb.ac.in</p>
-    </a>
-</p>
-                </div>
-            </div>
-            <div className="footer-bottom">
-                    <p>
-                        Made with <span className="heart">❤️</span> by <strong>SARC</strong>
-                    </p>
-            </div>
-        </>
-    );
+          <p className="contact-details" style={{marginBottom: "7vh"}}>
+            <i className="fa fa-phone" />
+            <p className="contact-info">+91 77348 44289</p>
+            <br />
+            <i className="fa fa-map-marker" onClick={handleLocationClick} />
+            <p className="contact-info">SARC Room, Old SAC, IIT Bombay</p>
+            <br />
+            <i className="fa fa-envelope" />
+            <a href="mailto:sarc@iitb.ac.in">
+              <p
+                className="contact-info"
+                style={{ color: "black", marginRight: "auto" }}
+              >
+                sarc@iitb.ac.in
+              </p>
+            </a>
+          </p>
+        </div>
+        <div className="footer-bottom">
+          <p style={{margin: 0}}> Made with <span className="heart">❤️</span> by <strong>SARC</strong> </p>
+        </div> 
+      </div> 
+         
+    </>
+  );
 };
 
 export default Footer;
-
 
 // const Footer = () => {
 
@@ -133,8 +209,6 @@ export default Footer;
 //                     </div>
 //                 </div>
 
-
-
 //                 <div className="footer-right">
 //                     <p className="footer-company-about">
 //                         <span>SARC🤍</span>
@@ -157,7 +231,7 @@ export default Footer;
 //                 </div>
 //             </footer>
 //         </>
-        
+
 //     );
 // };
 
