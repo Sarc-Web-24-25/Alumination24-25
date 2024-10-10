@@ -256,7 +256,7 @@ function EventIndividual() {
               }}
             >
 
-              <div style={{ height: 'fit-content', objectFit: "cover" }}>
+              <div style={{ width: '100%' }}>
                 {event.youtube_link !== "" && (
                   <YouTube
                     className="youtube"
