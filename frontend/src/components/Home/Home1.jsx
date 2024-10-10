@@ -18,18 +18,78 @@ import cloud3 from "./photos24/Clouds3.png";
 import Petal from "./Petal";
 import backgroundMusic from "./photos24/bgm.mp3";
 import flagIcon from "./photos24/flag.png";
+import SoundOn from "./photos24/sound_on.png";
+import SoundOff from "./photos24/sound_off.png";
 import Count from "./count/Count";
 import Character from "./Character";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
 import Aluminatiom from "./photos24/AluminationLogo.png";
+import { gsap } from "gsap";
 
 export default function Home1() {
+
   const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef(new Audio(backgroundMusic));
+  const speakerRef = useRef(null);
+  const tlMute = useRef(gsap.timeline({ paused: true }));
+  const tlUnmute = useRef(gsap.timeline({ paused: true }));
+
   const [isLayer2Visible, setIsLayer2Visible] = useState(false);
   const [sponsors, setSponsors] = useState([]);
-  const audioRef = useRef(new Audio(backgroundMusic));
+
+  useEffect(() => {
+    // Set up GSAP animations for mute/unmute buttons without DrawSVGPlugin
+    const speaker = speakerRef.current;
+
+    // Manual SVG path animation using strokeDashoffset and strokeDasharray
+    tlMute.current
+      .to("#large-curve", { duration: 0.3, strokeDashoffset: 100 })
+      .to("#small-curve", { duration: 0.3, strokeDashoffset: 100 }, "-=0.15")
+      .to("#dark-line", { duration: 0.2, opacity: 1, strokeDashoffset: 0 })
+      .to("#light-line", { duration: 0.2, opacity: 1, strokeDashoffset: 0 });
+
+    tlUnmute.current
+      .to("#large-curve", { duration: 0.3, strokeDashoffset: 0 })
+      .to("#small-curve", { duration: 0.3, strokeDashoffset: 0 }, "-=0.15")
+      .to("#dark-line", { duration: 0.2, opacity: 0 })
+      .to("#light-line", { duration: 0.2, opacity: 0 });
+
+    // Audio handling logic
+    const handleEnded = () => {
+      audioRef.current.currentTime = 0;
+      if (!isMuted) {
+        audioRef.current.play().catch((error) => {
+          console.error("Audio playback failed:", error);
+        });
+      }
+    };
+
+    audioRef.current.addEventListener("ended", handleEnded);
+
+    if (!isMuted) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio autoplay failed:", error);
+      });
+    }
+
+    return () => {
+      audioRef.current.pause();
+      audioRef.current.removeEventListener("ended", handleEnded);
+    };
+  }, [isMuted]);
+
+  const toggleMute = () => {
+    setIsMuted((prev) => !prev);
+    if (isMuted) {
+      audioRef.current.play().catch((error) => {
+        console.error("Audio playback failed:", error);
+      });
+    } else {
+      audioRef.current.pause();
+    }
+  };
 
   // Scroll ref for parallax sections
   const layerRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
@@ -150,17 +210,7 @@ export default function Home1() {
       audioRef.current.removeEventListener("ended", handleEnded);
     };
   }, [isMuted]);
-
-  const toggleMute = () => {
-    setIsMuted((prev) => !prev);
-    if (isMuted) {
-      audioRef.current.play().catch((error) => {
-        console.error("Audio playback failed:", error);
-      });
-    } else {
-      audioRef.current.pause();
-    }
-  };
+  
   useEffect(() => {
     axios
       .get("http://127.0.0.1:8000/api/sponsors/")
@@ -217,6 +267,7 @@ export default function Home1() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 786) {
@@ -261,7 +312,8 @@ export default function Home1() {
         }}
       >
         <img
-          src={flagIcon}
+          // src={flagIcon}
+          src={isMuted ? SoundOff : SoundOn}
           alt={isMuted ? "Unmute" : "Mute"}
           style={{ width: "30px", height: "30px" }}
         />
