@@ -22,13 +22,13 @@ def get_tokens_for_user(user):
 
 def send_verification_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
-    send_mail(subject="Verify your email | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isVerify=True, verificationToken=token)
+    send_mail(subject="Verify your email | Alumination 2024 | SARC IIT Bombay", userName="User", userEmail=username, isVerify=True, verificationToken=token)
     print(token)
     
     
 def send_forgot_password_email(username):
     token = Token.objects.get_or_create(user=MyUser.objects.get(username=username))[0]
-    send_mail(subject="Reset Password | Alumination 2023 | SARC IIT Bombay", userName="User", userEmail=username, isForgot=True, forgotToken=token)
+    send_mail(subject="Reset Password | Alumination 2024 | SARC IIT Bombay", userName="User", userEmail=username, isForgot=True, forgotToken=token)
     print(token)
 
 @permission_classes([permissions.AllowAny])
@@ -188,7 +188,7 @@ class ProfileView(APIView):
             serializer = ProfileSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                send_mail("Welcome to Alumination 2023", request.data['fullname'], user.username, True)
+                send_mail("Welcome to Alumination 2024", request.data['fullname'], user.username, True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             print(serializer.errors)
             return Response(serializer.errors, status=status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
@@ -219,7 +219,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     msg["Subject"] = subject
     msg["From"] = SMTP_USERNAME
     msg["To"] = userEmail
-    proxy = 'https://alumination.sarc-iitb.org'
+    proxy = 'http://127.0.0.1:8000/api/authenticate'
     
     eventmail = f'''
     <!DOCTYPE html>
@@ -321,7 +321,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
 <html>
 
 <head>
-    <title>Alumination 2023 | SARC IIT Bombay</title>
+    <title>Alumination 2024 | SARC IIT Bombay</title>
 </head>
 
 <body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
@@ -329,7 +329,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
         style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat; ">
         <h1
             style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">
-            User Verification of Alumination 2023 | SARC IIT Bombay</h1>
+            User Verification of Alumination 2024 | SARC IIT Bombay</h1>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             Dear User,</p>
@@ -352,7 +352,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             Regards,</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Aastha Patel | Prerna Agrawal</p>
+            Aniruddh Goyal</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             Overall Co-ordinators</p>
@@ -377,15 +377,15 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
 <body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply;
 box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-size: cover; background-repeat: no-repeat;">
-        <h1 style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">Welcome to Alumination 2023 | SARC IIT Bombay</h1>
+        <h1 style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">Welcome to Alumination 2024 | SARC IIT Bombay</h1>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Dear User,</p>
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We hope this message finds you well and filled with excitement for the upcoming Alumination 2023 event! As the organizing team, we are thrilled to invite you to this extraordinary two-day fest that promises to be an unforgettable experience.</p>
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We hope this message finds you well and filled with excitement for the upcoming Alumination 2024 event! As the organizing team, we are thrilled to invite you to this extraordinary two-day fest that promises to be an unforgettable experience.</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
         
         <a href="{proxy}/events" style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Explore Events</a>
         
         </p>
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We look forward to welcoming you to Alumination 2023 and embarking on this enriching journey together. Get ready to Break The Ice, Learn from the Best, and Illuminate your path to success!</p>
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We look forward to welcoming you to Alumination 2024 and embarking on this enriching journey together. Get ready to Break The Ice, Learn from the Best, and Illuminate your path to success!</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Regards,</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Aastha Patel | Prerna Agrawal</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Overall Co-ordinators</p>

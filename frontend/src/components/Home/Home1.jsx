@@ -25,7 +25,7 @@ import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
 import Aluminatiom from "./photos24/AluminationLogo.png";
 
-function Home1() {
+export default function Home1() {
   const [isMuted, setIsMuted] = useState(false);
   const [isLayer2Visible, setIsLayer2Visible] = useState(false);
   const [sponsors, setSponsors] = useState([]);
@@ -45,7 +45,13 @@ function Home1() {
   //       const layer = layerRefs[i].current;
   //       const layerPosition = layer.getBoundingClientRect().top;
   //       const layerHeight = layer.offsetHeight;
+  //     for (let i = 0; i < layerRefs.length; i++) {
+  //       const layer = layerRefs[i].current;
+  //       const layerPosition = layer.getBoundingClientRect().top;
+  //       const layerHeight = layer.offsetHeight;
 
+  //       // Check if 10% of the layer is visible
+  //       const isLayerVisible = layerPosition <= window.innerHeight * 0.9 && layerPosition >= -layerHeight * 0.1;
   //       // Check if 10% of the layer is visible
   //       const isLayerVisible = layerPosition <= window.innerHeight * 0.9 && layerPosition >= -layerHeight * 0.1;
 
@@ -59,7 +65,20 @@ function Home1() {
   //       }
   //     }
   //   };
+  //       // If scrolling down and the layer below is visible, or scrolling up and the layer above is visible
+  //       if (isLayerVisible && ((direction === "down" && layerPosition >= 0) || (direction === "up" && layerPosition <= 0))) {
+  //         window.scrollTo({
+  //           top: window.scrollY + layerPosition,
+  //           behavior: "smooth",
+  //         });
+  //         break;
+  //       }
+  //     }
+  //   };
 
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
@@ -149,9 +168,11 @@ function Home1() {
         const sponsor_list = [...response.data];
         let sponsors = [];
         sponsor_list.forEach((sponsor) => {
-          sponsors.push(`http://127.0.0.1:8000${sponsor.image}`);
+          sponsors.push({
+            image: `http://127.0.0.1:8000${sponsor.image}`,
+            url: sponsor.url
+          });
         });
-
         setSponsors(sponsors);
       })
       .catch((error) => {
@@ -174,6 +195,28 @@ function Home1() {
   const [bgImage1, setBgImage1] = useState(layer1); // Default background image
   const [bgImage3, setBgImage3] = useState(layer3); // Default background image
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 786) {
+        setBgImage1(layer1PH); // Use small image for screens smaller than 786px
+        setBgImage3(layer3PH); // Use small image for screens smaller than 786px
+      } else {
+        setBgImage1(layer1); // Use default image for larger screens
+        setBgImage3(layer3); // Use default image for larger screens
+      }
+    };
+
+    // Call the function on initial load
+    handleResize();
+
+    // Add event listener to handle resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 786) {
@@ -282,6 +325,7 @@ function Home1() {
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" /> */}
       </div>
+      {/* </div> */}
 
       {/* Parallax Layer 2 */}
       <Parallax bgImage={layer2} strength={200} zIndex={1000}>
@@ -311,6 +355,7 @@ function Home1() {
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" /> */}
       </div>
+      {/* </div> */}
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={bgImage3} strength={150}>
@@ -318,6 +363,7 @@ function Home1() {
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
+
 
           <Count />
         </div>
@@ -332,6 +378,7 @@ function Home1() {
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" /> */}
       </div>
+      {/* </div> */}
 
       {/* Parallax Layer 4 */}
       <Parallax bgImage={layer4} strength={100}>
@@ -342,6 +389,7 @@ function Home1() {
         >
           <div style={{ height: "20vh" }}></div>
           <Alumni3 />
+          <div style={{ height: "10vh" }}></div>
           <div style={{ height: "10vh" }}></div>
         </div>
       </Parallax>
@@ -355,19 +403,20 @@ function Home1() {
           <img src={cloud1} alt="cloud1" className="cloud" />
           <img src={cloud3} alt="cloud3" className="cloud" /> */}
       </div>
+      {/* </div> */}
 
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
-        <div className="layer5" style={{ height: "100vh" }} ref={layerRefs[4]}>
-          <Sponsor2 sponsors={sponsors} />
+        <div className="layer5" ref={layerRefs[4]} style={{ height: "100vh" }}>
+          {sponsors.length !== 0 &&
+            <Sponsor2 sponsors={sponsors} />
+          }
         </div>
-        <Footer></Footer>
+        <Footer />
       </Parallax>
     </div>
   );
 }
-
-export default Home1;
 
 // "use client";
 
