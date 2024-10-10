@@ -26,6 +26,9 @@ import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
 import Aluminatiom from './photos24/AluminationLogo.png'
 
+import mute from './photos24/mute.png'
+import unmute from './photos24/speaker.png'
+
 
 
 function Home1() {
@@ -176,15 +179,17 @@ useEffect(() => {
 
     const [bgImage1, setBgImage1] = useState(layer1); // Default background image
     const [bgImage3, setBgImage3] = useState(layer3); // Default background image
-
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
     useEffect(() => {
       const handleResize = () => {
         if (window.innerWidth < 786) {
           setBgImage1(layer1PH); // Use small image for screens smaller than 786px
           setBgImage3(layer3PH); // Use small image for screens smaller than 786px
+          setIsSmallScreen(true);
         } else {
           setBgImage1(layer1); // Use default image for larger screens
           setBgImage3(layer3); // Use default image for larger screens
+          setIsSmallScreen(false);
         }
       };
   
@@ -203,7 +208,35 @@ useEffect(() => {
   return (
     <div className="newhome">
       {/* Mute Button */}
-      <button
+
+      {isSmallScreen ? (  <button
+            className="mute-button"
+            onClick={toggleMute}
+            style={{
+              position: "absolute",
+              top: "80px",
+              left: "7px",
+              background: "rgba(255, 255, 255, 0.6)",
+              border: "0px solid #000",
+              borderRadius: "50%",
+              padding: "10px",
+              cursor: "pointer",
+              zIndex: 1000,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+
+            {isMuted ? (
+                            <img src={mute} alt="" style={{ width: "22px", height: "22px" }}/>
+
+            ): (
+              <img src={unmute} alt=""  style={{ width: "22px", height: "22px" }}/>
+
+            )}
+
+          </button>) : (
+              <button
         className="mute-button"
         onClick={toggleMute}
         style={{
@@ -229,6 +262,10 @@ useEffect(() => {
           {isMuted ? "Unmute" : "Mute"}
         </span>
       </button>
+        
+      )}
+  
+
 
       {/* Parallax Layer 1 */}
       <Parallax bgImage={bgImage1} strength={200}>
