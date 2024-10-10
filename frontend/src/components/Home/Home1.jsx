@@ -407,7 +407,7 @@ export default function Home1() {
 
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
-        <div className="layer5" ref={layerRefs[4]} style={{ height: "100vh" }}>
+        <div className="layer5" ref={layerRefs[4]} style={{ height: "130vh" }}>
           {sponsors.length !== 0 &&
             <Sponsor2 sponsors={sponsors} />
           }
