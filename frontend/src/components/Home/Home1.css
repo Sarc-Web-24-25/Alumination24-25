@@ -154,6 +154,14 @@ margin-bottom: 10%;
         }
     }
 
+    @media screen and (max-width: 940px) {
+        .registerHome{
+            height: 40%;
+        width: 40%;
+
+        }
+    }
+
     @media screen and (max-width: 768px) {
       .registerHome{
         width: 100%;
@@ -162,6 +170,7 @@ margin-bottom: 10%;
         max-width: 270px;
         margin-top: -10%;
         height: 35%;
+        background-size: contain;
       }
       .realistic-flame{
         display: none;
@@ -171,7 +180,9 @@ margin-bottom: 10%;
 
     @media screen and (max-width: 400px) {
         .registerHome{
-            height: 40%;
+            height: 80px;
+            width: 250px;
+
         }
     }
     
@@ -702,6 +713,26 @@ h1 {
   pointer-events: none; /* Ensure no interaction with clouds */
   z-index: 4; /* Ensure clouds are on top of Layer 2 */
   overflow-y: hidden;
+}
+
+
+@media screen and (max-width: 1286px) {
+    .clouds1{
+        top: 11%;
+      }
+    
+      .clouds2{
+        top: 35%;
+      }
+    
+      .clouds3{
+        top: 50%;
+      }
+    
+      .clouds4{
+        top: 76%; 
+      }
+      
 }
 
 @media screen and (max-width: 768px) {

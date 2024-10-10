@@ -344,7 +344,7 @@ export default function Home1() {
 
       {/* Parallax Layer 2 */}
       <Parallax bgImage={layer2} strength={200} zIndex={1000}>
-        <div className="layer2" style={{ height: "150vh" }} ref={layerRefs[1]}>
+        <div className="layer2" style={{ height: "100vh" }} ref={layerRefs[1]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>Layer 2 Content</h1> */}
 
           {/* About Us Section */}
@@ -374,7 +374,7 @@ export default function Home1() {
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={bgImage3} strength={150}>
-        <div className="layer3" style={{ height: "120vh" }} ref={layerRefs[2]}>
+        <div className="layer3" style={{ height: "130vh" }} ref={layerRefs[2]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
@@ -411,7 +411,7 @@ export default function Home1() {
 
       <div className="clouds4">
         <img src={cloud1} alt="cloud1" className="cloud" />
-        <img src={cloud2} alt="cloud2" className="cloud" />
+        {/* <img src={cloud2} alt="cloud2" className="cloud" /> */}
         <img src={cloud3} alt="cloud3" className="cloud" />
         {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
         {/* <img src={cloud3} alt="cloud3" className="cloud" />
