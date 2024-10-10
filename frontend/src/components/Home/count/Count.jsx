@@ -46,7 +46,7 @@ const Count = () => {
             x: endX,
             y: endY,
             ease: 'power3.out',
-            duration: 2,
+            duration: 0.1,
             // delay:0.5,
             scrollTrigger: {
               trigger: dropRef.current,

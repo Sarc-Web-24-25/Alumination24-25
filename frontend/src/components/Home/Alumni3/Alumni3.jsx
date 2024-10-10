@@ -1,38 +1,63 @@
 import React from 'react'
 import AlumniCard from './AlumniCard'
 import japanDaisukiFont from '../../../assets/fonts/JapanDaisuki-8OeaZ.woff' 
+import Nandan_Nilekani from '../photos24/Nandan_Nilekani.png'
+import Nitesh_Tiwari from '../photos24/Nitesh_Tiwari.png'
+import Bhavish_Aggarwal from '../photos24/Bhavish_Aggarwal.png'
+import Bharat_Desai from '../photos24/Bharat_Desai.png'
+import Lalit_Keshare from '../photos24/Lalit_Keshare.png'
+import Zishaan_Hayath from '../photos24/Zishaan_Hayath.jpg'
+import Ankit_Mehta from '../photos24/Ankit_Mehta.jpg'
+import Gaganjeet_Singh from '../photos24/Gaganjeet_Singh.jpeg'
+import Sameer_Saxena from '../photos24/Sameer_Saxena.jpg'
 
 const alumniList = [  
   {
-    name: "Jane Smith",
-    designation: "Product Manager at ABC",
-    imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=2560&auto=format&fit=crop&q=80",
+    name: "Nandan_Nilekani",
+    designation: "Cofounder Infosys",
+    imageSrc: Nandan_Nilekani,
   },
   {
-    name: "John Doe",
-    designation: "Software Engineer at XYZ",
-    imageSrc: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Nitesh Tiwari",
+    designation: "CEO Groww",
+    imageSrc: Nitesh_Tiwari,
   },
   {
-    name: "Mike Johnson",
+    name: "Bhavish Aggarwal",
     designation: "Data Scientist at DEF",
-    imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=2560&auto=format&fit=crop&q=80",
+    imageSrc: Bhavish_Aggarwal,
   },
   {
-    name: "John Doe",
-    designation: "Software Engineer at XYZ",
-    imageSrc: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Bharat Desai",
+    designation: "Chairman, Syntel",
+    imageSrc: Bharat_Desai,
   },
   {
-    name: "Jane Smith",
-    designation: "Product Manager at ABC",
-    imageSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=2560&auto=format&fit=crop&q=80",
+    name: "Lalit Keshare",
+    designation: "CEO Groww",
+    imageSrc: Lalit_Keshare,
   },
   {
-    name: "John Doe",
-    designation: "Software Engineer at XYZ",
-    imageSrc: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Zishaan Hayath",
+    designation: "toppr CEO",
+    imageSrc: Zishaan_Hayath,
   },
+  {
+    name: "Ankit Mehta",
+    designation: "CEO Ideaforge",
+    imageSrc: Ankit_Mehta,
+  },
+  {
+    name: "Gaganjeet Singh",
+    designation: "Writer and Director",
+    imageSrc: Gaganjeet_Singh,
+  },
+  {
+    name: "Sameer Saxena",
+    designation: "Director",
+    imageSrc: Sameer_Saxena,
+  },
+  
 ];
 
 const styles = {
@@ -55,13 +80,14 @@ const styles = {
 };
 
 const Alumni3 = () => {
+  
   return (
     <>
         <h1
           style={styles.heading}
           // className="text-5xl font-bold text-center"
         >
-          Esteemed Alumni
+          Past Speakers
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 p-6 mx-50">
         {alumniList.map((alumni, index) => (

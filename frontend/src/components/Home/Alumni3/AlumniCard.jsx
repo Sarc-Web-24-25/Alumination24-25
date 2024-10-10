@@ -52,7 +52,7 @@ export default function Alumni3({ name, designation, imageSrc }) {
       }}
     >
       <CardBody
-        className="bg-[rgba(249,250,251,0.5)] relative group/card border-white/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border"
+        className="bg-[rgba(249,250,251,0.5)] relative group/card w-[20rem] h-[25rem] border-white/[0.1] sm:w-[30rem] rounded-xl p-6 border"
       >
         <CardItem
           translateZ="30"
@@ -72,13 +72,13 @@ export default function Alumni3({ name, designation, imageSrc }) {
 
         <CardItem
           translateZ="40"
-          className="w-full mt-4"
+          className="w-full h-48 mt-4"
         >
           <img
             src={imageSrc}
             height="1000"
             width="1000"
-            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            className="w-full h-full object-cover rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
         </CardItem>

@@ -473,15 +473,12 @@ export default function Home1() {
 
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
-        <div className="layer5" ref={layerRefs[4]} style={{
-          height: "fit-content",
-          marginBottom: sponsors.length === 0 ? "50vh" : "15vh",
-        }}>
-          {sponsors.length !== 0 &&
+        <div className="layer5" ref={layerRefs[4]} style={{height: sponsors.length === 0 ? "80vh" : "130vh"}}>
+          
             <Sponsor2 sponsors={sponsors} />
-          }
-        </div>
+          
         <Footer />
+        </div>
       </Parallax>
     </div>
   );

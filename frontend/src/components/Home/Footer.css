@@ -95,14 +95,14 @@
         border-top: 0px !important;
     }
 
-    .footer-distributed .footer-left {
+    /* .footer-distributed .footer-left {
         display: flex !important;
         flex-direction: column;
         width: 100% !important;
         margin-bottom: 40px !important;
         text-align: center !important;
         height: auto;
-    }
+    } */
 
     .footer-distributed .footer-center,
     .footer-distributed .footer-center1 {

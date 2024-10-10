@@ -229,7 +229,10 @@ function EventIndividual() {
     <>
       {event && (
         <div>
-          <div style={{ overflowX: "hidden" }} className="event-list-container">
+          <div style={{ overflowX: "hidden", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }} className="event-list-container">
+            <div className="Event_Heading">
+              <p>{event.name}</p>
+            </div>
             {/* <CursorAnimation /> */}
             {/* <div className="top-section">
               <img src={headingImage} alt="Top Image" className="top-imagee" />
@@ -245,21 +248,21 @@ function EventIndividual() {
               style={{
                 // width: "100vw",
                 height: "100%",
-                // display: "flex",
-                // flexDirection: 'column',
+                display: "flex",
+                flexDirection: 'column',
                 justifyContent: "center",
                 alignItems: "center",
                 border: "5px solid white",
               }}
             >
 
-              <div style={{ height: 'fit-content' }}>
+              <div style={{ height: 'fit-content', objectFit: "cover" }}>
                 {event.youtube_link !== "" && (
                   <YouTube
                     className="youtube"
                     opts={opts}
                     videoId={event.youtube_link}
-                    style={{ aspectRatio: '16/9' }}
+                    style={{ aspectRatio: '16/9',  }}
                   />
                 )}
               </div>
@@ -451,24 +454,24 @@ function EventIndividual() {
                 }}
               >
                 <h4 className="event-speaker-heading">Speakers</h4>
-                <div className="event-speakers-list" style={{display: 'flex', flexDirection: 'column'}}>
+                <div className="event-speakers-list" style={{ display: 'flex', flexDirection: 'column' }}>
                   {event.speakers.map((speaker) => (
-                    <li 
-                    key={speaker.id} className="event-list-item"
-                    style={{
-                      display: "flex",
-                    
-                      justifyContent: "center",
-                      flexDirection: "row",
-                      alignItems: "center",
-                      backgroundColor: "rgba(81, 86, 145, 1)",
-                      border: "5px solid white",
-                      textAlign: "left",
-                      fontFamily: "sans-serif",
+                    <li
+                      key={speaker.id} className="event-list-item"
+                      style={{
+                        display: "flex",
 
-                    }}
+                        justifyContent: "center",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        backgroundColor: "rgba(81, 86, 145, 1)",
+                        border: "5px solid white",
+                        textAlign: "left",
+                        fontFamily: "sans-serif",
+
+                      }}
                     >
-                      <div className="event-img" style={{paddingLeft: '2vw'}}>
+                      <div className="event-img" style={{ paddingLeft: '2vw' }}>
                         <img
                           src={`http://127.0.0.1:8000/${speaker.profile_image}`}
                           alt={speaker.fullname}
@@ -479,12 +482,12 @@ function EventIndividual() {
                         />
                       </div>
                       <div className="event-desc">
-                        <p 
-                        style={{
-                          fontSize: '2em',
-                          textAlign: 'center',
-                          color: '#ad92dc'
-                        }}
+                        <p
+                          style={{
+                            fontSize: '2em',
+                            textAlign: 'center',
+                            color: '#ad92dc'
+                          }}
                         /*className="event-title"*/>{speaker.fullname}</p>
                         <p /*className="event-desc"*/>
                           {speaker.description}
