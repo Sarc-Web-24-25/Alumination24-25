@@ -24,7 +24,7 @@ const alumniList = [
   },
   {
     name: "Bhavish Aggarwal",
-    designation: "Data Scientist at DEF",
+    designation: "CEO OLA",
     imageSrc: Bhavish_Aggarwal,
   },
   {
