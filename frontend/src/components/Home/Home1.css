@@ -865,6 +865,10 @@ body {
   .laptop-height {
     height: 0vh !important;
   }
+
+  .alumniHomeContainer {
+    margin-bottom: 60vh;
+  }
 }
 
 @media screen and (max-width: 380px) {

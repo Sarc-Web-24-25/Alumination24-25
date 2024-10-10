@@ -34,7 +34,7 @@ const styles = {
     fontSize: "1.35rem",
     lineHeight: "1.25rem",
     fontWeight: "700",
-    textAlign: "center",
+    // textAlign: "center",
     marginTop: "0.9rem",
   }
 };
