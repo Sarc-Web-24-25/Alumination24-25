@@ -25,7 +25,10 @@ import Character from "./Character";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
-import Aluminatiom from "./photos24/AluminationLogo.png";
+import Aluminatiom from './photos24/AluminationLogo.png'
+
+import mute from './photos24/mute.png'
+import unmute from './photos24/speaker.png'
 import { gsap } from "gsap";
 
 export default function Home1() {
@@ -242,59 +245,66 @@ export default function Home1() {
     navigate(route); // Navigate to the specified route
   };
 
-  const [bgImage1, setBgImage1] = useState(layer1); // Default background image
-  const [bgImage3, setBgImage3] = useState(layer3); // Default background image
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 786) {
-        setBgImage1(layer1PH); // Use small image for screens smaller than 786px
-        setBgImage3(layer3PH); // Use small image for screens smaller than 786px
-      } else {
-        setBgImage1(layer1); // Use default image for larger screens
-        setBgImage3(layer3); // Use default image for larger screens
-      }
-    };
-
-    // Call the function on initial load
-    handleResize();
-
-    // Add event listener to handle resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 786) {
-        setBgImage1(layer1PH); // Use small image for screens smaller than 786px
-        setBgImage3(layer3PH); // Use small image for screens smaller than 786px
-      } else {
-        setBgImage1(layer1); // Use default image for larger screens
-        setBgImage3(layer3); // Use default image for larger screens
-      }
-    };
-
-    // Call the function on initial load
-    handleResize();
-
-    // Add event listener to handle resize
-    window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    const [bgImage1, setBgImage1] = useState(layer1); // Default background image
+    const [bgImage3, setBgImage3] = useState(layer3); // Default background image
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth < 786) {
+          setBgImage1(layer1PH); // Use small image for screens smaller than 786px
+          setBgImage3(layer3PH); // Use small image for screens smaller than 786px
+          setIsSmallScreen(true);
+        } else {
+          setBgImage1(layer1); // Use default image for larger screens
+          setBgImage3(layer3); // Use default image for larger screens
+          setIsSmallScreen(false);
+        }
+      };
+  
+      // Call the function on initial load
+      handleResize();
+  
+      // Add event listener to handle resize
+      window.addEventListener("resize", handleResize);
+  
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
 
   return (
     <div className="newhome">
       {/* Mute Button */}
-      <button
+
+      {isSmallScreen ? (  <button
+            className="mute-button"
+            onClick={toggleMute}
+            style={{
+              position: "absolute",
+              top: "80px",
+              left: "7px",
+              background: "rgba(255, 255, 255, 0.6)",
+              border: "0px solid #000",
+              borderRadius: "50%",
+              padding: "10px",
+              cursor: "pointer",
+              zIndex: 1000,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+
+            {isMuted ? (
+                            <img src={mute} alt="" style={{ width: "22px", height: "22px" }}/>
+
+            ): (
+              <img src={unmute} alt=""  style={{ width: "22px", height: "22px" }}/>
+
+            )}
+
+          </button>) : (
+              <button
         className="mute-button"
         onClick={toggleMute}
         style={{
@@ -321,6 +331,10 @@ export default function Home1() {
           {isMuted ? "Unmute" : "Mute"}
         </span>
       </button>
+        
+      )}
+  
+
 
       {/* Parallax Layer 1 */}
       <Parallax bgImage={bgImage1} strength={200}>
@@ -381,7 +395,7 @@ export default function Home1() {
 
       {/* Parallax Layer 2 */}
       <Parallax bgImage={layer2} strength={200} zIndex={1000}>
-        <div className="layer2" style={{ height: "150vh" }} ref={layerRefs[1]}>
+        <div className="layer2" style={{ height: "100vh" }} ref={layerRefs[1]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>Layer 2 Content</h1> */}
 
           {/* About Us Section */}
@@ -411,7 +425,7 @@ export default function Home1() {
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={bgImage3} strength={150}>
-        <div className="layer3" style={{ height: "120vh" }} ref={layerRefs[2]}>
+        <div className="layer3" style={{ height: "130vh" }} ref={layerRefs[2]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
@@ -448,7 +462,7 @@ export default function Home1() {
 
       <div className="clouds4">
         <img src={cloud1} alt="cloud1" className="cloud" />
-        <img src={cloud2} alt="cloud2" className="cloud" />
+        {/* <img src={cloud2} alt="cloud2" className="cloud" /> */}
         <img src={cloud3} alt="cloud3" className="cloud" />
         {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
         {/* <img src={cloud3} alt="cloud3" className="cloud" />
