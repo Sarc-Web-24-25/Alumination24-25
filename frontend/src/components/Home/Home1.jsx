@@ -37,14 +37,14 @@ const paragraph =
 const styles = {
   newHomee: {
     backgroundImage: `url(${photoo})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    // backgroundSize: "cover",
+    // backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     width: "100%",
   },
   newHomee2: {
     backgroundImage: `url(${photoo2})`,
-    backgroundSize: "cover",
+    // backgroundSize: "cover",
     // backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     width: "100%",
@@ -112,7 +112,11 @@ function Home1() {
         const sponsor_list = [...response.data];
         let sponsors = [];
         sponsor_list.forEach((sponsor) => {
-          sponsors.push(`http://127.0.0.1:8000${sponsor.image}`);
+          // sponsors.push(`http://127.0.0.1:8000${sponsor.image}`);
+          sponsors.push({
+            image: `http://127.0.0.1:8000${sponsor.image}`, // The image path
+            url: sponsor.url // The associated website URL
+          });
         });
         console.log(sponsors);
         setSponsors(sponsors);
@@ -134,41 +138,43 @@ function Home1() {
     <>
       {isMobile ? (
         <div className="newhome" style={styles.newHomee2}>
-          <button
-            className="mute-button"
-            onClick={toggleMute}
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              background: "rgba(255, 255, 255, 0.8)",
-              border: "2px solid #000",
-              borderRadius: "5px",
-              padding: "10px",
-              cursor: "pointer",
-              zIndex: 1000,
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={flagIcon}
-              alt={isMuted ? "Unmute" : "Mute"}
-              style={{ width: "30px", height: "30px" }}
-            />
-            <span
+          <div className="mute_button_ka_div">
+            <button
+              className="mute-button"
+              onClick={toggleMute}
               style={{
-                marginLeft: "10px",
-                fontWeight: "bold",
+                // position: "absolute",
+                top: "20px",
+                // right: "20px",
+                background: "rgba(255, 255, 255, 0.8)",
+                border: "2px solid #000",
+                borderRadius: "5px",
+                padding: "10px",
+                cursor: "pointer",
+                zIndex: 1000,
                 display: "flex",
                 alignItems: "center",
-                height: "30px",
-                fontSize: "20px",
               }}
             >
-              {isMuted ? "Unmute" : "Mute"}
-            </span>
-          </button>
+              <img
+                src={flagIcon}
+                alt={isMuted ? "Unmute" : "Mute"}
+                style={{ width: "30px", height: "30px" }}
+              />
+              <span
+                style={{
+                  marginLeft: "10px",
+                  fontWeight: "bold",
+                  display: "flex",
+                  alignItems: "center",
+                  height: "30px",
+                  fontSize: "20px",
+                }}
+              >
+                {isMuted ? "Unmute" : "Mute"}
+              </span>
+            </button>
+          </div>
           <div>
             <div className="mainHome">
               {petals}
@@ -399,7 +405,10 @@ function Home1() {
 
             <div
               className="alumniHomeContainer"
-              style={{ height: "fit-content" }}
+              style={{
+                height: "fit-content",
+                marginBottom: sponsors.length === 0 ? "50vh" : "15vh",
+              }}
             >
               <Alumni3 />
             </div>
@@ -409,7 +418,7 @@ function Home1() {
               <Sponsor2 sponsors={sponsors} />
             </div>
 
-            <Footer> </Footer>
+            <Footer />
           </div>
         </div>
       )}

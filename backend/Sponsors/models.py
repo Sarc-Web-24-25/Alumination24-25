@@ -20,8 +20,7 @@ def process_image(image_file, name, prefix):
 class Sponsor(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='sponsor_images/')
-    date = models.TextField(default="", blank=True)
-    priority = models.BooleanField(default=False, blank=False)
+    url = models.TextField(default='', blank=False)
 
     def __str__(self):
         return self.name

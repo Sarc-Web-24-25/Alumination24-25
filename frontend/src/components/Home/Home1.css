@@ -18,7 +18,7 @@
   width: 100vw;
   min-height: 100vh;
   height: 700vh;
-  /* height: fit-content; */
+  height: fit-content;
   /* background-image: url('./photos24/Alumination.png'); */
   background-size: "cover";
   background-position: "center";
@@ -70,7 +70,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-top: 250px; */
+  margin-top: 35vh;
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
@@ -562,10 +562,14 @@ body {
   /* Stronger glow */
 }
 
-
 .mute-button {
   cursor: pointer;
   outline: none;
+}
+
+.alumniHomeContainer {
+  margin-top: 15vh;
+  /* margin-bottom: 15vh; */
 }
 
 @media screen and (max-width: 1287px) {
@@ -783,6 +787,20 @@ body {
 
   .laptop-height {
     height: 0vh !important;
+  }
+
+  .mute_button_ka_div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .mute-button {
+    position: relative;
+    right: 0;
   }
 }
 

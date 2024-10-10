@@ -46,7 +46,7 @@ function EventList() {
         setEvents(sortedEvents); // Update the state with the sorted array
         sortedEvents.forEach((element) => {
           // console.log(element.priority);
-          if (element.priority) setMainEvents((prev) => [...prev, element]);
+          if (element) setMainEvents((prev) => [...prev, element]);
         });
       })
       .catch((error) => {

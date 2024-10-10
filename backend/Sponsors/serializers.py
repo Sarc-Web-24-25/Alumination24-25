@@ -4,4 +4,4 @@ from .models import Sponsor
 class SponsorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sponsor
-        fields = ('name', 'image', 'date', 'priority')
+        fields = ('name', 'image', 'url')

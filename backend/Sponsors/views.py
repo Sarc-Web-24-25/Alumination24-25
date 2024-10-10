@@ -10,10 +10,6 @@ from Authentication.models import MyUser, Profile
 from rest_framework import permissions
 from Authentication.views import send_mail
 
-
-
-
-
 class SponsorList(APIView):
     permission_classes = [permissions.AllowAny]
     def get(self, request, format=None, id=None):
@@ -49,9 +45,7 @@ class SponsorList(APIView):
             return Response({"error": "You have not verified your account"}, status=status.HTTP_400_BAD_REQUEST)
         if user in Sponsor.applicants.all():
             return Response({"error": "You have already applied for this event"}, status=status.HTTP_400_BAD_REQUEST)
-        
-        
+                
         sponsor.save()
        
         return Response({"message": "You have successfully added this sponsor"}, status=status.HTTP_200_OK)
-    

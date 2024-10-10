@@ -25,49 +25,72 @@ export default function Sponsor2({ sponsors }) {
   const row1 = sponsors.slice(0, middleIndex); // First half
   const row2 = sponsors.slice(middleIndex); // Second half
 
-  // console.log("row1: ", row1);
-  // console.log("row2: ", row2);
+  console.log(sponsors)
 
   return (
-    <AppContainer style={{marginBottom: '80vh'}}>
-      <Wrapper>
-        <GlobalStyles />
-        <Text>Our Sponsors</Text>
-        <Marquee>
-          <MarqueeGroup>
-            {row1.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup>
-          <MarqueeGroup>
-            {row1.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup>
-        </Marquee>
+    <>
+    {sponsors.length !== 0 && 
+      <AppContainer style={{marginBottom: '80vh'}}>
+        <Wrapper>
+          <GlobalStyles />
+          <Text>Our Sponsors</Text>
+          <Marquee>
+            <MarqueeGroup>
+              {row1.map((el, index) => (
+                <div style={{ cursor: 'pointer' }}>
+                  <ImageGroup
+                    onClick={() => window.open(el.url, '_blank')}
+                    key={index}
+                  >
+                    <Image src={el.image} />
+                  </ImageGroup>
+                </div>
+              ))}
+            </MarqueeGroup>
+            <MarqueeGroup>
+              {row1.map((el, index) => (
+                <div style={{ cursor: 'pointer' }}>
+                  <ImageGroup
+                    onClick={() => window.open(el.url, '_blank')}
+                    key={index}
+                  >
+                    <Image src={el.image} />
+                  </ImageGroup>
+                </div>
+              ))}
+            </MarqueeGroup>
+          </Marquee>
 
-        <Marquee>
-          <MarqueeGroup2>
-            {row2.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup2>
-          <MarqueeGroup2>
-            {row2.map((el) => (
-              <ImageGroup>
-                <Image src={el} />
-              </ImageGroup>
-            ))}
-          </MarqueeGroup2>
-        </Marquee>
-      </Wrapper>
-    </AppContainer>
+          <Marquee>
+            <MarqueeGroup2>
+              {row2.map((el, index) => (
+                <div style={{ cursor: 'pointer' }}>
+                  <ImageGroup
+                    onClick={() => window.open(el.url, '_blank')}
+                    key={index}
+                  >
+                    <Image src={el.image} />
+                  </ImageGroup>
+                </div>
+              ))}
+            </MarqueeGroup2>
+            <MarqueeGroup2>
+              {row2.map((el, index) => (
+                <div style={{ cursor: 'pointer' }}>
+                  <ImageGroup
+                    onClick={() => window.open(el.url, '_blank')}
+                    key={index}
+                  >
+                    <Image src={el.image} />
+                  </ImageGroup>
+                </div>
+              ))}
+            </MarqueeGroup2>
+          </Marquee>
+        </Wrapper>
+      </AppContainer>
+    }
+    </>
   );
 }
 
