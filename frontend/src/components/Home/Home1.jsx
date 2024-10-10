@@ -257,7 +257,7 @@ function Home1() {
             <div className="laptop-height"></div>
             <div
               className="alumniHomeContainer"
-              style={{ height: "fit-content" }}
+              style={{ height: "fit-content", marginBottom: sponsors.length === 0 ? "50vh" : "15vh" }}
             >
               <Alumni3 />
             </div>
