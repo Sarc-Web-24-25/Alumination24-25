@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import permissions, status,generics
@@ -109,6 +109,23 @@ class ResetPasswordView(APIView):
         
 @permission_classes([permissions.AllowAny])
 class VerifyEmailView(APIView):
+    def get(self, request, key, format=None):  # Use 'key' instead of 'token'
+        try:
+            # Retrieve the token object using 'key' from the URL parameter
+            token_object = Token.objects.get(key=key)  # Change 'token' to 'key'
+            user = token_object.user
+            if user.is_active:
+                return redirect('http://localhost:3000/login')  # Redirect if already verified
+            user.is_active = True
+            user.save()
+            return redirect('http://localhost:3000/login')  # Redirect after successful verification
+        except Token.DoesNotExist:
+            print("Error while verifying key: Token does not exist")
+            return Response("No user found, please signup", status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            print("Error while verifying key", e)
+            return Response("An error occurred", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
     def post(self,request,key):
         try:
             token = Token.objects.filter(key=key)

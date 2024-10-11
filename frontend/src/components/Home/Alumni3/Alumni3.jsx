@@ -19,7 +19,7 @@ const alumniList = [
   },
   {
     name: "Nitesh Tiwari",
-    designation: "CEO Groww",
+    designation: "Film Director",
     imageSrc: Nitesh_Tiwari,
   },
   {

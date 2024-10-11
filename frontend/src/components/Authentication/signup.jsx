@@ -19,7 +19,7 @@ const formStyle = {
   backgroundSize: 'cover', // Scale the image to cover the entire container
   backgroundPosition: 'center', // Center the background image
   backgroundAttachment: 'fixed', // Fix the background image in place
-
+  // paddingTop: '10vh'
 };
 const containerStyle = {
   width: '60%',
@@ -39,6 +39,7 @@ const containerStyle = {
   display: 'flex',
   justifyContent: 'center',
   transition: 'transform 2s ease-in-out',
+  paddingTop: '10vh' 
 };
 
 // const inputStyle = {

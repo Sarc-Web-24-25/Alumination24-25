@@ -374,7 +374,7 @@ export default function Home1() {
           <div className="lowerMainHome">
             <div
               className="registerHome"
-              style={{ fontSize: "25px", color: "#700815" }}
+              style={{ fontSize: "25px", color: "#700815", cursor: 'pointer' }}
               onClick={() => handleNavClick("/signup")}
             >
               REGISTER

@@ -6,7 +6,7 @@ import group18 from '../photos24/count.png'; // Your texture
 // Extend Three.js elements
 extend({ MeshBasicMaterial: THREE.MeshBasicMaterial, CylinderGeometry: THREE.CylinderGeometry });
 
-const RotatingCylinder = ({ maxValue }) => {
+const RotatingCylinder = ({ maxValue, coinText }) => {
   const cylinderRef = useRef();
   const [combinedTexture, setCombinedTexture] = useState(null);
   const [currentNumber, setCurrentNumber] = useState(0);
@@ -28,11 +28,11 @@ const RotatingCylinder = ({ maxValue }) => {
     context.drawImage(image.image, 0, 0, canvas.width, canvas.height);
 
     // Add the text on top of the image
-    context.font = '72px Arial';
+    context.font = '44px Arial';
     context.fillStyle = 'rgba(255, 255, 255, 0.8)';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText(number.toString() + '+', canvas.width / 2, canvas.height / 2);
+    context.fillText(number.toString() + 'k+' + ' ' + coinText, canvas.width / 2, canvas.height / 2);
 
     // Convert canvas to a texture
     const texture = new THREE.CanvasTexture(canvas);
@@ -62,7 +62,7 @@ const RotatingCylinder = ({ maxValue }) => {
 
     if ((currentNumber < maxValue) && cylinderRef.current) {
       
-      setCurrentNumber(prev => Math.min(prev + 1000, maxValue)) // Increment the number by 1 per frame
+      setCurrentNumber(prev => Math.min(prev + 2, maxValue)) // Increment the number by 1 per frame
       cylinderRef.current.rotation.z += 0.2 // Rotate about the Y-axis
     }
 
@@ -90,7 +90,7 @@ const RotatingCylinder = ({ maxValue }) => {
   );
 };
 
-function Drop3D() {
+function Drop3D({ content, maxValue }) {
   return (
     <div
       className="drop3d-container"
@@ -105,7 +105,7 @@ function Drop3D() {
       <Canvas style={{width: '200px', height: '200px', padding: 0}} camera={{ fov: 45, position: [3, 3, 6] }}>
         <ambientLight intensity={0.5} />  
         <pointLight position={[10, 10, 10]} />
-        <RotatingCylinder maxValue={40000} />
+        <RotatingCylinder maxValue={maxValue} coinText={content} />
       </Canvas>
     </div>
   );

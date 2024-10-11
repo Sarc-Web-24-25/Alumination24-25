@@ -7,6 +7,8 @@ import './count.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const Count = () => {
+  const coinContent = ['Alumini', 'Events', 'Students'];
+  const maxValues = [65, 60, 12];
   const dropRefs = [useRef(null), useRef(null), useRef(null)];
   // const [footfall, setFootfall] = useState([0, 0, 0]);
   const [positions, setPositions] = useState([]);
@@ -46,7 +48,7 @@ const Count = () => {
             x: endX,
             y: endY,
             ease: 'power3.out',
-            duration: 0.1,
+            duration: 0.5,
             // delay:0.5,
             scrollTrigger: {
               trigger: dropRef.current,
@@ -100,7 +102,7 @@ const Count = () => {
     <div className="count-container">
       {dropRefs.map((dropRef, index) => (
         <div key={index} className="drop" ref={dropRef}>
-          <Drop3D/>
+          <Drop3D content={coinContent[index]} maxValue={ maxValues[index] }/>
         </div>
       ))}
 

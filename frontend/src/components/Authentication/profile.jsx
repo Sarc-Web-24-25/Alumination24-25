@@ -54,6 +54,8 @@ const styles = {
         alignItems: 'center',
         fontSize: '32px',
         gap: '3rem',
+        marginTop: '20vh',
+        marginLeft: '10vw'
         // Important: media queries for font size and gap adjustments
         // '@media (max-width: 768px)': {
         //     fontSize: '24px !important',

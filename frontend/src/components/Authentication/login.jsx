@@ -77,8 +77,9 @@ function Login() {
     flexDirection: 'column',
     alignItems: 'center',
     display: 'flex',
-    // justifyContent: 'center',
+    justifyContent: 'center',
     transition: 'transform 2s ease-in-out',
+    // paddingTop: '10vh'
   };
 
 
@@ -124,8 +125,7 @@ function Login() {
      backgroundColor:'rgba(0, 0, 0, 0.4)',
     // opacity:'80%',
     color:'black',
-    padding:'10px'
-    
+    padding:'10px',
   };
 
   const buttonStyle = {
@@ -167,7 +167,7 @@ const headingstyle={fontWeight: "bold", color: "black", marginBottom:"50px",marg
         <div className='inputfield' style={inputfield}>
         <FontAwesomeIcon icon={faUser} />
           <input
-            type="text"
+            type="username"
             name='username'
             className='inputstyle'
             style={inputStyle}
