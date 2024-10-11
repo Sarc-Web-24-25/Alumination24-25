@@ -385,12 +385,16 @@ export default function Home1() {
 
       <div className="clouds1">
         <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud2} alt="cloud3" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+
       </div>
       {/* </div> */}
 

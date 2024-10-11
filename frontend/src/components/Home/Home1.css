@@ -666,7 +666,7 @@ h1 {
     z-index: 4; /* Ensure clouds are on top of Layer 2 */
     overflow-y: hidden;
     top: 13%;
-    opacity: 0.9;
+    opacity: 1;
 }
 /* .clouds1 img {
    
@@ -797,13 +797,13 @@ h1 {
       }
     }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 786px) {
   .clouds1{
-    top: 6.8%;
+    top: 7%;
   }
 
   .clouds2{
-    top: 23%;
+    top: 24%;
   }
 
   .clouds3{
@@ -816,6 +816,169 @@ h1 {
   
 }
 
+@media screen and (max-width: 700px) {
+    .clouds1{
+      top: 8%;
+    }
+  
+    .clouds2{
+      top: 24%;
+    }
+  
+    .clouds3{
+      top: 40%;
+    }
+  
+    .clouds4{
+      top: 85.5%; 
+    }
+    
+  }
+
+  @media screen and (max-width: 640px) {
+    .clouds1{
+      top: 6.3%;
+    }
+  
+    .clouds2{
+      top: 19%;
+    }
+  
+    .clouds3{
+      top: 31.5%;
+    }
+  
+    .clouds4{
+      top: 88.5%; 
+    }
+    
+  }
+
+
+  @media screen and (max-width: 607px) {
+  
+    .clouds4{
+      top: 88.7%; 
+    }
+    
+  }
+
+  @media screen and (max-width: 550px) {
+    .clouds1{
+      top: 6.5%;
+    }
+  
+    .clouds2{
+      top: 19%;
+    }
+  
+    .clouds3{
+      top: 31.5%;
+    }
+  
+    .clouds4{
+      top: 89.5%; 
+    }
+    
+  }
+
+
+  @media screen and (max-width: 500px) {
+    .clouds1{
+      top: 6.8%;
+    }
+  
+    .clouds2{
+      top: 19%;
+    }
+  
+    .clouds3{
+      top: 31.5%;
+    }
+  
+    .clouds4{
+      top: 89.5%; 
+    }
+    
+  }
+
+  @media screen and (max-width: 460px) {
+    .clouds1{
+      top: 7%;
+    }
+  
+    .clouds2{
+      top: 19.5%;
+    }
+  
+    .clouds3{
+      top: 31.9%;
+    }
+  
+    .clouds4{
+      top: 89.8%; 
+    }
+    
+  }
+
+  
+  @media screen and (max-width: 432px) {
+    .clouds1{
+      top: 7.9%;
+    }
+  
+    .clouds2{
+      top: 21.5%;
+    }
+  
+    .clouds3{
+      top: 35%;
+    }
+  
+    .clouds4{
+      top: 89.5%; 
+    }
+    
+  }
+
+  @media screen and (max-width: 417px) {
+    .clouds1{
+      top: 7.6%;
+    }
+  
+    .clouds2{
+      top: 20.5%;
+    }
+  
+    .clouds3{
+      top: 33.5%;
+    }
+  
+    .clouds4{
+      top: 90%; 
+    }
+    
+  }
+
+  @media screen and (max-width: 378px) {
+    .clouds1{
+      top: 6.6%;
+    }
+  
+    .clouds2{
+      top: 17.8%;
+    }
+  
+    .clouds3{
+      top: 29%;
+    }
+  
+    .clouds4{
+      top: 90.7%; 
+    }
+    
+  }
+  
 .cloud {
     position: absolute;
     animation: moveClouds 20s linear infinite; /* Adjust duration for speed */
