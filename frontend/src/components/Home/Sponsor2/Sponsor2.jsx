@@ -31,7 +31,7 @@ export default function Sponsor2({ sponsors }) {
   return (
     <>
     {sponsors.length !== 0 &&
-      <AppContainer>
+      <AppContainer style={{marginBottom: "15vh"}}>
         <Wrapper>
           <GlobalStyles />
           <Text>Our Sponsors</Text>
