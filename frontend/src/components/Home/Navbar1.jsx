@@ -97,7 +97,7 @@ function Navbar1() {
             </div>
           </div>
           <div className="profileHome">
-            <div className="menuHamburger"><Hamburger toggled={isOpen2} toggle={setIsOpen2} size={30} color="#ffffff"></Hamburger></div>
+            <div className="menuHamburger"><Hamburger rounded toggled={isOpen2} toggle={setIsOpen2} size={30} color="#ffffff"></Hamburger></div>
           </div>
           {isOpen2 && (
             <div className="menuProfile">
@@ -139,10 +139,12 @@ function Navbar1() {
           <div className="phoneCircular2">
             <div className="custom-hamburger">
               <Hamburger
+              rounded
                 toggled={isOpen}
                 toggle={setIsOpen}
                 size={30}
                 color="#ffffff"
+
               />
             </div>
             {/* Hamburger toggle */}
