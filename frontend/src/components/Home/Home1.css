@@ -661,7 +661,7 @@ h1 {
   z-index: 4; /* Ensure clouds are on top of Layer 2 */
   overflow-y: hidden;
   top: 32%;
-  opacity: 0.9;
+  opacity: 0.7;
 
 }
 
@@ -674,7 +674,7 @@ h1 {
   pointer-events: none; /* Ensure no interaction with clouds */
   z-index: 4; /* Ensure clouds are on top of Layer 2 */
   overflow-y: hidden;
-  opacity: 0.9;
+  opacity: 0.8;
 
 }
 
@@ -687,22 +687,22 @@ h1 {
   pointer-events: none; /* Ensure no interaction with clouds */
   z-index: 4; /* Ensure clouds are on top of Layer 2 */
   overflow-y: hidden;
-  opacity: 0.9;
+  opacity: 0.7;
 
 }
 
 
 @media screen and (min-width: 1286px) {
     .clouds1{
-        top: 8%;
+        top: 7%;
       }
     
       .clouds2{
-        top: 29%;
+        top: 25%;
       }
     
       .clouds3{
-        top: 51%;
+        top: 45%;
       }
     
       .clouds4{
@@ -713,30 +713,74 @@ h1 {
 
 @media screen and (max-width: 1286px) {
     .clouds1{
-        top: 11%;
+        top: 7%;
       }
     
       .clouds2{
-        top: 35%;
+        top: 25%;
       }
     
       .clouds3{
-        top: 50%;
+        top: 45%;
       }
     
       .clouds4{
-        top: 76%; 
+        top: 80%; 
       }
       
 }
 
+@media screen and (max-width: 1025px) {
+    .clouds1{
+        top: 5.5%;
+      }
+    
+      .clouds2{
+        top: 22%;
+      }
+    
+      .clouds3{
+        top: 38%;
+      }
+    
+      .clouds4{
+        top: 82.5%; 
+      }
+      
+}
+
+@media screen and (max-width: 970px) {
+    .clouds1{
+        top: 6%;
+      }
+    
+      .clouds2{
+        top: 23%;
+      }
+    
+      .clouds3{
+        top: 38.5%;
+      }
+    
+      .clouds4{
+        top: 83.5%; 
+      }
+      
+}
+
+@media screen and (max-width: 885px) {
+    .clouds1{
+        top: 6.5%;
+      }
+    }
+
 @media screen and (max-width: 768px) {
   .clouds1{
-    top: 10%;
+    top: 6.8%;
   }
 
   .clouds2{
-    top: 25%;
+    top: 23%;
   }
 
   .clouds3{
@@ -744,7 +788,7 @@ h1 {
   }
 
   .clouds4{
-    top: 86%; 
+    top: 84.5%; 
   }
   
 }
@@ -940,7 +984,7 @@ h1 {
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1080px) {
     .About p{
         font-size: 35px;
       }
