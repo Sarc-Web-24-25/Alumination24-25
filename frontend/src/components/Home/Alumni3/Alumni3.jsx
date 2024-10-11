@@ -6,10 +6,10 @@ import Nitesh_Tiwari from '../photos24/Nitesh_Tiwari.png'
 import Bhavish_Aggarwal from '../photos24/Bhavish_Aggarwal.png'
 import Bharat_Desai from '../photos24/Bharat_Desai.png'
 import Lalit_Keshare from '../photos24/Lalit_Keshare.png'
-import Zishaan_Hayath from '../photos24/Zishaan_Hayath.jpg'
-import Ankit_Mehta from '../photos24/Ankit_Mehta.jpg'
-import Gaganjeet_Singh from '../photos24/Gaganjeet_Singh.jpeg'
-import Sameer_Saxena from '../photos24/Sameer_Saxena.jpg'
+import Zishaan_Hayath from '../photos24/Zishaan_Hayath.png'
+import Ankit_Mehta from '../photos24/Ankit_Mehta.png'
+import Gaganjeet_Singh from '../photos24/Gaganjeet_Singh.png'
+import Sameer_Saxena from '../photos24/Sameer_Saxena.png'
 
 const alumniList = [  
   {
