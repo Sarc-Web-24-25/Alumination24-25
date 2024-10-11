@@ -12,9 +12,9 @@ import layer3PH from "./photos24/coinParallaxPH.jpg";
 import layer4 from "./photos24/layer4.png"; // New layer
 import layer5 from "./photos24/layer5.png"; // New layer
 import dragon from "./photos24/dragon.png";
-import cloud1 from "./photos24/Cloud1.png";
-import cloud2 from "./photos24/Clouds2.png";
-import cloud3 from "./photos24/Clouds3.png";
+import cloud1 from "./photos24/clod1.png";
+import cloud2 from "./photos24/clod2.png";
+import cloud3 from "./photos24/clod3.png";
 import Petal from "./Petal";
 import backgroundMusic from "./photos24/bgm.mp3";
 import flagIcon from "./photos24/flag.png";
@@ -386,10 +386,10 @@ export default function Home1() {
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
-        {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
-        {/* <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
           <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" /> */}
+          <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
       {/* </div> */}
 
@@ -416,10 +416,10 @@ export default function Home1() {
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
-        {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
-        {/* <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
           <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" /> */}
+          <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
       {/* </div> */}
 
@@ -439,10 +439,10 @@ export default function Home1() {
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
-        {/* <img src={cloud2} alt="cloud3" className="cloud" /> */}
-        {/* <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
           <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" /> */}
+          <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
       {/* </div> */}
 

@@ -229,6 +229,8 @@
     font-weight: 600;
     animation: slideIn 0.8s ease-out forwards;
     border-radius: 50%;
+    font-family: 'Sylfaen', sans-serif;
+
 }
 
 .scheduleLaptop{
