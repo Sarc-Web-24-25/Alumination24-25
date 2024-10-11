@@ -383,6 +383,11 @@ export default function Home1() {
         </div>
       </Parallax>
 
+      <div className="clouds1always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds2always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds3always" ><img src={cloud1} alt="" /></div>
+
+
       <div className="clouds1">
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud1} alt="cloud1" className="cloud" />
