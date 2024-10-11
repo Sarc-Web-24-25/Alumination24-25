@@ -2,20 +2,25 @@ import React from 'react'
 import AlumniCard from './AlumniCard'
 import japanDaisukiFont from '../../../assets/fonts/JapanDaisuki-8OeaZ.woff' 
 import Nandan_Nilekani from '../photos24/Nandan_Nilekani.png'
-import Nitesh_Tiwari from '../photos24/Nitesh_Tiwari.png'
 import Bhavish_Aggarwal from '../photos24/Bhavish_Aggarwal.png'
-import Bharat_Desai from '../photos24/Bharat_Desai.png'
-import Lalit_Keshare from '../photos24/Lalit_Keshare.png'
-import Zishaan_Hayath from '../photos24/Zishaan_Hayath.png'
-import Ankit_Mehta from '../photos24/Ankit_Mehta.png'
-import Gaganjeet_Singh from '../photos24/Gaganjeet_Singh.png'
+import Nitesh_Tiwari from '../photos24/Nitesh_Tiwari.png'
 import Sameer_Saxena from '../photos24/Sameer_Saxena.png'
+import Gaganjeet_Singh from '../photos24/Gaganjeet_Singh.png'
+import Ashima_Mittal from '../photos24/Ashima_Mittal.png'
+import Vipul_Goyal from '../photos24/Vipul_Goyal.png'
+import Shubham_Kumar from '../photos24/Shubham_Kumar.png'
+import Ahana_Gautam from '../photos24/Ahana_Gautam.png'
 
 const alumniList = [  
   {
     name: "Nandan_Nilekani",
-    designation: "Cofounder Infosys",
+    designation: "Co-Founder, Infosys",
     imageSrc: Nandan_Nilekani,
+  },
+  {
+    name: "Bhavish Aggarwal",
+    designation: "CEO, Ola Cabs",
+    imageSrc: Bhavish_Aggarwal,
   },
   {
     name: "Nitesh Tiwari",
@@ -23,40 +28,36 @@ const alumniList = [
     imageSrc: Nitesh_Tiwari,
   },
   {
-    name: "Bhavish Aggarwal",
-    designation: "CEO OLA",
-    imageSrc: Bhavish_Aggarwal,
+    name: "Sameer Saxena",
+    designation: "Film Director",
+    imageSrc: Sameer_Saxena,
   },
   {
-    name: "Bharat Desai",
-    designation: "Chairman, Syntel",
-    imageSrc: Bharat_Desai,
+    name: "Ashima Mittal",
+    designation: "Indian Administrative Services '18",
+    imageSrc: Ashima_Mittal,
   },
   {
-    name: "Lalit Keshare",
-    designation: "CEO Groww",
-    imageSrc: Lalit_Keshare,
+    name: "Vipul Goyal",
+    designation: "Stand-up Comedian and Actor",
+    imageSrc: Vipul_Goyal,
   },
   {
-    name: "Zishaan Hayath",
-    designation: "toppr CEO",
-    imageSrc: Zishaan_Hayath,
+    name: "Shubham Kumar",
+    designation: "AIR 1 UPSC CSE 2020",
+    imageSrc: Shubham_Kumar,
   },
   {
-    name: "Ankit Mehta",
-    designation: "CEO Ideaforge",
-    imageSrc: Ankit_Mehta,
+    name: "Ahana Gautam",
+    designation: "Co-founder and CEO, Open Secret",
+    imageSrc: Ahana_Gautam,
   },
   {
     name: "Gaganjeet Singh",
     designation: "Writer and Director",
     imageSrc: Gaganjeet_Singh,
   },
-  {
-    name: "Sameer Saxena",
-    designation: "Director",
-    imageSrc: Sameer_Saxena,
-  },
+  
   
 ];
 

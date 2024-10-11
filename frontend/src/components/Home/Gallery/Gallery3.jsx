@@ -215,9 +215,10 @@ const Gallery3 = () => {
                                 position: 'absolute', // Ensures photos overlap
                                 transition: 'opacity 0.5s', // Smooth transition for opacity
                                 opacity: index === counter ? 1 : 0,
+                                width: '100%'
                             }}
                         >
-                            <img src={item.img} alt={item.title} />
+                            <img src={item.img} alt={item.title} style={{aspectRatio: '16/9'}}/>
                         </div>
                     ))}
                 </div>

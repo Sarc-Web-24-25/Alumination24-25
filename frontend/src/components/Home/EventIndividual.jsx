@@ -13,6 +13,7 @@ import letter from "../Home/bgimg/letter.png";
 import MultiSelect from "react-select";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import message_background from './photos24/message_background.jpg'
 
 function EventIndividual() {
   const [selectedEventId, setSelectedEventId] = useState(null);
@@ -125,13 +126,17 @@ function EventIndividual() {
 
     if (!userData) {
       Swal.fire({
-        title: "Please Login",
-        text: "You need to login to register for this event",
+        title: '<span style="color: red;">Please Login</span>',
+        html: '<span style="color: blue;">You need to login to register for this event</span>',
         icon: "warning",
         confirmButtonText: "OK",
         iconColor: "brown",
         confirmButtonColor: "brown",
-        background: `url(${letter})`,
+        background: `url(${message_background})`,
+        customClass: {
+          title: 'custom-title',
+          text: 'custom-text'
+        }
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.href = "/login";
@@ -145,13 +150,13 @@ function EventIndividual() {
         register(eventId);
       } else {
         Swal.fire({
-          title: "Please fill all the fields",
-          text: "You need to fill all the fields to register for this event",
+          title: '<span style="color: black;">Please fill all the fields</span>',
+          html: '<span style="color: beige;">You need to fill all the fields to register for this event</span>',
           icon: "warning",
           confirmButtonText: "OK",
           iconColor: "brown",
           confirmButtonColor: "brown",
-          background: `url(${letter})`,
+          background: `url(${message_background})`,
         });
       }
     }

@@ -49,7 +49,7 @@ const Count = () => {
               x: endX,
               y: endY,
               ease: 'power3.out',
-              duration: 0.1,
+              duration: 0.5,
               scrollTrigger: {
                 trigger: dropRef.current,
                 start: 'top 80%', // Start earlier before the drop comes into full view

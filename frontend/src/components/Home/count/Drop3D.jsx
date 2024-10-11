@@ -63,7 +63,7 @@ const RotatingCylinder = ({ maxValue, coinText }) => {
 
   useFrame(() => {
     if (currentNumber < maxValue && cylinderRef.current) {
-      setCurrentNumber((prev) => Math.min(prev + 10000, maxValue)); // Faster increment
+      setCurrentNumber((prev) => Math.min(prev + 1000, maxValue)); // Faster increment
       cylinderRef.current.rotation.z += 0.2; // Rotate the cylinder while counting
     }
 

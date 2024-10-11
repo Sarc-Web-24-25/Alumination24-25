@@ -21,9 +21,77 @@
 .newhome {
     overflow-x: hidden;
     position: relative; /* To position the clouds and layers correctly */
-overflow-y: hidden;
-    
+    overflow-y: hidden;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.falling-leaves {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    /* image is only 880x880 */
+    max-width: 880px;    
+    max-height: 880px;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    /* border: 20px solid #fff;
+    border-radius: 50px;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/sidebar-bg.png) no-repeat center center;
+    background-size: cover;
+    overflow: hidden; */
+  }
+  
+  .leaf-scene {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      transform-style: preserve-3d;
+  
+      div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/125707/leaf.svg) no-repeat;
+        background-size: 100%;
+        transform-style: preserve-3d;
+        backface-visibility: visible;
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Main Home styles */
 .mainHome{
