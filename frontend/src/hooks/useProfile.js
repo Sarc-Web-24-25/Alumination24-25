@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { json } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import defaultProfile from './defaultProfile.png';
-import letter from '../components/Home/bgimg/letter.png';
+import message_background from '../components/Home/photos24/message_background.jpg'
 
 // Define a custom hook for managing the user profile data
 function useProfile() {
@@ -81,29 +81,29 @@ function useProfile() {
       if (response.status === 404 || response.status === 400) {
         Swal.fire({
           icon: 'error',
-          title: 'Error',
-          text: response.data.error,
+          title: '<span style="color: black;">Error</span>',
+          html: `<span style="color: beige;">${response.data.error}</span>`,
           iconColor: 'brown',
-          background: `url(${letter})`,
+          background: `url(${message_background})`,
         })
       }
       else if(response.status === 203){
         Swal.fire({
           icon: 'error',
-          title: 'Error',
-          text: 'Please fill all the fields',
+          title: '<span style="color: black;">Error</span>',
+          html: `<span style="color: beige;">Please fill all the fields</span>`,
           iconColor: 'brown',
-          background: `url(${letter})`,
+          background: `url(${message_background})`,
         })
       }
       
       else{
         Swal.fire({
           icon: 'success',
-          title: 'Profile updated successfully',
+          title: '<span style="color: black;">Profile updated successfully</span>',
           showConfirmButton: true,
           iconColor: 'brown',
-          background: `url(${letter})`,
+          background: `url(${message_background})`,
         }).then((result) => {
           if (result.isConfirmed) {
             fetchProfileData();

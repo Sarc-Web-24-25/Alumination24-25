@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import letter from "../components/Home/bgimg/letter.png";
+import message_background from '../components/Home/photos24/message_background.jpg'
 
 function useIndividualEvent() {
   const [event, setEvent] = useState(null);
@@ -36,10 +36,10 @@ function useIndividualEvent() {
         setSuccess("registered successfully"); // Set a success flag to indicate successful login
         Swal.fire({
           icon: "success",
-          title: "Registered Successfully",
-          text: "You have been registered successfully for the event",
+          title: '<span style="color: black;">Registered Successfully</span>',
+          html: `<span style="color: beige;">You have been registered successfully for the event</span>`,
           iconColor: "brown",
-          background: `url(${letter})`,
+          background: `url(${message_background})`,
         }).then(() => {
           window.location.reload();
         } );
@@ -47,10 +47,10 @@ function useIndividualEvent() {
       .catch((error) => {
          Swal.fire({
             icon: "error",
-            title: "Error",
+            title: '<span style="color: black;">Error</span>',
             iconColor: "brown",
-            background: `url(${letter})`,
-            text: error.response.data.error,
+            background: `url(${message_background})`,
+            html: `<span style="color: beige;">${error.response.data.error}</span>`,
          }).then(() => {
             if(error.response.data.error === "Profile does not exist, Please create a profile first"){
                 window.location.href = "/profile";
