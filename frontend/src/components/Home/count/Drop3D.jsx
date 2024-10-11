@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Canvas, useLoader, extend, useFrame } from '@react-three/fiber'; // Add useFrame import
+import { Canvas, useLoader, extend, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import group18 from '../photos24/count.png'; // Your texture
 
@@ -27,12 +27,17 @@ const RotatingCylinder = ({ maxValue, coinText }) => {
     // Draw the PNG image on the canvas
     context.drawImage(image.image, 0, 0, canvas.width, canvas.height);
 
-    // Add the text on top of the image
+    // Add the number + symbol on the first line and coinText on the second line
     context.font = '44px Arial';
     context.fillStyle = 'rgba(255, 255, 255, 0.8)';
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.fillText(number.toString() + 'k+' + ' ' + coinText, canvas.width / 2, canvas.height / 2);
+
+    // Display the number followed by a '+' on the first line
+    context.fillText(`${number}+`, canvas.width / 2, canvas.height / 3);
+
+    // Display the coinText slightly below the number at 2/3rd of the height
+    context.fillText(coinText, canvas.width / 2, (canvas.height / 3) * 2);
 
     // Convert canvas to a texture
     const texture = new THREE.CanvasTexture(canvas);
@@ -52,30 +57,19 @@ const RotatingCylinder = ({ maxValue, coinText }) => {
       if (cylinderRef.current) {
         cylinderRef.current.geometry.dispose();
         cylinderRef.current.material.dispose();
-      }}
+      }
+    };
   }, [currentNumber, pngTexture]);
 
   useFrame(() => {
-    // if (currentNumber < maxValue && isRotating && cylinderRef.current) {
-    //   setCurrentNumber((prev) => Math.min(prev + 20000, maxValue));
-    // }
-
-    if ((currentNumber < maxValue) && cylinderRef.current) {
-      
-      setCurrentNumber(prev => Math.min(prev + 2, maxValue)) // Increment the number by 1 per frame
-      cylinderRef.current.rotation.z += 0.2 // Rotate about the Y-axis
+    if (currentNumber < maxValue && cylinderRef.current) {
+      setCurrentNumber((prev) => Math.min(prev + 1000, maxValue)); // Faster increment
+      cylinderRef.current.rotation.z += 0.2; // Rotate the cylinder while counting
     }
 
     if (currentNumber >= maxValue && isRotating) {
-      
-      
-      cylinderRef.current.rotation.z += 0.2; // Continue rotating
-        
-        if (Math.abs(cylinderRef.current.rotation.z % Math.PI*2) < 0.1) { // Adjust condition as needed
-          
-          setIsRotating(false); // Stop rotating after the extra rotation
-        }
-      
+      setIsRotating(false); // Stop the rotation flag
+      cylinderRef.current.rotation.z = 0; // Ensure the rotation stops immediately
     }
   });
 
@@ -85,7 +79,6 @@ const RotatingCylinder = ({ maxValue, coinText }) => {
       <meshBasicMaterial attachArray="material" />
       <meshBasicMaterial map={combinedTexture} attachArray="material" />
       <meshBasicMaterial map={combinedTexture} attachArray="material" />
-      {/* <meshBasicMaterial color={'#888888'} attachArray="material" /> */}
     </mesh>
   );
 };
@@ -95,15 +88,12 @@ function Drop3D({ content, maxValue }) {
     <div
       className="drop3d-container"
       style={{
-       
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        // width: '100%',
-        // height: '100vh', // Ensure full viewport height
       }}
     >
-      <Canvas style={{width: '200px', height: '200px', padding: 0}} camera={{ fov: 45, position: [3, 3, 6] }}>
-        <ambientLight intensity={0.5} />  
+      <Canvas style={{ width: '200px', height: '200px', padding: 0 }} camera={{ fov: 45, position: [3, 3, 6] }}>
+        <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <RotatingCylinder maxValue={maxValue} coinText={content} />
       </Canvas>

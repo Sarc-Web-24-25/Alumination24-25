@@ -25,14 +25,13 @@ import Character from "./Character";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
-import Aluminatiom from './photos24/AluminationLogo.png'
+import Aluminatiom from "./photos24/AluminationLogo.png";
 
-import mute from './photos24/mute.png'
-import unmute from './photos24/speaker.png'
+import mute from "./photos24/mute.png";
+import unmute from "./photos24/speaker.png";
 import { gsap } from "gsap";
 
 export default function Home1() {
-
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(new Audio(backgroundMusic));
   const speakerRef = useRef(null);
@@ -161,7 +160,8 @@ export default function Home1() {
 
     const handleScroll = debounce(() => {
       const currentScrollY = window.scrollY;
-      const direction = currentScrollY > previousScrollY.current ? "down" : "up";
+      const direction =
+        currentScrollY > previousScrollY.current ? "down" : "up";
       previousScrollY.current = currentScrollY;
 
       for (let i = 0; i < layerRefs.length; i++) {
@@ -170,7 +170,9 @@ export default function Home1() {
         const layerHeight = layer.offsetHeight;
 
         // Check if 25% of the layer is visible
-        const isLayerVisible = layerPosition <= window.innerHeight * 0.75 && layerPosition >= -layerHeight * 0.25;
+        const isLayerVisible =
+          layerPosition <= window.innerHeight * 0.75 &&
+          layerPosition >= -layerHeight * 0.25;
 
         if (
           isLayerVisible &&
@@ -223,7 +225,7 @@ export default function Home1() {
         sponsor_list.forEach((sponsor) => {
           sponsors.push({
             image: `http://127.0.0.1:8000${sponsor.image}`,
-            url: sponsor.url
+            url: sponsor.url,
           });
         });
         setSponsors(sponsors);
@@ -277,33 +279,35 @@ export default function Home1() {
     <div className="newhome">
       {/* Mute Button */}
 
-      {isSmallScreen ? (<button
-        className="mute-button"
-        onClick={toggleMute}
-        style={{
-          position: "absolute",
-          top: "80px",
-          left: "7px",
-          background: "rgba(255, 255, 255, 0.6)",
-          border: "0px solid #000",
-          borderRadius: "50%",
-          padding: "10px",
-          cursor: "pointer",
-          zIndex: 1000,
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-
-        {isMuted ? (
-          <img src={mute} alt="" style={{ width: "22px", height: "22px" }} />
-
-        ) : (
-          <img src={unmute} alt="" style={{ width: "22px", height: "22px" }} />
-
-        )}
-
-      </button>) : (
+      {isSmallScreen ? (
+        <button
+          className="mute-button"
+          onClick={toggleMute}
+          style={{
+            position: "absolute",
+            top: "80px",
+            left: "7px",
+            background: "rgba(255, 255, 255, 0.6)",
+            border: "0px solid #000",
+            borderRadius: "50%",
+            padding: "10px",
+            cursor: "pointer",
+            zIndex: 1000,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {isMuted ? (
+            <img src={mute} alt="" style={{ width: "22px", height: "22px" }} />
+          ) : (
+            <img
+              src={unmute}
+              alt=""
+              style={{ width: "22px", height: "22px" }}
+            />
+          )}
+        </button>
+      ) : (
         <button
           className="mute-button"
           onClick={toggleMute}
@@ -331,10 +335,7 @@ export default function Home1() {
             {isMuted ? "Unmute" : "Mute"}
           </span>
         </button>
-
       )}
-
-
 
       {/* Parallax Layer 1 */}
       <Parallax bgImage={bgImage1} strength={200}>
@@ -388,8 +389,8 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud2} alt="cloud3" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
       {/* </div> */}
 
@@ -418,8 +419,8 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud2} alt="cloud3" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
       {/* </div> */}
 
@@ -429,7 +430,6 @@ export default function Home1() {
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
-
 
           <Count />
         </div>
@@ -441,8 +441,8 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud2} alt="cloud3" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
       {/* </div> */}
 
@@ -466,18 +466,21 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud2} alt="cloud3" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
-          <img src={cloud1} alt="cloud1" className="cloud" />
-          {/* <img src={cloud3} alt="cloud3" className="cloud" /> */}
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        {/* <img src={cloud3} alt="cloud3" className="cloud" /> */}
       </div>
       {/* </div> */}
 
       {/* Parallax Layer 5 */}
       <Parallax bgImage={layer5} strength={50}>
-        <div className="layer5" ref={layerRefs[4]} style={{height: sponsors.length === 0 ? "80vh" : "130vh"}}>
-          
-            <Sponsor2 sponsors={sponsors} />
-          
-        <Footer />
+        <div
+          className="layer5"
+          ref={layerRefs[4]}
+          style={{ height: sponsors.length === 0 ? "80vh" : "130vh" }}
+        >
+          <Sponsor2 sponsors={sponsors} />
+
+          <Footer />
         </div>
       </Parallax>
     </div>
