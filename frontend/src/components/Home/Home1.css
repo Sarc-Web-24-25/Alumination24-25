@@ -230,7 +230,7 @@ margin-bottom: 10%;
 @media screen and (max-width: 1286px) {
 
     .realistic-flame {
-        top: 57%;
+        top: 58%;
     }
 }
 
@@ -272,7 +272,31 @@ margin-bottom: 10%;
 @media screen and (max-width: 1160px) {
 
     .realistic-flame {
-        top: 51%;
+        top: 50%;
+        left: 23%;
+    }
+}
+
+@media screen and (max-width: 1118px) {
+
+    .realistic-flame {
+        top: 48.5%;
+        left: 23%;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+
+    .realistic-flame {
+        top: 47%;
+        left: 23%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .realistic-flame {
+       display: none;
     }
 }
 
@@ -825,16 +849,7 @@ h1 {
 }
 
 /* Realistic Flame Effect */
-.realistic-flame {
-    position: absolute;
-    top: 70%; /* Adjust position */
-    left: 25%; /* Adjust position */
-    width: 50px;
-    height: 100px;
-    background: radial-gradient(circle, rgba(255, 119, 0, 0.8) 20%, transparent 70%);
-    animation: flicker 0.5s infinite alternate linear;
-    filter: blur(2px);
-}
+
 
 @keyframes flicker {
     0% {
@@ -995,6 +1010,8 @@ h1 {
     font-size: 28px;
   }
 
+
+
 }
 
 @media screen and (max-width: 563px) {
@@ -1012,3 +1029,12 @@ h1 {
 .layer2, .layer3, .layer4, .layer5 {
     will-change: transform; /* Helps optimize rendering */
   }
+
+@media screen and (max-width:1130px) {
+    /* .realistic-flame{
+        display: none;
+    } */
+    .semicircle-moon1,.semicircle-moon2,.semicircle-moon3,.semicircle-moon4,.semicircle-moon5,.semicircle-moon6,.semicircle-moon7,.semicircle-moon8,.semicircle-moon9,.semicircle-moon10,.semicircle-moon11,.semicircle-moon12,.semicircle-moon13{
+        display: none;
+    }
+}
