@@ -1,0 +1,13 @@
+.teamPageThumbnailsHehe {      
+      /* translateX: translateX, */
+      /* left: "0%", */
+      /* transform: "translateX(-10%)", */
+      rotate: rotate;
+      whiteSpace: "nowrap";
+}
+
+@media screen and (min-width: 480px) {
+    .teamPageThumbnailsHehe {
+        left: 0%;
+    }
+}

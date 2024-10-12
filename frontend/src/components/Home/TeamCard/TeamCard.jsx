@@ -54,6 +54,25 @@ import "./TeamCard.scss";
 import japanDaisukiFont from '../../../assets/fonts/JapanDaisuki-8OeaZ.woff';
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 
+const TeamCard = ( {people} ) => {
+  return (
+    <div className="teamCardContainer">
+      <div className="teamCards">
+
+        {people && people.map((member, index) => (
+          <Card
+            key={index}
+            image={member.image}
+            header={member.header}
+            linkedInUrl={member.linkedInUrl}
+            instagramUrl={member.instagramUrl}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const styles = {
     '@font-face': {
       fontFamily: 'Japan Daisuki Regular',
@@ -148,27 +167,5 @@ const Card = ({ image, header, linkedInUrl, instagramUrl }) => {
   );
 };
 
-const TeamCard = () => {
-  return (
-    <div className="teamCardContainer">
-      <div className="teamCards">
-        <Card
-          image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop="
-          header="Pranita Randive"
-          // content="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-          linkedInUrl="https://www.linkedin.com/in/example1"
-          instagramUrl="https://www.instagram.com/example1"
-        />
-        <Card
-          image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop="
-          header="Ashwani Dubey"
-          // content="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-          linkedInUrl="https://www.linkedin.com/in/example1"
-          instagramUrl="https://www.instagram.com/example1"
-        />
-      </div>
-    </div>
-  );
-};
-
 export default TeamCard;
+
