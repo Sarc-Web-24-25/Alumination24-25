@@ -444,11 +444,17 @@ export default function Home1() {
     navigate(route); // Navigate to the specified route
   };
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [bgImage1, setBgImage1] = useState(layer1); // Default background image
   const [bgImage3, setBgImage3] = useState(layer3); // Default background image
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [cloudStyles, setCloudStyles] = useState({}); // To store dynamic cloud positions
+
   useEffect(() => {
     const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+
+      // Background image logic for smaller screens
       if (window.innerWidth < 786) {
         setBgImage1(layer1PH); // Use small image for screens smaller than 786px
         setBgImage3(layer3PH); // Use small image for screens smaller than 786px
@@ -458,20 +464,104 @@ export default function Home1() {
         setBgImage3(layer3); // Use default image for larger screens
         setIsSmallScreen(false);
       }
+
+      // Dynamic cloud position based on window width
+      let styles = {};
+      if (windowWidth >= 1286) {
+        styles = {
+          clouds1: { top: '7%' },
+          clouds2: { top: '27%' },
+          clouds3: { top: '49%' },
+          clouds4: { top: '80%' }
+        };
+      } else if (windowWidth < 1286 && windowWidth >= 1025) {
+        styles = {
+          clouds1: { top: '7%' },
+          clouds2: { top: '28%' },
+          clouds3: { top: '49%' },
+          clouds4: { top: '79%' }
+        };
+      } else if (windowWidth < 1025 && windowWidth >= 970) {
+        styles = {
+          clouds1: { top: '6%' },
+          clouds2: { top: '24%' },
+          clouds3: { top: '41%' },
+          clouds4: { top: '82.5%' }
+        };
+      } else if (windowWidth < 970 && windowWidth >= 855) {
+        styles = {
+          clouds1: { top: '6.5%' },
+          clouds2: { top: '24%' },
+          clouds3: { top: '42%' },
+          clouds4: { top: '83.5%' }
+        };
+      }
+        else if (windowWidth < 855 && windowWidth >= 810) {
+          styles = {
+            clouds1: { top: '7%' },
+            clouds2: { top: '25%' },
+            clouds3: { top: '42%' },
+            clouds4: { top: '84.5%' }
+          };
+        }
+
+        else if (windowWidth < 810 && windowWidth >= 786) {
+          styles = {
+            clouds1: { top: '7%' },
+            clouds2: { top: '25.5%' },
+            clouds3: { top: '43%' },
+            clouds4: { top: '84.5%' }
+          };
+        }
+      else if (windowWidth < 786 && windowWidth >= 700) {
+        styles = {
+          clouds1: { top: '7%' },
+          clouds2: { top: '24%' },
+          clouds3: { top: '40%' },
+          clouds4: { top: '84.5%' }
+        };
+      } else if (windowWidth < 700 && windowWidth >= 640) {
+        styles = {
+          clouds1: { top: '8%' },
+          clouds2: { top: '24%' },
+          clouds3: { top: '40%' },
+          clouds4: { top: '85.5%' }
+        };
+      } else if (windowWidth < 640 && windowWidth >= 607) {
+        styles = {
+          clouds1: { top: '6.3%' },
+          clouds2: { top: '19%' },
+          clouds3: { top: '31.5%' },
+          clouds4: { top: '88.5%' }
+        };
+      } else if (windowWidth < 607 && windowWidth >= 550) {
+        styles = {
+          clouds1: { top: '6.3%' },
+          clouds2: { top: '19%' },
+          clouds3: { top: '31.5%' },
+          clouds4: { top: '88.5%' }
+        };
+      } else if (windowWidth < 550) {
+        styles = {
+          clouds1: { top: '6.5%' },
+          clouds2: { top: '19%' },
+          clouds3: { top: '31.5%' },
+          clouds4: { top: '89.5%' }
+        };
+      }
+
+      setCloudStyles(styles);
     };
 
-    // Call the function on initial load
+    // Call handleResize on initial load and window resize events
     handleResize();
-
-    // Add event listener to handle resize
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     // Cleanup event listener on component unmount
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
-  }, []);
-
+  }, [windowWidth]);
   return (
     <div className="newhome">
       <div className="falling-leaves" ref={leafContainerRef}></div>
@@ -596,7 +686,7 @@ export default function Home1() {
 
 
 
-      <div className="clouds1">
+      <div className="clouds1" style={cloudStyles.clouds1}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
@@ -630,7 +720,7 @@ export default function Home1() {
         {/* Clouds above Layer 2 */}
       </Parallax>
 
-      <div className="clouds2">
+      <div className="clouds2" style={cloudStyles.clouds2}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
@@ -652,7 +742,7 @@ export default function Home1() {
         </div>
       </Parallax>
 
-      <div className="clouds3">
+      <div className="clouds3" style={cloudStyles.clouds3}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
