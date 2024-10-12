@@ -198,37 +198,6 @@ export default function Home1() {
   }, []);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const [isMuted, setIsMuted] = useState(false);
   const audioRef = useRef(new Audio(backgroundMusic));
   const speakerRef = useRef(null);
@@ -450,6 +419,151 @@ export default function Home1() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [cloudStyles, setCloudStyles] = useState({}); // To store dynamic cloud positions
 
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+
+  //     // Background image logic for smaller screens
+  //     if (window.innerWidth < 786) {
+  //       setBgImage1(layer1PH); // Use small image for screens smaller than 786px
+  //       setBgImage3(layer3PH); // Use small image for screens smaller than 786px
+  //       setIsSmallScreen(true);
+  //     } else {
+  //       setBgImage1(layer1); // Use default image for larger screens
+  //       setBgImage3(layer3); // Use default image for larger screens
+  //       setIsSmallScreen(false);
+  //     }
+
+  //     // Dynamic cloud position based on window width
+  //     let styles = {};
+  //     if (windowWidth >= 1286) {
+  //       styles = {
+  //         clouds1: { top: '12.5%' },
+  //         clouds2: { top: '27%' },
+  //         clouds3: { top: '49%' },
+  //         clouds4: { top: '80%' }
+  //       };
+  //     } else if (windowWidth < 1286 && windowWidth >= 1025) {
+  //       styles = {
+  //         clouds1: { top: '7%' },
+  //         clouds2: { top: '28%' },
+  //         clouds3: { top: '49%' },
+  //         clouds4: { top: '79%' }
+  //       };
+  //     } else if (windowWidth < 1025 && windowWidth >= 970) {
+  //       styles = {
+  //         clouds1: { top: '6%' },
+  //         clouds2: { top: '24%' },
+  //         clouds3: { top: '41%' },
+  //         clouds4: { top: '82.5%' }
+  //       };
+  //     } else if (windowWidth < 970 && windowWidth >= 855) {
+  //       styles = {
+  //         clouds1: { top: '6.5%' },
+  //         clouds2: { top: '24%' },
+  //         clouds3: { top: '42%' },
+  //         clouds4: { top: '83.5%' }
+  //       };
+  //     }
+  //       else if (windowWidth < 855 && windowWidth >= 810) {
+  //         styles = {
+  //           clouds1: { top: '7%' },
+  //           clouds2: { top: '25%' },
+  //           clouds3: { top: '42%' },
+  //           clouds4: { top: '84.5%' }
+  //         };
+  //       }
+
+  //       else if (windowWidth < 810 && windowWidth >= 786) {
+  //         styles = {
+  //           clouds1: { top: '7%' },
+  //           clouds2: { top: '25.5%' },
+  //           clouds3: { top: '43%' },
+  //           clouds4: { top: '84.5%' }
+  //         };
+  //       }
+  //     else if (windowWidth < 786 && windowWidth >= 710) {
+  //       styles = {
+  //         clouds1: { top: '8%' },
+  //         clouds2: { top: '25.5%' },
+  //         clouds3: { top: '43%' },
+  //         clouds4: { top: '84.5%' }
+  //       };
+  //     } else if (windowWidth < 710 && windowWidth >= 640) {
+  //       styles = {
+  //         clouds1: { top: '8.5%' },
+  //         clouds2: { top: '25.5%' },
+  //         clouds3: { top: '43.5%' },
+  //         clouds4: { top: '85.5%' }
+  //       };
+  //     } else if (windowWidth < 640 && windowWidth >= 607) {
+  //       styles = {
+  //         clouds1: { top: '6.5%' },
+  //         clouds2: { top: '20.5%' },
+  //         clouds3: { top: '34%' },
+  //         clouds4: { top: '88.5%' }
+  //       };
+  //     } else if (windowWidth < 607 && windowWidth >= 550) {
+  //       styles = {
+  //         clouds1: { top: '6.3%' },
+  //         clouds2: { top: '20.5%' },
+  //         clouds3: { top: '34%' },
+  //         clouds4: { top: '88.5%' }
+  //       };
+  //     } else if (windowWidth < 550 && windowWidth >= 490) {
+  //       styles = {
+  //         clouds1: { top: '7.3%' },
+  //         clouds2: { top: '20.5%' },
+  //         clouds3: { top: '34%' },
+  //         clouds4: { top: '89.5%' }
+  //       };
+
+        
+  //     }
+  //     else if (windowWidth < 490 && windowWidth >= 450) {
+  //       styles = {
+  //         clouds1: { top: '7.5%' },
+  //         clouds2: { top: '21%' },
+  //         clouds3: { top: '34%' },
+  //         clouds4: { top: '89.5%' }
+  //       };
+
+        
+  //     }
+
+  //     else if (windowWidth < 450 && windowWidth >= 400) {
+  //       styles = {
+  //         clouds1: { top: '8.5%' },
+  //         clouds2: { top: '22.4%' },
+  //         clouds3: { top: '36.5%' },
+  //         clouds4: { top: '89.5%' }
+  //       };
+
+        
+  //     }
+  //     else if (windowWidth < 400 && windowWidth >= 340) {
+  //       styles = {
+  //         clouds1: { top: '8%' },
+  //         clouds2: { top: '21.4%' },
+  //         clouds3: { top: '34.5%' },
+  //         clouds4: { top: '89.5%' }
+  //       };
+
+        
+  //     }
+  //     setCloudStyles(styles);
+  //   };
+
+  //   // Call handleResize on initial load and window resize events
+  //   handleResize();
+  //   window.addEventListener('resize', handleResize);
+
+  //   // Cleanup event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, [windowWidth]);
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -470,22 +584,22 @@ export default function Home1() {
       if (windowWidth >= 1286) {
         styles = {
           clouds1: { top: '12.5%' },
-          clouds2: { top: '27%' },
-          clouds3: { top: '49%' },
+          clouds2: { top: '33.5%' },
+          clouds3: { top: '57%' },
           clouds4: { top: '80%' }
         };
       } else if (windowWidth < 1286 && windowWidth >= 1025) {
         styles = {
-          clouds1: { top: '7%' },
-          clouds2: { top: '28%' },
-          clouds3: { top: '49%' },
+          clouds1: { top: '12.5%' },
+          clouds2: { top: '35%' },
+          clouds3: { top: '57%' },
           clouds4: { top: '79%' }
         };
       } else if (windowWidth < 1025 && windowWidth >= 970) {
         styles = {
-          clouds1: { top: '6%' },
-          clouds2: { top: '24%' },
-          clouds3: { top: '41%' },
+          clouds1: { top: '14%' },
+          clouds2: { top: '39%' },
+          clouds3: { top: '62.5%' },
           clouds4: { top: '82.5%' }
         };
       } else if (windowWidth < 970 && windowWidth >= 855) {
@@ -496,7 +610,7 @@ export default function Home1() {
           clouds4: { top: '83.5%' }
         };
       }
-        else if (windowWidth < 855 && windowWidth >= 810) {
+        else if (windowWidth < 855 && windowWidth >= 821) {
           styles = {
             clouds1: { top: '7%' },
             clouds2: { top: '25%' },
@@ -505,19 +619,19 @@ export default function Home1() {
           };
         }
 
-        else if (windowWidth < 810 && windowWidth >= 786) {
+        else if (windowWidth < 821 && windowWidth >= 786) {
           styles = {
-            clouds1: { top: '7%' },
-            clouds2: { top: '25.5%' },
-            clouds3: { top: '43%' },
+            clouds1: { top: '13%' },
+            clouds2: { top: '32.5%' },
+            clouds3: { top: '53%' },
             clouds4: { top: '84.5%' }
           };
         }
       else if (windowWidth < 786 && windowWidth >= 710) {
         styles = {
-          clouds1: { top: '8%' },
-          clouds2: { top: '25.5%' },
-          clouds3: { top: '43%' },
+          clouds1: { top: '12.5%' },
+          clouds2: { top: '31.5%' },
+          clouds3: { top: '50%' },
           clouds4: { top: '84.5%' }
         };
       } else if (windowWidth < 710 && windowWidth >= 640) {
@@ -565,21 +679,29 @@ export default function Home1() {
       else if (windowWidth < 450 && windowWidth >= 400) {
         styles = {
           clouds1: { top: '8.5%' },
-          clouds2: { top: '22.4%' },
-          clouds3: { top: '36.5%' },
+          clouds2: { top: '23.4%' },
+          clouds3: { top: '38%' },
           clouds4: { top: '89.5%' }
         };
 
         
       }
-      else if (windowWidth < 400 && windowWidth >= 340) {
+      else if (windowWidth < 400 && windowWidth >= 376) {
         styles = {
-          clouds1: { top: '8%' },
-          clouds2: { top: '21.4%' },
-          clouds3: { top: '34.5%' },
+          clouds1: { top: '8.5%' },
+          clouds2: { top: '22.75%' },
+          clouds3: { top: '36%' },
           clouds4: { top: '89.5%' }
         };
-
+      }
+      else if (windowWidth < 376 && windowWidth >= 359) {
+          styles = {
+            clouds1: { top: '7%' },
+            clouds2: { top: '19.5%' },
+            clouds3: { top: '31.5%' },
+            clouds4: { top: '89.5%' }
+          };
+  
         
       }
       setCloudStyles(styles);
@@ -594,6 +716,7 @@ export default function Home1() {
       window.removeEventListener('resize', handleResize);
     };
   }, [windowWidth]);
+
   return (
     <div className="newhome">
       <div className="falling-leaves" ref={leafContainerRef}></div>
@@ -731,6 +854,8 @@ export default function Home1() {
         <img src={cloud1} alt="cloud1" className="cloud" />
 
       </div>
+
+          
       {/* </div> */}
 
       {/* Parallax Layer 2 */}
@@ -761,6 +886,49 @@ export default function Home1() {
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
+
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'-25vw'}}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'25vw'}}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'-15vw'}}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'15vw'}}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+
+    
       {/* </div> */}
 
       {/* Parallax Layer 3 */}
@@ -773,6 +941,66 @@ export default function Home1() {
           <Count />
         </div>
       </Parallax>
+
+      <div className="clouds3" style={cloudStyles.clouds3}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds3" style={{...cloudStyles.clouds3, left:'-20vw'}}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds3" style={{...cloudStyles.clouds3, left:'20vw'}}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds3" style={cloudStyles.clouds3}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds3" style={cloudStyles.clouds3}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
+
+      <div className="clouds3" style={cloudStyles.clouds3}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div>
 
       <div className="clouds3" style={cloudStyles.clouds3}>
         <img src={cloud1} alt="cloud1" className="cloud" />
