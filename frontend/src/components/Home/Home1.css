@@ -783,7 +783,7 @@ h1 {
   opacity: 1;
 }
 
-
+/* 
 @media screen and (min-width: 1286px) {
     .clouds1{
         top: 7%;
@@ -1046,7 +1046,7 @@ h1 {
       top: 90.7%; 
     }
     
-  }
+  } */
   
 .cloud {
     position: absolute;
