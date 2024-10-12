@@ -34,12 +34,12 @@ const alumniList = [
   },
   {
     name: "Ashima Mittal",
-    designation: "Indian Administrative Services '18",
+    designation: "Indian Administrative Services",
     imageSrc: Ashima_Mittal,
   },
   {
     name: "Vipul Goyal",
-    designation: "Stand-up Comedian and Actor",
+    designation: "Stand-up Comedian & Actor",
     imageSrc: Vipul_Goyal,
   },
   {
@@ -49,7 +49,8 @@ const alumniList = [
   },
   {
     name: "Ahana Gautam",
-    designation: "Co-founder and CEO, Open Secret",
+    designation: "Co-Founder, Open Secret",
+    // designation: "afwasfawszfasw",
     imageSrc: Ahana_Gautam,
   },
   {

@@ -342,52 +342,52 @@ export default function Home1() {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
 
-  useEffect(() => {
-    const debounce = (func, wait) => {
-      let timeout;
-      return (...args) => {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-      };
-    };
+  // useEffect(() => {
+  //   const debounce = (func, wait) => {
+  //     let timeout;
+  //     return (...args) => {
+  //       const later = () => {
+  //         clearTimeout(timeout);
+  //         func(...args);
+  //       };
+  //       clearTimeout(timeout);
+  //       timeout = setTimeout(later, wait);
+  //     };
+  //   };
 
-    const handleScroll = debounce(() => {
-      const currentScrollY = window.scrollY;
-      const direction =
-        currentScrollY > previousScrollY.current ? "down" : "up";
-      previousScrollY.current = currentScrollY;
+  //   const handleScroll = debounce(() => {
+  //     const currentScrollY = window.scrollY;
+  //     const direction =
+  //       currentScrollY > previousScrollY.current ? "down" : "up";
+  //     previousScrollY.current = currentScrollY;
 
-      for (let i = 0; i < layerRefs.length; i++) {
-        const layer = layerRefs[i].current;
-        const layerPosition = layer.getBoundingClientRect().top;
-        const layerHeight = layer.offsetHeight;
+  //     for (let i = 0; i < layerRefs.length; i++) {
+  //       const layer = layerRefs[i].current;
+  //       const layerPosition = layer.getBoundingClientRect().top;
+  //       const layerHeight = layer.offsetHeight;
 
-        // Check if 25% of the layer is visible
-        const isLayerVisible =
-          layerPosition <= window.innerHeight * 0.75 &&
-          layerPosition >= -layerHeight * 0.25;
+  //       // Check if 25% of the layer is visible
+  //       const isLayerVisible =
+  //         layerPosition <= window.innerHeight * 0.75 &&
+  //         layerPosition >= -layerHeight * 0.25;
 
-        if (
-          isLayerVisible &&
-          ((direction === "down" && layerPosition >= 0) ||
-            (direction === "up" && layerPosition <= 0))
-        ) {
-          window.scrollTo({
-            top: window.scrollY + layerPosition,
-            behavior: "smooth",
-          });
-          break;
-        }
-      }
-    }, 20); // Adjust the delay to 100ms for debouncing
+  //       if (
+  //         isLayerVisible &&
+  //         ((direction === "down" && layerPosition >= 0) ||
+  //           (direction === "up" && layerPosition <= 0))
+  //       ) {
+  //         window.scrollTo({
+  //           top: window.scrollY + layerPosition,
+  //           behavior: "smooth",
+  //         });
+  //         break;
+  //       }
+  //     }
+  //   }, 20); // Adjust the delay to 100ms for debouncing
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   useEffect(() => {
     const handleEnded = () => {
@@ -674,22 +674,29 @@ export default function Home1() {
           <Alumni3 />
           <div style={{ height: "10vh" }}></div>
           <div style={{ height: "10vh" }}></div>
+          <div style={{ height: sponsors.length === 0 ? "40vh" : "130vh" }}>
+        <Sponsor2 sponsors={sponsors} />
+
+          </div>
+          <Footer />
         </div>
+
+
       </Parallax>
 
-      <div className="clouds4">
+      {/* <div className="clouds4">
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud2} alt="cloud3" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud1} alt="cloud1" className="cloud" />
-        {/* <img src={cloud3} alt="cloud3" className="cloud" /> */}
-      </div>
+        <img src={cloud3} alt="cloud3" className="cloud" />
+      </div> */}
       {/* </div> */}
 
       {/* Parallax Layer 5 */}
-      <Parallax bgImage={layer5} strength={50}>
+      {/* <Parallax bgImage={layer5} strength={50}>
         <div
           className="layer5"
           ref={layerRefs[4]}
@@ -699,7 +706,7 @@ export default function Home1() {
 
           <Footer />
         </div>
-      </Parallax>
+      </Parallax> */}
     </div>
   );
 }
