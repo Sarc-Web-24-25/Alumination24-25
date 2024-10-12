@@ -1298,3 +1298,39 @@ h1 {
 
     z-index: 10;
 }
+
+@media screen and (max-width: 786px) {
+  .clouds1always,.clouds2always,.clouds3always{
+    top: 8.5%;
+
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .clouds1always,.clouds2always,.clouds3always{
+    top: 6.8%;
+
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .clouds1always,.clouds2always,.clouds3always{
+    top: 7.2%;
+
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .clouds1always,.clouds2always,.clouds3always{
+    top: 7.7%;
+
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .clouds1always,.clouds2always,.clouds3always{
+    top: 8.1%;
+
+  }
+}
+

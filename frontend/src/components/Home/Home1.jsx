@@ -513,43 +513,75 @@ export default function Home1() {
             clouds4: { top: '84.5%' }
           };
         }
-      else if (windowWidth < 786 && windowWidth >= 700) {
-        styles = {
-          clouds1: { top: '7%' },
-          clouds2: { top: '24%' },
-          clouds3: { top: '40%' },
-          clouds4: { top: '84.5%' }
-        };
-      } else if (windowWidth < 700 && windowWidth >= 640) {
+      else if (windowWidth < 786 && windowWidth >= 710) {
         styles = {
           clouds1: { top: '8%' },
-          clouds2: { top: '24%' },
-          clouds3: { top: '40%' },
+          clouds2: { top: '25.5%' },
+          clouds3: { top: '43%' },
+          clouds4: { top: '84.5%' }
+        };
+      } else if (windowWidth < 710 && windowWidth >= 640) {
+        styles = {
+          clouds1: { top: '8.5%' },
+          clouds2: { top: '25.5%' },
+          clouds3: { top: '43.5%' },
           clouds4: { top: '85.5%' }
         };
       } else if (windowWidth < 640 && windowWidth >= 607) {
         styles = {
-          clouds1: { top: '6.3%' },
-          clouds2: { top: '19%' },
-          clouds3: { top: '31.5%' },
+          clouds1: { top: '6.5%' },
+          clouds2: { top: '20.5%' },
+          clouds3: { top: '34%' },
           clouds4: { top: '88.5%' }
         };
       } else if (windowWidth < 607 && windowWidth >= 550) {
         styles = {
           clouds1: { top: '6.3%' },
-          clouds2: { top: '19%' },
-          clouds3: { top: '31.5%' },
+          clouds2: { top: '20.5%' },
+          clouds3: { top: '34%' },
           clouds4: { top: '88.5%' }
         };
-      } else if (windowWidth < 550) {
+      } else if (windowWidth < 550 && windowWidth >= 490) {
         styles = {
-          clouds1: { top: '6.5%' },
-          clouds2: { top: '19%' },
-          clouds3: { top: '31.5%' },
+          clouds1: { top: '7.3%' },
+          clouds2: { top: '20.5%' },
+          clouds3: { top: '34%' },
           clouds4: { top: '89.5%' }
         };
+
+        
+      }
+      else if (windowWidth < 490 && windowWidth >= 450) {
+        styles = {
+          clouds1: { top: '7.5%' },
+          clouds2: { top: '21%' },
+          clouds3: { top: '34%' },
+          clouds4: { top: '89.5%' }
+        };
+
+        
       }
 
+      else if (windowWidth < 450 && windowWidth >= 400) {
+        styles = {
+          clouds1: { top: '8.5%' },
+          clouds2: { top: '22.4%' },
+          clouds3: { top: '36.5%' },
+          clouds4: { top: '89.5%' }
+        };
+
+        
+      }
+      else if (windowWidth < 400 && windowWidth >= 340) {
+        styles = {
+          clouds1: { top: '8%' },
+          clouds2: { top: '21.4%' },
+          clouds3: { top: '34.5%' },
+          clouds4: { top: '89.5%' }
+        };
+
+        
+      }
       setCloudStyles(styles);
     };
 
