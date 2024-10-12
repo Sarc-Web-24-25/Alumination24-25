@@ -252,6 +252,9 @@
     color: rgb(255, 255, 255);
 }
 .menuLapLogin{
+    position: relative;
+    top: 75px;
+    right: 90px;
     cursor: pointer;
 }
 .menuLapLogin:hover{
@@ -265,7 +268,7 @@
         right: -140px;
     }
 
-    .menuLapProfile{
+    .menuLapProfile,.menuLapLogin{
         top: 85px;
         right: 90px;
     }
@@ -283,7 +286,7 @@
         right: -150px;
     }
 
-    .menuLapProfile{
+    .menuLapProfile,.menuLapLogin{
         top: 90px;
         right: 80px;
     }
@@ -301,7 +304,7 @@
         right: -160px;
     }
 
-    .menuLapProfile{
+    .menuLapProfile,.menuLapLogin{
         top: 90px;
         right: 50px;
     }
