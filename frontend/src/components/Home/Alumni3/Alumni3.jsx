@@ -57,8 +57,6 @@ const alumniList = [
     designation: "Writer and Director",
     imageSrc: Gaganjeet_Singh,
   },
-  
-  
 ];
 
 const styles = {

@@ -27,6 +27,7 @@ import VerifyEmailView from "./components/VerifyEmailView";
 import ChangePasswordView from "./components/ChangePasswordView";
 import EventIndividual from "./components/Home/EventIndividual";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TeamCard from "./components/Home/TeamCard/TeamCard";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home1 />} exact={true} />
         <Route path="/team" element={<Team2 /> } exact={true} />
+        <Route path="/team2" element={<TeamCard /> } exact={true} />
         <Route path="/gallery" element={<Gallery3 />} exact={true} />
         <Route path="/signup" element={<Signup />} exact={true} />
         <Route path="/login" element={<Login />} exact={true}/>

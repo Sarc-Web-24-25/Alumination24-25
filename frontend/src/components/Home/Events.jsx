@@ -93,6 +93,7 @@ function EventList() {
       <div className="Event_Heading">
           <p>Events</p>
       </div>
+
       <ImageCarousel main={mainEvents} />
       {/* <span className='event-head'>Events</span> */}
       <div className="page-content" style={{ zIndex: 0 }}>

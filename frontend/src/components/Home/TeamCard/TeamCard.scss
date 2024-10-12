@@ -1,0 +1,159 @@
+$hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
+$returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+.teamCardContainer {
+    padding: 40px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Raleway";
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #BCAAA4;
+    -webkit-font-smoothing: antialiased;
+}
+
+.teamCards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-card-information h1 {
+  font-family: 'Japan Daisuki Regular', sans-serif;
+  font-weight: bolder;
+  font-size: 10px;
+  color: white;
+  -webkit-text-stroke: 1px #700815;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3vh;
+}
+
+.team-card-information p {
+  line-height: 1.5em;
+  opacity: 0;
+}
+
+.team-card-information h1 + p,
+.team-card-information p + p {
+  margin-top: 10px;
+}
+
+.team-card-wrap {
+  margin: 10px;
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  &:hover {
+    .team-card-information {
+      transform: translateY(0);
+    }
+    .team-card-information p {
+      opacity: 1;
+    }
+    .team-card-information,
+    .team-card-information p {
+      transition: 0.6s $hoverEasing;
+    }
+    .team-card-information:after {
+      transition: 5s $hoverEasing;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-card-background {
+      transition: 0.6s $hoverEasing, opacity 5s $hoverEasing;
+      opacity: 0.8;
+      scale: 1.2;
+    }
+    .team-ke-card {
+      transition: 0.6s $hoverEasing, box-shadow 2s $hoverEasing;
+      box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, rgba(255, 255, 255, 1) 0 0 0 1px,
+        rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset #fff 0 0 0 6px;
+    }
+  }
+}
+
+.team-ke-card {
+  position: relative;
+  display: flex;
+  flex: 0 0 240px;
+  width: 240px;
+  height: 320px;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: 1s $returnEasing;
+}
+
+.team-card-background {
+    opacity: 0.5;
+    position: absolute;
+    top: 0px; left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 1s $returnEasing, opacity 5s 1s $returnEasing;
+    // pointer-events: none;
+    scale: 1.4;
+}
+
+.team-card-information {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  transform: translateY(40%);
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  .team-card-information .team-card-social-icons {
+    opacity: 0;
+    text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
+    transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+    background-blend-mode: overlay;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 5s 1s $returnEasing;
+  }
+}
+
+.team-card-social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; // Space between icons
+    margin-top: 0; // Add some spacing from the header
+  }
+  
+  .team-card-social-icons a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .team-card-social-icons a:hover {
+    color: #0077b5;
+  }
+  
+  .team-card-social-icons a:nth-child(2):hover {
+    color: #e1306c;
+  }
