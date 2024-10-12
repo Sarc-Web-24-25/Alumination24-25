@@ -97,20 +97,18 @@ import Team3 from '../Team3/Team3';
 import TeamCard from '../TeamCard/TeamCard';
 
 const Team2 = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [currentMembers, setCurrentMembers] = useState([]);
+    const [currentMembers, setCurrentMembers] = useState([ {
+        image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+        header: "Aniruddha Goyal",
+        linkedInUrl: "https://www.linkedin.com/in/example1",
+        instagramUrl: "https://www.instagram.com/example1",
+    }]);
     
     const portfolios = {
         oc: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
-            },
-            {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Aniruddha Goyal",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
@@ -118,13 +116,13 @@ const Team2 = () => {
         asmp: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
+                header: "Anshika Mishra",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Nishit Moonat",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
@@ -132,13 +130,13 @@ const Team2 = () => {
         hda: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
+                header: "Bhakti Joshi",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Ishaan Grover",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
@@ -146,13 +144,13 @@ const Team2 = () => {
         events: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
+                header: "Arnav Mishra",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Aditya Singh",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
@@ -160,13 +158,13 @@ const Team2 = () => {
         marketing: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
+                header: "Hemendra Suthar",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Aditya Aryan",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
@@ -174,13 +172,13 @@ const Team2 = () => {
         operations: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
+                header: "Kartik Vaishnav",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Himanya Garg",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
@@ -188,13 +186,13 @@ const Team2 = () => {
         mpr: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
+                header: "Ananya Patil",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Rutuja Khandekar",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
@@ -202,24 +200,18 @@ const Team2 = () => {
         design: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
+                header: "Jinisha Sabara",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
+                header: "Akshita Choudhary",
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
         ],
         web: [
-            {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Pranita Randive",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
-            },
             {
                 image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
                 header: "Ashwani Dubey",
@@ -240,14 +232,17 @@ const Team2 = () => {
                 <div className="carousel">
                     
                     <div className="list">
-                        {currentMembers && currentMembers.map((member, index) => (
+                        {/* {currentMembers && currentMembers.map((member, index) => (
+                            // console.log("current member:", currentMembers),
                             <TeamCard
                                 key={index}
-                                header={member.header}
-                                linkedInUrl={member.linkedInUrl}
-                                instagramUrl={member.instagramUrl}
+                                people={member}
+                                // header={member.header}
+                                // linkedInUrl={member.linkedInUrl}
+                                // instagramUrl={member.instagramUrl}
                             />
-                        ))}
+                        ))} */}
+                        <TeamCard people={currentMembers} />
                     </div>
 
                     <Team3 handleThumbnailClick={handleThumbnailClick} />

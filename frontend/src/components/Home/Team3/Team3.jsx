@@ -46,7 +46,7 @@ const people = [
   },
   {
     id: 6,
-    name: "Media and PR",
+    name: "MPR",
     id_name: "mpr",
     designation: "The Explorer",
     image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
@@ -68,21 +68,30 @@ const people = [
 ];
 
 export default function Team3({handleThumbnailClick}) {
+
+  const styles = {
+    container: {
+      flexWrap: "wrap",
+      position: "absolute",
+      bottom: "0",
+      background: "rgba(0, 0, 0, 0.2)",
+      backdropFilter: "blur(10px)",
+      WebkitBackdropFilter: "blur(100px)",
+      borderRadius: "35px 35px 0 0",
+      gap: "1.5vh",
+      padding: "3vh 0",
+      zIndex: 100,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "100%",
+    },
+  };
+
   return (
     <div
         className="flex flex-row items-center justify-center w-full"
-        style={{
-            flexWrap: "wrap",
-            position: "absolute",
-            bottom: "0",
-            background: "rgba(0, 0, 0, 0.2)",
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(100px)",
-            borderRadius: "35px 35px 0 0",
-            gap: "2vh",
-            padding: "3vh 0",
-            zIndex: "100",
-        }}
+        style={styles.container}
     >
       <AnimatedTooltip items={people} handleThumbnailClick={handleThumbnailClick} />
     </div>

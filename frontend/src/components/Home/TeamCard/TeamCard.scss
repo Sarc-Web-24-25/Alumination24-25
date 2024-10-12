@@ -2,8 +2,10 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 .teamCardContainer {
-    padding: 40px 80px;
+    padding: 80px 80px;
+    height: 100vh;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     justify-content: center;
     font-family: "Raleway";
@@ -11,12 +13,14 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     font-weight: 500;
     background-color: #BCAAA4;
     -webkit-font-smoothing: antialiased;
+    overflow: auto;
 }
 
 .teamCards {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
 .team-card-information h1 {
