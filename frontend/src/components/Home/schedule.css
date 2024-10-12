@@ -10,6 +10,7 @@
     overflow-x: hidden;
     background-repeat: no-repeat;
     overflow-x: hidden;
+    font-family: 'Sylfaen', sans-serif;
 
 }
 
@@ -114,4 +115,39 @@
     align-items: center;
     flex-direction: row;
     border-radius: 20px;
+}
+
+@media screen and (min-width: 786px) and (max-width: 1280px) {
+    .schedule_upper{
+        justify-content: flex-start;
+        padding-left: 15.5%;
+    }
+  }
+  
+
+@media screen and (max-width: 820px) {
+    .schedule_time{
+        font-size: 100%;
+        width: 40%;
+    }
+
+    .schedule_event{
+        font-size: 100%;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .schedule_time{
+        font-size: 80%;
+        width: 45%;
+    }
+
+    .schedule_event{
+        font-size: 80%;
+        width: 55%;
+    }
+    .schedule_upper{
+        font-size: 300%;
+    }
 }
