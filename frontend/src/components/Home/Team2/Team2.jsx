@@ -108,12 +108,6 @@ const Team2 = () => {
                 linkedInUrl: "https://www.linkedin.com/in/example1",
                 instagramUrl: "https://www.instagram.com/example1",
             },
-            {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
-                header: "Ashwani Dubey",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
-            },
         ],
         asmp: [
             {
