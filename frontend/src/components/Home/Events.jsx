@@ -93,12 +93,13 @@ function EventList() {
       <div className="Event_Heading">
           <p>Events</p>
       </div>
-
-      <ImageCarousel main={mainEvents} />
+      {events.length !== 0 && 
+        <ImageCarousel main={mainEvents} />
+      }
       {/* <span className='event-head'>Events</span> */}
       <div className="page-content" style={{ zIndex: 0 }}>
         <ul>
-          {events.map((event, index) => (
+          {events.length !== 0 ? events.map((event, index) => (
             <li
               key={event.id}
               style={{ flexDirection: index % 2 !== 0 && "row-reverse" }}
@@ -148,7 +149,13 @@ function EventList() {
                 {/* <a style={{float: index%2 === 0 && "right", marginRight: index%2 === 0 && "20px"}} href={`/${event.id}`}><button style={{marginTop: "-20px"}} className="register-button">Know More</button></a> */}
               </div>
             </li>
-          ))}
+          )) :
+          <div className="coming_soon">
+            <div className="typewriter">
+              <h1>Coming Soon...</h1> 
+            </div>
+          </div>
+          }
         </ul>
       </div>
     </div>
