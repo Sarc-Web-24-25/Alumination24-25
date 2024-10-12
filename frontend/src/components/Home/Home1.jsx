@@ -584,6 +584,16 @@ export default function Home1() {
       <div className="clouds1always" ><img src={cloud1} alt="" /></div>
       <div className="clouds2always" ><img src={cloud1} alt="" /></div>
       <div className="clouds3always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds1always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds2always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds3always" ><img src={cloud1} alt="" /></div>
+ <div className="clouds1always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds2always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds3always" ><img src={cloud1} alt="" /></div>
+
+
+
+
 
 
       <div className="clouds1">
