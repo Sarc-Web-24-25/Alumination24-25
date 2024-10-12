@@ -231,6 +231,7 @@ const Team2 = () => {
 
     const handleThumbnailClick = (index, portfolioKey) => {
         setCurrentMembers(portfolios[portfolioKey]);
+        console.log(portfolios[portfolioKey]);
     };
 
     return (
@@ -239,7 +240,7 @@ const Team2 = () => {
                 <div className="carousel">
                     
                     <div className="list">
-                        {currentMembers.map((member, index) => (
+                        {currentMembers && currentMembers.map((member, index) => (
                             <TeamCard
                                 key={index}
                                 header={member.header}

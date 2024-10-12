@@ -23,7 +23,7 @@ export const AnimatedTooltip = ({ items, handleThumbnailClick }) => {
           key={item.name}
           onMouseEnter={() => setHoveredIndex(item.id)}
           onMouseLeave={() => setHoveredIndex(null)}
-          onClick={() => handleThumbnailClick(item.id)}
+          onClick={() => handleThumbnailClick(item.id, item.id_name)}
         >
           <AnimatePresence mode="popLayout">
             {hoveredIndex === item.id && (
