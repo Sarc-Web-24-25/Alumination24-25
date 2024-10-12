@@ -177,7 +177,7 @@ const Gallery3 = () => {
             setCounter(index);
         }
 
-        console.log("thumbnail width: ", thumbnailWidth)
+        // console.log("thumbnail width: ", thumbnailWidth)
         // Calculate the translation
         // const thumbnailWidth = 200; // Set this to the width of each thumbnail item (adjust as necessary)
         // const thumbnailsToShow = 8; // Number of thumbnails to show at once
@@ -186,7 +186,7 @@ const Gallery3 = () => {
 
         // Apply the translation to the thumbnail container
         const thumbnailContainer = thumbnailDom.current;
-        thumbnailContainer.style.transform = `translateX(-${Math.min(translation, maxTranslation)}px)`;
+        // thumbnailContainer.style.transform = `translateX(-${Math.min(translation, maxTranslation)}px)`;
 
         clearTimeout(runAutoRun);
         runAutoRun = setTimeout(() => {
@@ -224,6 +224,7 @@ const Gallery3 = () => {
                 </div>
 
                 <div className="thumbnail" ref={thumbnailDom}>
+
                     {items.map((item, index) => (
                         <div
                             className="item"
