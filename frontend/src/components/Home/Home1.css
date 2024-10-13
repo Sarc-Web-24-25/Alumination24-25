@@ -1311,7 +1311,7 @@ h1 {
 
 .clouds1always{
     position: absolute;
-    top: 10.5%;
+    top: 11.5%;
     left: -9%;
     width: 100%;
     /* height: 100%; */
@@ -1321,7 +1321,7 @@ h1 {
 
 .clouds2always{
     position: absolute;
-    top: 10.5%;
+    top: 11.5%;
     left: 30%;
     width: 100%;
     /* height: 100%; */
@@ -1330,12 +1330,26 @@ h1 {
 }
 .clouds3always{
     position: absolute;
-    top: 10.5%;
+    top: 11.5%;
     left: 55%;
     width: 100%;
     /* height: 100%; */
 
     z-index: 10;
+}
+
+@media screen and (max-width: 1286px) {
+.clouds1always{
+  top: 10.5%;
+
+}
+.clouds2always{
+  top: 10.5%;
+
+}.clouds3always{
+  top: 10.5%;
+
+}
 }
 
 @media screen and (max-width: 1025px) {

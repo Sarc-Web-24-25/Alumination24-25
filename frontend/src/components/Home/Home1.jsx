@@ -589,9 +589,9 @@ export default function Home1() {
       let styles = {};
       if (windowWidth >= 1286) {
         styles = {
-          clouds1: { top: '100%' },
-          clouds2: { top: '33.5%' },
-          clouds3: { top: '54%' },
+          clouds1: { top: '11%' },
+          clouds2: { top: '35%' },
+          clouds3: { top: '59%' },
           clouds4: { top: '80%' }
         };
       } else if (windowWidth < 1286 && windowWidth >= 1025) {
