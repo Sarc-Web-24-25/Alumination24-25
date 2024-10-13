@@ -26,32 +26,19 @@ import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
 import Aluminatiom from "./photos24/AluminationLogo.png";
+import layyer2 from "./photos24/layer1-removebg.png";
 
 import mute from "./photos24/mute.png";
 import unmute from "./photos24/speaker.png";
 import { gsap } from "gsap";
 
 export default function Home1() {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   const leafContainerRef = useRef(null);
 
   useEffect(() => {
     const LeafScene = function (el) {
       this.viewport = el;
-      this.world = document.createElement('div');
+      this.world = document.createElement("div");
       this.leaves = [];
 
       this.options = {
@@ -77,7 +64,7 @@ export default function Home1() {
 
         if (leaf.x > this.width) {
           leaf.x = this.width + 10;
-          leaf.y = Math.random() * this.height / 2;
+          leaf.y = (Math.random() * this.height) / 2;
         }
 
         if (this.timer === 0) {
@@ -87,12 +74,12 @@ export default function Home1() {
         leaf.rotation.speed = Math.random() * 10;
         const randomAxis = Math.random();
         if (randomAxis > 0.5) {
-          leaf.rotation.axis = 'X';
+          leaf.rotation.axis = "X";
         } else if (randomAxis > 0.25) {
-          leaf.rotation.axis = 'Y';
+          leaf.rotation.axis = "Y";
           leaf.rotation.x = Math.random() * 180 + 90;
         } else {
-          leaf.rotation.axis = 'Z';
+          leaf.rotation.axis = "Z";
           leaf.rotation.x = Math.random() * 360 - 180;
           leaf.rotation.speed = Math.random() * 3;
         }
@@ -104,7 +91,10 @@ export default function Home1() {
       };
 
       this._updateLeaf = function (leaf) {
-        const leafWindSpeed = this.options.wind.speed(this.timer - this.options.wind.start, leaf.y);
+        const leafWindSpeed = this.options.wind.speed(
+          this.timer - this.options.wind.start,
+          leaf.y
+        );
         const xSpeed = leafWindSpeed + leaf.xSpeedVariation;
         leaf.x -= xSpeed;
         leaf.y += leaf.ySpeed;
@@ -114,11 +104,14 @@ export default function Home1() {
         let opacity = 1;
 
         if (leaf.y > fadeStart) {
-          opacity = Math.max(0, 1 - ((leaf.y - fadeStart) / (this.height - fadeStart)));
+          opacity = Math.max(
+            0,
+            1 - (leaf.y - fadeStart) / (this.height - fadeStart)
+          );
         }
 
         let t = `translateX(${leaf.x}px) translateY(${leaf.y}px) translateZ(${leaf.z}px) rotate${leaf.rotation.axis}(${leaf.rotation.value}deg)`;
-        if (leaf.rotation.axis !== 'X') {
+        if (leaf.rotation.axis !== "X") {
           t += ` rotateX(${leaf.rotation.x}deg)`;
         }
 
@@ -126,7 +119,7 @@ export default function Home1() {
         leaf.el.style.MozTransform = t;
         leaf.el.style.oTransform = t;
         leaf.el.style.transform = t;
-        
+
         // Apply opacity
         leaf.el.style.opacity = opacity;
 
@@ -136,15 +129,28 @@ export default function Home1() {
       };
 
       this._updateWind = function () {
-        if (this.timer === 0 || this.timer > this.options.wind.start + this.options.wind.duration) {
-          this.options.wind.magnitude = Math.random() * this.options.wind.maxSpeed;
-          this.options.wind.duration = this.options.wind.magnitude * 50 + (Math.random() * 20 - 10);
+        if (
+          this.timer === 0 ||
+          this.timer > this.options.wind.start + this.options.wind.duration
+        ) {
+          this.options.wind.magnitude =
+            Math.random() * this.options.wind.maxSpeed;
+          this.options.wind.duration =
+            this.options.wind.magnitude * 50 + (Math.random() * 20 - 10);
           this.options.wind.start = this.timer;
 
           const screenHeight = this.height;
           this.options.wind.speed = function (t, y) {
-            const a = this.magnitude / 2 * (screenHeight - 2 * y / 3) / screenHeight;
-            return a * Math.sin((2 * Math.PI) / this.duration * t + (3 * Math.PI) / 2) + a;
+            const a =
+              ((this.magnitude / 2) * (screenHeight - (2 * y) / 3)) /
+              screenHeight;
+            return (
+              a *
+                Math.sin(
+                  ((2 * Math.PI) / this.duration) * t + (3 * Math.PI) / 2
+                ) +
+              a
+            );
           };
         }
       };
@@ -153,12 +159,12 @@ export default function Home1() {
     LeafScene.prototype.init = function () {
       for (let i = 0; i < this.options.numLeaves; i++) {
         const leaf = {
-          el: document.createElement('div'),
+          el: document.createElement("div"),
           x: 0,
           y: 0,
           z: 0,
           rotation: {
-            axis: 'X',
+            axis: "X",
             value: 0,
             speed: 0,
             x: 0,
@@ -171,10 +177,10 @@ export default function Home1() {
         this.world.appendChild(leaf.el);
       }
 
-      this.world.className = 'leaf-scene';
+      this.world.className = "leaf-scene";
       this.viewport.appendChild(this.world);
 
-      this.world.style.perspective = '400px';
+      this.world.style.perspective = "400px";
 
       window.onresize = () => {
         this.width = this.viewport.offsetWidth;
@@ -604,10 +610,10 @@ export default function Home1() {
         };
       } else if (windowWidth < 970 && windowWidth >= 855) {
         styles = {
-          clouds1: { top: '6.5%' },
-          clouds2: { top: '24%' },
-          clouds3: { top: '42%' },
-          clouds4: { top: '83.5%' }
+          clouds1: { top: "6.5%" },
+          clouds2: { top: "24%" },
+          clouds3: { top: "42%" },
+          clouds4: { top: "83.5%" },
         };
       }
         else if (windowWidth < 855 && windowWidth >= 821) {
@@ -636,36 +642,33 @@ export default function Home1() {
         };
       } else if (windowWidth < 710 && windowWidth >= 640) {
         styles = {
-          clouds1: { top: '8.5%' },
-          clouds2: { top: '25.5%' },
-          clouds3: { top: '43.5%' },
-          clouds4: { top: '85.5%' }
+          clouds1: { top: "8.5%" },
+          clouds2: { top: "25.5%" },
+          clouds3: { top: "43.5%" },
+          clouds4: { top: "85.5%" },
         };
       } else if (windowWidth < 640 && windowWidth >= 607) {
         styles = {
-          clouds1: { top: '6.5%' },
-          clouds2: { top: '20.5%' },
-          clouds3: { top: '34%' },
-          clouds4: { top: '88.5%' }
+          clouds1: { top: "6.5%" },
+          clouds2: { top: "20.5%" },
+          clouds3: { top: "34%" },
+          clouds4: { top: "88.5%" },
         };
       } else if (windowWidth < 607 && windowWidth >= 550) {
         styles = {
-          clouds1: { top: '6.3%' },
-          clouds2: { top: '20.5%' },
-          clouds3: { top: '34%' },
-          clouds4: { top: '88.5%' }
+          clouds1: { top: "6.3%" },
+          clouds2: { top: "20.5%" },
+          clouds3: { top: "34%" },
+          clouds4: { top: "88.5%" },
         };
       } else if (windowWidth < 550 && windowWidth >= 490) {
         styles = {
-          clouds1: { top: '7.3%' },
-          clouds2: { top: '20.5%' },
-          clouds3: { top: '34%' },
-          clouds4: { top: '89.5%' }
+          clouds1: { top: "7.3%" },
+          clouds2: { top: "20.5%" },
+          clouds3: { top: "34%" },
+          clouds4: { top: "89.5%" },
         };
-
-        
-      }
-      else if (windowWidth < 490 && windowWidth >= 450) {
+      } else if (windowWidth < 490 && windowWidth >= 450) {
         styles = {
           clouds1: { top: '7.5%' },
           clouds2: { top: '21%' },
@@ -709,11 +712,11 @@ export default function Home1() {
 
     // Call handleResize on initial load and window resize events
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Cleanup event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [windowWidth]);
 
@@ -817,7 +820,7 @@ export default function Home1() {
           <div className="lowerMainHome">
             <div
               className="registerHome"
-              style={{ fontSize: "25px", color: "#700815", cursor: 'pointer' }}
+              style={{ fontSize: "25px", color: "#700815", cursor: "pointer" }}
               onClick={() => handleNavClick("/signup")}
             >
               REGISTER
@@ -832,14 +835,9 @@ export default function Home1() {
       <div className="clouds1always" ><img src={cloud1} alt="" /></div>
       <div className="clouds2always" ><img src={cloud1} alt="" /></div>
       <div className="clouds3always" ><img src={cloud1} alt="" /></div>
- <div className="clouds1always" ><img src={cloud1} alt="" /></div>
+      <div className="clouds1always" ><img src={cloud1} alt="" /></div>
       <div className="clouds2always" ><img src={cloud1} alt="" /></div>
       <div className="clouds3always" ><img src={cloud1} alt="" /></div>
-
-
-
-
-
 
       <div className="clouds1" style={cloudStyles.clouds1}>
         <img src={cloud1} alt="cloud1" className="cloud" />
@@ -852,7 +850,6 @@ export default function Home1() {
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
         <img src={cloud1} alt="cloud1" className="cloud" />
-
       </div>
 
           
@@ -1025,13 +1022,10 @@ export default function Home1() {
           <div style={{ height: "10vh" }}></div>
           <div style={{ height: "10vh" }}></div>
           <div style={{ height: sponsors.length === 0 ? "40vh" : "130vh" }}>
-        <Sponsor2 sponsors={sponsors} />
-
+            <Sponsor2 sponsors={sponsors} />
           </div>
           <Footer />
         </div>
-
-
       </Parallax>
 
       {/* <div className="clouds4">
