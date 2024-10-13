@@ -45,7 +45,7 @@ function Navbar1() {
             top: "0",
             left: "0",
             width: "100%",
-            zIndex: "1000",
+            zIndex: "100000",
           }}
         >
           <div className="homeFlag" onClick={() => handleNavClick("flag", " ")}>

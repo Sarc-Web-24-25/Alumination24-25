@@ -589,23 +589,23 @@ export default function Home1() {
       let styles = {};
       if (windowWidth >= 1286) {
         styles = {
-          clouds1: { top: '12.5%' },
+          clouds1: { top: '100%' },
           clouds2: { top: '33.5%' },
           clouds3: { top: '54%' },
           clouds4: { top: '80%' }
         };
       } else if (windowWidth < 1286 && windowWidth >= 1025) {
         styles = {
-          clouds1: { top: '12.5%' },
-          clouds2: { top: '35%' },
-          clouds3: { top: '57%' },
+          clouds1: { top: '9%' },
+          clouds2: { top: '33%' },
+          clouds3: { top: '53%' },
           clouds4: { top: '79%' }
         };
       } else if (windowWidth < 1025 && windowWidth >= 970) {
         styles = {
           clouds1: { top: '14%' },
-          clouds2: { top: '39%' },
-          clouds3: { top: '62.5%' },
+          clouds2: { top: '39.5%' },
+          clouds3: { top: '59%' },
           clouds4: { top: '82.5%' }
         };
       } else if (windowWidth < 970 && windowWidth >= 855) {
@@ -629,13 +629,13 @@ export default function Home1() {
           styles = {
             clouds1: { top: '13%' },
             clouds2: { top: '32.5%' },
-            clouds3: { top: '53%' },
+            clouds3: { top: '49.5%' },
             clouds4: { top: '84.5%' }
           };
         }
       else if (windowWidth < 786 && windowWidth >= 710) {
         styles = {
-          clouds1: { top: '12.5%' },
+          clouds1: { top: '14%' },
           clouds2: { top: '31.5%' },
           clouds3: { top: '50%' },
           clouds4: { top: '84.5%' }
@@ -682,8 +682,8 @@ export default function Home1() {
       else if (windowWidth < 450 && windowWidth >= 400) {
         styles = {
           clouds1: { top: '8.5%' },
-          clouds2: { top: '23.4%' },
-          clouds3: { top: '38%' },
+          clouds2: { top: '22.3%' },
+          clouds3: { top: '35.75%' },
           clouds4: { top: '89.5%' }
         };
 
@@ -692,20 +692,28 @@ export default function Home1() {
       else if (windowWidth < 400 && windowWidth >= 376) {
         styles = {
           clouds1: { top: '8.5%' },
-          clouds2: { top: '22.75%' },
-          clouds3: { top: '36%' },
+          clouds2: { top: '21.5%' },
+          clouds3: { top: '34%' },
           clouds4: { top: '89.5%' }
         };
       }
-      else if (windowWidth < 376 && windowWidth >= 359) {
+      else if (windowWidth < 376 && windowWidth >= 361) {
           styles = {
             clouds1: { top: '7%' },
             clouds2: { top: '19.5%' },
             clouds3: { top: '31.5%' },
             clouds4: { top: '89.5%' }
           };
+        }
+      else if (windowWidth < 361) {
+            styles = {
+              clouds1: { top: '7%' },
+              clouds2: { top: '20.5%' },
+              clouds3: { top: '33.5%' },
+              clouds4: { top: '89.5%' }
+            };
   
-        
+      
       }
       setCloudStyles(styles);
     };
@@ -853,12 +861,69 @@ export default function Home1() {
         <img src={cloud1} alt="cloud1" className="cloud" />
       </div>
 
-          
+      {windowWidth > '1025px' && 
+      <>
+      <div className="clouds1" style={cloudStyles.clouds1}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+      </div>
+
+      
+      <div className="clouds1" style={cloudStyles.clouds1}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+      </div>
+
+      
+      <div className="clouds1" style={cloudStyles.clouds1}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+      </div>
+
+      
+      <div className="clouds1" style={cloudStyles.clouds1}>
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud2} alt="cloud2" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud2} alt="cloud3" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+        <img src={cloud3} alt="cloud3" className="cloud" />
+        <img src={cloud1} alt="cloud1" className="cloud" />
+      </div>
+      </>
+} 
       {/* </div> */}
 
       {/* Parallax Layer 2 */}
       <Parallax bgImage={layer2} strength={200} zIndex={1000}>
-        <div className="layer2" style={{ height: "100vh" }} ref={layerRefs[1]}>
+        <div className="layer2" /*style={{ height: "150vh" }}*/ ref={layerRefs[1]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>Layer 2 Content</h1> */}
 
           {/* About Us Section */}
@@ -875,7 +940,7 @@ export default function Home1() {
         {/* Clouds above Layer 2 */}
       </Parallax>
 
-      <div className="clouds2" style={cloudStyles.clouds2}>
+      <div className="clouds2" style={{...cloudStyles.clouds2, zIndex: '10000'}}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
@@ -885,7 +950,7 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
 
-      <div className="clouds2" style={{...cloudStyles.clouds2, left:'-25vw'}}>
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'-25vw', zIndex: '10000'}}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
@@ -895,7 +960,7 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
 
-      <div className="clouds2" style={{...cloudStyles.clouds2, left:'25vw'}}>
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'25vw', zIndex: '10000'}}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
@@ -905,7 +970,7 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
 
-      <div className="clouds2" style={{...cloudStyles.clouds2, left:'-15vw'}}>
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'-15vw', zIndex: '10000'}}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
@@ -915,7 +980,7 @@ export default function Home1() {
         <img src={cloud3} alt="cloud3" className="cloud" />
       </div>
 
-      <div className="clouds2" style={{...cloudStyles.clouds2, left:'15vw'}}>
+      <div className="clouds2" style={{...cloudStyles.clouds2, left:'15vw', zIndex: '10000'}}>
         <img src={cloud1} alt="cloud1" className="cloud" />
         <img src={cloud2} alt="cloud2" className="cloud" />
         <img src={cloud3} alt="cloud3" className="cloud" />
@@ -931,7 +996,7 @@ export default function Home1() {
 
       {/* Parallax Layer 3 */}
       <Parallax bgImage={bgImage3} strength={150}>
-        <div className="layer3" style={{ height: "130vh" }} ref={layerRefs[2]}>
+        <div className="layer3" /*style={{ height: "170vh" }}*/ ref={layerRefs[2]}>
           {/* <h1 style={{ textAlign: "center", color: "#fff" }}>
             Layer 3 Content
           </h1> */}
@@ -1019,7 +1084,10 @@ export default function Home1() {
           ref={layerRefs[3]}
         >
           <div style={{ height: "20vh" }}></div>
+          <div style={{ marginBottom: windowWidth < 376 ? "10vh" :  'auto'}}>
+
           <Alumni3 />
+          </div>
           <div style={{ height: "10vh" }}></div>
           <div style={{ height: "10vh" }}></div>
           <div style={{ height: sponsors.length === 0 ? "40vh" : "130vh" }}>
