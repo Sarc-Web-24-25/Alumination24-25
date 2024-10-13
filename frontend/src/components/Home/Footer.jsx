@@ -115,8 +115,8 @@ const Footer = () => {
             <i className="fa fa-phone" />
             <p className="contact-info">+91 62631 73987</p>
             <br />
-            <i className="fa fa-map-marker" onClick={handleLocationClick} />
-            <p className="contact-info">SARC Room, Old SAC, IIT Bombay</p>
+            <i  className="fa fa-map-marker"  />
+            <p style={{cursor: "pointer"}} onClick={handleLocationClick} className="contact-info">SARC Room, Old SAC, IIT Bombay</p>
             <br />
             <i className="fa fa-envelope" />
             <a style={{textDecoration: "none" }} href="mailto:sarc@iitb.ac.in">
