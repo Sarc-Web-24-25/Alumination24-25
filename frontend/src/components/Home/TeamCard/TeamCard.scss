@@ -11,7 +11,9 @@ $returnEasing: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     font-family: "Raleway";
     font-size: 14px;
     font-weight: 500;
-    background-color: #BCAAA4;
+    // background-color: #BCAAA4;
+    background-image: url('../photos24/team_bg_2.jpg');
+    background-size: cover;
     -webkit-font-smoothing: antialiased;
     overflow: auto;
 }
