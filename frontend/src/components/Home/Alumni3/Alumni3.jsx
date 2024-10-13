@@ -50,7 +50,6 @@ const alumniList = [
   {
     name: "Ahana Gautam",
     designation: "Co-Founder, Open Secret",
-    // designation: "afwasfawszfasw",
     imageSrc: Ahana_Gautam,
   },
   {

@@ -99,6 +99,8 @@ import aniruddhaGoyal from '../photos24/photoshoot/aniruddha_goyal.jpg'
 import ishaanGrover from '../photos24/photoshoot/ishan_grover.jpg'
 import jinisha from '../photos24/photoshoot/jinisha.png'
 import ananyaPatil from '../photos24/photoshoot/ananya_patil.png'
+import hemendra from '../photos24/photoshoot/hemendra.jpg'
+import { FaMarkdown } from 'react-icons/fa';
 
 const Team2 = () => {
     const [currentMembers, setCurrentMembers] = useState([ {
@@ -141,7 +143,7 @@ const Team2 = () => {
             },
             {
                 image: ishaanGrover,
-                header: "Ishaan Grover",
+                header: "Ishan Grover",
                 linkedInUrl: "https://www.linkedin.com/in/ishan-grover-30b499256/",
                 instagramUrl: "https://www.instagram.com/ishan__grover/",
             },
@@ -161,9 +163,9 @@ const Team2 = () => {
                 instagramUrl: "https://www.instagram.com/_adityasingh96/",
             },
         ],
-        marketing: [
+        operations: [
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                image: hemendra,
                 header: "Hemendra Suthar",
                 linkedInUrl: "https://www.linkedin.com/in/hemendrasuthar/",
                 instagramUrl: "https://www.instagram.com/hemendra._.s/",
@@ -176,7 +178,7 @@ const Team2 = () => {
                 instagramUrl: "https://www.instagram.com/adi__aaryan?igsh=MWtqNTU1MDJ0MmY3Yw==",
             },
         ],
-        operations: [
+        marketing: [
             {
                 // image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
                 image: karthikVaishnav,
@@ -208,7 +210,7 @@ const Team2 = () => {
         design: [
             {
                 image: jinisha,
-                header: "Jinisha Sabara",
+                header: "Jinisha Sabadra",
                 linkedInUrl: "https://www.linkedin.com/in/jinisha-sabadra-37949a263",
                 instagramUrl: "https://www.instagram.com/jinisha_2784?igsh=eTR2YjJveDRvM29p",
             },
