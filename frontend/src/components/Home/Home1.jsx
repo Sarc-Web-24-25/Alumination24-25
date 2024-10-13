@@ -411,7 +411,7 @@ export default function Home1() {
   ));
 
   const paragraph =
-    "A Student run organisation at IIT Bombay, Connecting 60k+ Alumni and 12k+ Students Actively strengthens Student alumni relations through robust calendar of 50+ events conducted throughout the year. Student Alumni Relations Cell has been proudly fostering a vibrant student - alumni Community since 2008.";
+    "A student-run organisation at IIT Bombay, connecting 65k+ alumni and 12k+ students. The Student Alumni Relations Cell actively strengthens student-alumni relations through 50+ events in various fields, conducted throughout the year. SARC has been proudly fostering a vibrant student alumni community since 2008.";
 
   const navigate = useNavigate(); // Initialize the navigate function
 

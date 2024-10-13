@@ -372,7 +372,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             Aniruddh Goyal</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Overall Co-ordinators</p>
+            Overall Co-ordinator</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             Student Alumni Relations Cell</p>
