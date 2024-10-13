@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Drop3D from './Drop3D'; // Adjust path as necessary
-import './count.css';
+import React, { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Drop3D from "./Drop3D"; // Adjust path as necessary
+import "./count.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Count = () => {
-  const coinContent = ['Alumini', 'Events', 'Students'];
-  const maxValues = [65000, 60000, 12000];
+  const coinContent = ["Alumni", "Events", "Students"];
+  const maxValues = [65000, 50000, 12000];
   const dropRefs = [useRef(null), useRef(null), useRef(null)];
   const [positions, setPositions] = useState([]);
 
@@ -17,9 +17,9 @@ const Count = () => {
     const screenHeight = window.innerHeight;
 
     return [
-      { x: screenWidth * -0.10, y: screenHeight * 0.2 },  // First coin at 20% of the viewport height
-      { x: screenWidth * 0.12, y: screenHeight * 0.25 },   // Second coin at 25%
-      { x: screenWidth * -0.10, y: screenHeight * 0.3 },   // Third coin at 30%
+      { x: screenWidth * -0.1, y: screenHeight * 0.2 }, // First coin at 20% of the viewport height
+      { x: screenWidth * 0.12, y: screenHeight * 0.25 }, // Second coin at 25%
+      { x: screenWidth * -0.1, y: screenHeight * 0.3 }, // Third coin at 30%
     ];
   };
 
@@ -28,8 +28,8 @@ const Count = () => {
     const handleResize = () => {
       setPositions(calculatePositions());
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -48,13 +48,13 @@ const Count = () => {
               scale: 1,
               x: endX,
               y: endY,
-              ease: 'power3.out',
+              ease: "power3.out",
               duration: 0.5,
               scrollTrigger: {
                 trigger: dropRef.current,
-                start: 'top 80%', // Start earlier before the drop comes into full view
-                end: 'top 90%',
-                toggleActions: 'play none none none',
+                start: "top 80%", // Start earlier before the drop comes into full view
+                end: "top 90%",
+                toggleActions: "play none none none",
               },
             }
           );
@@ -67,13 +67,13 @@ const Count = () => {
               scale: 1,
               x: endX,
               y: endY,
-              ease: 'power3.out',
+              ease: "power3.out",
               duration: 0.1,
               scrollTrigger: {
                 trigger: dropRef.current,
-                start: 'top 80%', // Start earlier for the second and third coins as well
-                end: 'top 90%',
-                toggleActions: 'play none none none',
+                start: "top 80%", // Start earlier for the second and third coins as well
+                end: "top 90%",
+                toggleActions: "play none none none",
               },
             },
             0 // Start both animations at the same time (0 second delay)

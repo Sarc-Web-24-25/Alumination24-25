@@ -761,14 +761,15 @@ export default function Home1() {
             position: "absolute",
             top: "10px",
             left: "110px",
-            background: "rgba(255, 255, 255, 0.8)",
-            border: "2px solid #000",
+            background: "rgba(255, 255, 255, 0.552)",
+            border: "0px solid #000",
             borderRadius: "5px",
             padding: "10px",
             cursor: "pointer",
             zIndex: 1000,
             display: "flex",
             alignItems: "center",
+            borderRadius:'50%'
           }}
         >
           <img
@@ -777,9 +778,9 @@ export default function Home1() {
             alt={isMuted ? "Unmute" : "Mute"}
             style={{ width: "30px", height: "30px" }}
           />
-          <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
+          {/* <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
             {isMuted ? "Unmute" : "Mute"}
-          </span>
+          </span> */}
         </button>
       )}
 

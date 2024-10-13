@@ -13,7 +13,7 @@ import Ahana_Gautam from '../photos24/Ahana_Gautam.png'
 
 const alumniList = [  
   {
-    name: "Nandan_Nilekani",
+    name: "Nandan Nilekani",
     designation: "Co-Founder, Infosys",
     imageSrc: Nandan_Nilekani,
   },

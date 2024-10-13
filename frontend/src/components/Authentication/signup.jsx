@@ -315,7 +315,7 @@ function Signup() {
     alignItems: "center", // Center align items vertically
     flexWrap: "nowrap"
 }}>
-    <span style={{whiteSpace: "nowrap"}}> Are you an IITB Alum?</span> {/* Added span for better alignment */}
+    <span style={{whiteSpace: "nowrap"}}> Are you an IITB Alum? &nbsp;</span> {/* Added span for better alignment */}
     <input 
         onChange={() => handleAlumChange(true)} 
         type="radio" 
@@ -324,7 +324,7 @@ function Signup() {
         style={{ marginRight: "1px", color: "white" }} 
         required 
     /> 
-    Yes
+    Yes&nbsp;
     <input 
         onChange={() => handleAlumChange(false)} 
         type="radio" 
@@ -339,7 +339,7 @@ function Signup() {
 
 
       <button onClick={handleSubmit} style={allFieldsFilled() ? buttonStyle : disabledButtonStyle} disabled={!allFieldsFilled()}>REGISTER</button>
-      <a className='links' href='/login' style={anchorStyle}>Already a member ?? Login </a>
+      <a className='links' href='/login' style={anchorStyle}>Already a member? Login </a>
         </div>
        
     </div>
