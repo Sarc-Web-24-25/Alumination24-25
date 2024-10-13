@@ -79,144 +79,154 @@
 
 // export default Team2;
 
-
-
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap'
 import './Team2.css';
 import Team3 from '../Team3/Team3';
 import TeamCard from '../TeamCard/TeamCard';
+import adityaAryan from '../photos24/photoshoot/aditya_aryan.jpeg'
+import akshitaChoudhary from '../photos24/photoshoot/akshita_choudhary.jpg'
+import arnavMishra from '../photos24/photoshoot/arnav_mishra.JPG'
+import ashwaniDubey from '../photos24/photoshoot/ashwani_dubey.jpg'
+import adityaSingh from '../photos24/photoshoot/aditya_singh.jpg'
+import nishitMoonat from '../photos24/photoshoot/nishit_moonat.jpg'
+import karthikVaishnav from '../photos24/photoshoot/karthik_vaishnav.jpg'
+import himanyaGarg from '../photos24/photoshoot/himanya_garg.jpg'
+import bhaktiJoshi from '../photos24/photoshoot/bhakti_joshi.jpg'
+import anshikaMishra from '../photos24/photoshoot/anshika_mishra.jpg'
+import rutuja from '../photos24/photoshoot/rutuja.jpg'
+import aniruddhaGoyal from '../photos24/photoshoot/aniruddha_goyal.jpg'
+import ishaanGrover from '../photos24/photoshoot/ishan_grover.jpg'
+import jinisha from '../photos24/photoshoot/jinisha.png'
+import ananyaPatil from '../photos24/photoshoot/ananya_patil.png'
 
 const Team2 = () => {
     const [currentMembers, setCurrentMembers] = useState([ {
-        image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-        header: "Aniruddha Goyal",
-        linkedInUrl: "https://www.linkedin.com/in/example1",
-        instagramUrl: "https://www.instagram.com/example1",
+        image: aniruddhaGoyal,
+        header: "Aniruddh Goyal",
+        linkedInUrl: "https://www.linkedin.com/in/aniruddhgoyal/?originalSubdomain=in",
+        instagramUrl: "https://www.instagram.com/anniboii/",
     }]);
     
     const portfolios = {
         oc: [
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
-                header: "Aniruddha Goyal",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                image: aniruddhaGoyal,
+                header: "Aniruddh Goyal",
+                linkedInUrl: "https://www.linkedin.com/in/aniruddhgoyal/?originalSubdomain=in",
+                instagramUrl: "https://www.instagram.com/anniboii/",
             },
         ],
         asmp: [
+
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                image: anshikaMishra,
                 header: "Anshika Mishra",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/anshika-mishra-952715267",
+                instagramUrl: "https://www.instagram.com/anshika.mishra?igsh=aW1zMmtobjNoaXU4",
             },
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: nishitMoonat,
                 header: "Nishit Moonat",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/nishit-moonat-416187250",
+                instagramUrl: "https://www.instagram.com/nishitt27?igsh=MWJlajJmMnlhcW1kdA==",
             },
         ],
         hda: [
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                image: bhaktiJoshi,
                 header: "Bhakti Joshi",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/bhakti-joshi-33b1b7252/",
+                instagramUrl: "https://www.instagram.com/bhaktijoshi_14",
             },
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: ishaanGrover,
                 header: "Ishaan Grover",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/ishan-grover-30b499256/",
+                instagramUrl: "https://www.instagram.com/ishan__grover/",
             },
         ],
         events: [
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                // image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                image: arnavMishra,
                 header: "Arnav Mishra",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/arnav-mishra-b1000924b/",
+                instagramUrl: "https://www.instagram.com/arnavm7203?igsh=MTJwNGJsejFxenRvZQ==",
             },
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: adityaSingh,
                 header: "Aditya Singh",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/aditya-singh-4b2052201/",
+                instagramUrl: "https://www.instagram.com/_adityasingh96/",
             },
         ],
         marketing: [
             {
                 image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
                 header: "Hemendra Suthar",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/hemendrasuthar/",
+                instagramUrl: "https://www.instagram.com/hemendra._.s/",
             },
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                // image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: adityaAryan,
                 header: "Aditya Aryan",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/aditya-aryan-3aba9b250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                instagramUrl: "https://www.instagram.com/adi__aaryan?igsh=MWtqNTU1MDJ0MmY3Yw==",
             },
         ],
         operations: [
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                // image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                image: karthikVaishnav,
                 header: "Kartik Vaishnav",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/kartik-vaishnav-12a758251",
+                instagramUrl: "https://www.instagram.com/kartik__vaishnav?igsh=MXU0cGE3cTUzbGVsYw==",
             },
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: himanyaGarg,
                 header: "Himanya Garg",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/himanya-garg-75230a256/",
+                instagramUrl: "https://instagram.com/himanya_garg30?igshid=ZDc4ODBmNjlmNQ==",
             },
         ],
         mpr: [
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                image: ananyaPatil,
                 header: "Ananya Patil",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/ananya-patil-a18437281/",
+                instagramUrl: "https://www.instagram.com/ananyapatil._/",
             },
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: rutuja,
                 header: "Rutuja Khandekar",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/rutuja-khandekar-42971b248/",
+                instagramUrl: "https://www.instagram.com/___.rutujaaa.__/",
             },
         ],
         design: [
             {
-                image: "https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=",
+                image: jinisha,
                 header: "Jinisha Sabara",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/jinisha-sabadra-37949a263",
+                instagramUrl: "https://www.instagram.com/jinisha_2784?igsh=eTR2YjJveDRvM29p",
             },
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                // image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: akshitaChoudhary,
                 header: "Akshita Choudhary",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/akshita-choudhary-851319253?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                instagramUrl: "https://www.instagram.com/akshita_choudhary1905?igsh=MWg2dXJzcm1yOGR4Yw==",
             },
         ],
         web: [
             {
-                image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                // image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+                image: ashwaniDubey,
                 header: "Ashwani Dubey",
-                linkedInUrl: "https://www.linkedin.com/in/example1",
-                instagramUrl: "https://www.instagram.com/example1",
+                linkedInUrl: "https://www.linkedin.com/in/ashwani-dubey-3b2a81258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                instagramUrl: "https://www.instagram.com/kanhahihu?igsh=MW5xeHZoNW1vbmZlaw==",
             },
         ],
     };
