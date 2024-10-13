@@ -16,7 +16,7 @@ import cloud1 from "./photos24/Cloud1-removebg.png";
 import cloud2 from "./photos24/Clouds2-removebg.png";
 import cloud3 from "./photos24/Clouds3-removebg.png";
 import Petal from "./Petal";
-import backgroundMusic from "./photos24/bgm.mp3";
+import backgroundMusic from "./photos24/songgg.mp3";
 import flagIcon from "./photos24/flag.png";
 import SoundOn from "./photos24/sound_on.png";
 import SoundOff from "./photos24/sound_off.png";
@@ -774,7 +774,7 @@ export default function Home1() {
             borderRadius: "5px",
             padding: "10px",
             cursor: "pointer",
-            zIndex: 1000,
+            zIndex: 100000,
             display: "flex",
             alignItems: "center",
             borderRadius:'50%'
