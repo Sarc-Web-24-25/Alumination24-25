@@ -56,7 +56,7 @@
   } 
  
   .links:hover{
-    color: aqua !important;
+    color: #700815 !important;
     transform: scale(1.02);
 }
 .login-button {
