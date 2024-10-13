@@ -138,7 +138,7 @@ AUTH_USER_MODEL = 'Authentication.MyUser'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Replace with the actual URL of your React frontend
+    "https://alumination.sarc-iitb.org",  # Replace with the actual URL of your React frontend
 ]
 
 
@@ -159,4 +159,4 @@ SIMPLE_JWT = {
 }
 
 
-CSRF_TRUSTED_ORIGINS = ['http://localhost:3000', 'http://localhost:8000', 'https://alumination.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org/']
+CSRF_TRUSTED_ORIGINS = ['https://alumination.sarc-iitb.org', 'http://localhost:8000', 'https://alumination.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org/']
