@@ -205,7 +205,7 @@ const headingstyle={fontWeight: "bold", color: "black", marginBottom:"50px",marg
         <button className='login-button' style={password !== "" && email !== "" ? buttonStyle: disabledButtonStyle} onClick={handleSubmit} disabled={!(password !== "" && email !== "")}>
           LOGIN
         </button>
-        <a className='links' href='/signup' style={anchorStyle}>New user ? Register here!</a>
+        <a className='links' href='/signup' style={anchorStyle}>New user? Register here!</a>
       </div>
     </div>
   );
