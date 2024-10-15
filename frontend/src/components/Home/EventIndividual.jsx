@@ -173,9 +173,9 @@ function EventIndividual() {
   };
 
   const DATES = {
-    21: "21st October",
-    22: "22nd October",
-    both: "Both Works",
+    26: "26th October (Online)",
+    27: "27th October (Offline)",
+    // both: "Both Works",
   };
 
   const FIELDS_GM = {

@@ -52,7 +52,7 @@ function useIndividualEvent() {
             background: `url(${message_background})`,
             html: `<span style="color: beige;">${error.response.data.error}</span>`,
          }).then(() => {
-            if(error.response.data.error === "Profile does not exist, Please create a profile first"){
+            if(error.response.data.error === "Profile does not exist, please create a profile or complete existing profile"){
                 window.location.href = "/profile";
             }
          });
