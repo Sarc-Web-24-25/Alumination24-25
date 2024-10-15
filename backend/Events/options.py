@@ -17,13 +17,11 @@ FIELDS_GM = {
     "quant": "Quant",
 }
 
-
 DATES = {
-    "21": "21st October",
-    "22": "22nd October",
-    "both": "Both Works",
+    "26": "26th October",
+    "27": "27th October",
+    "both": "Both Works"
 }
-
 
 WORKSHOPS = {
     'consult': 'Consulting',
@@ -34,4 +32,22 @@ WORKSHOPS = {
     'quant': 'Quant',
     'blockchain': 'Blockchain',
     'hr': 'HR',
+}
+
+FIELDS_MIGD = {
+    'analytics': "Analytics",
+    'consult': "Consulting",
+    'finance': "Finance",
+    'software': "IT/Software",
+    'product': "Product Management",
+    'quant': "Quant",
+    'core': "Core",
+    'hr': "Human Resource",
+    'pm': "Product Management"
+}
+
+TYPES_MIGD = {
+    'mock': "Mock Interview",
+    'grp_diss': "Group Discussion",
+    'any': "Any"
 }

@@ -100,6 +100,7 @@ DEPARTMENTS = {
     "Center for Machine Intelligence and Data Science": "CMIDS",
     "Centre for Urban Science and Engineering": "CUSE",
     "Centre of Studies in Resources Engineering": "CSRE",
+    "Center for Liberal Education":"LASE",
     "Chemical Engineering": "Chemical Engg",
     "Chemistry": "Chemistry",
     "Civil Engineering": "Civil Engg",
