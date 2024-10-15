@@ -102,12 +102,14 @@ function EventIndividual() {
                 field_pref2_migd: pref2,
                 field_pref3_migd: pref3,
                 pref_date: prefDate,
+                pref_type_migd: prefType
               }
               : {
                 field_pref1_gm: pref1,
                 field_pref2_gm: pref2,
                 field_pref3_gm: pref3,
                 // pref_date: prefDate,
+                
               },
           }
           : {
@@ -117,7 +119,7 @@ function EventIndividual() {
           }
       );
     }
-  }, [pref1, pref2, pref3, prefDate, workshops]);
+  }, [pref1, pref2, pref3, prefDate, prefType, workshops]);
 
   const handleRegisterClick = (eventId, isRegNeeded) => {
     // if (eventId === 2) {
@@ -263,6 +265,7 @@ function EventIndividual() {
   };
 
   const handleTypeChange = (e) => {
+    console.log("inside type change function")
     setPrefType(e.target.value);
   };
 
