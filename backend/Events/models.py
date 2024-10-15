@@ -73,6 +73,9 @@ class Event(models.Model):
 
 class Workshops(models.Model):
     workshop = models.CharField(max_length=255, blank=False, unique=True, choices=WORKSHOPS.items())
+
+    def __str__(self):
+        return self.workshop
         
 class OtherDetails(models.Model):
     field_pref1 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
