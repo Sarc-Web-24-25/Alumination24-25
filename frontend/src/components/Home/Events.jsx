@@ -39,7 +39,7 @@ function EventList() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/events/")
+      .get("https://alumination.sarc-iitb.org/api/events/")
       .then((response) => {
         const sortedEvents = [...response.data]; // Create a copy of the events array
         sortEvents(sortedEvents); // Sort the events based on your criteria
@@ -114,7 +114,7 @@ function EventList() {
                     borderTopLeftRadius: "20px",
                     zIndex: 10,
                   }}
-                  src={"http://127.0.0.1:8000/" + event.image}
+                  src={"https://alumination.sarc-iitb.org/" + event.image}
                   alt={event.name}
                 />
 

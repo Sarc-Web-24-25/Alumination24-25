@@ -29,7 +29,7 @@ function useIndividualEvent() {
   const register = (key) => {
     console.log(otherDetails);
     axios
-      .put(`http://127.0.0.1:8000/api/events/${key}`,otherDetails, { headers })
+      .put(`https://alumination.sarc-iitb.org/api/events/${key}`,otherDetails, { headers })
       .then((response) => {
         console.log(response.data);
         setSuccess("registered successfully"); // Set a success flag to indicate successful login
@@ -60,7 +60,7 @@ function useIndividualEvent() {
 
   const fetchEvent = (key) => {
     axios
-      .get(`http://127.0.0.1:8000/api/events/${key}`)
+      .get(`https://alumination.sarc-iitb.org/api/events/${key}`)
       .then((response) => {
         setEvent(response.data);
       })

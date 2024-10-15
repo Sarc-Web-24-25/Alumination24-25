@@ -11,11 +11,11 @@ const ImageCarousel = ({ main }) => {
       style={{ height: "auto", marginBottom: "10vh" }}
     >
       {main.map((event) => (
-        // console.log('http://127.0.0.1:8000/' + event.image);
+        // console.log('https://alumination.sarc-iitb.org/' + event.image);
         <Carousel.Item style={{ margin: "20vh 0vh" }}>
           <img
             className="d-block w-100"
-            src={"http://127.0.0.1:8000/" + event.image}
+            src={"https://alumination.sarc-iitb.org/" + event.image}
             alt="First slide"
             style={{ width: "500px", height: "500px", borderRadius: "10px" }}
           />

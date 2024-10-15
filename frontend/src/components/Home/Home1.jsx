@@ -390,13 +390,13 @@ export default function Home1() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/sponsors/")
+      .get("https://alumination.sarc-iitb.org/api/sponsors/")
       .then((response) => {
         const sponsor_list = [...response.data];
         let sponsors = [];
         sponsor_list.forEach((sponsor) => {
           sponsors.push({
-            image: `http://127.0.0.1:8000${sponsor.image}`,
+            image: `https://alumination.sarc-iitb.org${sponsor.image}`,
             url: sponsor.url,
           });
         });

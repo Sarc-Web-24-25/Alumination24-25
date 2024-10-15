@@ -340,7 +340,7 @@ function EventIndividual() {
                   <img
                     /*style={{ marginRight: event.youtube_link === "" && "15vw" }}*/
                     className="poster"
-                    src={`http://127.0.0.1:8000/${event.image}`}
+                    src={`https://alumination.sarc-iitb.org/${event.image}`}
                     alt=""
                   />
                 </div>
@@ -595,7 +595,7 @@ function EventIndividual() {
                     >
                       <div className="event-img" style={{ paddingLeft: '2vw' }}>
                         <img
-                          src={`http://127.0.0.1:8000/${speaker.profile_image}`}
+                          src={`https://alumination.sarc-iitb.org/${speaker.profile_image}`}
                           alt={speaker.fullname}
                           // className="event-speaker-image"
                           // style={{borderRadius:"20px"}} 
