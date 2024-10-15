@@ -81,6 +81,7 @@ function EventIndividual() {
   const [pref3, setPref3] = useState("");
 
   const [prefDate, setPrefDate] = useState("");
+  const [prefType, setPrefType] = useState("");
 
   const [workshops, setWorkshops] = useState([]);
 
@@ -97,16 +98,16 @@ function EventIndividual() {
           ? {
             other_details: !event.isGM
               ? {
-                field_pref1: pref1,
-                field_pref2: pref2,
-                field_pref3: pref3,
+                field_pref1_migd: pref1,
+                field_pref2_migd: pref2,
+                field_pref3_migd: pref3,
                 pref_date: prefDate,
               }
               : {
                 field_pref1_gm: pref1,
                 field_pref2_gm: pref2,
                 field_pref3_gm: pref3,
-                pref_date: prefDate,
+                // pref_date: prefDate,
               },
           }
           : {
@@ -119,10 +120,10 @@ function EventIndividual() {
   }, [pref1, pref2, pref3, prefDate, workshops]);
 
   const handleRegisterClick = (eventId, isRegNeeded) => {
-    if (eventId === 2) {
-      window.location.href = "https://forms.gle/J4t7hJaB7xViaZKD6";
-      return;
-    }
+    // if (eventId === 2) {
+    //   window.location.href = "https://forms.gle/J4t7hJaB7xViaZKD6";
+    //   return;
+    // }
 
     if (!userData) {
       Swal.fire({
@@ -172,9 +173,16 @@ function EventIndividual() {
     hr: "HR",
   };
 
-  const DATES = {
+  const TYPES_MIGD = {
+    mock: "Mock Interview",
+    grp_diss: "Group Discussion",
+    any: "Any"
+  }
+
+  const DATES_MIGD = {
     26: "26th October (Online)",
     27: "27th October (Offline)",
+    Any: "Any"
     // both: "Both Works",
   };
 
@@ -186,6 +194,18 @@ function EventIndividual() {
     product: "Product Management",
     quant: "Quant",
   };
+
+  const FIELDS_MIGD = {
+    analytics: "Analytics",
+    consult: "Consulting",
+    finance: "Finance",
+    software: "IT/Software",
+    product: "Product Management",
+    quant: "Quant",
+    core: "Core",
+    hr: "Human Resource",
+    pm: "Product Management"
+  }
 
   const WORKSHOPS = {
     consult: "Consulting",
@@ -206,8 +226,20 @@ function EventIndividual() {
     return <option value={key}>{FIELDS_GM[key]}</option>;
   });
 
-  const dateOptions = Object.keys(DATES).map((key) => {
-    return <option value={key}>{DATES[key]}</option>;
+  const fieldOptionsMIGD = Object.keys(FIELDS_MIGD).map((key) => {
+    return <option value={key}>{FIELDS_MIGD[key]}</option>;
+  });
+
+  // const dateOptions = Object.keys(DATES).map((key) => {
+  //   return <option value={key}>{DATES[key]}</option>;
+  // });
+
+  const typeOptionsMIGD = Object.keys(TYPES_MIGD).map((key) => {
+    return <option value={key}>{TYPES_MIGD[key]}</option>;
+  });
+
+  const dateOptionsMIGD = Object.keys(DATES_MIGD).map((key) => {
+    return <option value={key}>{DATES_MIGD[key]}</option>;
   });
 
   const workshopOptions = Object.keys(WORKSHOPS).map((key) => {
@@ -228,6 +260,10 @@ function EventIndividual() {
 
   const handleDateChange = (e) => {
     setPrefDate(e.target.value);
+  };
+
+  const handleTypeChange = (e) => {
+    setPrefType(e.target.value);
   };
 
   return (
@@ -322,7 +358,7 @@ function EventIndividual() {
                     style={{ display: !regBox && "none" }}
                     className="fields-container"
                   >
-                    {!event.isWorkshops && (
+                    {event.isMIGD && (
                       <>
                         <select
                           onChange={(e) => handlePref1Change(e)}
@@ -332,7 +368,7 @@ function EventIndividual() {
                           id=""
                         >
                           <option value="">Field Preference 1</option>
-                          {event.isGM ? fieldOptionsGM : fieldOptions}
+                          {fieldOptionsMIGD}
                         </select>
                         <select
                           onChange={(e) => handlePref2Change(e)}
@@ -342,7 +378,7 @@ function EventIndividual() {
                           id=""
                         >
                           <option value="">Field Preference 2</option>
-                          {event.isGM ? fieldOptionsGM : fieldOptions}
+                          {fieldOptionsMIGD}
                         </select>
                         <select
                           onChange={(e) => handlePref3Change(e)}
@@ -352,7 +388,7 @@ function EventIndividual() {
                           id=""
                         >
                           <option value="">Field Preference 3</option>
-                          {event.isGM ? fieldOptionsGM : fieldOptions}
+                          {fieldOptionsMIGD}
                         </select>
                         <select
                           onChange={(e) => handleDateChange(e)}
@@ -362,7 +398,29 @@ function EventIndividual() {
                           id=""
                         >
                           <option value="">Date Preference</option>
-                          {dateOptions}
+                          {dateOptionsMIGD}
+                        </select>
+
+                        {/* <select
+                          onChange={(e) => handleDateChange(e)}
+                          className="field-input"
+                          value={prefDate}
+                          name=""
+                          id=""
+                        >
+                          <option value="">Date Preference</option>
+                          {dateOptionsMIGD}
+                        </select> */}
+
+                        <select
+                          onChange={(e) => handleTypeChange(e)}
+                          className="field-input"
+                          value={prefType}
+                          name=""
+                          id=""
+                        >
+                          <option value="">Preferred Type</option>
+                          {typeOptionsMIGD}
                         </select>
                       </>
                     )}
@@ -424,6 +482,53 @@ function EventIndividual() {
                         />
                       </>
                     )}
+
+                    {event.isGM && (
+                      <>
+                        <select
+                          onChange={(e) => handlePref1Change(e)}
+                          className="field-input"
+                          value={pref1}
+                          name=""
+                          id=""
+                        >
+                          <option value="">Field Preference 1</option>
+                          {fieldOptions}
+                        </select>
+                        <select
+                          onChange={(e) => handlePref2Change(e)}
+                          className="field-input"
+                          value={pref2}
+                          name=""
+                          id=""
+                        >
+                          <option value="">Field Preference 2</option>
+                          {fieldOptions}
+                        </select>
+                        <select
+                          onChange={(e) => handlePref3Change(e)}
+                          className="field-input"
+                          value={pref3}
+                          name=""
+                          id=""
+                        >
+                          <option value="">Field Preference 3</option>
+                          {fieldOptions}
+                        </select>
+                        {/* <select
+                          onChange={(e) => handleDateChange(e)}
+                          className="field-input"
+                          value={prefDate}
+                          name=""
+                          id=""
+                        >
+                          <option value="">Date Preference</option>
+                          {dateOptionsMIGD}
+                        </select> */}
+                      </>
+                    )}
+
+                    
                   </div>
 
                   <button

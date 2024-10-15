@@ -4,7 +4,7 @@ from PIL import Image
 from Authentication.models import MyUser
 from django.core.files import File
 import io
-from .options import FIELDS, DATES, FIELDS_GM, WORKSHOPS
+from .options import FIELDS, DATES, FIELDS_GM, WORKSHOPS, FIELDS_MIGD, TYPES_MIGD
 
 def process_image(image_file, name, prefix):
     image = Image.open(image_file)
@@ -17,7 +17,6 @@ def process_image(image_file, name, prefix):
     output.seek(0)
     output.name = prefix + str(name) + ".jpg"
     return File(output)
-
 
 class Speaker(models.Model):
     fullname = models.CharField(max_length=255)
@@ -54,6 +53,7 @@ class Event(models.Model):
     isEnded = models.BooleanField(default=False, blank=True)
     isGM = models.BooleanField(default=False, blank=True)
     isWorkshops = models.BooleanField(default=False, blank=True)
+    isMIGD = models.BooleanField(default=False, blank=True)
     priority = models.BooleanField(default=False, blank=False)
 
     def __str__(self):
@@ -78,19 +78,24 @@ class Workshops(models.Model):
         return self.workshop
         
 class OtherDetails(models.Model):
-    field_pref1 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
-    field_pref2 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
-    field_pref3 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
-    field_pref4 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
-    field_pref5 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    # field_pref1 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    # field_pref2 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    # field_pref3 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    # field_pref4 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
+    # field_pref5 = models.CharField(max_length=255, default="", blank=True, choices=FIELDS.items())
     
     field_pref1_gm = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
     field_pref2_gm = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
     field_pref3_gm = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
+
+    field_pref1_migd = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_MIGD.items())
+    field_pref2_migd = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
+    field_pref3_migd = models.CharField(max_length=255, default="", blank=True, choices=FIELDS_GM.items())
     
     workshops = models.ManyToManyField(Workshops, related_name='workshops', blank=True)
 
     pref_date = models.CharField(max_length=255, default="", blank=True, choices=DATES.items())
+    pref_type_migd = models.CharField(max_length=255, default="", blank=True, choices=TYPES_MIGD.items())
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
     
