@@ -86,7 +86,7 @@ function EventIndividual() {
 
   useEffect(() => {
     console.log(workshops);
-    if ((pref1 && pref2 && pref3 && prefDate) || workshops.length > 0) {
+    if ((pref1 && pref2 && pref3) || workshops.length > 0) {
       setCheckFields(true);
     } else {
       setCheckFields(false);
@@ -354,7 +354,7 @@ function EventIndividual() {
                           <option value="">Field Preference 3</option>
                           {event.isGM ? fieldOptionsGM : fieldOptions}
                         </select>
-                        <select
+                        {/* <select
                           onChange={(e) => handleDateChange(e)}
                           className="field-input"
                           value={prefDate}
@@ -363,7 +363,7 @@ function EventIndividual() {
                         >
                           <option value="">Date Preference</option>
                           {dateOptions}
-                        </select>
+                        </select> */}
                       </>
                     )}
 
