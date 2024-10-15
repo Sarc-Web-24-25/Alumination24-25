@@ -5,7 +5,6 @@ import message_background from '../components/Home/photos24/message_background.j
 
 function useIndividualEvent() {
   const [event, setEvent] = useState(null);
-
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(null);
   const [otherDetails, setOtherDetails] = useState({});

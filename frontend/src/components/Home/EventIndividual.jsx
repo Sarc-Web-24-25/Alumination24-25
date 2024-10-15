@@ -87,10 +87,19 @@ function EventIndividual() {
 
   useEffect(() => {
     console.log(workshops);
-    if ((pref1 && pref2 && pref3 && prefDate) || workshops.length > 0) {
-      setCheckFields(true);
-    } else {
-      setCheckFields(false);
+    if (event && !event.isMIGD) {
+      if ((pref1 && pref2 && pref3) || workshops.length > 0) {
+        setCheckFields(true);
+      } else {
+        setCheckFields(false);
+      }
+    }
+    else {
+      if ((pref1 && pref2 && pref3 && prefDate && prefType) || workshops.length > 0) {
+        setCheckFields(true);
+      } else {
+        setCheckFields(false);
+      }
     }
     if (event) {
       setOtherDetails(
@@ -108,8 +117,8 @@ function EventIndividual() {
                 field_pref1_gm: pref1,
                 field_pref2_gm: pref2,
                 field_pref3_gm: pref3,
-                // pref_date: prefDate,
-                
+                pref_date: prefDate,
+
               },
           }
           : {
@@ -306,7 +315,7 @@ function EventIndividual() {
                     className="youtube"
                     opts={opts}
                     videoId={event.youtube_link}
-                    style={{ aspectRatio: '16/9',  }}
+                    style={{ aspectRatio: '16/9', }}
                   />
                 )}
               </div>
@@ -531,7 +540,7 @@ function EventIndividual() {
                       </>
                     )}
 
-                    
+
                   </div>
 
                   <button
