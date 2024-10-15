@@ -24,7 +24,7 @@ function useLogin() {
 
   const login = () => {
     axios
-      .post('http://127.0.0.1:8000/api/authenticate/login', formData, { headers })
+      .post('https://alumination.sarc-iitb.org/api/authenticate/login', formData, { headers })
       .then((response) => {
         console.log(response.data);
         localStorage.setItem('userData', JSON.stringify(response.data));

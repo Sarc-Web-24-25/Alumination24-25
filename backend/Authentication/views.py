@@ -236,7 +236,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     msg["Subject"] = subject
     msg["From"] = SMTP_USERNAME
     msg["To"] = userEmail
-    proxy = 'http://127.0.0.1:8000/api/authenticate'
+    proxy = 'https://alumination.sarc-iitb.org/api/authenticate'
     
     eventmail = f'''
     <!DOCTYPE html>
@@ -270,10 +270,10 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             Regards,</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Aastha Patel | Prerna Agrawal</p>
+            Aniruddh Goyal</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Overall Co-ordinators</p>
+            Overall Co-ordinator</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             Student Alumni Relations Cell</p>
@@ -404,8 +404,8 @@ box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 
         </p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We look forward to welcoming you to Alumination 2024 and embarking on this enriching journey together. Get ready to Break The Ice, Learn from the Best, and Illuminate your path to success!</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Regards,</p>
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Aastha Patel | Prerna Agrawal</p>
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Overall Co-ordinators</p>
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Aniruddh Goyal</p>
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Overall Co-ordinator</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Student Alumni Relations Cell</p>
     </div>
 </body>

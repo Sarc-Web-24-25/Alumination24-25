@@ -27,7 +27,7 @@ function useSignup() {
 
   const signup = () => {
     axios
-      .post('http://127.0.0.1:8000/api/authenticate/signup', formData, { headers })
+      .post('https://alumination.sarc-iitb.org/api/authenticate/signup', formData, { headers })
       .then((response) => {
         console.log(response.data);
         setSuccess(true); // Set a success flag to indicate successful signup

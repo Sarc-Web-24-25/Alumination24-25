@@ -16,7 +16,7 @@ function useForgotPassword() {
 
   const forgotPassword = (key) => {
     axios
-      .post(`http://127.0.0.1:8000/api/authenticate/resetPassword/${key}/`, formData, { headers })
+      .post(`https://alumination.sarc-iitb.org/api/authenticate/resetPassword/${key}/`, formData, { headers })
       .then((response) => {
         console.log(response.data);
         setSuccess("Password changed successfully, you can now login"); // Set a success flag to indicate successful login
