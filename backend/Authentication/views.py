@@ -245,9 +245,8 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
 <head>
     <title>{subject}</title>
 </head>
-
-<body
-    style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+<body 
+    style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container"
         style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat;">
         <h1
@@ -270,10 +269,10 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             Regards,</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Aastha Patel | Prerna Agrawal</p>
+            Aniruddh Goyal</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Overall Co-ordinators</p>
+            Overall Co-ordinator</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             Student Alumni Relations Cell</p>
@@ -291,8 +290,8 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
 <head>
     <title>{subject}</title>
 </head>
-
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+<body
+style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container"
         style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat;">
         <h1
@@ -319,10 +318,10 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
             Regards,</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Aastha Patel | Prerna Agrawal</p>
+            Aniruddh Goyal</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
-            Overall Co-ordinators</p>
+            Overall Co-ordinator</p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             Student Alumni Relations Cell</p>
@@ -341,7 +340,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     <title>Alumination 2024 | SARC IIT Bombay</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container"
         style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat; ">
         <h1
@@ -391,8 +390,7 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     <title>{subject}</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #cd7f32, #cf9e7a, #e8bb9e, #cd7f32); background-blend-mode: multiply;
-box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-size: cover; background-repeat: no-repeat;">
         <h1 style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">Welcome to Alumination 2024 | SARC IIT Bombay</h1>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Dear User,</p>
@@ -404,8 +402,8 @@ box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 
         </p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We look forward to welcoming you to Alumination 2024 and embarking on this enriching journey together. Get ready to Break The Ice, Learn from the Best, and Illuminate your path to success!</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Regards,</p>
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Aastha Patel | Prerna Agrawal</p>
-        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Overall Co-ordinators</p>
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Aniruddh Goyal</p>
+        <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Overall Co-ordinator</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Student Alumni Relations Cell</p>
     </div>
 </body>
