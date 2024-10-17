@@ -39,7 +39,7 @@ class EventList(APIView):
         try:
             profile = Profile.objects.get(user=user)
         except Profile.DoesNotExist:
-            return Response({"error": "Profile does not exist, Please create a profile first"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"error": "Profile does not exist, Please create a profile or complete existing profile(profile photo remaining)"}, status=status.HTTP_404_NOT_FOUND)
         try:
             event = Event.objects.get(id=id)
         except Event.DoesNotExist:
