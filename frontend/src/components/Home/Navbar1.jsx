@@ -101,7 +101,7 @@ function Navbar1() {
           </div>
           {isOpen2 && (
             <div className="menuProfile">
-              {localStorage.getItem("accessToken") ? (
+              {localStorage.getItem("userData.access") ? (
                 <div
                   className={`menuLapProfile ${selectedNav === "menuLapProfile" ? "activate" : ""}`}
                   onClick={() => handleNavClick("menuLapProfile", "/profile")}
@@ -178,7 +178,7 @@ function Navbar1() {
                 >
                   Schedule
                 </div>
-                {localStorage.getItem("accessToken") ? (
+                {localStorage.getItem("userData.access") ? (
                   <div
                     className="phoneNavProfile"
                     onClick={() => handleNavClick("navitem5", "/profile")}
