@@ -77,7 +77,20 @@ a{
     gap: 20px;
     z-index: 100 !important;
     /* overflow: hidden; */
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, border 1s ease;
+}
+
+.thumbnail :hover {
+    border: 3px solid white;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%); /* Start from the left */
+    }
+    100% {
+        transform: translateX(100%); /* Move to the right */
+    }
 }
 
 .thumbnail .item{
@@ -101,6 +114,7 @@ a{
     height: 100%;
     object-fit: cover;
     border-radius: 20%;
+    transition: transform 1s ease;
 }
 
 
