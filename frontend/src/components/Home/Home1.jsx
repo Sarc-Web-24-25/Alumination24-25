@@ -826,13 +826,19 @@ export default function Home1() {
           </div>
 
           <div className="lowerMainHome">
-            <div
+            {localStorage.getItem("userData.access") ? (<div
+              className="registerHome"
+              style={{ fontSize: "25px", color: "#700815", cursor: "pointer" }}
+              onClick={() => handleNavClick("/profile")}
+            >
+              PROFILE
+            </div>): (<div
               className="registerHome"
               style={{ fontSize: "25px", color: "#700815", cursor: "pointer" }}
               onClick={() => handleNavClick("/signup")}
             >
               REGISTER
-            </div>
+            </div>)}
           </div>
         </div>
       </Parallax>
