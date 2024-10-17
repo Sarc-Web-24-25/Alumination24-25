@@ -210,7 +210,7 @@ const Gallery3 = () => {
                             className={`item ${index === counter ? 'active' : ''}`}
                             key={index}
                             style={{
-                                backgroundImage: `url(${item.img})`,
+                                // backgroundImage: `url(${item.img})`,
                                 zIndex: index === counter ? 1 : -1,
                                 position: 'absolute', // Ensures photos overlap
                                 transition: 'opacity 0.5s', // Smooth transition for opacity

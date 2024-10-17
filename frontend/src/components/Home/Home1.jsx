@@ -25,7 +25,7 @@ import Character from "./Character";
 import Alumni3 from "./Alumni3/Alumni3.jsx";
 import Sponsor2 from "./Sponsor2/Sponsor2.jsx";
 import Footer from "./Footer.jsx";
-import Aluminatiom from "./photos24/AluminationLogo.png";
+import Aluminatiom from "./photos24/fontalumination.png";
 import layyer2 from "./photos24/layer1-removebg.png";
 
 import mute from "./photos24/mute.png";
@@ -822,18 +822,23 @@ export default function Home1() {
           <div className="upperMainHome">
             <div className="headingHome">
               <img src={Aluminatiom} alt="" />
-              <div className="noren">Noren of Nostalgia</div>
             </div>
           </div>
 
           <div className="lowerMainHome">
-            <div
+            {localStorage.getItem("userData.access") ? (<div
+              className="registerHome"
+              style={{ fontSize: "25px", color: "#700815", cursor: "pointer" }}
+              onClick={() => handleNavClick("/profile")}
+            >
+              PROFILE
+            </div>): (<div
               className="registerHome"
               style={{ fontSize: "25px", color: "#700815", cursor: "pointer" }}
               onClick={() => handleNavClick("/signup")}
             >
               REGISTER
-            </div>
+            </div>)}
           </div>
         </div>
       </Parallax>

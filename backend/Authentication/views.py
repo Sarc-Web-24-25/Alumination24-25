@@ -246,7 +246,9 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     <title>{subject}</title>
 </head>
 <body 
-    style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+    <body
+style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #4e9ce4, #f8b3d1); background-blend-mode: multiply; box-shadow: inset #b8860b 0 0 0 5px, inset #d4af37 0 0 0 1px, inset #ffd700 0 0 0 10px, inset #e1ad21 0 0 0 11px, inset #f0c80e 0 0 0 16px, inset #ffea00 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+    <div class="container"
     <div class="container"
         style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat;">
         <h1
@@ -291,7 +293,8 @@ def send_mail(subject, userName, userEmail, isWelcome=False, isVerify=False, isF
     <title>{subject}</title>
 </head>
 <body
-style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #4e9ce4, #f8b3d1); background-blend-mode: multiply; box-shadow: inset #b8860b 0 0 0 5px, inset #d4af37 0 0 0 1px, inset #ffd700 0 0 0 10px, inset #e1ad21 0 0 0 11px, inset #f0c80e 0 0 0 16px, inset #ffea00 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+
     <div class="container"
         style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat;">
         <h1
@@ -306,7 +309,7 @@ style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; 
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             <a href="{proxy}/changePassword/{forgotToken}"
-                style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
+                style="text-decoration: none; background: #f2b8b5; color: black; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
                 Email</a></p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
@@ -340,7 +343,7 @@ style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; 
     <title>Alumination 2024 | SARC IIT Bombay</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #4e9ce4, #f8b3d1); background-blend-mode: multiply; box-shadow: inset #b8860b 0 0 0 5px, inset #d4af37 0 0 0 1px, inset #ffd700 0 0 0 10px, inset #e1ad21 0 0 0 11px, inset #f0c80e 0 0 0 16px, inset #ffea00 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container"
         style="max-width: 600px; margin: 0 auto; padding: 40px;  background-size: cover; background-repeat: no-repeat; ">
         <h1
@@ -356,7 +359,7 @@ style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; 
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
             <a href="{proxy}/verify/{verificationToken}"
-                style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
+                style="text-decoration: none; background: #f2b8b5; color: black; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Verify
                 Email</a></p>
         <p
             style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
@@ -390,14 +393,14 @@ style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; 
     <title>{subject}</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 0; background: linear-gradient(to right, #f08d84, #f8b298, #fddbb5, #f08d84); background-blend-mode: multiply; box-shadow: inset #532915 0 0 0 5px, inset #652a0e 0 0 0 1px, inset #80471c 0 0 0 10px, inset #9a7b4f 0 0 0 11px, inset #deb887 0 0 0 16px, inset #f5deb3 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
+<body style="font-family: Arial, sans-serif; line-height: 1.5; margin: 0; padding: 10px; background: linear-gradient(to right, #4e9ce4, #f8b3d1); background-blend-mode: multiply; box-shadow: inset #b8860b 0 0 0 5px, inset #d4af37 0 0 0 1px, inset #ffd700 0 0 0 10px, inset #e1ad21 0 0 0 11px, inset #f0c80e 0 0 0 16px, inset #ffea00 0 0 0 17px, inset #fff8dc 0 0 0 21px, inset #fef8e0 0 0 0 22px;">
     <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; background-size: cover; background-repeat: no-repeat;">
         <h1 style="font-size: 24px; color: rgb(71, 28, 6); margin-top: 0; margin-bottom: 20px; font-family: 'Inknut Antiqua';">Welcome to Alumination 2024 | SARC IIT Bombay</h1>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">Dear User,</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We hope this message finds you well and filled with excitement for the upcoming Alumination 2024 event! As the organizing team, we are thrilled to invite you to this extraordinary two-day fest that promises to be an unforgettable experience.</p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">
         
-        <a href="{proxy}/events" style="text-decoration: none; background: linear-gradient(to bottom, #3c1a04, #a3643a 15%, #b0805f 25%, #a3643a 75%, #3c1a04 100%); color: #ffffff; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Explore Events</a>
+        <a href="{proxy}/events" style="text-decoration: none; background: #f2b8b5; color: black; padding: 10px 20px; border-radius: 5px; font-family: 'Inknut Antiqua'; font-size: 24px; display: inline-block;">Explore Events</a>
         
         </p>
         <p style="color: rgb(71, 28, 6); margin-bottom: 10px; font-family: 'Inknut Antiqua'; font-size: 20px; text-align: justify;">We look forward to welcoming you to Alumination 2024 and embarking on this enriching journey together. Get ready to Break The Ice, Learn from the Best, and Illuminate your path to success!</p>
