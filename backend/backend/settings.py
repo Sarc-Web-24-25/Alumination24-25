@@ -159,4 +159,4 @@ SIMPLE_JWT = {
 }
 
 
-CSRF_TRUSTED_ORIGINS = ['https://alumination.sarc-iitb.org', 'http://localhost:8000', 'https://alumination.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org/']
+CSRF_TRUSTED_ORIGINS = ['https://alumination.sarc-iitb.org', 'https://alumination.sarc-iitb.org', 'https://alumination.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org', 'https://koitoroklo.sarc-iitb.org/']

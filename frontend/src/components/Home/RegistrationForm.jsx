@@ -18,7 +18,7 @@ function RegistrationForm({ eventId }) {
         event.preventDefault();
 
         // Make a POST request to your backend to handle registration data submission
-        axios.post(`http://localhost:8000/api/register/${eventId}/`, formData)
+        axios.post(`https://alumination.sarc-iitb.org/api/register/${eventId}/`, formData)
             .then((response) => {
                 setSuccessMessage('Registration successful');
             })
