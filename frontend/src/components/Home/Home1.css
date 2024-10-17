@@ -120,11 +120,11 @@ margin-bottom: 10%;
     justify-content: center;
     align-items: flex-end;
     flex-direction: column;
-    margin-right: 20%;
+    margin-right: 5%;
 }
 
 .headingHome img{
-    height: 120% ;
+    height: 420% ;
 }
 
 .headingHome .noren{
@@ -144,7 +144,7 @@ margin-bottom: 10%;
         padding-right: 2.7%;
     }
     .headingHome img{
-        height: 95% ;
+        height: 400% ;
     }
 }
 
@@ -158,24 +158,24 @@ margin-bottom: 10%;
         padding-right: 4.3%;
     }
     .headingHome img{
-        height: 95% ;
+        height: 400% ;
     }
 }
 
 @media screen and (max-width: 660px) {
     .headingHome{
-        margin-bottom: 10%;
+        margin-bottom: -15%;
     }
     .headingHome img{
-        height: 85% ;
+        height: 400% ;
     }
 }
 
 @media screen and (max-width: 600px) {
     .headingHome{
-        margin-bottom: 30%;
+        margin-bottom: 20%;
         align-items: center;
-        margin-right: 0;
+        margin-right: -15%;
     }
     .headingHome .noren{
         font-size: 170%;
@@ -183,7 +183,7 @@ margin-bottom: 10%;
         padding-right: 5.8%;
     }
     .headingHome img{
-        height: 75% ;
+        height: 400% ;
     }
 }
 .lowerMainHome{
@@ -196,14 +196,14 @@ margin-bottom: 10%;
   }
 
 .registerHome{
-    height: 45%;
+    height: 85%;
   width: 28%;
   max-width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   /* background-color: rgba(0, 255, 255, 0.323);  */
-  margin-top: 2%;
+  margin-top: -5%;
   background-image: url('./photos24/register.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -219,7 +219,7 @@ margin-bottom: 10%;
 
     @media screen and (max-width: 1050px) {
         .registerHome{
-            height: 25%;
+            height: 75%;
         }
     }
 
@@ -232,18 +232,18 @@ margin-bottom: 10%;
     }
 
     @media screen and (max-width: 821px) {
-      .registerHome{
+      /* .registerHome{
 
         padding-bottom: 5%;
 
-      }
+      } */
   }
 
     @media screen and (max-width: 768px) {
       .registerHome{
         width: 100%;
         /* height: 35%; */
-    padding-top: 3%;
+    /* padding-top: 3%; */
         max-width: 270px;
         margin-top: -10%;
         height: 35%;
@@ -258,7 +258,8 @@ margin-bottom: 10%;
     @media screen and (max-width: 400px) {
         .registerHome{
             height: 80px;
-            width: 250px;
+            width: 200px;
+            padding-bottom: 7%;
 
         }
     }
