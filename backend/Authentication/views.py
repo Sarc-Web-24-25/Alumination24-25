@@ -115,10 +115,10 @@ class VerifyEmailView(APIView):
             token_object = Token.objects.get(key=key)  # Change 'token' to 'key'
             user = token_object.user
             if user.is_active:
-                return redirect('https://alumination.sarc-iitb.org/login')  # Redirect if already verified
+                return redirect('https://alumination.sarc-iitb.org/api/authenticate/login')  # Redirect if already verified
             user.is_active = True
             user.save()
-            return redirect('https://alumination.sarc-iitb.org/login')  # Redirect after successful verification
+            return redirect('https://alumination.sarc-iitb.org/api/authenticate/login')  # Redirect after successful verification
         except Token.DoesNotExist:
             print("Error while verifying key: Token does not exist")
             return Response("No user found, please signup", status=status.HTTP_400_BAD_REQUEST)

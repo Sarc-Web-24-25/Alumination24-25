@@ -121,6 +121,10 @@
   .event-image a {
     left: 3% !important;
   }
+
+  .Event_Heading {
+    margin-top: 8vh;
+  }
 }
 
 
@@ -1137,11 +1141,7 @@
 .carousel-control-next,
 .carousel-control-prev {
   top: 0px !important;
-  bottom: 24vh !important;
-}
-
-.carousel-indicators {
-  bottom: 37vh !important;
+  bottom: 0vh !important;
 }
 
 @media screen and (max-width: 1110px) {
@@ -1190,4 +1190,13 @@
 .event-img {
   /* border-right: 5px solid white; */
   padding: 10px;
+}
+
+@media screen and (min-width: 1025px) {
+  .lap-ht {
+    aspect-ratio: 16 / 9 !important;
+    
+  }
+
+  
 }

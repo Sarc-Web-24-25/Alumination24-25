@@ -130,7 +130,9 @@ function EventIndividual() {
     }
   }, [pref1, pref2, pref3, prefDate, prefType, workshops]);
 
-  const handleRegisterClick = (eventId, isRegNeeded) => {
+  const handleRegisterClick = (event, isRegNeeded) => {
+    console.log('registering');
+    console.log(userData);
     // if (eventId === 2) {
     //   window.location.href = "https://forms.gle/J4t7hJaB7xViaZKD6";
     //   return;
@@ -158,8 +160,9 @@ function EventIndividual() {
       setRegBox(true);
       return;
     } else {
+  
       if ((checkFields && isRegNeeded) || !isRegNeeded) {
-        register(eventId);
+        register(event.id);
       } else {
         Swal.fire({
           title: '<span style="color: black;">Please fill all the fields</span>',
@@ -546,7 +549,7 @@ function EventIndividual() {
                   <button
                     disabled={!event.isLaunched}
                     onClick={() =>
-                      handleRegisterClick(event.id, event.isRegNeeded)
+                      handleRegisterClick(event, event.isRegNeeded)
                     }
                     // className="register-button"
                     className={`register-button ${event.isLaunched ? 'enabled' : ''}`}
