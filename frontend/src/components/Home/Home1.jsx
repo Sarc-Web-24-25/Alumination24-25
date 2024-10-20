@@ -835,9 +835,9 @@ export default function Home1() {
             </div>): (<div
               className="registerHome"
               style={{ fontSize: "25px", color: "#700815", cursor: "pointer" }}
-              onClick={() => handleNavClick("/signup")}
+              onClick={() => handleNavClick("/profile")}
             >
-              REGISTER
+              PROFILE
             </div>)}
           </div>
         </div>

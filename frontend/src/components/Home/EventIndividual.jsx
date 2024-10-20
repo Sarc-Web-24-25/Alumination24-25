@@ -363,8 +363,8 @@ function EventIndividual() {
                       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: "8px", color: "#515691E5" }} />
-                    <span>Date: {event.date}</span>
+                    {/* <FontAwesomeIcon icon={faCalendarAlt} style={{ marginRight: "8px", color: "#515691E5" }} /> */}
+                    {/* <span>Date: {event.date}</span> */}
                   </p>
                   <div
                     style={{ display: !regBox && "none" }}
