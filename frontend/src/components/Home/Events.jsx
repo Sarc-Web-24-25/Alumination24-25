@@ -94,7 +94,10 @@ function EventList() {
           <p>Events</p>
       </div>
       {events.length !== 0 && 
+      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <ImageCarousel main={mainEvents} />
+      </div>
+        
       }
       {/* <span className='event-head'>Events</span> */}
       <div className="page-content" style={{ zIndex: 0 }}>
@@ -114,7 +117,7 @@ function EventList() {
                     borderTopLeftRadius: "20px",
                     zIndex: 10,
                   }}
-                  src={"https://alumination.sarc-iitb.org/" + event.image}
+                  src={"https://alumination.sarc-iitb.org" + event.image}
                   alt={event.name}
                 />
 

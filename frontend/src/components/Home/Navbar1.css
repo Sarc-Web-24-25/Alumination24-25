@@ -203,14 +203,13 @@
 .menuHamburger{
     height: 65px;
     width: 65px ;
-    background-color: rgba(239, 200, 117, 0.605);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #700815;
     z-index: 1000;
-
+    transition: background-color 1s ease;
 }
 
 .menuProfile{

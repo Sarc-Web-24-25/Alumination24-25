@@ -5,57 +5,24 @@ import { Carousel } from "react-bootstrap";
 const ImageCarousel = ({ main }) => {
   return (
     <Carousel
-      className="container"
+      className="container lap-ht-cont"
       indicators={false}
       slide={true}
-      style={{ height: "auto", marginBottom: "10vh" }}
+      style={{ height: 'auto', marginBottom: "20vh", padding: 0, borderRadius: '10px' }}
     >
       {main.map((event) => (
         // console.log('https://alumination.sarc-iitb.org/' + event.image);
-        <Carousel.Item style={{ margin: "20vh 0vh" }}>
+        <Carousel.Item 
+        >
           <img
-            className="d-block w-100"
-            src={"https://alumination.sarc-iitb.org/" + event.image}
+            className="d-block lap-ht"
+            src={"https://alumination.sarc-iitb.org" + event.image}
             alt="First slide"
-            style={{ width: "500px", height: "500px", borderRadius: "10px" }}
+            style={{ width: '100%', aspectRatio: '1/1', borderRadius: "10px" }}
           />
-          <Carousel.Caption>
-            <h3 style={{ fontFamily: `"Kadwa", serif` }}>{event.name}</h3>
-            <p
-              style={{
-                fontFamily: `"Kadwa", serif`,
-                fontFamily: `"Sansita", sans-serif`,
-              }}
-            >
-              {event.description}
-            </p>
-          </Carousel.Caption>
+         
         </Carousel.Item>
       ))}
-
-      {/* <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={image}
-          alt="Second slide"
-        />
-        <Carousel.Caption>
-          <h3>Second Slide</h3>
-          <p>Description of the second slide.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={image}
-          alt="Third slide"
-        />
-        <Carousel.Caption>
-          <h3>Third Slide</h3>
-          <p>Description of the third slide.</p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
     </Carousel>
   );
 };

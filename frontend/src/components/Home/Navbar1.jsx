@@ -97,27 +97,48 @@ function Navbar1() {
             </div>
           </div>
           <div className="profileHome">
-            <div className="menuHamburger"><Hamburger rounded toggled={isOpen2} toggle={setIsOpen2} size={30} color="#ffffff"></Hamburger></div>
+            <div
+              className="menuHamburger"
+              style={{backgroundColor: isOpen2 ? "transparent" : "rgba(239, 200, 117, 0.605)"}}
+            >
+              <Hamburger
+                rounded
+                toggled={isOpen2}
+                toggle={setIsOpen2}
+                size={30}
+                color="#ffffff"
+              ></Hamburger>
+            </div>
           </div>
           {isOpen2 && (
             <div className="menuProfile">
               {localStorage.getItem("userData.access") ? (
                 <div
-                  className={`menuLapProfile ${selectedNav === "menuLapProfile" ? "activate" : ""}`}
+                  className={`menuLapProfile ${
+                    selectedNav === "menuLapProfile" ? "activate" : ""
+                  }`}
                   onClick={() => handleNavClick("menuLapProfile", "/profile")}
                 >
                   Profile
                 </div>
               ) : (
                 <div
-                  className={`menuLapLogin ${selectedNav === "menuLapLogin" ? "activate" : ""}`} 
+                  className={`menuLapLogin ${
+                    selectedNav === "menuLapLogin" ? "activate" : ""
+                  }`}
                   onClick={() => handleNavClick("menuLapLogin", "/login")}
                 >
                   Login
                 </div>
               )}
-              <div className={`scheduleLaptop ${selectedNav === "scheduleLaptop" ? "activate" : ""}`} onClick={() => handleNavClick("scheduleLaptop", "/schedule")}>Schedule</div>
-
+              <div
+                className={`scheduleLaptop ${
+                  selectedNav === "scheduleLaptop" ? "activate" : ""
+                }`}
+                onClick={() => handleNavClick("scheduleLaptop", "/schedule")}
+              >
+                Schedule
+              </div>
             </div>
           )}
         </div>
@@ -139,12 +160,11 @@ function Navbar1() {
           <div className="phoneCircular2">
             <div className="custom-hamburger">
               <Hamburger
-              rounded
+                rounded
                 toggled={isOpen}
                 toggle={setIsOpen}
                 size={30}
                 color="#ffffff"
-
               />
             </div>
             {/* Hamburger toggle */}
@@ -185,12 +205,14 @@ function Navbar1() {
                   >
                     Profile
                   </div>
-                ) :                   <div
-                className="phoneNavLogin"
-                onClick={() => handleNavClick("navitem6", "/login")}
-              >
-                Login
-              </div>}
+                ) : (
+                  <div
+                    className="phoneNavLogin"
+                    onClick={() => handleNavClick("navitem6", "/login")}
+                  >
+                    Login
+                  </div>
+                )}
               </div>
             </div>
           )}
