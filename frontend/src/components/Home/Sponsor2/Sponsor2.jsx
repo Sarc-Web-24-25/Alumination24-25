@@ -18,6 +18,8 @@ import theglobalhues from '../photos24/sponsors/theglobalhues.png'
 import vskills from '../photos24/sponsors/vskills.png'
 import zomato from '../photos24/sponsors/zomato.png'
 import zoomcar from '../photos24/sponsors/zoomcar.png'
+import alpha8 from '../photos24/sponsors/Alpha8.png'
+import mindflix from '../photos24/sponsors/mindflix.png'
 
 
 export default function Sponsor2() {
@@ -31,18 +33,20 @@ export default function Sponsor2() {
     "Gifting Partner",
     "Title Sponsor",
     "SARCathon Partner",
+    "FnB Partner"
   ];
 
   const row2name = [
-    "FnB Partner",
-    "Media Partner",
+    "   FnB Partner   ",
+    "  Media Partner  ",
     "SARCathon Partner",
-    "Gifting Partner",
+    " Gifting Partner ",
     "SARCathon Partner",
-    "Media Partner",
+    "  Media Partner  ",
     "SARCathon Partner",
-    "FnB Sponsor",
-    "Travel Partner",
+    "   FnB Sponsor   ",
+    "  Travel Partner ",
+    "     Partner     "
   ];
 
   const row1 = [
@@ -55,6 +59,7 @@ export default function Sponsor2() {
     jirana,
     kotak,
     piramal,
+    alpha8
   ];
 
   const row2 = [
@@ -67,6 +72,7 @@ export default function Sponsor2() {
     vskills,
     zomato,
     zoomcar,
+    mindflix
   ];
 
   const row1url = [
@@ -79,6 +85,7 @@ export default function Sponsor2() {
     "https://www.jiranaworld.com/",
     "https://www.kotakmf.com/",
     "https://www.piramalfoundation.org/",
+    "https://habhit.com/"
   ];
 
   const row2url = [
@@ -91,6 +98,7 @@ export default function Sponsor2() {
     "http://www.vskills.in/",
     "https://www.zomato.com/",
     "https://www.zoomcar.com/",
+    "https://www.mindflixholidays.com/" 
   ];
 
   // const middleIndex = Math.ceil(sponsors.length / 2);
@@ -253,6 +261,9 @@ const Subtext = styled.div`
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
+  max-width: 100px;
+  
+  border: 10px solid transparent;
 
   @media (max-width: 768px) {
     font-size: 0.9rem; /* Adjust font-size for tablets or smaller screens */
@@ -294,7 +305,7 @@ const common = css`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  white-space: nowrap;
+  white-space: wrap;
   width: 100%;
   animation: ${scrollX} 30s linear infinite;
 `;
