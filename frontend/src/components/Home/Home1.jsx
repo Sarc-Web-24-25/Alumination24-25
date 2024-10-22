@@ -756,22 +756,22 @@ export default function Home1() {
       } else if (windowWidth < 1286 && windowWidth >= 1025) {
         styles = {
           clouds1: { top: '9%' },
-          clouds2: { top: '28%' },
-          clouds3: { top: '47%' },
+          clouds2: { top: '29%' },
+          clouds3: { top: '49%' },
           clouds4: { top: '79%' }
         };
       } else if (windowWidth < 1025 && windowWidth >= 970) {
         styles = {
           clouds1: { top: '14%' },
-          clouds2: { top: '39.5%' },
-          clouds3: { top: '59%' },
+          clouds2: { top: '32.5%' },
+          clouds3: { top: '49%' },
           clouds4: { top: '82.5%' }
         };
       } else if (windowWidth < 970 && windowWidth >= 855) {
         styles = {
-          clouds1: { top: "6.5%" },
-          clouds2: { top: "24%" },
-          clouds3: { top: "42%" },
+          clouds1: { top: "12%" },
+          clouds2: { top: "30%" },
+          clouds3: { top: "44%" },
           clouds4: { top: "83.5%" },
         };
       }
@@ -784,19 +784,19 @@ export default function Home1() {
           };
         }
 
-        else if (windowWidth < 821 && windowWidth >= 786) {
+        else if (windowWidth < 821 && windowWidth >= 787) {
           styles = {
-            clouds1: { top: '13%' },
-            clouds2: { top: '32.5%' },
-            clouds3: { top: '49.5%' },
+            clouds1: { top: '12%' },
+            clouds2: { top: '28.5%' },
+            clouds3: { top: '42.5%' },
             clouds4: { top: '84.5%' }
           };
         }
-      else if (windowWidth < 786 && windowWidth >= 710) {
+      else if (windowWidth < 787 && windowWidth >= 710) {
         styles = {
-          clouds1: { top: '14%' },
-          clouds2: { top: '31.5%' },
-          clouds3: { top: '50%' },
+          clouds1: { top: '12%' },
+          clouds2: { top: '26.5%' },
+          clouds3: { top: '41%' },
           clouds4: { top: '84.5%' }
         };
       } else if (windowWidth < 710 && windowWidth >= 640) {
@@ -822,9 +822,9 @@ export default function Home1() {
         };
       } else if (windowWidth < 550 && windowWidth >= 490) {
         styles = {
-          clouds1: { top: "7.3%" },
-          clouds2: { top: "20.5%" },
-          clouds3: { top: "34%" },
+          clouds1: { top: "6.8%" },
+          clouds2: { top: "17.5%" },
+          clouds3: { top: "25.5%" },
           clouds4: { top: "89.5%" },
         };
       } else if (windowWidth < 490 && windowWidth >= 450) {
@@ -840,9 +840,9 @@ export default function Home1() {
 
       else if (windowWidth < 450 && windowWidth >= 400) {
         styles = {
-          clouds1: { top: '8.5%' },
-          clouds2: { top: '22.3%' },
-          clouds3: { top: '35.75%' },
+          clouds1: { top: '8%' },
+          clouds2: { top: '19.3%' },
+          clouds3: { top: '31.3%' },
           clouds4: { top: '89.5%' }
         };
 
@@ -850,25 +850,25 @@ export default function Home1() {
       }
       else if (windowWidth < 400 && windowWidth >= 376) {
         styles = {
-          clouds1: { top: '8.5%' },
-          clouds2: { top: '21.5%' },
-          clouds3: { top: '34%' },
+          clouds1: { top: '7.5%' },
+          clouds2: { top: '18.5%' },
+          clouds3: { top: '30%' },
           clouds4: { top: '89.5%' }
         };
       }
       else if (windowWidth < 376 && windowWidth >= 361) {
           styles = {
-            clouds1: { top: '7%' },
-            clouds2: { top: '19.5%' },
-            clouds3: { top: '31.5%' },
+            clouds1: { top: '6%' },
+            clouds2: { top: '17%' },
+            clouds3: { top: '28.5%' },
             clouds4: { top: '89.5%' }
           };
         }
       else if (windowWidth < 361) {
             styles = {
-              clouds1: { top: '7%' },
-              clouds2: { top: '20.5%' },
-              clouds3: { top: '33.5%' },
+              clouds1: { top: '6%' },
+              clouds2: { top: '18%' },
+              clouds3: { top: '29.5%' },
               clouds4: { top: '89.5%' }
             };
   
