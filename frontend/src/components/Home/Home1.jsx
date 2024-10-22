@@ -570,6 +570,165 @@ export default function Home1() {
   //   };
   // }, [windowWidth]);
 
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+
+  //     // Background image logic for smaller screens
+  //     if (window.innerWidth < 786) {
+  //       setBgImage1(layer1PH); // Use small image for screens smaller than 786px
+  //       setBgImage3(layer3PH); // Use small image for screens smaller than 786px
+  //       setIsSmallScreen(true);
+  //     } else {
+  //       setBgImage1(layer1); // Use default image for larger screens
+  //       setBgImage3(layer3); // Use default image for larger screens
+  //       setIsSmallScreen(false);
+  //     }
+
+  //     // Dynamic cloud position based on window width
+  //     let styles = {};
+  //     if (windowWidth >= 1286) {
+  //       styles = {
+  //         clouds1: { top: '11%' },
+  //         clouds2: { top: '35%' },
+  //         clouds3: { top: '59%' },
+  //         clouds4: { top: '80%' }
+  //       };
+  //     } else if (windowWidth < 1286 && windowWidth >= 1025) {
+  //       styles = {
+  //         clouds1: { top: '9%' },
+  //         clouds2: { top: '33%' },
+  //         clouds3: { top: '53%' },
+  //         clouds4: { top: '79%' }
+  //       };
+  //     } else if (windowWidth < 1025 && windowWidth >= 970) {
+  //       styles = {
+  //         clouds1: { top: '14%' },
+  //         clouds2: { top: '39.5%' },
+  //         clouds3: { top: '59%' },
+  //         clouds4: { top: '82.5%' }
+  //       };
+  //     } else if (windowWidth < 970 && windowWidth >= 855) {
+  //       styles = {
+  //         clouds1: { top: "6.5%" },
+  //         clouds2: { top: "24%" },
+  //         clouds3: { top: "42%" },
+  //         clouds4: { top: "83.5%" },
+  //       };
+  //     }
+  //       else if (windowWidth < 855 && windowWidth >= 821) {
+  //         styles = {
+  //           clouds1: { top: '7%' },
+  //           clouds2: { top: '25%' },
+  //           clouds3: { top: '42%' },
+  //           clouds4: { top: '84.5%' }
+  //         };
+  //       }
+
+  //       else if (windowWidth < 821 && windowWidth >= 786) {
+  //         styles = {
+  //           clouds1: { top: '13%' },
+  //           clouds2: { top: '32.5%' },
+  //           clouds3: { top: '49.5%' },
+  //           clouds4: { top: '84.5%' }
+  //         };
+  //       }
+  //     else if (windowWidth < 786 && windowWidth >= 710) {
+  //       styles = {
+  //         clouds1: { top: '14%' },
+  //         clouds2: { top: '31.5%' },
+  //         clouds3: { top: '50%' },
+  //         clouds4: { top: '84.5%' }
+  //       };
+  //     } else if (windowWidth < 710 && windowWidth >= 640) {
+  //       styles = {
+  //         clouds1: { top: "8.5%" },
+  //         clouds2: { top: "25.5%" },
+  //         clouds3: { top: "43.5%" },
+  //         clouds4: { top: "85.5%" },
+  //       };
+  //     } else if (windowWidth < 640 && windowWidth >= 607) {
+  //       styles = {
+  //         clouds1: { top: "6.5%" },
+  //         clouds2: { top: "20.5%" },
+  //         clouds3: { top: "34%" },
+  //         clouds4: { top: "88.5%" },
+  //       };
+  //     } else if (windowWidth < 607 && windowWidth >= 550) {
+  //       styles = {
+  //         clouds1: { top: "6.3%" },
+  //         clouds2: { top: "20.5%" },
+  //         clouds3: { top: "34%" },
+  //         clouds4: { top: "88.5%" },
+  //       };
+  //     } else if (windowWidth < 550 && windowWidth >= 490) {
+  //       styles = {
+  //         clouds1: { top: "7.3%" },
+  //         clouds2: { top: "20.5%" },
+  //         clouds3: { top: "34%" },
+  //         clouds4: { top: "89.5%" },
+  //       };
+  //     } else if (windowWidth < 490 && windowWidth >= 450) {
+  //       styles = {
+  //         clouds1: { top: '7.5%' },
+  //         clouds2: { top: '21%' },
+  //         clouds3: { top: '34%' },
+  //         clouds4: { top: '89.5%' }
+  //       };
+
+        
+  //     }
+
+  //     else if (windowWidth < 450 && windowWidth >= 400) {
+  //       styles = {
+  //         clouds1: { top: '8.5%' },
+  //         clouds2: { top: '22.3%' },
+  //         clouds3: { top: '35.75%' },
+  //         clouds4: { top: '89.5%' }
+  //       };
+
+        
+  //     }
+  //     else if (windowWidth < 400 && windowWidth >= 376) {
+  //       styles = {
+  //         clouds1: { top: '8.5%' },
+  //         clouds2: { top: '21.5%' },
+  //         clouds3: { top: '34%' },
+  //         clouds4: { top: '89.5%' }
+  //       };
+  //     }
+  //     else if (windowWidth < 376 && windowWidth >= 361) {
+  //         styles = {
+  //           clouds1: { top: '7%' },
+  //           clouds2: { top: '19.5%' },
+  //           clouds3: { top: '31.5%' },
+  //           clouds4: { top: '89.5%' }
+  //         };
+  //       }
+  //     else if (windowWidth < 361) {
+  //           styles = {
+  //             clouds1: { top: '7%' },
+  //             clouds2: { top: '20.5%' },
+  //             clouds3: { top: '33.5%' },
+  //             clouds4: { top: '89.5%' }
+  //           };
+  
+      
+  //     }
+  //     setCloudStyles(styles);
+  //   };
+
+  //   // Call handleResize on initial load and window resize events
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+
+  //   // Cleanup event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, [windowWidth]);
+
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -597,8 +756,8 @@ export default function Home1() {
       } else if (windowWidth < 1286 && windowWidth >= 1025) {
         styles = {
           clouds1: { top: '9%' },
-          clouds2: { top: '33%' },
-          clouds3: { top: '53%' },
+          clouds2: { top: '28%' },
+          clouds3: { top: '47%' },
           clouds4: { top: '79%' }
         };
       } else if (windowWidth < 1025 && windowWidth >= 970) {
@@ -1095,7 +1254,7 @@ export default function Home1() {
           </div>
           <div style={{ height: "10vh" }}></div>
           <div style={{ height: "10vh" }}></div>
-          <div style={{ height: sponsors.length === 0 ? "40vh" : "130vh" }}>
+          <div style={{ height: windowWidth < 600 ? "170vh" :  '140vh' }}>
             <Sponsor2 sponsors={sponsors} />
           </div>
           <Footer />

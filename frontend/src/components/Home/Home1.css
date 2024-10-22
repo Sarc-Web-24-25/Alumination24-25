@@ -199,8 +199,8 @@ margin-bottom: 10%;
 
 .registerHome{
     height: 85%;
-  width: 28%;
-  max-width: 300px;
+  width: 30%;
+  max-width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,6 +218,7 @@ margin-bottom: 10%;
   /* padding-top: 15px; */
 
     }
+
 
     @media screen and (max-width: 1050px) {
         .registerHome{
@@ -1343,14 +1344,14 @@ h1 {
 
 @media screen and (max-width: 1286px) {
 .clouds1always{
-  top: 10.5%;
+  top: 9.1%;
 
 }
 .clouds2always{
-  top: 10.5%;
+  top: 9.1%;
 
 }.clouds3always{
-  top: 10.5%;
+  top: 9.1%;
 
 }
 }
@@ -1364,7 +1365,7 @@ h1 {
 
 @media screen and (max-width: 786px) {
   .clouds1always,.clouds2always,.clouds3always{
-    top: 12.5%;
+    top: 12%;
     display: block;
 
   }
@@ -1372,7 +1373,7 @@ h1 {
 
 @media screen and (max-width: 640px) {
   .clouds1always,.clouds2always,.clouds3always{
-    top: 6.8%;
+    top: 6.5%;
 
   }
 }
@@ -1386,14 +1387,14 @@ h1 {
 
 @media screen and (max-width: 500px) {
   .clouds1always,.clouds2always,.clouds3always{
-    top: 7.7%;
+    top: 6.6%;
 
   }
 }
 
 @media screen and (max-width: 431px) {
   .clouds1always,.clouds2always,.clouds3always{
-    top: 10%;
+    top: 9%;
 
   }
 
@@ -1402,17 +1403,23 @@ h1 {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
   .clouds1always,.clouds2always,.clouds3always{
-    top: 9.5%;
+    top: 9%;
   }
 
   
 }
+@media screen and (max-width: 400px) {
+  .clouds1always,.clouds2always,.clouds3always{
+    top: 8.6%;
+  }
 
+  
+}
 @media screen and (max-width: 376px) {
   .clouds1always,.clouds2always,.clouds3always{
-    top: 8%;
+    top: 7.6%;
   }
 
   .layer2 {
