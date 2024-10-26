@@ -99,7 +99,7 @@ export default function Sponsor2() {
     "https://www.piramalfoundation.org/",
     "https://habhit.com/",
     "https://upstox.com/",
-    "https://www.imperial.ac.uk/"
+    "https://www.imperial-overseas.com/"
   ];
 
   const row2url = [
