@@ -37,20 +37,20 @@
     align-items: center;
     font-family: 'Japan Daisuki Regular', sans-serif;
     font-weight: bolder;
-    font-size: 400%;
+    font-size: 500%;
     color: white;
     -webkit-text-stroke: 1px #700815;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     padding-top: 2%;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
 }
 
 .schedule_middle {
     height: 20px;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    padding-left: 17%;
+    justify-content: center;
+    /* padding-left: 17%; */
     align-items: center;
     font-size: 250%;
     color: white;
@@ -86,7 +86,7 @@
 }
 
 .schedule_item {
-    height: 50px;
+    height: auto;
     width: 70%;
 
     background-color: rgba(255, 255, 255, 0.8);
@@ -150,6 +150,7 @@
     align-items: center;
     flex-direction: row;
     border-radius: 20px;
+    
 }
 
 @media screen and (min-width: 786px) and (max-width: 1280px) {
@@ -195,13 +196,13 @@
     text-align: center;
 }
 
-.schedule_item {
+/* .schedule_item {
     height: 50vh;
-}
+} */
 
-.schedule_container {
+/* .schedule_container {
     height: 100vh;
-}
+} */
 
 .typewriter {
     font-family: 'Katsumi', sans-serif;
