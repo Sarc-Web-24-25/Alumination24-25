@@ -24,6 +24,7 @@ import upstox from '../photos24/sponsors/Upstox.png'
 import imperial from '../photos24/sponsors/Imperial.png'
 import dinas from '../photos24/sponsors/Dinas.png'
 import knocksense from '../photos24/sponsors/KnockSense.png'
+import outlookBusiness from '../photos24/sponsors/OutlookBusiness.png'
 
 
 export default function Sponsor2() {
@@ -45,7 +46,7 @@ export default function Sponsor2() {
   const row2name = [
     "   FnB Partner   ",
     "  Media Partner  ",
-    "SARCathon Partner",
+    "Media partner",
     " Gifting Partner ",
     "SARCathon Partner",
     "  Media Partner  ",
@@ -75,7 +76,7 @@ export default function Sponsor2() {
   const row2 = [
     maxProtein,
     noticebard,
-    piramal,
+    outlookBusiness,
     portonics,
     saras,
     theglobalhues,
@@ -99,13 +100,13 @@ export default function Sponsor2() {
     "https://www.piramalfoundation.org/",
     "https://habhit.com/",
     "https://upstox.com/",
-    "https://www.imperial.ac.uk/"
+    "https://www.imperial-overseas.com/"
   ];
 
   const row2url = [
     "https://maxprotein.in/",
     "https://noticebard.com/",
-    "https://www.piramalfoundation.org/",
+    "https://www.outlookindia.com/hub4business/alumination-2024-a-journey-of-wisdom-and-inspiration",
     "https://www.portronics.com/",
     "https://www.sarasai.org/",
     "https://theglobalhues.com/",
