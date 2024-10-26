@@ -20,6 +20,10 @@ import zomato from '../photos24/sponsors/zomato.png'
 import zoomcar from '../photos24/sponsors/zoomcar.png'
 import alpha8 from '../photos24/sponsors/Alpha8.png'
 import mindflix from '../photos24/sponsors/mindflix.png'
+import upstox from '../photos24/sponsors/Upstox.png'
+import imperial from '../photos24/sponsors/Imperial.png'
+import dinas from '../photos24/sponsors/Dinas.png'
+import knocksense from '../photos24/sponsors/KnockSense.png'
 
 
 export default function Sponsor2() {
@@ -33,7 +37,9 @@ export default function Sponsor2() {
     "Gifting Partner",
     "Title Sponsor",
     "SARCathon Partner",
-    "FnB Partner"
+    "FnB Partner",
+    "Gifting Partner",
+    "Higher Studies Partner"
   ];
 
   const row2name = [
@@ -46,7 +52,9 @@ export default function Sponsor2() {
     "SARCathon Partner",
     "   FnB Sponsor   ",
     "  Travel Partner ",
-    "     Partner     "
+    "     Partner     ",
+    "Aftermovie Partner",
+    "Media Partner"
   ];
 
   const row1 = [
@@ -59,7 +67,9 @@ export default function Sponsor2() {
     jirana,
     kotak,
     piramal,
-    alpha8
+    alpha8,
+    upstox,
+    imperial
   ];
 
   const row2 = [
@@ -72,7 +82,9 @@ export default function Sponsor2() {
     vskills,
     zomato,
     zoomcar,
-    mindflix
+    mindflix,
+    dinas,
+    knocksense
   ];
 
   const row1url = [
@@ -85,7 +97,9 @@ export default function Sponsor2() {
     "https://www.jiranaworld.com/",
     "https://www.kotakmf.com/",
     "https://www.piramalfoundation.org/",
-    "https://habhit.com/"
+    "https://habhit.com/",
+    "https://upstox.com/",
+    "https://www.imperial.ac.uk/"
   ];
 
   const row2url = [
@@ -98,7 +112,9 @@ export default function Sponsor2() {
     "http://www.vskills.in/",
     "https://www.zomato.com/",
     "https://www.zoomcar.com/",
-    "https://www.mindflixholidays.com/" 
+    "https://www.mindflixholidays.com/",
+    "https://www.knocksense.com/",
+    "https://www.instagram.com/dinasmedia?igsh=d2FrcWMwcXFncm1s"
   ];
 
   // const middleIndex = Math.ceil(sponsors.length / 2);
