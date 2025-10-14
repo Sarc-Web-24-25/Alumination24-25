@@ -83,6 +83,22 @@ function Schedule() {
     { time: "4:00 PM - 5:30 PM", event: "Un-Engineering" },
     { time: "5:30 PM - 7:00 PM", event: "Trailblazers" },
     { time: "7:30 PM - 9:30 PM", event: "Beyond The Horizon" },
+
+    { time: "10:00 AM - 3:00 PM", event: "Group Mentoring" },
+    { time: "10:00 AM", event: "Break The Ice " },
+    { time: "10:00 AM - 5:00 PM", event: "MI/GD " },
+    { time: "11:00 AM", event: "Innovation Expo " },
+    { time: "10:00 AM - 5:00 PM", event: "Hostalgia " },
+    { time: "10:00 AM - 11:00 AM", event: "Consult Workshop" },
+    { time: "11:00 AM - 12:00 PM", event: "PM Workshop" },
+    { time: "12:00 PM - 1:00 PM", event: "Finance Workshop" },
+    { time: "1:30 PM - 2:30 PM", event: "Quant Workshop" },
+    { time: "11:00 AM - 3:30 PM", event: "SARCathon Finals" },
+    { time: "6:00 PM", event: "Start It Up" },
+    { time: "4:00 PM", event: "Un-Engineering" },
+    { time: "2:00 PM", event: "Trailblazers" },
+    { time: "7:30 PM - 9:30 PM", event: "Beyond The Horizon " },
+
   ];
 
   return (
